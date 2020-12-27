@@ -2,30 +2,24 @@ name: Deploy
 on: [push]
 
 jobs:
-  publish:
+  Setup:
     runs-on: ubuntu-latest
-    name: Publish
+    name: setup
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
-      # https://github.com/cycjimmy/semantic-release-action
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
-        id: semantic
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
-          branch: master
-          extra_plugins: |
-            @semantic-release/git
-            @semantic-release/changelog
+          node-version: 12
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Push updates to branch for major version
-        # if there is a new version published, let's say v1.2.3
-        # then this step will update branch "v1" to this commit
-        if: steps.semantic.outputs.new_release_published == 'true'
-        run: "git push https://x-access-token:${GH_ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/v${{steps.semantic.outputs.new_release_major_version}}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        run: npx semantic-release
