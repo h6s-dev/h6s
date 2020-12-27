@@ -1,9 +1,12 @@
 {
   "name": "@becca/react-calendar",
   "version": "0.0.1",
-  "description": "Calenar ui library",
+  "description": "Calendar Headless UI Library with react hooks",
   "keywords": [
-    "calendar"
+    "calendar",
+    "headless",
+    "fullcalendar",
+    "react-calendar"
   ],
   "license": "MIT",
   "main": "dist/index.ts",
