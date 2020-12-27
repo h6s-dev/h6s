@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
@@ -10,5 +10,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "editor.tabSize": 2
 }

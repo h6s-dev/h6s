@@ -10,7 +10,9 @@
     "eol-last": ["error", "always"],
     "quotes": ["error", "single"],
     "no-tabs": "error",
+    "semi": ["error", "never"],
     "import/no-anonymous-default-export": 0,
+    "object-shorthand": "error",
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": "*", "next": "return" }
