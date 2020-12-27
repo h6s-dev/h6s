@@ -1,0 +1,20 @@
+{
+  "extends": ["react-app"],
+  "plugins": ["react-hooks", "simple-import-sort", "prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "no-multiple-empty-lines": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "eol-last": ["error", "always"],
+    "quotes": ["error", "single"],
+    "no-tabs": "error",
+    "import/no-anonymous-default-export": 0,
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ]
+  }
+}
