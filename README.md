@@ -1,9 +1,9 @@
-# react-calendar
+# @becca/react-calendar
 
 ## Installation
 
 ```sh
-yarn react-calendar
+yarn @becca/react-calendar
 ```
 
 ## Show your support

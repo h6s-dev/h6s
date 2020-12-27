@@ -1,5 +1,5 @@
 {
-  "name": "react-calendar",
+  "name": "@becca/react-calendar",
   "version": "0.0.1",
   "description": "Calenar ui library",
   "keywords": [
@@ -43,7 +43,7 @@
   "author": "JaeYeopHan(Jbee)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JaeYeopHan/react-calendar"
+    "url": "https://github.com/becca-io/react-calendar"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
