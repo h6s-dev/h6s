@@ -4,7 +4,7 @@ import { format, getDate } from 'date-fns'
 import locale from 'date-fns/locale/ko'
 import React from 'react'
 
-import useCalendar, { CalendarViewType } from '../../../../src/index'
+import useCalendar from '../../../../src/index'
 import { Container } from '../components/Container'
 
 export default function Example() {
@@ -22,23 +22,23 @@ export default function Example() {
           <nav>
             <Flex justify="space-between" width="w.100">
               <Stack direction="row" gutter={4}>
-                <Button size="md" onClick={view.showMonthView} isActive={view.type === CalendarViewType.Month}>
+                <Button size="md" onClick={view.showMonthView} isActive={view.isMonthView}>
                   M
                 </Button>
-                <Button size="md" onClick={view.showWeekView} isActive={view.type === CalendarViewType.Week}>
+                <Button size="md" onClick={view.showWeekView} isActive={view.isWeekView}>
                   W
                 </Button>
-                <Button size="md" onClick={view.showDayView} isActive={view.type === CalendarViewType.Day}>
+                <Button size="md" onClick={view.showDayView} isActive={view.isDayView}>
                   D
                 </Button>
               </Stack>
               <Text fontSize="2xl">{format(calendar.date, 'yyyy. MM')}</Text>
               <Stack direction="row" gutter={8}>
-                <IconButton aria-label="prev-month-button" icon={<ChevronLeftIcon />} onClick={navigation.setNextMonth} />
+                <IconButton aria-label="prev-button" icon={<ChevronLeftIcon />} onClick={navigation.toPrev} />
                 <Button size="md" colorScheme="teal" onClick={navigation.setToday}>
                   TODAY
                 </Button>
-                <IconButton aria-label="next-month-button" icon={<ChevronRightIcon />} onClick={navigation.setNextMonth} />
+                <IconButton aria-label="next-button" icon={<ChevronRightIcon />} onClick={navigation.toNext} />
               </Stack>
             </Flex>
           </nav>
