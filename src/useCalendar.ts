@@ -20,7 +20,7 @@ export interface UseCalendarOptions {
 
 export default function useCalendar(options: UseCalendarOptions = {}) {
   const { defaultDate, defaultWeekStart = 0, defaultViewType = CalendarViewType.Month } = options
-  const baseDate = defaultDate ? new Date(defaultDate) : new Date()
+  const baseDate = useMemo(() => defaultDate ? new Date(defaultDate) : new Date(), [defaultDate])
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
   const [currentDate, setCurrentDate] = useState(baseDate)

@@ -22,9 +22,9 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
     return new Date(year, month, day)
   }
   const getCurrentWeek = () => {
-    const control = (day - 1) % 7 > startWeekdayInMonth ? 1 : 0
+    const control = (day - 1) % 7 > startWeekdayInMonth ? 0 : -1
 
-    return Math.ceil(day / 7) + control - 1
+    return Math.ceil(day / 7) + control
   }
 
   const getMonth = () => {
