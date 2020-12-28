@@ -1,9 +1,9 @@
-import { Flex, FlexProps, useColorMode } from '@chakra-ui/react'
+import { Box, Flex, FlexProps, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 
 import { DarkModeSwitch } from './DarkModeSwitch'
 
-export const Container = ({ children, ...props}: FlexProps) => {
+export const Container = ({ children, ...props }: FlexProps) => {
   const { colorMode } = useColorMode()
 
   const bgColor = { light: 'gray.50', dark: 'gray.900' }
@@ -15,11 +15,12 @@ export const Container = ({ children, ...props}: FlexProps) => {
       direction="column"
       bg={bgColor[colorMode]}
       color={color[colorMode]}
-      paddingX={120}
       {...props}
     >
       <DarkModeSwitch />
-      {children}
+      <Box maxW="640px" m="auto">
+        {children}
+      </Box>
     </Flex>
   )
 }
