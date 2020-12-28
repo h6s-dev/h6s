@@ -4,6 +4,9 @@
   "main": "dist/index.ts",
   "module": "esm/index.ts",
   "typings": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Headless Calendar UI Library with react hooks",
   "keywords": [
     "calendar",
