@@ -1,0 +1,35 @@
+---
+name: Getting Started
+route: /getting-started
+---
+
+# Getting Started
+
+```tsx
+import useCalendar from '@becca/react-calendar'
+
+export default function Calendar() {
+  const { headers, body, view } = useCalendar()
+
+  return (
+    <Table>
+      <Thead>
+        <Tr>
+          {headers.weekDays.map(({ key, value }) => {
+            return <Th key={key}>{format(value, 'E', { locale })}</Th>
+          })}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {body.weeks.map(({ key, value: days }) => (
+          <Tr key={key}>
+            {days.map(({ key, value }) => (
+              <Td key={key}>{getDate(value.date)}</Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  )
+}
+```

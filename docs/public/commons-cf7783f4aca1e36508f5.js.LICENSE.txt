@@ -1,0 +1,32 @@
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * array-sort <https://github.com/jonschlinkert/array-sort>
+ *
+ * Copyright (c) 2015-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/*!
+ * get-value <https://github.com/jonschlinkert/get-value>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+/*!
+ * regjsgen 0.5.2
+ * Copyright 2014-2020 Benjamin Tan <https://ofcr.se/>
+ * Available under the MIT license <https://github.com/bnjmnt4n/regjsgen/blob/master/LICENSE-MIT.txt>
+ */
+
+/*! https://mths.be/he v1.2.0 by @mathias | MIT license */
+
+/*! https://mths.be/regenerate v1.4.2 by @mathias | MIT license */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
