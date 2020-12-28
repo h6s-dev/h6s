@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
-import { Button, Flex, Heading, IconButton, Stack, Table, TableCaption, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
+import { Badge, Button, Flex, Heading, IconButton, Stack, Table, TableCaption, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
 import useCalendar from '@veccu/react-calendar'
+import { version } from '@veccu/react-calendar/package.json'
 import { format, getDate } from 'date-fns'
 import locale from 'date-fns/locale/ko'
 import React from 'react'
@@ -13,6 +14,7 @@ export default function Example() {
   return (
     <Container height="100vh">
       <Stack padding={12} justifyContent="center" direction="column" alignItems="center" spacing={4}>
+        <Badge colorScheme="green" fontSize="1.2em" px={2} textTransform="lowercase">v{version}</Badge>
         <Heading as="h1" size="4xl" colorScheme="teal">react-calendar</Heading>
         <Text color="gray.500">Headless Calendar UI Library Example with Charkra UI</Text>
       </Stack>
