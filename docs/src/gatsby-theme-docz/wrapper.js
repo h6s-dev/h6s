@@ -6,7 +6,7 @@ export default function Wrapper({ children }) {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Shadow!</title>
+        <title>react-calendar</title>
         <link rel="icon" type="image/png" href="/favicon/favicon.ico" />
         <link
           rel="apple-touch-icon"
