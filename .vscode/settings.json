@@ -9,7 +9,7 @@
   "eslint.packageManager": "yarn",
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
-  }
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2
 }

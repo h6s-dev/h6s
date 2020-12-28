@@ -1,4 +1,11 @@
-.eslintrc.js
+.eslintrc
+.eslintignore
+.prettierignore
+.prettierrc
+.releaserc
 .github
+.vscode
 README.md
 examples
+docs
+coverage

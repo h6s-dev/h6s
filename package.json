@@ -1,19 +1,25 @@
 {
-  "name": "@becca/react-calendar",
+  "name": "@veccu/react-calendar",
   "version": "0.0.1",
-  "description": "Calenar ui library",
-  "keywords": [
-    "calendar"
-  ],
-  "license": "MIT",
   "main": "dist/index.ts",
   "module": "esm/index.ts",
   "typings": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Headless Calendar UI Library with react hooks",
+  "keywords": [
+    "calendar",
+    "headless",
+    "fullcalendar",
+    "react-calendar"
+  ],
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist esm",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly --declarationDir dist\"",
     "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
+    "test:watch": "jest --watch",
     "lint": "eslint -c .eslintrc '{pages,src}/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "precommit": "lint-staged",
@@ -43,7 +49,7 @@
   "author": "JaeYeopHan(Jbee)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/becca-io/react-calendar"
+    "url": "https://github.com/veccu/react-calendar"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -60,6 +66,7 @@
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
+    "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "babel-eslint": "^10.1.0",
@@ -83,6 +90,7 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.35.1",
     "rollup-plugin-sourcemaps": "^0.6.3",
@@ -92,6 +100,7 @@
   },
   "peerDependencies": {
     "date-fns": ">= 2",
-    "react": ">=17"
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8"
   }
 }

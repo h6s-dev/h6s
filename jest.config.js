@@ -5,5 +5,5 @@ module.exports = {
     '^.+\\.tsx?$': 'babel-jest',
   },
   coveragePathIgnorePatterns: ['/node_modules/', 'src/index.ts'],
-  collectCoverageFrom: ['src/*.{js,ts}'],
+  collectCoverageFrom: ['src/**/*.{js,ts}'],
 }
