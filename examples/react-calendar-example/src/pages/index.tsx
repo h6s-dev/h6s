@@ -12,9 +12,10 @@ export default function Example() {
 
   return (
     <Container height="100vh">
-      <Flex padding={8} justifyContent="center">
+      <Stack padding={12} justifyContent="center" direction="column" alignItems="center" spacing={4}>
         <Heading as="h1" size="4xl" colorScheme="teal">react-calendar</Heading>
-      </Flex>
+        <Text color="gray.500">Headless Calendar UI Library Example with Charkra UI</Text>
+      </Stack>
 
       <Table variant="simple" size="lg">
         <TableCaption placement="top">
