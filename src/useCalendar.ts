@@ -1,8 +1,12 @@
 import {
+  addDays,
   addMonths,
+  addWeeks,
+  subDays,
   subMonths,
+  subWeeks,
 } from 'date-fns'
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
 import { CalendarViewType, WeekDayType } from './models'
@@ -25,7 +29,7 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   const calendar = createCalendarInfo(currentDate, weekStartsOn)
   const { weekendDays, getCurrentWeek, getWeek, getMonth } = calendar
 
-  const getHeaders = (viewType: CalendarViewType) => {
+  const getHeaders = useCallback((viewType: CalendarViewType) => {
     switch (viewType) {
       case 'month':
       case 'week':
@@ -38,9 +42,9 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
           weekDays: attachKeyToArray([baseDate], 'weekdays'),
         }
     }
-  }
+  }, [baseDate, weekendDays])
 
-  const getBody = (viewType: CalendarViewType) => {
+  const getBody = useCallback((viewType: CalendarViewType) => {
     const currentWeek = getCurrentWeek()
     const monthWeeks = attachKeyToArray(getMonth().map(week => attachKeyToArray(week, 'days')), 'weeks')
     const weekWeeks = attachKeyToArray([attachKeyToArray(getWeek(currentWeek), 'days')], 'weeks')
@@ -60,7 +64,29 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
           weeks: [],
         }
     }
-  }
+  }, [getCurrentWeek, getMonth, getWeek])
+
+  const setNext = useMemo(() => {
+    switch(viewType) {
+      case CalendarViewType.Month:
+        return addMonths
+      case CalendarViewType.Week:
+        return addWeeks
+      case CalendarViewType.Day:
+        return addDays
+    }
+  }, [viewType])
+
+  const setPrev = useMemo(() => {
+    switch(viewType) {
+      case CalendarViewType.Month:
+        return subMonths
+      case CalendarViewType.Week:
+        return subWeeks
+      case CalendarViewType.Day:
+        return subDays
+    }
+  }, [viewType])
 
   return {
     calendar: {
@@ -70,8 +96,8 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
     headers: getHeaders(viewType),
     body: getBody(viewType),
     navigation: {
-      setNextMonth: () => setCurrentDate((date) => addMonths(date, 1)),
-      setPrevMonth: () => setCurrentDate((date) => subMonths(date, 1)),
+      toNext: () => setCurrentDate((date) => setNext(date, 1)),
+      toPrev: () => setCurrentDate((date) => setPrev(date, 1)),
       setToday: () => setCurrentDate(new Date()),
       setDate: (date: Date) => setCurrentDate(date),
     },

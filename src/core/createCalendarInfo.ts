@@ -1,6 +1,5 @@
 import {
   getDaysInMonth,
-  isSameDay,
   isSameMonth,
   isSameYear,
   setDay,
@@ -9,6 +8,7 @@ import {
 
 import { WeekDayType } from '../models'
 import { arrayOf, parseDate } from '../utils'
+import isSameDate from '../utils/isSameDate'
 
 export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType) {
   const { year, month, day } = parseDate(date)
@@ -45,7 +45,7 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
     return isSameMonth(targetDate, date) && isSameYear(targetDate, date)
   }
   const isCurrentDate = (targetDate: Date) => {
-    return isCurrentMonth(targetDate) && isSameDay(targetDate, date)
+    return isCurrentMonth(targetDate) && isSameDate(targetDate, date)
   }
 
   return {
