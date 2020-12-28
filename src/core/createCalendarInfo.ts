@@ -24,7 +24,7 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
   const getCurrentWeek = () => {
     const control = (day - 1) % 7 > startWeekdayInMonth ? 1 : 0
 
-    return Math.ceil(day / 7) + control
+    return Math.ceil(day / 7) + control - 1
   }
 
   const getMonth = () => {

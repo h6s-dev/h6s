@@ -41,9 +41,56 @@ describe('createCalendarInfo function', () => {
     const info2 = createCalendarInfo(new Date(2020, 10, 1), 0)
     const info3 = createCalendarInfo(new Date(2020, 11, 7), 0)
     // Then
-    expect(info1.getCurrentWeek()).toBe(5)
-    expect(info2.getCurrentWeek()).toBe(1)
-    expect(info3.getCurrentWeek()).toBe(2)
+    expect(info1.getCurrentWeek()).toBe(4)
+    expect(info2.getCurrentWeek()).toBe(0)
+    expect(info3.getCurrentWeek()).toBe(1)
+  })
+
+  it('getWeek return target week', () => {
+    // Given
+    const weekIndex = 4
+    
+    // When
+    const calendar = createCalendarInfo(new Date(2020, 11, 27), 0)
+    // Then
+    const expected = [
+      {
+        date: new Date(2020, 11, 27),
+        isCurrentDate: true,
+        isCurrentMonth: true,
+      },
+      {
+        date: new Date(2020, 11, 28),
+        isCurrentDate: false,
+        isCurrentMonth: true,
+      },
+      {
+        date: new Date(2020, 11, 29),
+        isCurrentDate: false,
+        isCurrentMonth: true,
+      },
+      {
+        date: new Date(2020, 11, 30),
+        isCurrentDate: false,
+        isCurrentMonth: true,
+      },
+      {
+        date: new Date(2020, 11, 31),
+        isCurrentDate: false,
+        isCurrentMonth: true,
+      },
+      {
+        date: new Date(2021, 0, 1),
+        isCurrentDate: false,
+        isCurrentMonth: false,
+      },
+      {
+        date: new Date(2021, 0, 2),
+        isCurrentDate: false,
+        isCurrentMonth: false,
+      },
+    ]
+    expect(calendar.getWeek(weekIndex)).toEqual(expected)
   })
 
   it('isCurrentMonth return true, isCurrentDate return false', () => {
