@@ -13,13 +13,13 @@
     "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
     "@veccu/react-calendar": "^1.0.1",
+    "babel-loader": "^8.2.2",
     "framer-motion": "^2.9.4",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@emotion/babel-preset-css-prop": "11.0.0",
     "@types/node": "^14.14.16",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
