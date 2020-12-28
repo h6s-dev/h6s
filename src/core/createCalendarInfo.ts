@@ -32,12 +32,12 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
   }
   const getWeek = (weekIndex: number) => {
     return arrayOf(7).map(dayIndex => {
-      const date = getTargetDate(weekIndex, dayIndex)
+      const targetDate = getTargetDate(weekIndex, dayIndex)
 
       return {
-        date,
-        isCurrentMonth: isCurrentMonth(date),
-        isCurrentDate: isCurrentDate(date),
+        date: targetDate,
+        isCurrentMonth: isCurrentMonth(targetDate),
+        isCurrentDate: isCurrentDate(targetDate),
       }
     })
   }

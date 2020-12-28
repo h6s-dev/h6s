@@ -39,15 +39,21 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
       case 'day':
       default:
         return {
-          weekDays: attachKeyToArray([baseDate], 'weekdays'),
+          weekDays: attachKeyToArray([currentDate], 'weekdays'),
         }
     }
-  }, [baseDate, weekendDays])
+  }, [currentDate, weekendDays])
 
   const getBody = useCallback((viewType: CalendarViewType) => {
+    const selectedDate = {
+      date: currentDate,
+      isCurrentDate: false,
+      isCurrentMonth: true,
+    }
     const currentWeek = getCurrentWeek()
     const monthWeeks = attachKeyToArray(getMonth().map(week => attachKeyToArray(week, 'days')), 'weeks')
     const weekWeeks = attachKeyToArray([attachKeyToArray(getWeek(currentWeek), 'days')], 'weeks')
+    const dayWeeks = attachKeyToArray([attachKeyToArray([selectedDate], 'days')], 'weeks')
 
     switch (viewType) {
       case 'month':
@@ -61,10 +67,10 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
       case 'day':
       default:
         return {
-          weeks: [],
+          weeks: dayWeeks,
         }
     }
-  }, [getCurrentWeek, getMonth, getWeek])
+  }, [currentDate, getCurrentWeek, getMonth, getWeek])
 
   const setNext = useMemo(() => {
     switch(viewType) {
