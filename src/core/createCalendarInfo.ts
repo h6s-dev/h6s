@@ -7,10 +7,8 @@ import {
   startOfMonth,
 } from 'date-fns'
 
-import WeekDayType from '../models/WeekDayType'
-import arrayOf from '../utils/arrayOf'
-import parseDate from '../utils/parseDate'
-
+import { WeekDayType } from '../models'
+import { arrayOf, parseDate } from '../utils'
 
 export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType) {
   const { year, month, day } = parseDate(date)

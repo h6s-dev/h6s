@@ -4,20 +4,18 @@ import {
 } from 'date-fns'
 import { useState } from 'react'
 
-import CalendarViewtype from '../models/CalendarViewType'
-import WeekDayType from '../models/WeekDayType'
-import attachKeyToArray from '../utils/attachKeyToArray'
-import createCalendarInfo from './createCalendarInfo'
+import { createCalendarInfo } from './core'
+import { CalendarViewType, WeekDayType } from './models'
+import { attachKeyToArray } from './utils'
 
-
-interface UseCalendarOptions {
+export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
-  defaultViewType?: CalendarViewtype
+  defaultViewType?: CalendarViewType
 }
 
 export default function useCalendar(options: UseCalendarOptions = {}) {
-  const { defaultDate, defaultWeekStart = 0, defaultViewType = CalendarViewtype.Month } = options
+  const { defaultDate, defaultWeekStart = 0, defaultViewType = CalendarViewType.Month } = options
   const baseDate = defaultDate ? new Date(defaultDate) : new Date()
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
@@ -27,7 +25,7 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   const calendar = createCalendarInfo(currentDate, weekStartsOn)
   const { weekendDays, getCurrentWeek, getWeek, getMonth } = calendar
 
-  const getHeaders = (viewType: CalendarViewtype) => {
+  const getHeaders = (viewType: CalendarViewType) => {
     switch (viewType) {
       case 'month':
       case 'week':
@@ -42,7 +40,7 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
     }
   }
 
-  const getBody = (viewType: CalendarViewtype) => {
+  const getBody = (viewType: CalendarViewType) => {
     const currentWeek = getCurrentWeek()
     const monthWeeks = attachKeyToArray(getMonth().map(week => attachKeyToArray(week, 'days')), 'weeks')
     const weekWeeks = attachKeyToArray([attachKeyToArray(getWeek(currentWeek), 'days')], 'weeks')
@@ -81,9 +79,9 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
       type: viewType,
       setViewType,
       setWeekStartsOn,
-      showMonthView: () => setViewType(CalendarViewtype.Month),
-      showWeekView: () => setViewType(CalendarViewtype.Week),
-      showDayView: () => setViewType(CalendarViewtype.Day),
+      showMonthView: () => setViewType(CalendarViewType.Month),
+      showWeekView: () => setViewType(CalendarViewType.Week),
+      showDayView: () => setViewType(CalendarViewType.Day),
     },
   }
 }
