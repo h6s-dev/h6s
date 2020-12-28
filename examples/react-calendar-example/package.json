@@ -7,31 +7,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.0",
-    "@chakra-ui/react": "^1.0.0",
-    "@chakra-ui/theme-tools": "1.0.0",
-    "@emotion/react": "11.1.1",
+    "@chakra-ui/icons": "^1.0.2",
+    "@chakra-ui/react": "^1.0.4",
+    "@chakra-ui/theme-tools": "1.0.2",
+    "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
+    "@veccu/react-calendar": "^1.0.1",
     "framer-motion": "^2.9.4",
-    "next": "latest"
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@babel/core": ">= 7",
-    "@babel/plugin-proposal-class-properties": ">= 7",
-    "@babel/plugin-proposal-nullish-coalescing-operator": ">= 7",
-    "@babel/plugin-proposal-numeric-separator": ">= 7",
-    "@babel/plugin-proposal-optional-chaining": ">= 7",
-    "@babel/preset-env": ">= 7",
-    "@babel/preset-react": ">= 7",
-    "@babel/preset-typescript": ">= 7",
-    "@emotion/babel-preset-css-prop": ">= 7",
-    "@types/node": "^14.6.0",
-    "@types/react": "^16.9.46",
-    "@types/react-dom": "^16.9.8",
-    "babel-loader": ">= 8",
+    "@emotion/babel-preset-css-prop": "11.0.0",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "date-fns": "^2.16.1",
-    "resolve-from": "^5.0.0",
-    "typescript": "4.0.5"
+    "typescript": "4.1.3"
   },
   "license": "MIT"
 }

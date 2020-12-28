@@ -1,10 +1,10 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { Button, Flex, Heading, IconButton, Stack, Table, TableCaption, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
+import useCalendar from '@veccu/react-calendar'
 import { format, getDate } from 'date-fns'
 import locale from 'date-fns/locale/ko'
 import React from 'react'
 
-import useCalendar from '../../../../src/index'
 import { Container } from '../components/Container'
 
 export default function Example() {
