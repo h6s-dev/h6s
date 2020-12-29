@@ -18,7 +18,7 @@ import {
 import useCalendar from '@veccu/react-calendar'
 import { version } from '@veccu/react-calendar/package.json'
 import { format, getDate } from 'date-fns'
-import locale from 'date-fns/locale/ko'
+import locale from 'date-fns/locale/en-US'
 import React from 'react'
 
 import { Container } from '../components/Container'
