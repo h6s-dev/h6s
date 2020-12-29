@@ -1,5 +1,5 @@
-import attachKeyToArray from './attachKeyToArray'
 import generateID from './generateID'
+import withKey from './withKey'
 
 jest.mock('./generateID')
 
@@ -9,12 +9,12 @@ mockGenerateId.mockImplementation(() => {
   return 'test-key'
 })
 
-describe('attachKeyToArray function', () => {
+describe('withKey function', () => {
   it('return array with key property', () => {
     // Given
     const arr = [1, 2]
     // When
-    const result = attachKeyToArray(arr, 'test')
+    const result = withKey(arr, 'test')
     // Then
     expect(result).toEqual([
       { key: 'test-key', value: 1 },

@@ -10,7 +10,7 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
 import { CalendarViewType, WeekDayType } from './models'
-import { attachKeyToArray } from './utils'
+import { withKey } from './utils'
 
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
@@ -34,12 +34,12 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
       case 'month':
       case 'week':
         return {
-          weekDays: attachKeyToArray(weekendDays, 'weekdays'),
+          weekDays: withKey(weekendDays, 'weekdays'),
         }
       case 'day':
       default:
         return {
-          weekDays: attachKeyToArray([currentDate], 'weekdays'),
+          weekDays: withKey([currentDate], 'weekdays'),
         }
     }
   }, [currentDate, weekendDays])
@@ -51,9 +51,9 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
       isCurrentMonth: true,
     }
     const currentWeek = getCurrentWeek()
-    const monthWeeks = attachKeyToArray(getMonth().map(week => attachKeyToArray(week, 'days')), 'weeks')
-    const weekWeeks = attachKeyToArray([attachKeyToArray(getWeek(currentWeek), 'days')], 'weeks')
-    const dayWeeks = attachKeyToArray([attachKeyToArray([selectedDate], 'days')], 'weeks')
+    const monthWeeks = withKey(getMonth().map(week => withKey(week, 'days')), 'weeks')
+    const weekWeeks = withKey([withKey(getWeek(currentWeek), 'days')], 'weeks')
+    const dayWeeks = withKey([withKey([selectedDate], 'days')], 'weeks')
 
     switch (viewType) {
       case 'month':
