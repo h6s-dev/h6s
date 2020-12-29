@@ -43,8 +43,8 @@ export default function Example() {
         >
           v{version}
         </Badge>
-        <Heading as="h1" size="4xl" colorScheme="teal">
-          react-calendar
+        <Heading as="h1" size="xl">
+          react-calendar-basic-example
         </Heading>
         <Text color="gray.500">
           Headless Calendar UI Library Example with Charkra UI
@@ -78,7 +78,9 @@ export default function Example() {
                   D
                 </Button>
               </Stack>
-              <Text fontSize="2xl">{format(calendar.date, 'yyyy. MM')}</Text>
+              <Text fontSize="2xl">
+                {format(calendar.cursorDate, 'yyyy. MM')}
+              </Text>
               <Stack direction="row" gutter={8}>
                 <IconButton
                   aria-label="prev-button"
@@ -109,23 +111,22 @@ export default function Example() {
           </Tr>
         </Thead>
         <Tbody>
-          {body.weeks.map((week) => {
+          {body.value.map((week) => {
             const { key, value: days } = week
 
             return (
               <Tr key={key}>
                 {days.map((day) => {
-                  const { key, value } = day
-                  const { date, isCurrentDate, isCurrentMonth } = value
+                  const { key, value, isCurrentDate, isCurrentMonth } = day
 
                   return (
                     <Td key={key} opacity={isCurrentMonth ? 1 : 0.2}>
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
-                          {getDate(date)}
+                          {getDate(value)}
                         </Text>
                       ) : (
-                        getDate(date)
+                        getDate(value)
                       )}
                     </Td>
                   )

@@ -1646,10 +1646,10 @@
   resolved "https://registry.yarnpkg.com/@types/warning/-/warning-3.0.0.tgz#0d2501268ad8f9962b740d387c4654f5f8e23e52"
   integrity sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=
 
-"@veccu/react-calendar@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@veccu/react-calendar/-/react-calendar-1.0.1.tgz#fa1fb1390ca94ff3223c718212a74c1ab603b46c"
-  integrity sha512-v/be94EDZGmq3U8wyVxw/HWHxb54gdzuirke7Gu9iOyFzGweuDwKqgU6IPlLfFLlo72tsb+T9HwyHcP5vZRb1A==
+"@veccu/react-calendar@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@veccu/react-calendar/-/react-calendar-1.1.0.tgz#83c6d6222f4a6de9de2213a25194b374d365e467"
+  integrity sha512-61vQLaJQD7hNaZXBBn9oPAShU5NT9+xW9T3KNZKpLyINxDbtrSOiUQmyP+pUZwjWutiKV3ZbQnX5bQ8ytB1A4Q==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
