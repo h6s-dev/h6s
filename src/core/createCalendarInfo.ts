@@ -1,14 +1,11 @@
 import {
   getDaysInMonth,
-  isSameMonth,
-  isSameYear,
   setDay,
   startOfMonth,
 } from 'date-fns'
 
 import { WeekDayType } from '../models'
 import { arrayOf, parseDate } from '../utils'
-import isSameDate from '../utils/isSameDate'
 
 export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType) {
   const { year, month, day } = parseDate(date)
@@ -16,12 +13,13 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
   const weeksInMonth = getWeeksInMonth(date, weekStartsOn)
   const weekendDays = arrayOf(7).map(index => setDay(date, (index + weekStartsOn) % 7))
 
-  const getTargetDate = (weekIndex: number, dayIndex: number) => {
+  const getDateByIndex = (weekIndex: number, dayIndex: number) => {
     const day = weekIndex * 7 + dayIndex - startWeekdayInMonth + 1
 
     return new Date(year, month, day)
   }
-  const getCurrentWeek = () => {
+  
+  const getCurrentWeekIndex = () => {
     const control = (day - 1) % 7 > startWeekdayInMonth ? 0 : -1
 
     return Math.ceil(day / 7) + control
@@ -30,22 +28,9 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
   const getMonth = () => {
     return arrayOf(weeksInMonth).map(weekIndex => getWeek(weekIndex))
   }
-  const getWeek = (weekIndex: number) => {
-    return arrayOf(7).map(dayIndex => {
-      const targetDate = getTargetDate(weekIndex, dayIndex)
 
-      return {
-        date: targetDate,
-        isCurrentMonth: isCurrentMonth(targetDate),
-        isCurrentDate: isCurrentDate(targetDate),
-      }
-    })
-  }
-  const isCurrentMonth = (targetDate: Date) => {
-    return isSameMonth(targetDate, date) && isSameYear(targetDate, date)
-  }
-  const isCurrentDate = (targetDate: Date) => {
-    return isCurrentMonth(targetDate) && isSameDate(targetDate, date)
+  const getWeek = (weekIndex: number = getCurrentWeekIndex()) => {
+    return arrayOf(7).map(dayIndex => getDateByIndex(weekIndex, dayIndex))
   }
 
   return {
@@ -57,12 +42,10 @@ export default function createCalendarInfo(date: Date, weekStartsOn: WeekDayType
     startWeekdayInMonth,
     weeksInMonth,
     weekendDays,
-    getTargetDate,
-    getCurrentWeek,
+    getDateByIndex,
+    getCurrentWeekIndex,
     getWeek,
     getMonth,
-    isCurrentMonth,
-    isCurrentDate,
   }
 }
 

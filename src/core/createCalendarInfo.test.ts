@@ -54,57 +54,14 @@ describe('createCalendarInfo function', () => {
     const calendar = createCalendarInfo(new Date(2020, 11, 27), 0)
     // Then
     const expected = [
-      {
-        date: new Date(2020, 11, 27),
-        isCurrentDate: true,
-        isCurrentMonth: true,
-      },
-      {
-        date: new Date(2020, 11, 28),
-        isCurrentDate: false,
-        isCurrentMonth: true,
-      },
-      {
-        date: new Date(2020, 11, 29),
-        isCurrentDate: false,
-        isCurrentMonth: true,
-      },
-      {
-        date: new Date(2020, 11, 30),
-        isCurrentDate: false,
-        isCurrentMonth: true,
-      },
-      {
-        date: new Date(2020, 11, 31),
-        isCurrentDate: false,
-        isCurrentMonth: true,
-      },
-      {
-        date: new Date(2021, 0, 1),
-        isCurrentDate: false,
-        isCurrentMonth: false,
-      },
-      {
-        date: new Date(2021, 0, 2),
-        isCurrentDate: false,
-        isCurrentMonth: false,
-      },
+      new Date(2020, 11, 27),
+      new Date(2020, 11, 28),
+      new Date(2020, 11, 29),
+      new Date(2020, 11, 30),
+      new Date(2020, 11, 31),
+      new Date(2021, 0, 1),
+      new Date(2021, 0, 2),
     ]
     expect(calendar.getWeek(weekIndex)).toEqual(expected)
-  })
-
-  it('isCurrentMonth return true, isCurrentDate return false', () => {
-    // Given
-    const date = new Date(2020, 11, 27)
-    const weekStartsOn = 0 // start Sunday
-    const targetDate1 = new Date(2020, 11, 22)
-    const targetDate2 = new Date(2020, 11, 27)
-    // When
-    const info = createCalendarInfo(date, weekStartsOn)
-    // Then
-    expect(info.isCurrentMonth(targetDate1)).toBeTruthy()
-    expect(info.isCurrentDate(targetDate1)).toBeFalsy()
-    expect(info.isCurrentMonth(targetDate2)).toBeTruthy()
-    expect(info.isCurrentDate(targetDate2)).toBeTruthy()
   })
 })

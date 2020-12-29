@@ -27,7 +27,7 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   const [viewType, setViewType] = useState(defaultViewType)
 
   const calendar = createCalendarInfo(currentDate, weekStartsOn)
-  const { weekendDays, getCurrentWeek, getWeek, getMonth } = calendar
+  const { weekendDays, getWeek, getMonth } = calendar
 
   const getHeaders = useCallback((viewType: CalendarViewType) => {
     switch (viewType) {
@@ -45,32 +45,26 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   }, [currentDate, weekendDays])
 
   const getBody = useCallback((viewType: CalendarViewType) => {
-    const selectedDate = {
-      date: currentDate,
-      isCurrentDate: false,
-      isCurrentMonth: true,
-    }
-    const currentWeek = getCurrentWeek()
-    const monthWeeks = withKey(getMonth().map(week => withKey(week, 'days')), 'weeks')
-    const weekWeeks = withKey([withKey(getWeek(currentWeek), 'days')], 'weeks')
-    const dayWeeks = withKey([withKey([selectedDate], 'days')], 'weeks')
+    const monthTypeWeeks = withKey(getMonth().map(week => withKey(week, 'days')), 'weeks')
+    const weekTypeWeeks = withKey([withKey(getWeek(), 'days')], 'weeks')
+    const dayTypeWeeks = withKey([withKey([currentDate], 'days')], 'weeks')
 
     switch (viewType) {
       case 'month':
         return {
-          weeks: monthWeeks,
+          weeks: monthTypeWeeks,
         }
       case 'week':
         return {
-          weeks: weekWeeks,
+          weeks: weekTypeWeeks,
         }
       case 'day':
       default:
         return {
-          weeks: dayWeeks,
+          weeks: dayTypeWeeks,
         }
     }
-  }, [currentDate, getCurrentWeek, getMonth, getWeek])
+  }, [currentDate, getMonth, getWeek])
 
   const setNext = useMemo(() => {
     switch(viewType) {
