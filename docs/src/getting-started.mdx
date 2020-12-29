@@ -5,6 +5,8 @@ route: /getting-started
 
 # Getting Started
 
+Quickly create calendar UI with table HTML elements!
+
 ```tsx
 import useCalendar from '@veccu/react-calendar'
 
@@ -21,10 +23,10 @@ export default function Calendar() {
         </Tr>
       </Thead>
       <Tbody>
-        {body.weeks.map(({ key, value: days }) => (
+        {body.value.map(({ key, value: days }) => (
           <Tr key={key}>
             {days.map(({ key, value }) => (
-              <Td key={key}>{getDate(value.date)}</Td>
+              <Td key={key}>{getDate(value)}</Td>
             ))}
           </Tr>
         ))}
@@ -33,3 +35,5 @@ export default function Calendar() {
   )
 }
 ```
+
+> it's done!
