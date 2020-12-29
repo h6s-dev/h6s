@@ -10,7 +10,7 @@ describe('isSameDate function', () => {
     // Then
     expect(result).toBeTruthy()
   })
-  
+
   it('return false when same month and different date', () => {
     // Given
     const baseDate = new Date(2020, 11, 27)

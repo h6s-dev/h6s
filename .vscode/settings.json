@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "javascript.format.enable": false,
   "eslint.alwaysShowStatus": true,
   "eslint.options": {
@@ -11,5 +11,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.useTabStops": true
 }
