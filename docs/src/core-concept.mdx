@@ -1,0 +1,75 @@
+---
+name: Core Concept
+route: /core-concept
+---
+
+# Core Concept
+
+- Headless UI Library
+- @veccu/react-calendar treat calendar as matrix (2x2)
+
+## What are headless components?
+
+> A component that doesn’t have a UI, but has the functionality.
+
+If you want to know more about headless components, please refer to this [link](https://blog.logrocket.com/the-complete-guide-to-building-headless-interface-components-in-react).
+
+## Calendar model
+
+Let's see model of [`Calendar`](https://github.com/veccu/react-calendar/blob/main/src/models/Calendar.ts)
+
+```ts
+export interface MonthMatrix extends Record<string, unknown> {
+  value: WeekRow[]
+}
+
+export interface WeekRow extends Record<string, unknown> {
+  value: DateCell[]
+}
+
+export interface DateCell extends Record<string, unknown> {
+  value: Date
+}
+```
+
+## Month dataset
+
+```js
+{
+  value: [ // <-- month!
+    {
+      value: [ // <-- week!
+        { value: new Date(2020, 11, 13) }, // <-- day
+        { value: new Date(2020, 11, 14) },
+        { value: new Date(2020, 11, 15) },
+        { value: new Date(2020, 11, 16) },
+        { value: new Date(2020, 11, 17) },
+        { value: new Date(2020, 11, 18) },
+        { value: new Date(2020, 11, 19) },
+      ],
+    },
+    {
+      value: [
+        { value: new Date(2020, 11, 20) },
+        { value: new Date(2020, 11, 21) },
+        { value: new Date(2020, 11, 22) },
+        { value: new Date(2020, 11, 23) },
+        { value: new Date(2020, 11, 24) },
+        { value: new Date(2020, 11, 25) },
+        { value: new Date(2020, 11, 26) },
+      ],
+    },
+    {
+      value: [
+        { value: new Date(2020, 11, 27) },
+        { value: new Date(2020, 11, 28) },
+        { value: new Date(2020, 11, 29) },
+        { value: new Date(2020, 11, 30) },
+        { value: new Date(2020, 11, 31) },
+        { value: new Date(2020, 12, 1) },
+        { value: new Date(2020, 12, 2) },
+      ],
+    },
+  ],
+}
+```

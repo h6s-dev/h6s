@@ -12,6 +12,7 @@ module.exports = {
         menu: [
           'React Calendar',
           'Installation',
+          'Core Concept',
           'Getting Started',
           'API Reference',
           'Examples',
