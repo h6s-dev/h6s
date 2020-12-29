@@ -10,8 +10,9 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
 import { CalendarViewType, WeekDayType } from './models'
-import { withCurrentPropsMonth, withKeysMonth } from './plugins'
+import { withDatePropsMonth, withKeysMonth } from './plugins'
 import { pipeWith, withKey } from './utils'
+
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
@@ -56,31 +57,17 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
 
   const getBody = useCallback(
     (viewType: CalendarViewType) => {
-      const monthTypeMonth = pipeWith(
-        getMonth(),
-        withCurrentPropsMonth(baseDate, cursorDate),
-        withKeysMonth(),
-      )
-      const weekTypeMonth = pipeWith(
-        { value: [getWeekRow()] },
-        withCurrentPropsMonth(baseDate, cursorDate),
-        withKeysMonth(),
-      )
-      const dayTypeWeeks = pipeWith(
-        { value: [{ value: [{ value: cursorDate }] }] },
-        withCurrentPropsMonth(baseDate, cursorDate),
-        withKeysMonth(),
-      )
+      const month = {
+        [CalendarViewType.Month]: getMonth(),
+        [CalendarViewType.Week]: { value: [getWeekRow()] },
+        [CalendarViewType.Day]: { value: [{ value: [{ value: cursorDate }] }] },
+      }[viewType]
 
-      switch (viewType) {
-        case CalendarViewType.Month:
-          return monthTypeMonth
-        case CalendarViewType.Week:
-          return weekTypeMonth
-        case CalendarViewType.Day:
-        default:
-          return dayTypeWeeks
-      }
+      return pipeWith(
+        month,
+        withDatePropsMonth(baseDate, cursorDate),
+        withKeysMonth(),
+      )
     },
     [baseDate, cursorDate, getMonth, getWeekRow],
   )

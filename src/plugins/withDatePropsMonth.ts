@@ -1,10 +1,9 @@
+import { getDate } from 'date-fns'
+
 import { MonthMatrix } from '../models'
 import { isSameDate, isSameMonth } from '../utils'
 
-export default function withCurrentPropsMonth(
-  baseDate: Date,
-  cursorDate: Date,
-) {
+export default function withDatePropsMonth(baseDate: Date, cursorDate: Date) {
   return function (month: MonthMatrix) {
     return {
       ...month,
@@ -18,6 +17,7 @@ export default function withCurrentPropsMonth(
             return {
               ...restDayProps,
               value: targetDate,
+              date: getDate(targetDate),
               isCurrentMonth,
               isCurrentDate,
             }
