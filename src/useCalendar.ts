@@ -10,8 +10,8 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
 import { CalendarViewType, WeekDayType } from './models'
-import { withKey } from './utils'
-
+import { withCurrentPropsMonth, withKeysMonth } from './plugins'
+import { pipeWith, withKey } from './utils'
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
@@ -19,55 +19,74 @@ export interface UseCalendarOptions {
 }
 
 export default function useCalendar(options: UseCalendarOptions = {}) {
-  const { defaultDate, defaultWeekStart = 0, defaultViewType = CalendarViewType.Month } = options
-  const baseDate = useMemo(() => defaultDate ? new Date(defaultDate) : new Date(), [defaultDate])
+  const {
+    defaultDate,
+    defaultWeekStart = 0,
+    defaultViewType = CalendarViewType.Month,
+  } = options
+  const baseDate = useMemo(
+    () => (defaultDate ? new Date(defaultDate) : new Date()),
+    [defaultDate],
+  )
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
-  const [currentDate, setCurrentDate] = useState(baseDate)
+  const [cursorDate, setCursorDate] = useState(baseDate)
   const [viewType, setViewType] = useState(defaultViewType)
 
-  const calendar = createCalendarInfo(currentDate, weekStartsOn)
-  const { weekendDays, getWeek, getMonth } = calendar
+  const calendar = createCalendarInfo(cursorDate, weekStartsOn)
+  const { weekendDays, getWeekRow, getMonth } = calendar
 
-  const getHeaders = useCallback((viewType: CalendarViewType) => {
-    switch (viewType) {
-      case 'month':
-      case 'week':
-        return {
-          weekDays: withKey(weekendDays, 'weekdays'),
-        }
-      case 'day':
-      default:
-        return {
-          weekDays: withKey([currentDate], 'weekdays'),
-        }
-    }
-  }, [currentDate, weekendDays])
+  const getHeaders = useCallback(
+    (viewType: CalendarViewType) => {
+      switch (viewType) {
+        case CalendarViewType.Month:
+        case CalendarViewType.Week:
+          return {
+            weekDays: withKey(weekendDays, 'weekdays'),
+          }
+        case CalendarViewType.Day:
+        default:
+          return {
+            weekDays: withKey([{ value: cursorDate }], 'weekdays'),
+          }
+      }
+    },
+    [cursorDate, weekendDays],
+  )
 
-  const getBody = useCallback((viewType: CalendarViewType) => {
-    const monthTypeWeeks = withKey(getMonth().map(week => withKey(week, 'days')), 'weeks')
-    const weekTypeWeeks = withKey([withKey(getWeek(), 'days')], 'weeks')
-    const dayTypeWeeks = withKey([withKey([currentDate], 'days')], 'weeks')
+  const getBody = useCallback(
+    (viewType: CalendarViewType) => {
+      const monthTypeMonth = pipeWith(
+        getMonth(),
+        withCurrentPropsMonth(baseDate, cursorDate),
+        withKeysMonth(),
+      )
+      const weekTypeMonth = pipeWith(
+        { value: [getWeekRow()] },
+        withCurrentPropsMonth(baseDate, cursorDate),
+        withKeysMonth(),
+      )
+      const dayTypeWeeks = pipeWith(
+        { value: [{ value: [{ value: cursorDate }] }] },
+        withCurrentPropsMonth(baseDate, cursorDate),
+        withKeysMonth(),
+      )
 
-    switch (viewType) {
-      case 'month':
-        return {
-          weeks: monthTypeWeeks,
-        }
-      case 'week':
-        return {
-          weeks: weekTypeWeeks,
-        }
-      case 'day':
-      default:
-        return {
-          weeks: dayTypeWeeks,
-        }
-    }
-  }, [currentDate, getMonth, getWeek])
+      switch (viewType) {
+        case CalendarViewType.Month:
+          return monthTypeMonth
+        case CalendarViewType.Week:
+          return weekTypeMonth
+        case CalendarViewType.Day:
+        default:
+          return dayTypeWeeks
+      }
+    },
+    [baseDate, cursorDate, getMonth, getWeekRow],
+  )
 
   const setNext = useMemo(() => {
-    switch(viewType) {
+    switch (viewType) {
       case CalendarViewType.Month:
         return addMonths
       case CalendarViewType.Week:
@@ -78,7 +97,7 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   }, [viewType])
 
   const setPrev = useMemo(() => {
-    switch(viewType) {
+    switch (viewType) {
       case CalendarViewType.Month:
         return subMonths
       case CalendarViewType.Week:
@@ -96,10 +115,10 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
     headers: getHeaders(viewType),
     body: getBody(viewType),
     navigation: {
-      toNext: () => setCurrentDate((date) => setNext(date, 1)),
-      toPrev: () => setCurrentDate((date) => setPrev(date, 1)),
-      setToday: () => setCurrentDate(new Date()),
-      setDate: (date: Date) => setCurrentDate(date),
+      toNext: () => setCursorDate((date) => setNext(date, 1)),
+      toPrev: () => setCursorDate((date) => setPrev(date, 1)),
+      setToday: () => setCursorDate(new Date()),
+      setDate: (date: Date) => setCursorDate(date),
     },
     view: {
       type: viewType,

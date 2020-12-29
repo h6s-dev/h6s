@@ -12,7 +12,7 @@ mockGenerateId.mockImplementation(() => {
 describe('withKey function', () => {
   it('return array with key property', () => {
     // Given
-    const arr = [1, 2]
+    const arr = [{ value: 1 }, { value: 2 }]
     // When
     const result = withKey(arr, 'test')
     // Then
