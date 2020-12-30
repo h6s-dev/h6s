@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 import React from 'react'
 
-import { config } from '../../../config'
+import config from '../../../config'
 
 export function Header() {
   return (
