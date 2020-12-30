@@ -2,6 +2,8 @@ import { css } from '@emotion/react'
 import React from 'react'
 
 import config from '../../../config'
+import logo from '../../../static/icon/logo.png'
+import title from '../../../static/icon/title.png'
 
 export function Header() {
   return (
@@ -35,11 +37,11 @@ export function Header() {
               display: inline-block;
               margin-right: 8px;
             `}
-            src="/icon/logo.png"
+            src={logo}
             alt="react-calendar-logo"
             height="36px"
           />
-          <img src="/icon/title.png" alt="react-calendar-title" height="24px" />
+          <img src={title} alt="react-calendar-title" height="24px" />
         </div>
 
         <div
