@@ -9,14 +9,14 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
-import { CalendarViewType, MonthMatrix, WeekDayType } from './models'
-import { withDatePropsMonth, withKeysMonth } from './plugins'
-import { arrayOf, pipeWith, withKey } from './utils'
+import { CalendarViewType, DateCell, MonthMatrix, WeekDayType } from './models'
+import { CalendarPlugin } from './plugins/applyPlugins'
+import { arrayOf, isEmpty, pipeWith, withKey } from './utils'
 
 export interface UseCalendarPlugins {
   month?: any
   week?: any
-  date?: any
+  date?: Array<CalendarPlugin<DateCell>>
 }
 
 export interface UseCalendarOptions {
@@ -30,7 +30,7 @@ export default function useCalendar({
   defaultDate,
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
-  plugins = { month: [], week: [], date: [] },
+  plugins: { date: datePlugins } = { month: [], week: [], date: [] },
 }: UseCalendarOptions = {}) {
   const baseDate = useMemo(
     () => (defaultDate ? new Date(defaultDate) : new Date()),
@@ -72,7 +72,9 @@ export default function useCalendar({
     (weeksInMonth: number) => ({
       value: arrayOf(weeksInMonth).map((weekIndex) => ({
         value: arrayOf(7).map((dayIndex) => {
-          return getDateCellByIndex(weekIndex, dayIndex)
+          const cell = getDateCellByIndex(weekIndex, dayIndex)
+
+          return cell
         }),
       })),
     }),
@@ -87,7 +89,7 @@ export default function useCalendar({
       return matrix
     }
     if (dateIndex == null) {
-      return { value: matrix.value[weekIndex] }
+      return { value: [matrix.value[weekIndex]] }
     }
 
     return {

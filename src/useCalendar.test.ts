@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks'
 
 import { DecemberFirstWeekData, DecemberMonthMatrix } from './mocks/mockDate'
+import { DateCell } from './models'
 import CalendarViewtype from './models/CalendarViewType'
 import useCalendar from './useCalendar'
 
@@ -53,7 +54,7 @@ describe('useCalendar hooks test', () => {
       )
 
       // Then
-      expect(result.current.body).toEqual({ value: DecemberFirstWeekData })
+      expect(result.current.body).toEqual(DecemberFirstWeekData)
     })
 
     it('reutrn pure date data / no plugins, Day viewType', () => {
@@ -82,5 +83,40 @@ describe('useCalendar hooks test', () => {
         value: [{ value: [{ value: defaultDate }] }],
       })
     })
+
+    // it('reutrn date data / with key plugins, Day viewType', () => {
+    //   // Given
+    //   const withKeyPlugin = (v: DateCell) => {
+    //     const key = 'test'
+
+    //     return {
+    //       key,
+    //       ...v,
+    //     }
+    //   }
+    //   const defaultDate = new Date(2020, 11, 1)
+    //   const defaultWeekStart = 0
+    //   const defaultViewType = CalendarViewtype.Day
+    //   const plugins = {
+    //     month: [],
+    //     week: [],
+    //     date: [withKeyPlugin],
+    //   }
+
+    //   // When
+    //   const { result } = renderHook(() =>
+    //     useCalendar({
+    //       defaultDate,
+    //       defaultWeekStart,
+    //       defaultViewType,
+    //       plugins,
+    //     }),
+    //   )
+
+    //   // Then
+    //   expect(result.current.body).toEqual({
+    //     value: [{ value: [{ key: 'test', value: defaultDate }] }],
+    //   })
+    // })
   })
 })

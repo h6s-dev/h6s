@@ -60,12 +60,20 @@ export const DecemberMonthMatrix = {
 
 export const DecemberFirstWeekData = {
   value: [
-    { value: new Date(2020, 10, 29) },
-    { value: new Date(2020, 10, 30) },
-    { value: new Date(2020, 11, 1) },
-    { value: new Date(2020, 11, 2) },
-    { value: new Date(2020, 11, 3) },
-    { value: new Date(2020, 11, 4) },
-    { value: new Date(2020, 11, 5) },
+    {
+      value: [
+        { value: new Date(2020, 10, 29) },
+        { value: new Date(2020, 10, 30) },
+        { value: new Date(2020, 11, 1) },
+        { value: new Date(2020, 11, 2) },
+        { value: new Date(2020, 11, 3) },
+        { value: new Date(2020, 11, 4) },
+        { value: new Date(2020, 11, 5) },
+      ],
+    },
   ],
+}
+
+export const DecemberFirkData = {
+  value: [{ value: [{ value: new Date(2020, 10, 29) }] }],
 }
