@@ -1,8 +1,7 @@
-import { getDaysInMonth, setDay, startOfMonth } from 'date-fns'
+import { getDay, getDaysInMonth, setDay, startOfMonth } from 'date-fns'
 
-import { DateCell, MonthMatrix, WeekDayType, WeekRow } from '../models'
+import { DateCell, WeekDayType } from '../models'
 import { arrayOf, parseDate } from '../utils'
-
 export default function createCalendarInfo(
   cursorDate: Date,
   weekStartsOn: WeekDayType,
@@ -20,6 +19,10 @@ export default function createCalendarInfo(
     return Math.ceil(day / 7) + control
   }
 
+  const getCurrentDateIndex = () => {
+    return getDay(cursorDate)
+  }
+
   const getDateCellByIndex = (
     weekIndex: number,
     dayIndex: number,
@@ -27,18 +30,6 @@ export default function createCalendarInfo(
     const day = weekIndex * 7 + dayIndex - startWeekdayInMonth + 1
 
     return { value: new Date(year, month, day) }
-  }
-
-  const getWeekRow = (weekIndex: number = getCurrentWeekIndex()): WeekRow => {
-    return {
-      value: arrayOf(7).map((dayIndex) =>
-        getDateCellByIndex(weekIndex, dayIndex),
-      ),
-    }
-  }
-
-  const getMonth = (weeks = weeksInMonth): MonthMatrix => {
-    return { value: arrayOf(weeks).map(getWeekRow) }
   }
 
   return {
@@ -50,10 +41,9 @@ export default function createCalendarInfo(
     startWeekdayInMonth,
     weeksInMonth,
     weekendDays,
-    getDateCellByIndex,
     getCurrentWeekIndex,
-    getWeekRow,
-    getMonth,
+    getCurrentDateIndex,
+    getDateCellByIndex,
   }
 }
 

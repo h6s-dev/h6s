@@ -9,22 +9,29 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
-import { CalendarViewType, WeekDayType } from './models'
+import { CalendarViewType, MonthMatrix, WeekDayType } from './models'
 import { withDatePropsMonth, withKeysMonth } from './plugins'
-import { pipeWith, withKey } from './utils'
+import { arrayOf, pipeWith, withKey } from './utils'
+
+export interface UseCalendarPlugins {
+  month?: any
+  week?: any
+  date?: any
+}
 
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
   defaultViewType?: CalendarViewType
+  plugins?: UseCalendarPlugins
 }
 
-export default function useCalendar(options: UseCalendarOptions = {}) {
-  const {
-    defaultDate,
-    defaultWeekStart = 0,
-    defaultViewType = CalendarViewType.Month,
-  } = options
+export default function useCalendar({
+  defaultDate,
+  defaultWeekStart = 0,
+  defaultViewType = CalendarViewType.Month,
+  plugins = { month: [], week: [], date: [] },
+}: UseCalendarOptions = {}) {
   const baseDate = useMemo(
     () => (defaultDate ? new Date(defaultDate) : new Date()),
     [defaultDate],
@@ -35,7 +42,13 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
   const [viewType, setViewType] = useState(defaultViewType)
 
   const calendar = createCalendarInfo(cursorDate, weekStartsOn)
-  const { weekendDays, getWeekRow, getMonth } = calendar
+  const {
+    weekendDays,
+    weeksInMonth,
+    getCurrentWeekIndex,
+    getCurrentDateIndex,
+    getDateCellByIndex,
+  } = calendar
 
   const getHeaders = useCallback(
     (viewType: CalendarViewType) => {
@@ -55,21 +68,51 @@ export default function useCalendar(options: UseCalendarOptions = {}) {
     [cursorDate, weekendDays],
   )
 
+  const createMatrix = useCallback(
+    (weeksInMonth: number) => ({
+      value: arrayOf(weeksInMonth).map((weekIndex) => ({
+        value: arrayOf(7).map((dayIndex) => {
+          return getDateCellByIndex(weekIndex, dayIndex)
+        }),
+      })),
+    }),
+    [getDateCellByIndex],
+  )
+
+  const getMatrixItem = (
+    matrix: MonthMatrix,
+    { weekIndex, dateIndex }: { weekIndex?: number; dateIndex?: number } = {},
+  ) => {
+    if (weekIndex == null) {
+      return matrix
+    }
+    if (dateIndex == null) {
+      return { value: matrix.value[weekIndex] }
+    }
+
+    return {
+      value: [{ value: [matrix.value[weekIndex].value[dateIndex]] }],
+    }
+  }
+
   const getBody = useCallback(
     (viewType: CalendarViewType) => {
-      const month = {
-        [CalendarViewType.Month]: getMonth(),
-        [CalendarViewType.Week]: { value: [getWeekRow()] },
-        [CalendarViewType.Day]: { value: [{ value: [{ value: cursorDate }] }] },
-      }[viewType]
+      const matrix = createMatrix(weeksInMonth)
+      const currentWeekIndex = getCurrentWeekIndex()
+      const currentDateIndex = getCurrentDateIndex()
 
-      return pipeWith(
-        month,
-        withDatePropsMonth(baseDate, cursorDate),
-        withKeysMonth(),
-      )
+      return {
+        [CalendarViewType.Month]: getMatrixItem(matrix),
+        [CalendarViewType.Week]: getMatrixItem(matrix, {
+          weekIndex: currentWeekIndex,
+        }),
+        [CalendarViewType.Day]: getMatrixItem(matrix, {
+          weekIndex: currentWeekIndex,
+          dateIndex: currentDateIndex,
+        }),
+      }[viewType]
     },
-    [baseDate, cursorDate, getMonth, getWeekRow],
+    [createMatrix, getCurrentDateIndex, getCurrentWeekIndex, weeksInMonth],
   )
 
   const setNext = useMemo(() => {
