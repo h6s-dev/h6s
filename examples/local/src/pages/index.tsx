@@ -14,13 +14,12 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
-import { format, getDate } from 'date-fns'
+import { format } from 'date-fns'
 import locale from 'date-fns/locale/ko'
 import React from 'react'
 
 import useCalendar from '../../../../src'
 import { Container } from '../components/Container'
-
 export default function Example() {
   const { calendar, headers, body, navigation, view } = useCalendar()
 
@@ -107,21 +106,16 @@ export default function Example() {
             return (
               <Tr key={key}>
                 {days.map((day) => {
-                  const {
-                    key,
-                    value: date,
-                    isCurrentDate,
-                    isCurrentMonth,
-                  } = day
+                  const { key, date, isCurrentDate, isCurrentMonth } = day
 
                   return (
                     <Td key={key} opacity={isCurrentMonth ? 1 : 0.2}>
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
-                          {getDate(date)}
+                          {date}
                         </Text>
                       ) : (
-                        getDate(date)
+                        date
                       )}
                     </Td>
                   )
