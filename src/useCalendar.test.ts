@@ -1,16 +1,60 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { act, renderHook } from '@testing-library/react-hooks'
 
 import { DecemberFirstWeekData, DecemberMonthMatrix } from './mocks/mockDate'
-import CalendarViewtype from './models/CalendarViewType'
+import CalendarViewType from './models/CalendarViewType'
 import useCalendar from './useCalendar'
+import resetTimeOfDate from './utils/resetTimeOfDate'
 
 describe('useCalendar hooks test', () => {
+  describe('result.header', () => {
+    it('return weekdays array when month viewType', () => {
+      // Given
+      const defaultDate = new Date(2020, 11, 1)
+      const defaultWeekStart = 0
+      const defaultViewType = CalendarViewType.Month
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultWeekStart,
+          defaultViewType,
+        }),
+      )
+      // Then
+      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+        value,
+      }))
+      expect(onlyDates).toEqual(DecemberFirstWeekData.value[0].value)
+      expect(result.current.headers.weekDays[0].key).toBeDefined()
+    })
+
+    it('return weekdays array when month viewType', () => {
+      // Given
+      const defaultDate = new Date(2020, 11, 27)
+      const defaultWeekStart = 0
+      const defaultViewType = CalendarViewType.Day
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultWeekStart,
+          defaultViewType,
+        }),
+      )
+      // Then
+      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+        value,
+      }))
+      expect(onlyDates).toEqual([{ value: defaultDate }])
+    })
+  })
+
   describe('result.body', () => {
     it('return pure month data / no plugins, Month viewType', () => {
       // Given
       const defaultDate = new Date(2020, 11, 27)
       const defaultWeekStart = 0
-      const defaultViewType = CalendarViewtype.Month
+      const defaultViewType = CalendarViewType.Month
 
       // When
       const { result } = renderHook(() =>
@@ -36,7 +80,7 @@ describe('useCalendar hooks test', () => {
       // Given
       const defaultDate = new Date(2020, 11, 1)
       const defaultWeekStart = 0
-      const defaultViewType = CalendarViewtype.Week
+      const defaultViewType = CalendarViewType.Week
 
       // When
       const { result } = renderHook(() =>
@@ -57,7 +101,7 @@ describe('useCalendar hooks test', () => {
       // Given
       const defaultDate = new Date(2020, 11, 1)
       const defaultWeekStart = 0
-      const defaultViewType = CalendarViewtype.Day
+      const defaultViewType = CalendarViewType.Day
 
       // When
       const { result } = renderHook(() =>
@@ -74,6 +118,284 @@ describe('useCalendar hooks test', () => {
       expect(result.current.body.value[0].value[0].isCurrentDate).toBeTruthy()
       expect(result.current.body.value[0].value[0].isCurrentMonth).toBeTruthy()
       expect(result.current.body.value[0].value[0].key).toBeDefined()
+    })
+  })
+
+  describe('result.navigation', () => {
+    it('return changed date by setDate', () => {
+      // Given
+      const defaultDate = new Date(2020, 11, 27)
+      const targetDate = new Date(2021, 1, 1)
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+        }),
+      )
+      act(() => {
+        result.current.navigation.setDate(targetDate)
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate).toEqual(targetDate)
+    })
+
+    it('return next month by toNext when month viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      const defaultDate = new Date(2020, 10, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toNext()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate.getMonth()).toEqual(
+        defaultDate.getMonth() + 1,
+      )
+    })
+
+    it('return next week by toNext when week viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Week
+      const defaultDate = new Date(2020, 10, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toNext()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 4))
+    })
+
+    it('return next date by toNext when day viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Day
+      const defaultDate = new Date(2020, 11, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toNext()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 28))
+    })
+
+    it('return prev month by toPrev when month viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      const defaultDate = new Date(2020, 11, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toPrev()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate.getMonth()).toEqual(
+        defaultDate.getMonth() - 1,
+      )
+    })
+
+    it('return prev week by toPrev when week viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Week
+      const defaultDate = new Date(2020, 11, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toPrev()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 20))
+    })
+
+    it('return prev date by toPrev when day viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Day
+      const defaultDate = new Date(2020, 11, 27)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toPrev()
+      })
+      rerender()
+      // Then
+      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 26))
+    })
+
+    it('return today date by setToday', () => {
+      // Given
+      const defaultDate = new Date(2020, 11, 27)
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+        }),
+      )
+      act(() => {
+        result.current.navigation.setToday()
+      })
+      rerender()
+      // Then
+      expect(resetTimeOfDate(result.current.calendar.cursorDate)).toEqual(
+        resetTimeOfDate(new Date()),
+      )
+    })
+  })
+
+  describe('result.view', () => {
+    it('return default view type', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({
+          defaultViewType,
+        }),
+      )
+      // Then
+      expect(result.current.view.type).toBe(defaultViewType)
+    })
+
+    it('return changed view type by setViewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultViewType,
+        }),
+      )
+      expect(result.current.view.type).toBe(CalendarViewType.Month)
+      expect(result.current.view.isMonthView).toBeTruthy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeFalsy()
+
+      act(() => {
+        result.current.view.setViewType(CalendarViewType.Day)
+      })
+      rerender()
+      // Then
+      expect(result.current.view.type).toBe(CalendarViewType.Day)
+      expect(result.current.view.isMonthView).toBeFalsy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeTruthy()
+    })
+
+    it('return changed view type by showDayView', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultViewType,
+        }),
+      )
+      expect(result.current.view.type).toBe(CalendarViewType.Month)
+      expect(result.current.view.isMonthView).toBeTruthy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeFalsy()
+
+      act(() => {
+        result.current.view.showDayView()
+      })
+      rerender()
+      // Then
+      expect(result.current.view.type).toBe(CalendarViewType.Day)
+      expect(result.current.view.isMonthView).toBeFalsy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeTruthy()
+    })
+
+    it('return changed view type by showMonthView', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Week
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultViewType,
+        }),
+      )
+      expect(result.current.view.type).toBe(CalendarViewType.Week)
+      expect(result.current.view.isMonthView).toBeFalsy()
+      expect(result.current.view.isWeekView).toBeTruthy()
+      expect(result.current.view.isDayView).toBeFalsy()
+
+      act(() => {
+        result.current.view.showMonthView()
+      })
+      rerender()
+      // Then
+      expect(result.current.view.type).toBe(CalendarViewType.Month)
+      expect(result.current.view.isMonthView).toBeTruthy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeFalsy()
+    })
+
+    it('return changed view type by showWeekView', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultViewType,
+        }),
+      )
+      expect(result.current.view.type).toBe(CalendarViewType.Month)
+      expect(result.current.view.isMonthView).toBeTruthy()
+      expect(result.current.view.isWeekView).toBeFalsy()
+      expect(result.current.view.isDayView).toBeFalsy()
+
+      act(() => {
+        result.current.view.showWeekView()
+      })
+      rerender()
+      // Then
+      expect(result.current.view.type).toBe(CalendarViewType.Week)
+      expect(result.current.view.isMonthView).toBeFalsy()
+      expect(result.current.view.isWeekView).toBeTruthy()
+      expect(result.current.view.isDayView).toBeFalsy()
     })
   })
 })
