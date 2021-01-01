@@ -9,28 +9,19 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
-import {
-  CalendarViewType,
-  DateCell,
-  MonthMatrix,
-  WeekDayType,
-  WeekRow,
-} from './models'
+import { CalendarViewType, DateCell, WeekDayType } from './models'
 import { withDateProps } from './plugins'
 import withKeyProps from './plugins/withKeyProps'
 import { arrayOf, generateID, pipeWith, withKey } from './utils'
 
-export interface UseCalendarPlugins {
-  month?: Array<<T>(data: MonthMatrix) => MonthMatrix & T> | null
-  week?: Array<<T>(data: WeekRow) => WeekRow & T> | null
-  date?: Array<<T>(data: DateCell) => DateCell & T> | null
-}
-
+export type CalendarPlugin<OriginType> = <PropsType>(
+  data: OriginType,
+) => OriginType & PropsType
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
   defaultViewType?: CalendarViewType
-  plugins?: UseCalendarPlugins
+  plugins?: Array<CalendarPlugin<DateCell>>
 }
 
 export default function useCalendar({
@@ -145,7 +136,6 @@ export default function useCalendar({
     },
     headers: getHeaders(viewType),
     body: getBody(viewType),
-    getBody,
     navigation: {
       toNext: () => setCursorDate((date) => setNext(date, 1)),
       toPrev: () => setCursorDate((date) => setPrev(date, 1)),
