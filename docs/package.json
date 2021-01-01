@@ -1,8 +1,12 @@
 {
   "private": true,
   "name": "react-calendar-docs",
-  "version": "2.0.0-rc.41",
+  "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veccu/react-calendar"
+  },
   "files": [
     "src/",
     "doczrc.js",
