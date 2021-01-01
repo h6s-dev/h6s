@@ -1,9 +1,12 @@
-import { renderHook } from '@testing-library/react-hooks'
+import { cleanup, renderHook } from '@testing-library/react-hooks'
 
 import { DecemberFirstWeekData, DecemberMonthMatrix } from './mocks/mockDate'
-import { DateCell } from './models'
 import CalendarViewtype from './models/CalendarViewType'
 import useCalendar from './useCalendar'
+
+beforeEach(() => {
+  cleanup()
+})
 
 describe('useCalendar hooks test', () => {
   describe('result.body', () => {
@@ -15,7 +18,7 @@ describe('useCalendar hooks test', () => {
       const plugins = {
         month: [],
         week: [],
-        date: [],
+        date: null,
       }
 
       // When
@@ -27,9 +30,16 @@ describe('useCalendar hooks test', () => {
           plugins,
         }),
       )
+      const onlyDates = result.current.body.value.map((week) => {
+        return {
+          value: week.value.map((day) => {
+            return { value: day.value }
+          }),
+        }
+      })
 
       // Then
-      expect(result.current.body).toEqual(DecemberMonthMatrix)
+      expect({ value: onlyDates }).toEqual(DecemberMonthMatrix)
     })
 
     it('reutrn pure week data / no plugins, Week viewType', () => {
@@ -40,7 +50,7 @@ describe('useCalendar hooks test', () => {
       const plugins = {
         month: [],
         week: [],
-        date: [],
+        date: null,
       }
 
       // When
@@ -52,9 +62,11 @@ describe('useCalendar hooks test', () => {
           plugins,
         }),
       )
+      const weekRow = result.current.body.value[0]
+      const onlyDates = weekRow.value.map(({ value }) => ({ value }))
 
       // Then
-      expect(result.current.body).toEqual(DecemberFirstWeekData)
+      expect({ value: [{ value: onlyDates }] }).toEqual(DecemberFirstWeekData)
     })
 
     it('reutrn pure date data / no plugins, Day viewType', () => {
@@ -65,7 +77,7 @@ describe('useCalendar hooks test', () => {
       const plugins = {
         month: [],
         week: [],
-        date: [],
+        date: null,
       }
 
       // When
@@ -79,44 +91,11 @@ describe('useCalendar hooks test', () => {
       )
 
       // Then
-      expect(result.current.body).toEqual({
-        value: [{ value: [{ value: defaultDate }] }],
-      })
+      expect(result.current.body.value[0].key).toBe('week-day-type')
+      expect(result.current.body.value[0].value[0].value).toEqual(defaultDate)
+      expect(result.current.body.value[0].value[0].isCurrentDate).toBeTruthy()
+      expect(result.current.body.value[0].value[0].isCurrentMonth).toBeTruthy()
+      expect(result.current.body.value[0].value[0].key).toBeDefined()
     })
-
-    // it('reutrn date data / with key plugins, Day viewType', () => {
-    //   // Given
-    //   const withKeyPlugin = (v: DateCell) => {
-    //     const key = 'test'
-
-    //     return {
-    //       key,
-    //       ...v,
-    //     }
-    //   }
-    //   const defaultDate = new Date(2020, 11, 1)
-    //   const defaultWeekStart = 0
-    //   const defaultViewType = CalendarViewtype.Day
-    //   const plugins = {
-    //     month: [],
-    //     week: [],
-    //     date: [withKeyPlugin],
-    //   }
-
-    //   // When
-    //   const { result } = renderHook(() =>
-    //     useCalendar({
-    //       defaultDate,
-    //       defaultWeekStart,
-    //       defaultViewType,
-    //       plugins,
-    //     }),
-    //   )
-
-    //   // Then
-    //   expect(result.current.body).toEqual({
-    //     value: [{ value: [{ key: 'test', value: defaultDate }] }],
-    //   })
-    // })
   })
 })
