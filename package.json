@@ -18,8 +18,9 @@
   "scripts": {
     "prebuild": "rimraf dist esm",
     "build": "concurrently \"rollup -c\" \"tsc --emitDeclarationOnly --declarationDir dist\"",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test": "jest --passWithNoTests",
+    "test:cov": "yarn test --coverage",
+    "test:watch": "yarn test --watch",
     "lint": "eslint -c .eslintrc '{pages,src}/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "precommit": "lint-staged",
