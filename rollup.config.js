@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import sourceMaps from 'rollup-plugin-sourcemaps'
+import { terser } from 'rollup-plugin-terser'
 
 import pkg from './package.json'
 
@@ -12,8 +13,16 @@ export default {
   input: 'src/index.ts',
 
   output: [
-    { file: pkg.main, format: 'cjs', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true },
+    {
+      file: pkg.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
+    {
+      file: pkg.module,
+      format: 'es',
+      sourcemap: true,
+    },
   ],
   plugins: [
     peerDepsExternal(),
@@ -25,6 +34,7 @@ export default {
       babelHelpers: 'runtime',
       plugins: ['@babel/transform-runtime'],
     }),
+    terser(),
     sourceMaps(),
   ],
 }
