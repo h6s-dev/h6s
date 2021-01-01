@@ -1,2 +1,2 @@
-export { default as withDatePropsMonth } from './withDatePropsMonth'
-export { default as withKeysMonth } from './withKeysMonth'
+export { default as withDateProps } from './withDateProps'
+export { default as withKeyProps } from './withKeyProps'
