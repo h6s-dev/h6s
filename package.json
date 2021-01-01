@@ -27,8 +27,8 @@
     "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": [
-      "eslint -c .eslintrc '{pages,src}/**/*.{js,jsx,ts,tsx}' --fix",
+    "src/**/*.ts": [
+      "eslint -c .eslintrc '{src}/**/*.{js,jsx,ts,tsx}' --fix",
       "git add"
     ]
   },
