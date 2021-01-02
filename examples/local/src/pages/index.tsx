@@ -20,6 +20,7 @@ import React from 'react'
 
 import useCalendar from '../../../../src'
 import { Container } from '../components/Container'
+
 export default function Example() {
   const { calendar, headers, body, navigation, view } = useCalendar()
 
