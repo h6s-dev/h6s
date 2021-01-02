@@ -1,10 +1,10 @@
 import useCalendar from '@veccu/react-calendar'
 import cx from 'classnames'
-import { format, getDate } from 'date-fns'
+import { format } from 'date-fns'
 import React from 'react'
 
 export default function Calendar() {
-  const { calendar, headers, body, view, navigation } = useCalendar()
+  const { cursorDate, headers, body, view, navigation } = useCalendar()
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function Calendar() {
               </button>
             </div>
             <div className="text-2xl font-black">
-              {format(calendar.cursorDate, 'yyyy.MM')}
+              {format(cursorDate, 'yyyy.MM')}
             </div>
             <div className="flex flex-row space space-x-2">
               <button
@@ -80,7 +80,7 @@ export default function Calendar() {
             return (
               <tr key={key}>
                 {days.map((day) => {
-                  const { key, value, isCurrentDate, isCurrentMonth } = day
+                  const { key, date, isCurrentDate, isCurrentMonth } = day
 
                   return (
                     <td
@@ -93,7 +93,7 @@ export default function Calendar() {
                         },
                       )}
                     >
-                      {getDate(value)}
+                      {date}
                     </td>
                   )
                 })}

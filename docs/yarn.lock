@@ -1959,10 +1959,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@veccu/react-calendar@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@veccu/react-calendar/-/react-calendar-1.2.1.tgz#f05154664216ddfdad0002aa2b2abf817069cbb5"
-  integrity sha512-P75yk88fODQe2uMsO6Jnyl+8Q/FHydVhVJFWhGUPg3Ln4Ad5Mz6w02OMOTBf6zE5lBvDDRAUiqbix0Cu6P6oxg==
+"@veccu/react-calendar@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@veccu/react-calendar/-/react-calendar-2.0.0.tgz#1b8bdd0da8b55b8267a923c26e820e088322405b"
+  integrity sha512-Y1c8sWeNXbNtbyDrLUtobsvv+uZcgUo4bScxPfXYgmBFSyQOasvrHVR4mInnXWuXpcIwPQcuR9Zgj5xxMz5wig==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
