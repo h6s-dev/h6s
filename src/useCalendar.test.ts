@@ -137,7 +137,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate).toEqual(targetDate)
+      expect(result.current.cursorDate).toEqual(targetDate)
     })
 
     it('return next month by toNext when month viewType', () => {
@@ -157,7 +157,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate.getMonth()).toEqual(
+      expect(result.current.cursorDate.getMonth()).toEqual(
         defaultDate.getMonth() + 1,
       )
     })
@@ -179,7 +179,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 4))
+      expect(result.current.cursorDate).toEqual(new Date(2020, 11, 4))
     })
 
     it('return next date by toNext when day viewType', () => {
@@ -199,7 +199,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 28))
+      expect(result.current.cursorDate).toEqual(new Date(2020, 11, 28))
     })
 
     it('return prev month by toPrev when month viewType', () => {
@@ -219,7 +219,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate.getMonth()).toEqual(
+      expect(result.current.cursorDate.getMonth()).toEqual(
         defaultDate.getMonth() - 1,
       )
     })
@@ -241,7 +241,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 20))
+      expect(result.current.cursorDate).toEqual(new Date(2020, 11, 20))
     })
 
     it('return prev date by toPrev when day viewType', () => {
@@ -261,7 +261,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.calendar.cursorDate).toEqual(new Date(2020, 11, 26))
+      expect(result.current.cursorDate).toEqual(new Date(2020, 11, 26))
     })
 
     it('return today date by setToday', () => {
@@ -278,7 +278,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(resetTimeOfDate(result.current.calendar.cursorDate)).toEqual(
+      expect(resetTimeOfDate(result.current.cursorDate)).toEqual(
         resetTimeOfDate(new Date()),
       )
     })

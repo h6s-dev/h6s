@@ -34,14 +34,8 @@ export default function useCalendar({
   const [cursorDate, setCursorDate] = useState(baseDate)
   const [viewType, setViewType] = useState(defaultViewType)
 
-  const calendar = createCalendarInfo(cursorDate, weekStartsOn)
-  const {
-    weekendDays,
-    weeksInMonth,
-    getCurrentWeekIndex,
-    getCurrentDateIndex,
-    getDateCellByIndex,
-  } = calendar
+  const calendar = createCalendarInfo(cursorDate, { weekStartsOn })
+  const { weekendDays, weeksInMonth, today, getDateCellByIndex } = calendar
 
   const getHeaders = useCallback(
     (viewType: CalendarViewType) => {
@@ -82,25 +76,24 @@ export default function useCalendar({
   const getBody = useCallback(
     (viewType: CalendarViewType) => {
       const matrix = createMatrix(weeksInMonth)
-      const currentWeekIndex = getCurrentWeekIndex()
-      const currentDateIndex = getCurrentDateIndex()
+      const { weekIndex, dateIndex } = today
 
       return {
         [CalendarViewType.Month]: matrix,
         [CalendarViewType.Week]: {
-          value: [matrix.value[currentWeekIndex]],
+          value: [matrix.value[weekIndex]],
         },
         [CalendarViewType.Day]: {
           value: [
             {
               key: 'week-day-type',
-              value: [matrix.value[currentWeekIndex].value[currentDateIndex]],
+              value: [matrix.value[weekIndex].value[dateIndex]],
             },
           ],
         },
       }[viewType]
     },
-    [createMatrix, getCurrentDateIndex, getCurrentWeekIndex, weeksInMonth],
+    [createMatrix, today, weeksInMonth],
   )
 
   const setNext = useMemo(() => {
@@ -126,10 +119,7 @@ export default function useCalendar({
   }, [viewType])
 
   return {
-    calendar: {
-      ...calendar,
-      viewType,
-    },
+    ...calendar,
     headers: getHeaders(viewType),
     body: getBody(viewType),
     navigation: {

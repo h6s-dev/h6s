@@ -1,11 +1,11 @@
 import { getDay, getDaysInMonth, setDay, startOfMonth } from 'date-fns'
 
-import { DateCell, WeekDayType } from '../models'
+import { WeekDayType } from '../models'
 import { arrayOf, parseDate } from '../utils'
 
 export default function createCalendarInfo(
   cursorDate: Date,
-  weekStartsOn: WeekDayType,
+  { weekStartsOn }: { weekStartsOn: WeekDayType },
 ) {
   const { year, month, day } = parseDate(cursorDate)
   const startWeekdayInMonth = getStartWeekdayInMonth(cursorDate, weekStartsOn)
@@ -14,20 +14,7 @@ export default function createCalendarInfo(
     value: setDay(cursorDate, (index + weekStartsOn) % 7),
   }))
 
-  const getCurrentWeekIndex = () => {
-    const control = (day - 1) % 7 > startWeekdayInMonth ? 0 : -1
-
-    return Math.ceil(day / 7) + control
-  }
-
-  const getCurrentDateIndex = () => {
-    return getDay(cursorDate)
-  }
-
-  const getDateCellByIndex = (
-    weekIndex: number,
-    dayIndex: number,
-  ): DateCell => {
+  const getDateCellByIndex = (weekIndex: number, dayIndex: number) => {
     const day = weekIndex * 7 + dayIndex - startWeekdayInMonth + 1
 
     return { value: new Date(year, month, day) }
@@ -42,8 +29,10 @@ export default function createCalendarInfo(
     startWeekdayInMonth,
     weeksInMonth,
     weekendDays,
-    getCurrentWeekIndex,
-    getCurrentDateIndex,
+    today: {
+      weekIndex: getCurrentWeekIndex(day, startWeekdayInMonth),
+      dateIndex: getDay(cursorDate),
+    },
     getDateCellByIndex,
   }
 }
@@ -59,4 +48,10 @@ function getWeeksInMonth(date: Date, weekStartsOn: WeekDayType) {
   const totalDaysOfMonth = getDaysInMonth(month)
 
   return Math.ceil((weekStartsOn + totalDaysOfMonth) / 7)
+}
+
+function getCurrentWeekIndex(day: number, startWeekdayInMonth: number) {
+  const control = (day - 1) % 7 > startWeekdayInMonth ? 0 : -1
+
+  return Math.ceil(day / 7) + control
 }
