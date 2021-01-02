@@ -19,6 +19,16 @@ For Calendar,
 - 🏞 Support view type (monthly, weekly, daily)
 - 🕹 Control with navigation
 
+## Usage 🎸
+
+```bash
+# npm
+npm install @veccu/react-calendar
+
+# yarn
+yarn add @veccu/react-calendar
+```
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
