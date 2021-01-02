@@ -2,6 +2,7 @@ import { getDay, getDaysInMonth, setDay, startOfMonth } from 'date-fns'
 
 import { DateCell, WeekDayType } from '../models'
 import { arrayOf, parseDate } from '../utils'
+
 export default function createCalendarInfo(
   cursorDate: Date,
   weekStartsOn: WeekDayType,

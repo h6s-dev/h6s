@@ -17,6 +17,7 @@ import { arrayOf, generateID, pipeWith, withKey } from './utils'
 export type CalendarPlugin<OriginType> = <PropsType>(
   data: OriginType,
 ) => OriginType & PropsType
+
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType

@@ -1,10 +1,10 @@
 import { DateCell } from '../models'
 import { generateID } from '../utils'
 
-export default function withKeyProps<T extends DateCell>(keyPrefix: string) {
-  return function (data: T) {
+export default function withKeyProps(keyPrefix: string) {
+  return function <T extends DateCell>(cell: T) {
     return {
-      ...data,
+      ...cell,
       key: generateID(keyPrefix),
     }
   }
