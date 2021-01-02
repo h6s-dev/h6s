@@ -17,14 +17,14 @@ import {
 } from '@chakra-ui/react'
 import useCalendar from '@veccu/react-calendar'
 import { version } from '@veccu/react-calendar/package.json'
-import { format, getDate } from 'date-fns'
+import { format } from 'date-fns'
 import locale from 'date-fns/locale/en-US'
 import React from 'react'
 
 import { Container } from '../components/Container'
 
 export default function Example() {
-  const { calendar, headers, body, navigation, view } = useCalendar()
+  const { cursorDate, headers, body, navigation, view } = useCalendar()
 
   return (
     <Container height="100vh">
@@ -78,9 +78,7 @@ export default function Example() {
                   D
                 </Button>
               </Stack>
-              <Text fontSize="2xl">
-                {format(calendar.cursorDate, 'yyyy. MM')}
-              </Text>
+              <Text fontSize="2xl">{format(cursorDate, 'yyyy. MM')}</Text>
               <Stack direction="row" gutter={8}>
                 <IconButton
                   aria-label="prev-button"
@@ -117,16 +115,16 @@ export default function Example() {
             return (
               <Tr key={key}>
                 {days.map((day) => {
-                  const { key, value, isCurrentDate, isCurrentMonth } = day
+                  const { key, date, isCurrentDate, isCurrentMonth } = day
 
                   return (
                     <Td key={key} opacity={isCurrentMonth ? 1 : 0.2}>
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
-                          {getDate(value)}
+                          {date}
                         </Text>
                       ) : (
-                        getDate(value)
+                        date
                       )}
                     </Td>
                   )
