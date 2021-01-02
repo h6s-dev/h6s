@@ -22,7 +22,7 @@ import useCalendar from '../../../../src'
 import { Container } from '../components/Container'
 
 export default function Example() {
-  const { calendar, headers, body, navigation, view } = useCalendar()
+  const { cursorDate, headers, body, navigation, view } = useCalendar()
 
   return (
     <Container height="100vh">
@@ -68,9 +68,7 @@ export default function Example() {
                   D
                 </Button>
               </Stack>
-              <Text fontSize="2xl">
-                {format(calendar.cursorDate, 'yyyy. MM')}
-              </Text>
+              <Text fontSize="2xl">{format(cursorDate, 'yyyy. MM')}</Text>
               <Stack direction="row" gutter={8}>
                 <IconButton
                   aria-label="prev-button"
