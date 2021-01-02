@@ -16,19 +16,8 @@ For Calendar,
 
 - 🧙‍♂️ Headless
 - 🔖 Lightweight
-- ⚓️ Extensible plugin system
-
-## RoadMap
-
-- [x] Support view type
-- [x] Support navigation
-- [ ] Support Layout plugin
-- [ ] Support Selectable plugin
-- [ ] Support Infinite plugin
-- [ ] Support Date Picker plugin
-- [ ] Support Date Range Picker plugin
-- [ ] Support a11y
-- [ ] Support i18n
+- 🏞 Support view type (monthly, weekly, daily)
+- 🕹 Control with navigation
 
 ## Contributors ✨
 
