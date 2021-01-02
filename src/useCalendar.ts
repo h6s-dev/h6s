@@ -9,20 +9,15 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
-import { CalendarViewType, DateCell, WeekDayType } from './models'
+import { CalendarViewType, WeekDayType } from './models'
 import { withDateProps } from './plugins'
 import withKeyProps from './plugins/withKeyProps'
 import { arrayOf, generateID, pipeWith, withKey } from './utils'
-
-export type CalendarPlugin<OriginType> = <PropsType>(
-  data: OriginType,
-) => OriginType & PropsType
 
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
   defaultViewType?: CalendarViewType
-  plugins?: Array<CalendarPlugin<DateCell>>
 }
 
 export default function useCalendar({
