@@ -1,0 +1,29 @@
+---
+name: useCalendar
+route: /api-references/useCalendar
+menu: API References
+---
+
+# useCalendar
+
+## Usage
+
+```ts
+function Component() {
+	const { cursorDate, headers, body, navigation, view } = useCalendar()
+
+	return (
+		<Something ... />
+	)
+}
+```
+
+## Options
+
+```ts
+export interface UseCalendarOptions {
+  defaultDate?: Date | number | string
+  defaultWeekStart?: WeekDayType
+  defaultViewType?: CalendarViewType
+}
+```

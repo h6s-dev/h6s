@@ -1,6 +1,7 @@
 ---
 name: Installation
-route: /installation
+route: /getting-started/installation
+menu: Getting Started
 ---
 
 # Installation
@@ -16,7 +17,14 @@ npm install --save @veccu/react-calendar
 ```json
 "peerDependencies": {
   "date-fns": ">= 2",
-  "react": ">= 16.8",
-  "react-dom": ">= 16.8"
+  "react": "^16.8.0 || ^17.0.0"
+},
+"peerDependenciesMeta": {
+  "react-dom": {
+    "optional": true
+  },
+  "react-native": {
+    "optional": true
+  }
 }
 ```

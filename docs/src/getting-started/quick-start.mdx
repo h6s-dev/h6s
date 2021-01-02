@@ -1,11 +1,24 @@
 ---
-name: Getting Started
-route: /getting-started
+name: Quick Start
+route: /getting-started/quick-start
+menu: Getting Started
 ---
 
-# Getting Started
+# Quick Start
 
 Quickly create calendar UI with table HTML elements!
+
+## Get calendar data
+
+`useCalendar` hooks are the most important functions and everything in React Calendar. These hooks return almost everything you need to construct a calendar.
+
+```ts
+const { headers, body, view } = useCalendar()
+```
+
+## Build UI with anything
+
+You can use anything UI library (like Charkra UI, Material UI, etc ...)
 
 ```tsx
 import useCalendar from '@veccu/react-calendar'
