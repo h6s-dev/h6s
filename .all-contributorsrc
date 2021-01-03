@@ -9,6 +9,17 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "SoYoung210",
+      "name": "soso",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/18658235?v=4",
+      "profile": "https://so-so.dev",
+      "contributions": [
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
