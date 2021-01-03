@@ -1,8 +1,8 @@
 {
   "name": "@veccu/react-calendar",
   "version": "0.0.1",
-  "main": "dist/index.ts",
-  "module": "esm/index.ts",
+  "main": "dist/index.js",
+  "module": "esm/index.js",
   "typings": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
