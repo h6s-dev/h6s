@@ -17,7 +17,7 @@ export function Logo() {
           margin-right: 8px;
           height: 36px;
         `}
-        src="/icon/logo.png"
+        src="https://raw.githubusercontent.com/veccu/react-calendar/main/docs/static/favicon/android-icon-192x192.png"
         alt="react-calendar Logo"
       />
       <span
