@@ -2,6 +2,7 @@ import {
   addDays,
   addMonths,
   addWeeks,
+  isValid,
   subDays,
   subMonths,
   subWeeks,
@@ -13,7 +14,6 @@ import { CalendarViewType, WeekDayType } from './models'
 import { withDateProps } from './plugins'
 import withKeyProps from './plugins/withKeyProps'
 import { arrayOf, generateID, pipeWith, withKey } from './utils'
-
 export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
@@ -25,6 +25,10 @@ export default function useCalendar({
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
 }: UseCalendarOptions = {}) {
+  if (!isValid(defaultDate)) {
+    console.error('[ERROR] Invalid defaultDate -> ', defaultDate)
+  }
+
   const baseDate = useMemo(
     () => (defaultDate ? new Date(defaultDate) : new Date()),
     [defaultDate],
