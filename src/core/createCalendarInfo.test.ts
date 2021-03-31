@@ -79,13 +79,13 @@ describe('createCalendarInfo function', () => {
 
   it('2021.3.31 test case', () => {
     // Given
-    const date = new Date('2021-03-31') // wendesday
+    const date = new Date('2021-3-31') // wendesday
     // When
     const result = createCalendarInfo(date, { weekStartsOn: 0 })
     // Then
     expect(result.startWeekdayInMonth).toBe(1)
     expect(result.weeksInMonth).toBe(5)
-    expect(result.today.weekIndex).toBe(5)
+    expect(result.today.weekIndex).toBe(4)
     expect(result.today.dateIndex).toBe(3)
 
     expect(result.getDateCellByIndex(0, 0).value).toEqual(new Date(2021, 1, 28))
