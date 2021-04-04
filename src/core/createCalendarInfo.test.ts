@@ -79,7 +79,7 @@ describe('createCalendarInfo function', () => {
 
   it('2021.3.31 test case', () => {
     // Given
-    const date = new Date('2021-3-31') // wendesday
+    const date = new Date('2021-3-31') // NOTE: wednesday
     // When
     const result = createCalendarInfo(date, { weekStartsOn: 0 })
     // Then
