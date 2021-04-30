@@ -84,6 +84,10 @@ export default function useCalendar({
       const matrix = createMatrix(weeksInMonth)
       const { weekIndex, dateIndex } = today
 
+      console.log('weeksInMonth -> ', weeksInMonth)
+      console.log(matrix)
+      console.log(today)
+
       return {
         [CalendarViewType.Month]: matrix,
         [CalendarViewType.Week]: {
