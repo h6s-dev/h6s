@@ -162,6 +162,28 @@ describe('useCalendar hooks test', () => {
       )
     })
 
+    it('return next month by toNext when month viewType', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Month
+      const defaultDate = new Date(2021, 4, 30)
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toNext()
+      })
+      rerender()
+      // Then
+      expect(result.current.cursorDate.getMonth()).toEqual(
+        defaultDate.getMonth() + 1,
+      )
+    })
+
     it('return next week by toNext when week viewType', () => {
       // Given
       const defaultViewType = CalendarViewType.Week
