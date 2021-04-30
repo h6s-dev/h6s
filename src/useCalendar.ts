@@ -2,14 +2,12 @@ import {
   addDays,
   addMonths,
   addWeeks,
-  isValid,
   subDays,
   subMonths,
   subWeeks,
 } from 'date-fns'
 import { useCallback, useMemo, useState } from 'react'
 
-import { __DEV__ } from './constants/isDev'
 import { createCalendarInfo } from './core'
 import { CalendarViewType, WeekDayType } from './models'
 import { withDateProps } from './plugins'
@@ -31,10 +29,6 @@ export default function useCalendar({
     () => (defaultDate ? new Date(defaultDate) : new Date()),
     [defaultDate],
   )
-
-  if (!isValid(baseDate)) {
-    if (__DEV__) console.error('[ERROR] baseDate is invalid')
-  }
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
   const [cursorDate, setCursorDate] = useState(baseDate)
@@ -84,9 +78,7 @@ export default function useCalendar({
       const matrix = createMatrix(weeksInMonth)
       const { weekIndex, dateIndex } = today
 
-      console.log('weeksInMonth -> ', weeksInMonth)
-      console.log(matrix)
-      console.log(today)
+      console.log('today -> ', today)
 
       return {
         [CalendarViewType.Month]: matrix,
@@ -97,7 +89,7 @@ export default function useCalendar({
           value: [
             {
               key: 'week-day-type',
-              value: [matrix.value[weekIndex].value[dateIndex]],
+              value: [matrix.value[weekIndex]?.value[dateIndex]],
             },
           ],
         },
