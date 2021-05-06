@@ -51,5 +51,8 @@ function getWeeksInMonth(date: Date, weekStartsOn: WeekDayType) {
 }
 
 function getCurrentWeekIndex(day: number, startWeekdayInMonth: number) {
-  return Math.floor((day + startWeekdayInMonth) / 7)
+  if ((day + startWeekdayInMonth) % 7) {
+    return Math.floor((day + startWeekdayInMonth) / 7)
+  }
+  return Math.floor((day + startWeekdayInMonth) / 7) - 1
 }
