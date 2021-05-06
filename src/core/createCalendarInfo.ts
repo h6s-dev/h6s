@@ -54,5 +54,6 @@ function getCurrentWeekIndex(day: number, startWeekdayInMonth: number) {
   if ((day + startWeekdayInMonth) % 7) {
     return Math.floor((day + startWeekdayInMonth) / 7)
   }
+
   return Math.floor((day + startWeekdayInMonth) / 7) - 1
 }
