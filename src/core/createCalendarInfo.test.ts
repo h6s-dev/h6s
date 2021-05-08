@@ -93,4 +93,23 @@ describe('createCalendarInfo function', () => {
     expect(result.getDateCellByIndex(1, 0).value).toEqual(new Date(2021, 2, 7))
     expect(result.getDateCellByIndex(1, 1).value).toEqual(new Date(2021, 2, 8))
   })
+
+  it('return proper calendar info when 6 weeks', () => {
+    // Given
+    const date = new Date('2021-5-30') // NOTE: monday
+    // When
+    const result = createCalendarInfo(date, { weekStartsOn: 0 })
+    // Then
+    expect(result.startWeekdayInMonth).toBe(6)
+    expect(result.weeksInMonth).toBe(6)
+    expect(result.today.weekIndex).toBe(5)
+    expect(result.today.dateIndex).toBe(0)
+
+    expect(result.getDateCellByIndex(0, 0).value).toEqual(new Date(2021, 3, 25))
+    expect(result.getDateCellByIndex(0, 1).value).toEqual(new Date(2021, 3, 26))
+    expect(result.getDateCellByIndex(1, 0).value).toEqual(new Date(2021, 4, 2))
+    expect(result.getDateCellByIndex(1, 1).value).toEqual(new Date(2021, 4, 3))
+    expect(result.getDateCellByIndex(5, 0).value).toEqual(new Date(2021, 4, 30))
+    expect(result.getDateCellByIndex(5, 1).value).toEqual(new Date(2021, 4, 31))
+  })
 })
