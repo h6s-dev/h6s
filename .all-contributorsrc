@@ -18,6 +18,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "JunHyeokHa",
+      "name": "Sirl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59739164?v=4",
+      "profile": "https://github.com/JunHyeokHa",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
