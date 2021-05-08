@@ -45,10 +45,10 @@ function getStartWeekdayInMonth(date: Date, weekStartsOn: WeekDayType) {
 
 function getWeeksInMonth(date: Date, weekStartsOn: WeekDayType) {
   const { year, month } = parseDate(date)
-  const monthStartsAt = startOfMonth(date)
+  const monthStartsAt = (startOfMonth(date).getDay() - weekStartsOn) % 7
   const totalDaysOfMonth = getDaysInMonth(new Date(year, month))
 
-  return Math.ceil((monthStartsAt.getDay() + totalDaysOfMonth) / 7)
+  return Math.ceil(((monthStartsAt < 0 ? monthStartsAt + 7 : monthStartsAt) + totalDaysOfMonth) / 7)
 }
 
 function getCurrentWeekIndex(day: number, startWeekdayInMonth: number) {
