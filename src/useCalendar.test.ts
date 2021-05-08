@@ -201,7 +201,7 @@ describe('useCalendar hooks test', () => {
       })
       rerender()
       // Then
-      expect(result.current.cursorDate).toEqual(new Date(2020, 11, 4))
+      expect(result.current.cursorDate).toEqual(new Date(2020, 10, 29))
     })
 
     it('return next date by toNext when day viewType', () => {
