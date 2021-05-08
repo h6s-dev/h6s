@@ -44,8 +44,7 @@ function getStartWeekdayInMonth(date: Date, weekStartsOn: WeekDayType) {
 }
 
 function getWeeksInMonth(date: Date, startWeekdayInMonth: number) {
-  const { year, month } = parseDate(date)
-  const totalDaysOfMonth = getDaysInMonth(new Date(year, month))
+  const totalDaysOfMonth = getDaysInMonth(date)
 
   return Math.ceil((startWeekdayInMonth + totalDaysOfMonth) / 7)
 }
