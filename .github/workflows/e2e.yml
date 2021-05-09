@@ -1,6 +1,9 @@
 name: e2e
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   cypress-run:
