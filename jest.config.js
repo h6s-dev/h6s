@@ -6,4 +6,5 @@ module.exports = {
   },
   coveragePathIgnorePatterns: ['/node_modules/', 'src/index.ts', 'src/models/*', 'src/core/index.ts', 'src/plugins/index.ts', 'src/utils.index.ts'],
   collectCoverageFrom: ['src/**/*.{js,ts}'],
+  testPathIgnorePatterns: ['/node_modules/', '/cypress/']
 }
