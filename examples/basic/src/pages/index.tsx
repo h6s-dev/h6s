@@ -23,7 +23,7 @@ import React from 'react'
 
 import { Container } from '../components/Container'
 
-export default function Example() {
+export default function BasicExample() {
   const { cursorDate, headers, body, navigation, view } = useCalendar()
 
   return (
@@ -40,6 +40,7 @@ export default function Example() {
           fontSize="1.2em"
           px={2}
           textTransform="lowercase"
+          aria-label="badge for current version"
         >
           v{version}
         </Badge>
@@ -60,6 +61,7 @@ export default function Example() {
                   size="md"
                   onClick={view.showMonthView}
                   isActive={view.isMonthView}
+                  aria-label="button for changing view type to month"
                 >
                   M
                 </Button>
@@ -67,6 +69,7 @@ export default function Example() {
                   size="md"
                   onClick={view.showWeekView}
                   isActive={view.isWeekView}
+                  aria-label="button for changing view type to week"
                 >
                   W
                 </Button>
@@ -74,14 +77,17 @@ export default function Example() {
                   size="md"
                   onClick={view.showDayView}
                   isActive={view.isDayView}
+                  aria-label="button for changing view type to day"
                 >
                   D
                 </Button>
               </Stack>
-              <Text fontSize="2xl">{format(cursorDate, 'yyyy. MM')}</Text>
+              <Text fontSize="2xl" data-testId="cursor-date">
+                {format(cursorDate, 'yyyy. MM')}
+              </Text>
               <Stack direction="row" gutter={8}>
                 <IconButton
-                  aria-label="prev-button"
+                  aria-label="button for navigating to prev calendar"
                   icon={<ChevronLeftIcon />}
                   onClick={navigation.toPrev}
                 />
@@ -89,11 +95,12 @@ export default function Example() {
                   size="md"
                   colorScheme="teal"
                   onClick={navigation.setToday}
+                  aria-label="button for navigating to today calendar"
                 >
                   TODAY
                 </Button>
                 <IconButton
-                  aria-label="next-button"
+                  aria-label="button for navigating to next calendar"
                   icon={<ChevronRightIcon />}
                   onClick={navigation.toNext}
                 />
@@ -104,7 +111,11 @@ export default function Example() {
         <Thead>
           <Tr>
             {headers.weekDays.map(({ key, value }) => {
-              return <Th key={key}>{format(value, 'E', { locale })}</Th>
+              return (
+                <Th key={key} data-testid="calendar-weekends">
+                  {format(value, 'E', { locale })}
+                </Th>
+              )
             })}
           </Tr>
         </Thead>
@@ -113,12 +124,20 @@ export default function Example() {
             const { key, value: days } = week
 
             return (
-              <Tr key={key}>
+              <Tr key={key} data-testid="calendar-weeks">
                 {days.map((day) => {
                   const { key, date, isCurrentDate, isCurrentMonth } = day
 
                   return (
-                    <Td key={key} opacity={isCurrentMonth ? 1 : 0.2}>
+                    <Td
+                      key={key}
+                      opacity={isCurrentMonth ? 1 : 0.2}
+                      data-testid={
+                        isCurrentMonth
+                          ? 'calendar-cell--today'
+                          : 'calendar-cell'
+                      }
+                    >
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
                           {date}
