@@ -1,6 +1,8 @@
-name: e2e
+name: sanity
 
-on: [push]
+on:
+  schedule:
+    - cron: 0 0 * * *
 
 jobs:
   cypress-run:
