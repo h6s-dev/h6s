@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "build:static": "next build && next export -o dist/",
     "start": "next start"
   },
   "dependencies": {
