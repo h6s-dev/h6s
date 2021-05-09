@@ -10,7 +10,7 @@
 
 ## Come to [@veccu/react-calendar docs](https://veccu-react-calendar.netlify.app/)
 
-## Quickly,
+## Quickly
 
 For Calendar,
 
@@ -18,6 +18,10 @@ For Calendar,
 - 🔖 Lightweight
 - 🏞 Support view type (monthly, weekly, daily)
 - 🕹 Control with navigation
+
+### Examples
+
+- [Basic](https://veccu-react-calendar-examples-basic.netlify.app/)
 
 ## Contributors ✨
 
