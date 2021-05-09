@@ -133,9 +133,7 @@ export default function BasicExample() {
                       key={key}
                       opacity={isCurrentMonth ? 1 : 0.2}
                       data-testid={
-                        isCurrentMonth
-                          ? 'calendar-cell--today'
-                          : 'calendar-cell'
+                        isCurrentDate ? 'calendar-cell--today' : 'calendar-cell'
                       }
                     >
                       {isCurrentDate ? (
