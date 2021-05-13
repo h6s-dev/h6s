@@ -120,26 +120,29 @@ export default function useCalendar({
     }
   }, [viewType])
 
-  return {
-    ...calendar,
-    headers: getHeaders(viewType),
-    body: getBody(viewType),
-    navigation: {
-      toNext: () => setCursorDate((date) => setNext(date)),
-      toPrev: () => setCursorDate((date) => setPrev(date)),
-      setToday: () => setCursorDate(new Date()),
-      setDate: (date: Date) => setCursorDate(date),
-    },
-    view: {
-      type: viewType,
-      setViewType,
-      setWeekStartsOn,
-      isMonthView: viewType === CalendarViewType.Month,
-      isWeekView: viewType === CalendarViewType.Week,
-      isDayView: viewType === CalendarViewType.Day,
-      showMonthView: () => setViewType(CalendarViewType.Month),
-      showWeekView: () => setViewType(CalendarViewType.Week),
-      showDayView: () => setViewType(CalendarViewType.Day),
-    },
-  }
+  return useMemo(
+    () => ({
+      ...calendar,
+      headers: getHeaders(viewType),
+      body: getBody(viewType),
+      navigation: {
+        toNext: () => setCursorDate((date) => setNext(date)),
+        toPrev: () => setCursorDate((date) => setPrev(date)),
+        setToday: () => setCursorDate(new Date()),
+        setDate: (date: Date) => setCursorDate(date),
+      },
+      view: {
+        type: viewType,
+        setViewType,
+        setWeekStartsOn,
+        isMonthView: viewType === CalendarViewType.Month,
+        isWeekView: viewType === CalendarViewType.Week,
+        isDayView: viewType === CalendarViewType.Day,
+        showMonthView: () => setViewType(CalendarViewType.Month),
+        showWeekView: () => setViewType(CalendarViewType.Week),
+        showDayView: () => setViewType(CalendarViewType.Day),
+      },
+    }),
+    [calendar, getBody, getHeaders, setNext, setPrev, viewType],
+  )
 }
