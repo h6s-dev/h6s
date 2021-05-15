@@ -30,11 +30,8 @@ export default function useCalendar({
 }: UseCalendarOptions = {}) {
   const isMounted = useIsMounted()
   const baseDate = useMemo(() => {
-    if (isMounted) {
-      return defaultDate != null ? new Date(defaultDate) : new Date()
-    }
-
-    return new Date()
+    return defaultDate != null ? new Date(defaultDate) : new Date()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultDate, isMounted])
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
