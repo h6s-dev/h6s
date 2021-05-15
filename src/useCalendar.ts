@@ -11,6 +11,7 @@ import {
 import { useCallback, useMemo, useState } from 'react'
 
 import { createCalendarInfo } from './core'
+import useIsMounted from './hooks/useIsMounted'
 import { CalendarViewType, WeekDayType } from './models'
 import { withDateProps } from './plugins'
 import withKeyProps from './plugins/withKeyProps'
@@ -27,10 +28,14 @@ export default function useCalendar({
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
 }: UseCalendarOptions = {}) {
-  const baseDate = useMemo(
-    () => (defaultDate ? new Date(defaultDate) : new Date()),
-    [defaultDate],
-  )
+  const isMounted = useIsMounted()
+  const baseDate = useMemo(() => {
+    if (isMounted) {
+      return defaultDate != null ? new Date(defaultDate) : new Date()
+    }
+
+    return new Date()
+  }, [defaultDate, isMounted])
 
   const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
   const [cursorDate, setCursorDate] = useState(baseDate)
