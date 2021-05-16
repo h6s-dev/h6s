@@ -82,7 +82,7 @@ export default function BasicExample() {
                   D
                 </Button>
               </Stack>
-              <Text fontSize="2xl" data-testId="cursor-date">
+              <Text fontSize="2xl" data-testid="cursor-date">
                 {format(cursorDate, 'yyyy. MM')}
               </Text>
               <Stack direction="row" gutter={8}>
