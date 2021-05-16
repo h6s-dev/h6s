@@ -27,6 +27,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "bugtype",
+      "name": "Bugtype(Jerry)",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24269591?v=4",
+      "profile": "https://github.com/bugtype",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
