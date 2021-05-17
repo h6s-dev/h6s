@@ -36,6 +36,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "bigsaigon333",
+      "name": "Danny Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31029000?v=4",
+      "profile": "https://velog.io/@bigsaigon333",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
