@@ -31,6 +31,5 @@ jobs:
       - name: Release to npm registry
         run: yarn semantic-release
         env:
-          GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SEMANTIC_RELEASE_PACKAGE: ${{ secrets.NPM_TOKEN }}
