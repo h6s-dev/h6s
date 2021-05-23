@@ -1,8 +1,8 @@
 {
   "branches": [
     {"name": "main"},
-    {"name": "alpha", "prerelease": "alpha"},
-    {"name": "beta", "prerelease": "beta"}
+    {"name": "alpha", "prerelease": true},
+    {"name": "beta", "prerelease": true}
   ],
   "repositoryUrl": "https://github.com/veccu/react-calendar",
   "debug": "true",
