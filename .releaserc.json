@@ -13,7 +13,6 @@
     [
       "@semantic-release/github", {
         "assets": ["dist/*", "esm/*"],
-        "githubUrl": "https://github.com/veccu/react-calendar",
         "successComment": "🎉 This PR is included in version ${nextRelease.version} 🎉 "
       }
     ],
