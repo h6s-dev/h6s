@@ -34,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://so-so.dev"><img src="https://avatars0.githubusercontent.com/u/18658235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>soso</b></sub></a><br /><a href="#infra-SoYoung210" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://so-so.dev"><img src="https://avatars0.githubusercontent.com/u/18658235?v=4?s=100" width="100px;" alt=""/><br /><sub><b>soso</b></sub></a><br /><a href="#infra-SoYoung210" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-SoYoung210" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/JunHyeokHa"><img src="https://avatars.githubusercontent.com/u/59739164?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sirl</b></sub></a><br /><a href="https://github.com/veccu/react-calendar/issues?q=author%3AJunHyeokHa" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/bugtype"><img src="https://avatars.githubusercontent.com/u/24269591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bugtype(Jerry)</b></sub></a><br /><a href="#maintenance-bugtype" title="Maintenance">🚧</a> <a href="https://github.com/veccu/react-calendar/commits?author=bugtype" title="Code">💻</a></td>
     <td align="center"><a href="https://velog.io/@bigsaigon333"><img src="https://avatars.githubusercontent.com/u/31029000?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Danny Kim</b></sub></a><br /><a href="#maintenance-bigsaigon333" title="Maintenance">🚧</a></td>
