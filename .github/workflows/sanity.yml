@@ -2,7 +2,7 @@ name: sanity
 
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 15 * * *
 
 jobs:
   cypress-run:
@@ -16,3 +16,27 @@ jobs:
           persist-credentials: false
       - name: Cypress run
         uses: cypress-io/github-action@v2
+      - name: Slack Notify Sanity
+        if: success()
+        id: react-calendar-sanity-notifiction
+        uses: voxmedia/github-action-slack-notify-build@v1.1.2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          message_id: ${{ steps.slack.outputs.message_id }}
+          channel: react-calendar-github
+          status: SUCCESS
+          color: good
+      - name: Slack Notify Sanity
+        if: failure()
+        id: react-calendar-sanity-notifiction
+        uses: voxmedia/github-action-slack-notify-build@v1.1.2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          message_id: ${{ steps.slack.outputs.message_id }}
+          channel: react-calendar-github
+          status: FAILED
+          color: danger
