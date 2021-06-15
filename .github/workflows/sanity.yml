@@ -18,7 +18,7 @@ jobs:
         uses: cypress-io/github-action@v2
       - name: Slack Notify Sanity
         if: success()
-        id: react-calendar-sanity-notifiction
+        id: react-calendar-sanity-notifiction-success
         uses: voxmedia/github-action-slack-notify-build@v1.1.2
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
           color: good
       - name: Slack Notify Sanity
         if: failure()
-        id: react-calendar-sanity-notifiction
+        id: react-calendar-sanity-notifiction-fail
         uses: voxmedia/github-action-slack-notify-build@v1.1.2
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
