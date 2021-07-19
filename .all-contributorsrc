@@ -48,6 +48,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "gladyscodes",
+      "name": "Gladys Álvarez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40550185?v=4",
+      "profile": "http://gladys.codes",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

@@ -7,7 +7,7 @@
 [![GitHub Action Release Status](https://github.com/veccu/react-calendar/workflows/Release/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/release.yml) [![GitHub Action CI Status](https://github.com/veccu/react-calendar/workflows/CI/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/ci.yml) [![GitHub Action E2E Status](https://github.com/veccu/react-calendar/workflows/e2e/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/e2e.yml) [![GitHub Action Sanity Status](https://github.com/veccu/react-calendar/workflows/sanity/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/sanity.yml)
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![npm version](https://badge.fury.io/js/%40veccu%2Freact-calendar.svg)](https://badge.fury.io/js/%40veccu%2Freact-calendar) [![gzipped size](https://badgen.net/bundlephobia/minzip/%40veccu%2Freact-calendar@latest)](https://bundlephobia.com/result?p=@veccu/react-calendar@latest) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Come to [@veccu/react-calendar docs](https://veccu-react-calendar.netlify.app/)
@@ -38,6 +38,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/JunHyeokHa"><img src="https://avatars.githubusercontent.com/u/59739164?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sirl</b></sub></a><br /><a href="https://github.com/veccu/react-calendar/issues?q=author%3AJunHyeokHa" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/bugtype"><img src="https://avatars.githubusercontent.com/u/24269591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bugtype(Jerry)</b></sub></a><br /><a href="#maintenance-bugtype" title="Maintenance">🚧</a> <a href="https://github.com/veccu/react-calendar/commits?author=bugtype" title="Code">💻</a></td>
     <td align="center"><a href="https://velog.io/@bigsaigon333"><img src="https://avatars.githubusercontent.com/u/31029000?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Danny Kim</b></sub></a><br /><a href="#maintenance-bigsaigon333" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://gladys.codes"><img src="https://avatars.githubusercontent.com/u/40550185?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gladys Álvarez</b></sub></a><br /><a href="https://github.com/veccu/react-calendar/commits?author=gladyscodes" title="Documentation">📖</a></td>
   </tr>
 </table>
 
