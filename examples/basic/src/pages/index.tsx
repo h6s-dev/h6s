@@ -126,7 +126,13 @@ export default function BasicExample() {
             return (
               <Tr key={key} data-testid="calendar-weeks">
                 {days.map((day) => {
-                  const { key, date, isCurrentDate, isCurrentMonth } = day
+                  const {
+                    key,
+                    date,
+                    isCurrentDate,
+                    isCurrentMonth,
+                    isWeekend,
+                  } = day
 
                   return (
                     <Td
@@ -141,7 +147,9 @@ export default function BasicExample() {
                           {date}
                         </Text>
                       ) : (
-                        date
+                        <Text color={isWeekend ? 'red.500' : 'black.500'}>
+                          {date}
+                        </Text>
                       )}
                     </Td>
                   )
