@@ -19,7 +19,7 @@ const baseCalendarInfo = {
   weeksLength: getWeeksInMonth(baseDate),
 }
 
-describe('@veccu/reactl-calendar - basic examples e2e test with default options', () => {
+describe('@veccu/react-calendar - basic examples e2e test with default options', () => {
   beforeEach(() => {
     cy.visit(BASIC_EXAMPLES_URL)
     cy.log(`[E2E] Run on ${format(baseDate, 'yyyy-MM-dd (E) HH:mm')}`)
