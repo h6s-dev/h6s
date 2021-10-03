@@ -47,6 +47,57 @@ describe('useCalendar hooks test', () => {
       }))
       expect(onlyDates).toEqual([{ value: defaultDate }])
     })
+
+    it('return weekDays when set WeekDayType: 0', () => {
+      // Given
+      const defaultDate = new Date(2021, 8, 30)
+      const defaultWeekStart = 0
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultWeekStart,
+        }),
+      )
+      // Then
+      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+        value,
+      }))
+      expect(onlyDates).toEqual([
+        { value: new Date(2021, 8, 26) },
+        { value: new Date(2021, 8, 27) },
+        { value: new Date(2021, 8, 28) },
+        { value: new Date(2021, 8, 29) },
+        { value: new Date(2021, 8, 30) },
+        { value: new Date(2021, 9, 1) },
+        { value: new Date(2021, 9, 2) },
+      ])
+    })
+    it('return weekDays when set WeekDayType: 1', () => {
+      // Given
+      const defaultDate = new Date(2021, 8, 30)
+      const defaultWeekStart = 1
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultWeekStart,
+        }),
+      )
+      // Then
+      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+        value,
+      }))
+      expect(onlyDates).toEqual([
+        { value: new Date(2021, 8, 27) },
+        { value: new Date(2021, 8, 28) },
+        { value: new Date(2021, 8, 29) },
+        { value: new Date(2021, 8, 30) },
+        { value: new Date(2021, 9, 1) },
+        { value: new Date(2021, 9, 2) },
+        { value: new Date(2021, 9, 3) },
+      ])
+    })
   })
 
   describe('result.body', () => {

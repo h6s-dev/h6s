@@ -11,7 +11,7 @@ export default function createCalendarInfo(
   const startWeekdayInMonth = getStartWeekdayInMonth(cursorDate, weekStartsOn)
   const weeksInMonth = getWeeksInMonth(cursorDate, startWeekdayInMonth)
   const weekendDays = arrayOf(7).map((index) => ({
-    value: setDay(cursorDate, (index + weekStartsOn) % 7),
+    value: setDay(cursorDate, index + weekStartsOn),
   }))
 
   const getDateCellByIndex = (weekIndex: number, dayIndex: number) => {
