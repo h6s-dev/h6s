@@ -26,6 +26,8 @@ import { Container } from '../components/Container'
 export default function BasicExample() {
   const { cursorDate, headers, body, navigation, view } = useCalendar()
 
+  const yyMM = format(cursorDate, 'yy-MM')
+
   return (
     <Container height="100vh">
       <Stack
@@ -144,11 +146,25 @@ export default function BasicExample() {
                     >
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
-                          {date}
+                          <time
+                            dateTime={`${yyMM}-${String(date).padStart(
+                              2,
+                              '0',
+                            )}`}
+                          >
+                            {date}
+                          </time>
                         </Text>
                       ) : (
                         <Text color={isWeekend ? 'red.500' : 'black.500'}>
-                          {date}
+                          <time
+                            dateTime={`${yyMM}-${String(date).padStart(
+                              2,
+                              '0',
+                            )}`}
+                          >
+                            {date}
+                          </time>
                         </Text>
                       )}
                     </Td>
