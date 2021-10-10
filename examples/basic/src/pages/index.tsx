@@ -26,6 +26,8 @@ import { Container } from '../components/Container'
 export default function BasicExample() {
   const { cursorDate, headers, body, navigation, view } = useCalendar()
 
+  const yyMM = format(cursorDate, 'yy/MM')
+
   return (
     <Container height="100vh">
       <Stack
@@ -141,6 +143,7 @@ export default function BasicExample() {
                       data-testid={
                         isCurrentDate ? 'calendar-cell--today' : 'calendar-cell'
                       }
+                      ariaLabel={`${yyMM}/${String(date).padStart(2, '0')}`}
                     >
                       {isCurrentDate ? (
                         <Text fontWeight="bold" color="teal.500">
