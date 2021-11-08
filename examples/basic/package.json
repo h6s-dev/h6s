@@ -14,7 +14,7 @@
     "@chakra-ui/theme-tools": "1.0.2",
     "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
-    "@veccu/react-calendar": "^2.3.0",
+    "@veccu/react-calendar": "^2.3.3",
     "babel-loader": "^8.2.2",
     "framer-motion": "^2.9.4",
     "next": "latest",
