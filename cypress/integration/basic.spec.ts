@@ -47,30 +47,23 @@ describe('@veccu/react-calendar - basic examples e2e test with default options',
   })
 
   it('run navigate successfully', () => {
+    // once prev
     cy.findByLabelText('button for navigating to prev calendar').click()
     cy.findByTestId('cursor-date')
       .should('include.text', baseMonth === 1 ? baseYear - 1 : baseYear)
-      .should('include.text', baseMonth - 1)
+      .should('include.text', baseMonth === 1 ? 12 : baseMonth - 1)
 
-    cy.findByLabelText('button for navigating to prev calendar').click()
-    cy.findByTestId('cursor-date')
-      .should('include.text', baseMonth === 1 ? baseYear - 1 : baseYear)
-      .should('include.text', baseMonth - 2)
-
+    // reset
     cy.findByLabelText('button for navigating to today calendar').click()
     cy.findByTestId('cursor-date')
       .should('include.text', baseYear)
       .should('include.text', baseMonth)
 
+    // once next
     cy.findByLabelText('button for navigating to next calendar').click()
     cy.findByTestId('cursor-date')
       .should('include.text', baseMonth === 12 ? baseYear + 1 : baseYear)
-      .should('include.text', baseMonth + 1)
-
-    cy.findByLabelText('button for navigating to next calendar').click()
-    cy.findByTestId('cursor-date')
-      .should('include.text', baseMonth === 12 ? baseYear + 1 : baseYear)
-      .should('include.text', baseMonth + 2)
+      .should('include.text', baseMonth === 12 ? 1 : baseMonth + 1)
 
     cy.findByLabelText('button for navigating to today calendar').click()
     cy.findByTestId('cursor-date')
