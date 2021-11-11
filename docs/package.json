@@ -38,7 +38,7 @@
     "@types/react-dom": "^17.0.0",
     "autoprefixer": "^10.1.0",
     "gatsby-plugin-postcss": "^3.4.0",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.10",
     "tailwindcss": "^2.0.2"
   }
 }
