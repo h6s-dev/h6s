@@ -105,22 +105,22 @@ export default function useCalendar({
       case CalendarViewType.Month:
         return (date: Date) => addMonths(startOfMonth(date), 1)
       case CalendarViewType.Week:
-        return (date: Date) => addWeeks(startOfWeek(date), 1)
+        return (date: Date) => addWeeks(startOfWeek(date, { weekStartsOn }), 1)
       case CalendarViewType.Day:
         return (date: Date) => addDays(date, 1)
     }
-  }, [viewType])
+  }, [viewType, weekStartsOn])
 
   const setPrev = useMemo(() => {
     switch (viewType) {
       case CalendarViewType.Month:
         return (date: Date) => subMonths(startOfMonth(date), 1)
       case CalendarViewType.Week:
-        return (date: Date) => subWeeks(startOfWeek(date), 1)
+        return (date: Date) => subWeeks(startOfWeek(date, { weekStartsOn }), 1)
       case CalendarViewType.Day:
         return (date: Date) => subDays(date, 1)
     }
-  }, [viewType])
+  }, [viewType, weekStartsOn])
 
   return useMemo(
     () => ({

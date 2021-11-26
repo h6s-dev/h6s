@@ -355,6 +355,28 @@ describe('useCalendar hooks test', () => {
         resetTimeOfDate(new Date()),
       )
     })
+
+    it('return next week by toNext when defaultWeekStart: 1', () => {
+      // Given
+      const defaultViewType = CalendarViewType.Week
+      const defaultDate = new Date(2020, 10, 27)
+      const defaultWeekStart = 1
+
+      // When
+      const { result, rerender } = renderHook(() =>
+        useCalendar({
+          defaultDate,
+          defaultViewType,
+          defaultWeekStart,
+        }),
+      )
+      act(() => {
+        result.current.navigation.toNext()
+      })
+      rerender()
+      // Then
+      expect(result.current.cursorDate).toEqual(new Date(2020, 10, 30))
+    })
   })
 
   describe('result.view', () => {
