@@ -1,6 +1,6 @@
 {
   "name": "@veccu/react-calendar",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "typings": "dist/index.d.ts",
