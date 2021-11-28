@@ -5,6 +5,10 @@
   "module": "esm/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./dist/index.js"
+  },
   "publishConfig": {
     "access": "public"
   },
