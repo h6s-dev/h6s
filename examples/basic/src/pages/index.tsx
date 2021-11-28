@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import {
-  Badge,
   Button,
   Flex,
   Heading,
@@ -16,7 +15,6 @@ import {
   Tr,
 } from '@chakra-ui/react'
 import useCalendar from '@veccu/react-calendar'
-import { version } from '@veccu/react-calendar/package.json'
 import { format } from 'date-fns'
 import locale from 'date-fns/locale/en-US'
 import React from 'react'
@@ -37,15 +35,6 @@ export default function BasicExample() {
         alignItems="center"
         spacing={4}
       >
-        <Badge
-          colorScheme="green"
-          fontSize="1.2em"
-          px={2}
-          textTransform="lowercase"
-          aria-label="badge for current version"
-        >
-          v{version}
-        </Badge>
         <Heading as="h1" size="xl">
           react-calendar-basic-example
         </Heading>
