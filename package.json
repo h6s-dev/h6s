@@ -5,6 +5,13 @@
   "module": "esm/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -62,6 +69,9 @@
     "dist",
     "esm"
   ],
+  "engines": {
+    "node": ">=14"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",

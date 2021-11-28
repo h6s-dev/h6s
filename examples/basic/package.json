@@ -7,6 +7,9 @@
     "build:static": "next build && next export -o dist/",
     "start": "next start"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@babel/preset-env": "^7.12.11",
     "@chakra-ui/icons": "^1.0.2",

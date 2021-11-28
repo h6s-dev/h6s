@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.2",
     "@chakra-ui/react": "^1.0.4",
