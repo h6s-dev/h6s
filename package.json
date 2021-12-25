@@ -63,7 +63,6 @@
     "@yarnpkg/esbuild-plugin-pnp": "^2.0.0",
     "@yarnpkg/pnpify": "^3.1.1-rc.8",
     "all-contributors-cli": "^6.20.0",
-    "babel-eslint": "^10.1.0",
     "concurrently": "^6.5.1",
     "cypress": "^9.2.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -101,7 +100,8 @@
   },
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "website"
   ],
   "scripts": {
     "build": "yarn workspaces foreach -p -t run build",
