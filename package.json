@@ -9,15 +9,16 @@
   ],
   "license": "MIT",
   "scripts": {
-    "lerna": "lerna",
     "build": "yarn lerna run build",
+    "lint": "yarn lerna run lint",
     "test": "yarn lerna run test",
     "typecheck": "yarn lerna run typecheck",
     "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 6006",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "packages/**/*.ts": [
       "eslint -c .eslintrc '{src}/**/*.{js,jsx,ts,tsx}' --fix",
       "git add"
     ]
@@ -25,7 +26,7 @@
   "husky": {
     "hooks": {
       "post-merge": "yarn",
-      "pre-push": "yarn install --immutable && yarn lint && yarn typecheck"
+      "pre-push": "yarn install --immutable && yarn lint && yarn test && yarn typecheck"
     }
   },
   "commitlint": {
@@ -45,16 +46,22 @@
     "@babel/core": "^7.16.5",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@mdx-js/react": "^1.6.22",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
     "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-docs": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "@testing-library/cypress": "^8.0.2",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.38",
+    "@types/testing-library__jest-dom": "^5.14.2",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "@yarnpkg/esbuild-plugin-pnp": "^2.0.0",
@@ -72,11 +79,14 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jest-dom": "^3.9.2",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-testing-library": "^5.0.1",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
     "lerna": "^4.0.0",

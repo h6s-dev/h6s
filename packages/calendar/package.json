@@ -26,24 +26,15 @@
     "test:cov": "yarn test --coverage",
     "test:watch": "yarn test --watch",
     "test:e2e": "cypress open",
-    "cypress": "cypress run",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "cypress": "cypress run"
   },
   "files": [
     "dist",
     "esm"
   ],
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.2.0",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9",
     "@testing-library/cypress": "^7.0.6",
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.3",
@@ -52,15 +43,10 @@
     "date-fns": "^2.16.1",
     "husky": "^4.3.6",
     "jest": "^26.6.3",
-    "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-test-renderer": "^17.0.1",
-    "rimraf": "^3.0.2",
-    "semantic-release": "^17.3.1",
-    "ts-jest": "^26.4.4",
-    "ts-node": "^9.1.1"
+    "react-test-renderer": "^17.0.1"
   },
   "peerDependencies": {
     "date-fns": ">= 2",
