@@ -91,7 +91,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.0.1",
     "framer-motion": "^5.5.5",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jest": "^27.4.5",
     "lerna": "^4.0.0",
     "lint-staged": "^12.1.4",
@@ -116,7 +116,8 @@
     "typecheck": "yarn workspaces foreach -p -t run typecheck",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "postinstall": "husky install"
   },
   "packageManager": "yarn@3.1.1"
 }

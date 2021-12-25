@@ -13826,7 +13826,7 @@ __metadata:
     eslint-plugin-simple-import-sort: ^7.0.0
     eslint-plugin-testing-library: ^5.0.1
     framer-motion: ^5.5.5
-    husky: ^7.0.4
+    husky: ^7.0.0
     jest: ^27.4.5
     lerna: ^4.0.0
     lint-staged: ^12.1.4
@@ -14412,7 +14412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.4":
+"husky@npm:^7.0.0":
   version: 7.0.4
   resolution: "husky@npm:7.0.4"
   bin:
