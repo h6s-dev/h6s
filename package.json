@@ -2,21 +2,25 @@
   "name": "h6s",
   "description": "Headless Component Development Kit for React",
   "keywords": [
-    "calendar",
     "headless",
+    "react",
+    "cdk",
+    "calendar",
     "fullcalendar",
-    "react-calendar"
+    "react-calendar",
+    "table",
+    "complex-table",
+    "merge table",
+    "react-table"
   ],
-  "license": "MIT",
-  "scripts": {
-    "build": "yarn lerna run build",
-    "lint": "yarn lerna run lint",
-    "test": "yarn lerna run test",
-    "typecheck": "yarn lerna run typecheck",
-    "semantic-release": "semantic-release",
-    "storybook": "start-storybook -p 6006",
-    "precommit": "lint-staged"
+  "author": "JaeYeopHan(Jbee)",
+  "organization": "h6s-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h6s-dev/h6s"
   },
+  "homepage": "https://netlify.com",
+  "license": "MIT",
   "lint-staged": {
     "packages/**/*.ts": [
       "eslint -c .eslintrc '{src}/**/*.{js,jsx,ts,tsx}' --fix",
@@ -33,11 +37,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "author": "JaeYeopHan(Jbee)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/h6s-dev/h6s"
   },
   "engines": {
     "node": ">=14"
@@ -104,5 +103,14 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "yarn lerna run build",
+    "lint": "yarn lerna run lint",
+    "test": "yarn lerna run test",
+    "typecheck": "yarn lerna run typecheck",
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 6006",
+    "precommit": "lint-staged"
+  },
   "packageManager": "yarn@3.1.1"
 }
