@@ -1,8 +1,4 @@
-<div align="center">
-  <img src="./assets/react-calendar.png" width="640px">
-</div>
-
-**Headless** Calendar UI Library
+# h6s means headless
 
 [![GitHub Action Release Status](https://github.com/veccu/react-calendar/workflows/Release/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/release.yml) [![GitHub Action CI Status](https://github.com/veccu/react-calendar/workflows/CI/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/ci.yml) [![GitHub Action E2E Status](https://github.com/veccu/react-calendar/workflows/e2e/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/e2e.yml) [![GitHub Action Sanity Status](https://github.com/veccu/react-calendar/workflows/sanity/badge.svg)](https://github.com/veccu/react-calendar/actions/workflows/sanity.yml)
 

@@ -1,10 +1,15 @@
 {
   "name": "@h6s/calendar",
-  "version": "0.0.0",
-  "main": "cjs/index.js",
+  "version": "0.0.1",
+  "main": "src/index.ts",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
+  "publishConfig": {
+    "main": "cjs/index.js",
+    "types": "dist/index.d.ts",
+    "module": "dist/index.js"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -12,21 +17,18 @@
       "require": "./cjs/index.js"
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "prebuild": "rimraf dist esm",
-    "build": "node ../../scripts/build.js",
-    "semantic-release": "semantic-release",
+    "prepack": "yarn build",
+    "prebuild": "rimraf dist cjs",
+    "build:type": "yarn run -T tsc --emitDeclarationOnly --declaration",
+    "build": "yarn build:type && node ../../scripts/build.js",
     "lint": "yarn run -T eslint '{pages,src}/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
-    "typecheck": "yarn run -T tsc --noEmit",
-    "test": "yarn run -T jest --passWithNoTests",
+    "typecheck": "yarn run -T tsc",
+    "test": "yarn run -T jest --config ../../jest.config.js",
     "test:cov": "yarn test --coverage",
     "test:watch": "yarn test --watch",
-    "test:e2e": "cypress open",
-    "cypress": "cypress run"
+    "semantic-release": "semantic-release"
   },
   "files": [
     "dist",
@@ -35,14 +37,15 @@
   "devDependencies": {
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.2.0",
+    "@storybook/react": "^6.4.9",
     "@testing-library/cypress": "^7.0.6",
     "@testing-library/react-hooks": "^7.0.2",
     "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.4",
     "@types/react": "^17.0.0",
     "cypress": "^7.2.0",
     "date-fns": "^2.16.1",
     "husky": "^4.3.6",
-    "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
