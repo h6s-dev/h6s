@@ -1,0 +1,18 @@
+{
+  "version": "0.0.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "message": "chore(release): %s 배포 [skip ci]",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "publish": {
+      "graphType": "all",
+      "registry": "https://registry.npmjs.org/"
+    }
+  }
+}

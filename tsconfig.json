@@ -1,7 +1,9 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "declaration": true,
     "outDir": "./dist",
+    "jsx": "react-jsx",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
@@ -23,8 +25,6 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
-    "jsx": "react"
-  },
-  "include": ["src"]
+    "target": "esnext"
+  }
 }

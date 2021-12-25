@@ -1,0 +1,78 @@
+{
+  "name": "@h6s/calendar",
+  "version": "2.3.4",
+  "main": "dist/index.js",
+  "module": "esm/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist esm",
+    "build": "node ../../scripts/build.js",
+    "semantic-release": "semantic-release",
+    "lint": "yarn run -T eslint '{pages,src}/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "typecheck": "yarn run -T tsc --noEmit",
+    "test": "yarn run -T jest --passWithNoTests",
+    "test:cov": "yarn test --coverage",
+    "test:watch": "yarn test --watch",
+    "test:e2e": "cypress open",
+    "cypress": "cypress run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "files": [
+    "dist",
+    "esm"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@testing-library/cypress": "^7.0.6",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.0",
+    "cypress": "^7.2.0",
+    "date-fns": "^2.16.1",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.3.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1"
+  },
+  "peerDependencies": {
+    "date-fns": ">= 2",
+    "react": "^16.8.0 || ^17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "packageManager": "yarn@3.1.1"
+}

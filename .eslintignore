@@ -1,1 +1,5 @@
 jest.config.js
+dist
+cjs
+.pnp.cjs
+.pnp.loader.mjs
