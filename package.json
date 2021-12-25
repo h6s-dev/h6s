@@ -28,12 +28,6 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "post-merge": "yarn",
-      "pre-push": "yarn install --immutable && yarn lint && yarn test && yarn typecheck"
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
