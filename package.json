@@ -62,6 +62,7 @@
     "@typescript-eslint/parser": "^5.8.0",
     "@yarnpkg/esbuild-plugin-pnp": "^2.0.0",
     "@yarnpkg/pnpify": "^3.1.1-rc.8",
+    "acorn": "^8.7.0",
     "all-contributors-cli": "^6.20.0",
     "concurrently": "^6.5.1",
     "cypress": "^9.2.0",

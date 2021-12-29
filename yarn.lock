@@ -9225,6 +9225,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"acorn@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "acorn@npm:8.7.0"
+  bin:
+    acorn: bin/acorn
+  checksum: e0f79409d68923fbf1aa6d4166f3eedc47955320d25c89a20cc822e6ba7c48c5963d5bc657bc242d68f7a4ac9faf96eef033e8f73656da6c640d4219935fdfd0
+  languageName: node
+  linkType: hard
+
 "add-stream@npm:^1.0.0":
   version: 1.0.0
   resolution: "add-stream@npm:1.0.0"
@@ -16558,6 +16567,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.8.0
     "@yarnpkg/esbuild-plugin-pnp": ^2.0.0
     "@yarnpkg/pnpify": ^3.1.1-rc.8
+    acorn: ^8.7.0
     all-contributors-cli: ^6.20.0
     concurrently: ^6.5.1
     cypress: ^9.2.0
