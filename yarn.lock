@@ -2884,7 +2884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^2.88.10, @cypress/request@npm:^2.88.5":
+"@cypress/request@npm:^2.88.10":
   version: 2.88.10
   resolution: "@cypress/request@npm:2.88.10"
   dependencies:
@@ -4047,23 +4047,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@h6s/calendar@*, @h6s/calendar@workspace:packages/calendar":
+"@h6s/calendar@workspace:^, @h6s/calendar@workspace:packages/calendar":
   version: 0.0.0-use.local
   resolution: "@h6s/calendar@workspace:packages/calendar"
   dependencies:
     "@storybook/react": ^6.4.9
-    "@testing-library/cypress": ^7.0.6
+    "@testing-library/cypress": ^8.0.2
     "@testing-library/react-hooks": ^7.0.2
     "@types/jest": ^27.0.3
-    "@types/node": ^17.0.4
-    "@types/react": ^17.0.0
-    cypress: ^7.2.0
-    date-fns: ^2.16.1
-    husky: ^4.3.6
-    prettier: ^2.2.1
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    react-test-renderer: ^17.0.1
+    "@types/node": ^17.0.5
+    "@types/react": ^17.0.38
+    cypress: ^9.2.0
+    date-fns: ^2.28.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-test-renderer: ^17.0.2
   peerDependencies:
     date-fns: ">= 2"
     react: ^16.8.0 || ^17.0.0
@@ -6699,18 +6697,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/cypress@npm:^7.0.6":
-  version: 7.0.7
-  resolution: "@testing-library/cypress@npm:7.0.7"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@testing-library/dom": ^7.29.6
-  peerDependencies:
-    cypress: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: e19c24c4d5017f08eb9dfd96bf3400e294a9b3f96395756120d9f016e70905ff047bbb2d45121f3dc79a65dae09a9d7bab540e1efda295c05e44d5e929f13863
-  languageName: node
-  linkType: hard
-
 "@testing-library/cypress@npm:^8.0.2":
   version: 8.0.2
   resolution: "@testing-library/cypress@npm:8.0.2"
@@ -6723,7 +6709,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^7.28.1, @testing-library/dom@npm:^7.29.6":
+"@testing-library/dom@npm:^7.28.1":
   version: 7.31.2
   resolution: "@testing-library/dom@npm:7.31.2"
   dependencies:
@@ -7266,6 +7252,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^17.0.5":
+  version: 17.0.5
+  resolution: "@types/node@npm:17.0.5"
+  checksum: 105535e78722515c26cfdc1b0cbf1b19f55fe53b814e2e90d8b1e653bc63136d4760c7efc102eca111c6d124a291e37d60d761d569a3f4afb3fba05bad5d9ade
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -7411,7 +7404,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^17.0.0, @types/react@npm:^17.0.15, @types/react@npm:^17.0.38":
+"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^17.0.15, @types/react@npm:^17.0.38":
   version: 17.0.38
   resolution: "@types/react@npm:17.0.38"
   dependencies:
@@ -9636,7 +9629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:3.7.2, bluebird@npm:^3.3.5, bluebird@npm:^3.5.5, bluebird@npm:^3.7.1, bluebird@npm:^3.7.2":
+"bluebird@npm:3.7.2, bluebird@npm:^3.3.5, bluebird@npm:^3.5.5, bluebird@npm:^3.7.1":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 869417503c722e7dc54ca46715f70e15f4d9c602a423a02c825570862d12935be59ed9c7ba34a9b31f186c017c23cac6b54e35446f8353059c101da73eac22ef
@@ -10154,7 +10147,7 @@ __metadata:
     "@chakra-ui/react": ^1.7.3
     "@chakra-ui/system": ^1.8.3
     "@chakra-ui/theme-tools": 1.3.1
-    "@h6s/calendar": "*"
+    "@h6s/calendar": "workspace:^"
     "@types/node": ^17.0.4
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -11010,13 +11003,6 @@ __metadata:
     array-ify: ^1.0.0
     dot-prop: ^5.1.0
   checksum: fb71d70632baa1e93283cf9d80f30ac97f003aabee026e0b4426c9716678079ef5fea7519b84d012cbed938c476493866a38a79760564a9e21ae9433e40e6f0d
-  languageName: node
-  linkType: hard
-
-"compare-versions@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "compare-versions@npm:3.6.0"
-  checksum: 7492a50cdaa2c27f5254eee7c4b38856e1c164991bab3d98d7fd067fe4b570d47123ecb92523b78338be86aa221668fd3868bfe8caa5587dc3ebbe1a03d52b5d
   languageName: node
   linkType: hard
 
@@ -11938,57 +11924,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^7.2.0":
-  version: 7.7.0
-  resolution: "cypress@npm:7.7.0"
-  dependencies:
-    "@cypress/request": ^2.88.5
-    "@cypress/xvfb": ^1.2.4
-    "@types/node": ^14.14.31
-    "@types/sinonjs__fake-timers": ^6.0.2
-    "@types/sizzle": ^2.3.2
-    arch: ^2.2.0
-    blob-util: ^2.0.2
-    bluebird: ^3.7.2
-    cachedir: ^2.3.0
-    chalk: ^4.1.0
-    check-more-types: ^2.24.0
-    cli-cursor: ^3.1.0
-    cli-table3: ~0.6.0
-    commander: ^5.1.0
-    common-tags: ^1.8.0
-    dayjs: ^1.10.4
-    debug: ^4.3.2
-    enquirer: ^2.3.6
-    eventemitter2: ^6.4.3
-    execa: 4.1.0
-    executable: ^4.1.1
-    extract-zip: 2.0.1
-    figures: ^3.2.0
-    fs-extra: ^9.1.0
-    getos: ^3.2.1
-    is-ci: ^3.0.0
-    is-installed-globally: ~0.4.0
-    lazy-ass: ^1.6.0
-    listr2: ^3.8.3
-    lodash: ^4.17.21
-    log-symbols: ^4.0.0
-    minimist: ^1.2.5
-    ospath: ^1.2.2
-    pretty-bytes: ^5.6.0
-    ramda: ~0.27.1
-    request-progress: ^3.0.0
-    supports-color: ^8.1.1
-    tmp: ~0.2.1
-    untildify: ^4.0.0
-    url: ^0.11.0
-    yauzl: ^2.10.0
-  bin:
-    cypress: bin/cypress
-  checksum: 8ad8700d448949941801b6ff25549ef93e593b659b1605a936a8021032acb50f1849c9b8f8d1ba7df713de803b8203a1978231ccd0443f2e819bd9cf1b23d562
-  languageName: node
-  linkType: hard
-
 "cypress@npm:^9.2.0":
   version: 9.2.0
   resolution: "cypress@npm:9.2.0"
@@ -12121,6 +12056,13 @@ __metadata:
   version: 2.27.0
   resolution: "date-fns@npm:2.27.0"
   checksum: db62036b3816eb0322c9532b353beac7f660a91e1a55dbd21c14893c621ebb8509f21c66ba287844dabd34dee0207edd54a9537bce6bb7cab9383dedc6b8bc90
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.28.0":
+  version: 2.28.0
+  resolution: "date-fns@npm:2.28.0"
+  checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
   languageName: node
   linkType: hard
 
@@ -16303,27 +16245,6 @@ __metadata:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
-  languageName: node
-  linkType: hard
-
-"husky@npm:^4.3.6":
-  version: 4.3.8
-  resolution: "husky@npm:4.3.8"
-  dependencies:
-    chalk: ^4.0.0
-    ci-info: ^2.0.0
-    compare-versions: ^3.6.0
-    cosmiconfig: ^7.0.0
-    find-versions: ^4.0.0
-    opencollective-postinstall: ^2.0.2
-    pkg-dir: ^5.0.0
-    please-upgrade-node: ^3.2.0
-    slash: ^3.0.0
-    which-pm-runs: ^1.0.0
-  bin:
-    husky-run: bin/run.js
-    husky-upgrade: lib/upgrader/bin.js
-  checksum: ac5e6c72053b2a25532f4137f4b036c9057a4b31980f41c7c2efe05e094d2e06b5c8adc0aafba5c6b70e204ab05d4a916233aec9dffc7a0ccfdd14d4b01c719b
   languageName: node
   linkType: hard
 
@@ -20981,15 +20902,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"opencollective-postinstall@npm:^2.0.2":
-  version: 2.0.3
-  resolution: "opencollective-postinstall@npm:2.0.3"
-  bin:
-    opencollective-postinstall: index.js
-  checksum: 0a68c5cef135e46d11e665d5077398285d1ce5311c948e8327b435791c409744d4a6bb9c55bd6507fb5f2ef34b0ad920565adcdaf974cbdae701aead6f32b396
-  languageName: node
-  linkType: hard
-
 "opener@npm:*, opener@npm:^1.5.2":
   version: 1.5.2
   resolution: "opener@npm:1.5.2"
@@ -21786,15 +21698,6 @@ __metadata:
   version: 1.3.6
   resolution: "platform@npm:1.3.6"
   checksum: 6f472a09c61d418c7e26c1c16d0bdc029549d512dbec6526216a1e59ec68100d07007d0097dcba69dddad883d6f2a83361b4bdfe0094a3d9a2af24158643d85e
-  languageName: node
-  linkType: hard
-
-"please-upgrade-node@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "please-upgrade-node@npm:3.2.0"
-  dependencies:
-    semver-compare: ^1.0.0
-  checksum: d87c41581a2a022fbe25965a97006238cd9b8cbbf49b39f78d262548149a9d30bd2bdf35fec3d810e0001e630cd46ef13c7e19c389dea8de7e64db271a2381bb
   languageName: node
   linkType: hard
 
@@ -22928,13 +22831,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:~0.27.1":
-  version: 0.27.1
-  resolution: "ramda@npm:0.27.1"
-  checksum: 31a0c0ef739b2525d7615f84cbb5d3cb89ee0c795469b711f729ea1d8df0dccc3cd75d3717a1e9742d42315ce86435680b7c87743eb7618111c60c144a5b8059
-  languageName: node
-  linkType: hard
-
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -23555,7 +23451,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-test-renderer@npm:^17.0.1, react-test-renderer@npm:^17.0.2":
+"react-test-renderer@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-test-renderer@npm:17.0.2"
   dependencies:
@@ -24701,13 +24597,6 @@ __metadata:
   bin:
     semantic-release: bin/semantic-release.js
   checksum: e99634d2fd392d007cd83cc28318cd4b0781825b550e75486676941b8f67a32c1b907c53de2761440b38ead220629cc3778c22373aacce4ee291dba43971b0d6
-  languageName: node
-  linkType: hard
-
-"semver-compare@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "semver-compare@npm:1.0.0"
-  checksum: dd1d7e2909744cf2cf71864ac718efc990297f9de2913b68e41a214319e70174b1d1793ac16e31183b128c2b9812541300cb324db8168e6cf6b570703b171c68
   languageName: node
   linkType: hard
 
@@ -28227,13 +28116,6 @@ __metadata:
   version: 2.0.0
   resolution: "which-module@npm:2.0.0"
   checksum: 809f7fd3dfcb2cdbe0180b60d68100c88785084f8f9492b0998c051d7a8efe56784492609d3f09ac161635b78ea29219eb1418a98c15ce87d085bce905705c9c
-  languageName: node
-  linkType: hard
-
-"which-pm-runs@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "which-pm-runs@npm:1.0.0"
-  checksum: 30cf7aee31f264558070e92414316c169367bb2b84a0a32777d30392fea0892fcf9955b81c3fe7f52165ae5a33f0acfd3bc0916416cb07e6d414c90255c228ca
   languageName: node
   linkType: hard
 
