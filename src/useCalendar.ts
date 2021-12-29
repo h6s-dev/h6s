@@ -23,6 +23,10 @@ export interface UseCalendarOptions {
   defaultViewType?: CalendarViewType
 }
 
+/**
+ * @deprecated This package will be replaced with @h6s/calendar
+ * @see https://github.com/h6s-dev/h6s
+ */
 export default function useCalendar({
   defaultDate,
   defaultWeekStart = 0,
