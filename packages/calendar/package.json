@@ -22,7 +22,7 @@
     "prebuild": "rimraf dist cjs",
     "build:type": "yarn run -T tsc --emitDeclarationOnly --declaration",
     "build": "yarn build:type && node ../../scripts/build.js",
-    "lint": "yarn run -T eslint '{pages,src}/**/*.{js,jsx,ts,tsx}'",
+    "lint": "yarn run -T eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "typecheck": "yarn run -T tsc",
     "test": "yarn run -T jest --config ../../jest.config.js",

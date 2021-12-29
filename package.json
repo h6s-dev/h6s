@@ -95,6 +95,7 @@
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
     "semantic-release": "^18.0.1",
+    "semantic-release-monorepo": "^7.0.5",
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
@@ -105,12 +106,14 @@
     "website"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -p -t run build",
-    "lint": "yarn workspaces foreach -p -t run lint",
-    "test": "yarn workspaces foreach -p -t run test",
-    "typecheck": "yarn workspaces foreach -p -t run typecheck",
-    "semantic-release": "semantic-release",
+    "build": "yarn workspaces foreach -pt --no-private run build",
+    "lint": "yarn workspaces foreach -pt --no-private run lint",
+    "test": "yarn workspaces foreach -pt --no-private run test",
+    "typecheck": "yarn workspaces foreach -pt --no-private run typecheck",
+    "changed": "yarn workspaces foreach -pt --no-private --since run publish",
+    "semantic-release": "yarn workspaces foreach --no-private run semantic-release",
     "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook",
     "precommit": "lint-staged",
     "postinstall": "husky install"
   },
