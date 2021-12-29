@@ -32,11 +32,9 @@
   },
   "files": [
     "dist",
-    "esm"
+    "cjs"
   ],
   "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.2.0",
     "@storybook/react": "^6.4.9",
     "@testing-library/cypress": "^7.0.6",
     "@testing-library/react-hooks": "^7.0.2",
