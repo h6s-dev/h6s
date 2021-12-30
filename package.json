@@ -115,7 +115,8 @@
     "semantic-release": "yarn workspaces foreach --no-private --since run semantic-release",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "build:website": "cd website && yarn build",
+    "build:website": "yarn workspaces foreach --include 'website' run build",
+    "build:examples": "yarn workspaces foreach --include '@h6s-examples/*' run build",
     "precommit": "lint-staged",
     "postinstall": "husky install"
   },
