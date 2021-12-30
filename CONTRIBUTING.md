@@ -2,7 +2,7 @@
 
 ## Reporting Issues
 
-If you have found what you think is a bug, please [file an issue](https://github.com/veccu/react-calendar/issues/new) `Bug_Report` type.
+If you have found what you think is a bug, please [file an issue](https://github.com/h6s-dev/h6s/issues/new) `Bug_Report` type.
 
 ## Suggesting new features
 
@@ -14,15 +14,15 @@ If you have been assigned to fix an issue or develop a new feature, please follo
 
 - Fork this repository
 - Install dependencies by running `$ yarn`
-- Implement your changes and tests to files in the `src/` directory and corresponding test files
-- To run [local project in examples](https://github.com/veccu/react-calendar/blob/main/examples/local), follow their individual directions. Usually this is just `$ yarn && yarn start`.
+- Implement your changes and tests to files in the `packages/{package}` directory and corresponding test files
+- To run [local project in examples](https://github.com/h6s-dev/h6s/blob/main/examples/local), follow their individual directions. Usually this is just `$ yarn && yarn start`.
 - Document your changes in the appropriate doc page
 - Git stage your required changes and commit (see below commit guidelines)
 - Submit PR for review
 
 ## Commit message conventions
 
-`react-calendar` is using [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
+`h6s` is using [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
 
 We have very precise rules over how our git commit messages can be formatted. This leads to **more readable messages** that are easy to follow when looking through the **project history**.
 

@@ -1,5 +1,5 @@
 {
   "packages": ["./"],
-  "sandboxes": ["/examples/basic"],
+  "sandboxes": ["/examples/calendar"],
   "node": "14"
 }

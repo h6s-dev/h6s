@@ -20,9 +20,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.0.0'
+          node-version: 14
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
+      - name: Check Type
+        run: yarn typecheck
       - name: Check Lint
         run: yarn lint
       - name: Run Test

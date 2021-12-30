@@ -1,0 +1,74 @@
+.heroBanner {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .heroImage {
+    display: none;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gradientSlates {
+  background-image: linear-gradient(60deg, var(--ifm-color-primary-light), var(--ifm-color-primary-lightest));
+  background-clip: text;
+  color: transparent;
+}
+
+.gradientRedOrange {
+  background-image: linear-gradient(60deg, #E21143, #FFB03A);
+  background-clip: text;
+  color: transparent;
+}
+
+.gradientOrangeRed {
+  background-image: linear-gradient(60deg, #FFB03A, #E21143);
+  background-clip: text;
+  color: transparent;
+}
+
+.animationFlutter {
+  display: inline-block;
+  transform-origin: center;
+  animation: flutter 2s linear infinite;
+}
+
+@keyframes flutter {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-2deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  65% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

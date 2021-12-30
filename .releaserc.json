@@ -1,10 +1,11 @@
 {
+  "extends": "semantic-release-monorepo",
   "branches": [
     {"name": "main"},
     {"name": "alpha", "prerelease": true},
     {"name": "beta", "prerelease": true}
   ],
-  "repositoryUrl": "https://github.com/veccu/react-calendar",
+  "repositoryUrl": "https://github.com/h6s-dev/h6s",
   "debug": "true",
   "plugins": [
     "@semantic-release/commit-analyzer",

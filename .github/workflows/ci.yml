@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: 14
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
+      - name: Check Type
+        run: yarn typecheck
       - name: Check Lint
         run: yarn lint
       - name: Run Test
         run: yarn test
-      - name: Build Package
-        run: yarn build
