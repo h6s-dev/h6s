@@ -1,4 +1,4 @@
-![logo](./assets/logo.png)
+<img width="200" src="./assets/logo.png" alt=">
 
 # h6s
 
