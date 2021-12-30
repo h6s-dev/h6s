@@ -4,9 +4,21 @@
   overflow: hidden;
 }
 
+.heroImage {
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+  }
+
+  .heroImage {
+    display: none;
   }
 }
 
