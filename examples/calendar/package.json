@@ -1,5 +1,5 @@
 {
-  "name": "calendar-example",
+  "name": "@h6s-examples/calendar",
   "private": true,
   "version": "1.0.0",
   "scripts": {

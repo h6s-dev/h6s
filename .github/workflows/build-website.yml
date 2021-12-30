@@ -1,9 +1,9 @@
-name: CI
+name: Website
 
 on: [pull_request]
 
 jobs:
-  integration:
+  build:
     runs-on: ubuntu-latest
     name: ci
     steps:
@@ -17,11 +17,5 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: yarn install --immutable
-      - name: Check Type
-        run: yarn typecheck
-      - name: Check Lint
-        run: yarn lint
-      - name: Run Test
-        run: yarn test
-      - name: Run Build
-        run: yarn build
+      - name: Build
+        run: yarn build:website

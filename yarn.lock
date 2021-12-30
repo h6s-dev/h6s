@@ -4047,6 +4047,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@h6s-examples/calendar@workspace:examples/calendar":
+  version: 0.0.0-use.local
+  resolution: "@h6s-examples/calendar@workspace:examples/calendar"
+  dependencies:
+    "@babel/preset-env": ^7.16.5
+    "@chakra-ui/icons": ^1.1.1
+    "@chakra-ui/react": ^1.7.3
+    "@chakra-ui/system": ^1.8.3
+    "@chakra-ui/theme-tools": 1.3.1
+    "@h6s/calendar": "workspace:^"
+    "@types/node": ^17.0.4
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    babel-loader: ^8.2.3
+    date-fns: ^2.27.0
+    next: 12.0.4
+    next-transpile-modules: ^9.0.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    typescript: 4.5.4
+  languageName: unknown
+  linkType: soft
+
 "@h6s/calendar@workspace:^, @h6s/calendar@workspace:packages/calendar":
   version: 0.0.0-use.local
   resolution: "@h6s/calendar@workspace:packages/calendar"
@@ -10137,29 +10160,6 @@ __metadata:
   checksum: ec90cb0f2e6336e266aa748dbadf3da9e0b20e843e43f1591acab7a3f1451337dc2f26cb9dd833ae8cfefeffeeb43ef5b5ff62782a685f4e3c2305dd98482fcb
   languageName: node
   linkType: hard
-
-"calendar-example@workspace:examples/calendar":
-  version: 0.0.0-use.local
-  resolution: "calendar-example@workspace:examples/calendar"
-  dependencies:
-    "@babel/preset-env": ^7.16.5
-    "@chakra-ui/icons": ^1.1.1
-    "@chakra-ui/react": ^1.7.3
-    "@chakra-ui/system": ^1.8.3
-    "@chakra-ui/theme-tools": 1.3.1
-    "@h6s/calendar": "workspace:^"
-    "@types/node": ^17.0.4
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    babel-loader: ^8.2.3
-    date-fns: ^2.27.0
-    next: 12.0.4
-    next-transpile-modules: ^9.0.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    typescript: 4.5.4
-  languageName: unknown
-  linkType: soft
 
 "call-bind@npm:^1.0.0, call-bind@npm:^1.0.2":
   version: 1.0.2

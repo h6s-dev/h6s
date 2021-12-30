@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks'
 
 import { DecemberFirstWeekData, DecemberMonthMatrix } from './mocks/mockDate'
 import CalendarViewType from './models/CalendarViewType'
-import useCalendar from './useCalendar'
+import { useCalendar } from './useCalendar'
 import resetTimeOfDate from './utils/resetTimeOfDate'
 
 describe('useCalendar hooks test', () => {
