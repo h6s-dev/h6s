@@ -15,7 +15,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
-import useCalendar from '@h6s/calendar'
+import { useCalendar } from '@h6s/calendar'
 import { version } from '@h6s/calendar/package.json'
 import { format } from 'date-fns'
 import locale from 'date-fns/locale/en-US'

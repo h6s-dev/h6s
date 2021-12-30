@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
 
-import useCalendar from '../useCalendar'
+import { useCalendar } from '../useCalendar'
 
 export function Calendar() {
   const { cursorDate, headers, body, navigation, view } = useCalendar()

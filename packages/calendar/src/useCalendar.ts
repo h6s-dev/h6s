@@ -23,7 +23,7 @@ export interface UseCalendarOptions {
   defaultViewType?: CalendarViewType
 }
 
-export default function useCalendar({
+export function useCalendar({
   defaultDate,
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
