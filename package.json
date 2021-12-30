@@ -1,7 +1,7 @@
 {
   "name": "h6s",
   "private": true,
-  "description": "Headless Component Development Kit for React",
+  "description": "Serve headless component development kit for React production apps",
   "keywords": [
     "headless",
     "react",
@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/h6s-dev/h6s"
   },
-  "homepage": "https://netlify.com",
+  "homepage": "https://h6s.dev",
   "license": "MIT",
   "lint-staged": {
     "packages/**/*.ts": [

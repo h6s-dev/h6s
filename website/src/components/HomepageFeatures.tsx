@@ -3,66 +3,45 @@ import React from 'react'
 
 import styles from './HomepageFeatures.module.css'
 
-type FeatureItem = {
-  title: string;
-  image: string;
-  description: JSX.Element;
-};
-
-const FeatureList: FeatureItem[] = [
+const features = [
   {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    title: 'Integrate Anything',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        You don't need to extend or customize styles. You don't care what CSS library or Design system framework you're using. Because you don't have to worry about it because you can just integrate it and use it!
       </>
     ),
   },
   {
-    title: 'Declarative',
-    image: '/img/undraw_docusaurus_tree.svg',
+    title: 'Simplify Complexity',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        No matter how complex the user interface is, it can be easily implemented with a simplified interface. You don't care about complex internal implementations, just use declarative interfaces
       </>
     ),
   },
   {
-    title: 'Reuse Everywhere',
-    image: '/img/undraw_docusaurus_react.svg',
+    title: 'Lightweight Code',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        You can use only the package you need for each UI from h6s. Of course, you don't need to worry about bundle size because unused code is tree shaked.
       </>
     ),
   },
 ]
 
-function Feature({ title, image, description }: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <img className={styles.featureSvg} alt={title} src={image} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-    </div>
-  )
-}
-
-export default function HomepageFeatures(): JSX.Element {
+export function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+          {features.map(({ title, description }) => (
+            <div key={title} className={clsx('col col--4')}>
+              <div className="padding-horiz--md">
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
