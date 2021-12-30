@@ -25,8 +25,6 @@ import { Container } from '../components/Container'
 export default function BasicExample() {
   const { cursorDate, headers, body, navigation, view } = useCalendar()
 
-  const yyMM = format(cursorDate, 'yy-MM')
-
   return (
     <Container height="100vh">
       <Stack
@@ -46,10 +44,10 @@ export default function BasicExample() {
           v{version}
         </Badge>
         <Heading as="h1" size="xl">
-          react-calendar-basic-example
+          @h6s/calendar
         </Heading>
         <Text color="gray.500">
-          Headless Calendar UI Library Example with Charkra UI
+          Build Calendar UI with <a href="https://chakra-ui.com/">chakra-ui</a>
         </Text>
       </Stack>
 
@@ -133,6 +131,7 @@ export default function BasicExample() {
                     isCurrentDate,
                     isCurrentMonth,
                     isWeekend,
+                    value,
                   } = day
 
                   return (
@@ -144,26 +143,12 @@ export default function BasicExample() {
                       }
                     >
                       {isCurrentDate ? (
-                        <Text fontWeight="bold" color="teal.500">
-                          <time
-                            dateTime={`${yyMM}-${String(date).padStart(
-                              2,
-                              '0',
-                            )}`}
-                          >
-                            {date}
-                          </time>
+                        <Text as="time" fontWeight="bold" color="teal.500" dateTime={format(value, 'yy-MM-dd')}>
+                          {date}
                         </Text>
                       ) : (
-                        <Text color={isWeekend ? 'red.500' : 'black.500'}>
-                          <time
-                            dateTime={`${yyMM}-${String(date).padStart(
-                              2,
-                              '0',
-                            )}`}
-                          >
-                            {date}
-                          </time>
+                        <Text as="time" color={isWeekend ? 'red.500' : 'black.500'} dateTime={format(value, 'yy-MM-dd')}>
+                          {date}
                         </Text>
                       )}
                     </Td>
