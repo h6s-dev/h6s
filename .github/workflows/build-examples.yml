@@ -1,14 +1,14 @@
-name: Build Examples
+name: Examples
 
 on: [pull_request]
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     name: ci
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Setup Node.js
