@@ -1,0 +1,4 @@
+[build]
+  base = "/examples/calendar/"
+  publish = "dist/"
+  command = "yarn build:static"
