@@ -62,8 +62,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Get Started',
                 to: '/docs/intro',
+              },
+              {
+                label: 'Storybook',
+                href: 'https://storybook.h6s.dev/',
               },
             ],
           },
@@ -72,7 +76,24 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: packageJson.repository.url,
+              },
+              {
+                label: 'NPM',
+                href: 'https://www.npmjs.com/org/h6s',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/JbeeLjyhanll',
+              },
+            ],
+          },
+          {
+            title: 'License',
+            items: [
+              {
+                label: 'MIT',
+                href: 'https://github.com/h6s-dev/h6s/blob/main/LICENSE',
               },
             ],
           },

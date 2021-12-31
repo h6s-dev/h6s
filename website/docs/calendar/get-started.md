@@ -26,17 +26,17 @@ npm install --save @h6s/calendar
 `useCalendar` hooks are the most important functions and everything in Calendar. These hooks return almost everything you need to construct a calendar.
 
 ```ts
-import useCalendar from '@h6s/calendar'
+import { useCalendar } from '@h6s/calendar'
 
 const { headers, body, view } = useCalendar()
 ```
 
 ## Build UI with anything
 
-You can use anything UI frameworks (like [Charkra UI](https://chakra-ui.com/), [MUI](https://mui.com/), etc ...)
+You can use anything UI frameworks (like [Chakra UI](https://chakra-ui.com/), [MUI](https://mui.com/), etc ...)
 
 ```tsx
-import useCalendar from '@h6s/calendar'
+import { useCalendar } from '@h6s/calendar'
 
 export default function Calendar() {
   const { headers, body, view } = useCalendar()
