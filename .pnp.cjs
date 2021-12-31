@@ -8253,6 +8253,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:17.0.11"],
             ["babel-loader", "virtual:4b9811fe443c24ffd9a2699295730b6a465229ba303d5d6569f63aaeaf5b907022ae768d0bc9644c7cec13796e922b98df2231a308ee1e88ddf11af6a2e1d774#npm:8.2.3"],
             ["date-fns", "npm:2.27.0"],
+            ["eslint", "npm:8.5.0"],
             ["next", "virtual:4b9811fe443c24ffd9a2699295730b6a465229ba303d5d6569f63aaeaf5b907022ae768d0bc9644c7cec13796e922b98df2231a308ee1e88ddf11af6a2e1d774#npm:12.0.4"],
             ["next-transpile-modules", "npm:9.0.0"],
             ["react", "npm:17.0.2"],

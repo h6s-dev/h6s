@@ -108,16 +108,15 @@
     "website"
   ],
   "scripts": {
-    "lint": "yarn workspaces foreach -pt --no-private run lint",
-    "test": "yarn workspaces foreach -pt --no-private run test",
-    "typecheck": "yarn workspaces foreach -pt --no-private run typecheck",
-    "semantic-release": "yarn workspaces foreach --no-private --since run semantic-release",
     "storybook": "start-storybook -p 6006",
-    "build": "yarn workspaces foreach -ptR --no-private run build",
+    "lint": "yarn workspaces foreach -pt --from '@h6s/*' run lint",
+    "test": "yarn workspaces foreach -pt --from '@h6s/*' run test",
+    "typecheck": "yarn workspaces foreach -pt --from '@h6s/*' run typecheck",
+    "semantic-release": "yarn workspaces foreach --from '@h6s/*' run semantic-release",
+    "build": "yarn workspaces foreach -ptR --from '@h6s/*' run build",
     "build:storybook": "build-storybook",
     "build:website": "yarn workspaces foreach --include 'website' run build",
     "build:examples": "yarn workspaces foreach -ptR --from '@h6s-examples/*' run build",
-    "precommit": "lint-staged",
     "postinstall": "husky install"
   },
   "packageManager": "yarn@3.1.1"
