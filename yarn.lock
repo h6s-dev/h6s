@@ -4073,7 +4073,7 @@ __metadata:
     "@chakra-ui/react": ^1.7.3
     "@chakra-ui/system": ^1.8.3
     "@chakra-ui/theme-tools": 1.3.1
-    "@h6s/calendar": "workspace:^"
+    "@h6s/calendar": latest
     "@types/node": ^17.0.4
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4088,7 +4088,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@h6s/calendar@workspace:^, @h6s/calendar@workspace:packages/calendar":
+"@h6s/calendar@npm:latest":
+  version: 1.0.0
+  resolution: "@h6s/calendar@npm:1.0.0"
+  peerDependencies:
+    date-fns: ">= 2"
+    react: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 1d0bd3744f76397427321ed8ed948bbe4d9b878b1864ad2573e557a64ee9ac40edadeba7e6e5ff9f13d1af80fdeb834d8df91faef6c974b1b8a3803b41dd2289
+  languageName: node
+  linkType: hard
+
+"@h6s/calendar@workspace:packages/calendar":
   version: 0.0.0-use.local
   resolution: "@h6s/calendar@workspace:packages/calendar"
   dependencies:
