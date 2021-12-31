@@ -23,10 +23,6 @@
     "test:watch": "yarn test --watch",
     "semantic-release": "semantic-release"
   },
-  "files": [
-    "dist",
-    "cjs"
-  ],
   "devDependencies": {
     "@storybook/react": "^6.4.9",
     "@testing-library/cypress": "^8.0.2",
