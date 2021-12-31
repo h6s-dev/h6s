@@ -1,2 +1,4 @@
-[[plugins]]
-package = "@netlify/plugin-nextjs"
+[build]
+  base = "/"
+  publish = "dist/"
+  command = "yarn build:static"
