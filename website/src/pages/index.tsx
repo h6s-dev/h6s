@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <Layout
-      title="Home"
+      title="Hello world"
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
