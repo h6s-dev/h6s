@@ -32,11 +32,11 @@ export function HomepageHeader() {
               to="/docs/intro">
               Get Started
             </Link>
-            <Link
+            <a
               className="button button--primary button--outline button--lg"
-              to="/docs/intro">
+              href="https://github.com/h6s-dev/h6s" target="_blank" rel="noreferrer">
               GitHub
-            </Link>
+            </a>
           </div>
         </div>
         <img className={styles.heroImage} src="/img/assets/logo@3x.png" alt="" width="320" />
