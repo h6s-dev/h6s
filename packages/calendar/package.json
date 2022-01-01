@@ -6,6 +6,7 @@
   "typings": "dist/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
+    "access": "public",
     "main": "cjs/index.js",
     "types": "dist/index.d.ts",
     "module": "dist/index.js"
