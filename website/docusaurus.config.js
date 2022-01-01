@@ -105,6 +105,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      image: 'img/assets/og.jpg',
     }),
 }
 
