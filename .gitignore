@@ -13,3 +13,4 @@ temp
 
 lerna-debug.log
 website/.yarn/.cache/**/*
+playwright-report
