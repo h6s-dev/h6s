@@ -27,6 +27,15 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         blog: false,
+        googleAnalytics: {
+          trackingID: 'G-T2K6NNP9S3',
+          anonymizeIP: true,
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
+        },
       }),
     ],
   ],
@@ -45,7 +54,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Documention',
+            label: 'Docs',
           },
           {
             href: packageJson.repository.url,
