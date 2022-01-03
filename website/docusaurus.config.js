@@ -54,7 +54,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Documention',
+            label: 'Docs',
           },
           {
             href: packageJson.repository.url,
