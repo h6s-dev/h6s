@@ -31,6 +31,11 @@ const config = {
           trackingID: 'G-T2K6NNP9S3',
           anonymizeIP: true,
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
+        },
       }),
     ],
   ],
