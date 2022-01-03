@@ -67,7 +67,7 @@
     "@yarnpkg/pnpify": "3.1.1-rc.9",
     "acorn": "8.7.0",
     "all-contributors-cli": "6.20.0",
-    "concurrently": "6.5.1",
+    "concurrently": "7.0.0",
     "cypress": "9.2.0",
     "cz-conventional-changelog": "3.3.0",
     "date-fns": "2.28.0",

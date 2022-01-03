@@ -80,7 +80,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],
             ["acorn", "npm:8.7.0"],
             ["all-contributors-cli", "npm:6.20.0"],
-            ["concurrently", "npm:6.5.1"],
+            ["concurrently", "npm:7.0.0"],
             ["cypress", "npm:9.2.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["date-fns", "npm:2.28.0"],
@@ -18430,10 +18430,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["concurrently", [
-        ["npm:6.5.1", {
-          "packageLocation": "./.yarn/cache/concurrently-npm-6.5.1-1c75a74f6e-3f4d89b464.zip/node_modules/concurrently/",
+        ["npm:7.0.0", {
+          "packageLocation": "./.yarn/cache/concurrently-npm-7.0.0-c402b003bc-1be78f24bf.zip/node_modules/concurrently/",
           "packageDependencies": [
-            ["concurrently", "npm:6.5.1"],
+            ["concurrently", "npm:7.0.0"],
             ["chalk", "npm:4.1.2"],
             ["date-fns", "npm:2.27.0"],
             ["lodash", "npm:4.17.21"],
@@ -24001,7 +24001,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],
             ["acorn", "npm:8.7.0"],
             ["all-contributors-cli", "npm:6.20.0"],
-            ["concurrently", "npm:6.5.1"],
+            ["concurrently", "npm:7.0.0"],
             ["cypress", "npm:9.2.0"],
             ["cz-conventional-changelog", "npm:3.3.0"],
             ["date-fns", "npm:2.28.0"],
