@@ -89,7 +89,7 @@
     "eslint-plugin-testing-library": "5.0.1",
     "framer-motion": "5.5.5",
     "husky": "7.0.4",
-    "jest": "27.4.5",
+    "jest": "27.4.7",
     "lint-staged": "12.1.4",
     "prettier": "2.5.1",
     "react": "17.0.2",
