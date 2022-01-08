@@ -108,7 +108,7 @@
     "website"
   ],
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --quiet",
     "lint": "yarn workspaces foreach -pt --from '@h6s/*' run lint",
     "test": "yarn workspaces foreach -pt --from '@h6s/*' run test",
     "typecheck": "yarn workspaces foreach -pt --from '@h6s/*' run typecheck",
