@@ -1,10 +1,11 @@
 import { devices, PlaywrightTestConfig } from '@playwright/test'
+import path from 'path'
 
 /**
  * https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './playwright',
+  testDir: './.e2e',
   testMatch: '*.e2e.ts',
 
   timeout: 30 * 1000,
@@ -53,9 +54,10 @@ const config: PlaywrightTestConfig = {
   ],
 
   /* TODO: Run local dev server before starting the tests */
-  // webServer: {
-  //   command: 'yarn start',
-  //   port: 3000,
-  // },
+  webServer: {
+    command: 'yarn storybook',
+    port: 6006,
+    cwd: path.join(__dirname, '../../'),
+  },
 }
 export default config

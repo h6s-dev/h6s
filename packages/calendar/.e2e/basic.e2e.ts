@@ -8,7 +8,7 @@ import {
 } from 'date-fns'
 
 const BASIC_EXAMPLES_URL =
-  'https://calendar.h6s.dev/'
+  'http://localhost:6006/iframe.html?id=calendar-with-table-element--default&args=&viewMode=story'
 
 const SELECTOR = {
   CURSOR_DATE: 'data-testid=cursor-date',
