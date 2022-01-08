@@ -12,10 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           persist-credentials: false
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Install Playwright
+        run: npx playwright install-deps
+      - name: Run CI
+        working-directory: packages/calendar
+        run: yarn run test:playwright
       - name: Slack Notify Sanity
         if: success()
         id: react-calendar-sanity-notification-success
