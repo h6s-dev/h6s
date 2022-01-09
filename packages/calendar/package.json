@@ -26,14 +26,14 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@playwright/test": "^1.17.1",
+    "@playwright/test": "1.17.1",
     "@storybook/react": "6.4.9",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "27.4.0",
     "@types/node": "17.0.5",
     "@types/react": "17.0.38",
     "date-fns": "2.28.0",
-    "playwright": "^1.17.1",
+    "playwright": "1.17.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-test-renderer": "17.0.2"
