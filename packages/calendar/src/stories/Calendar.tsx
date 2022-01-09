@@ -10,22 +10,22 @@ export function Calendar() {
       <caption>
         <nav>
           <div>
-            <button onClick={view.showMonthView}>M</button>
-            <button onClick={view.showWeekView}>W</button>
-            <button onClick={view.showDayView}>D</button>
+            <button onClick={view.showMonthView} aria-label="button for changing view type to month">M</button>
+            <button onClick={view.showWeekView} aria-label="button for changing view type to week">W</button>
+            <button onClick={view.showDayView} aria-label="button for changing view type to day">D</button>
           </div>
-          <p>{format(cursorDate, 'yyyy. MM')}</p>
+          <p data-testid="cursor-date">{format(cursorDate, 'yyyy. MM')}</p>
           <div>
-            <button onClick={navigation.toPrev}>{'>'}</button>
-            <button onClick={navigation.setToday}>TODAY</button>
-            <button onClick={navigation.toNext}>{'>'}</button>
+            <button aria-label="button for navigating to prev calendar" onClick={navigation.toPrev}>{'>'}</button>
+            <button aria-label="button for navigating to today calendar" onClick={navigation.setToday}>TODAY</button>
+            <button aria-label="button for navigating to next calendar" onClick={navigation.toNext}>{'>'}</button>
           </div>
         </nav>
       </caption>
       <thead>
         <tr>
           {headers.weekDays.map(({ key, value }) => {
-            return <th key={key}>{format(value, 'E')}</th>
+            return <th key={key} data-testid="calendar-weekends">{format(value, 'E')}</th>
           })}
         </tr>
       </thead>
@@ -34,17 +34,17 @@ export function Calendar() {
           const { key, value: days } = week
 
           return (
-            <tr key={key}>
+            <tr key={key} data-testid="calendar-weeks">
               {days.map((day) => {
                 const { key, date, isCurrentDate, isCurrentMonth } = day
 
                 return (
                   <td style={{ opacity: isCurrentMonth ? 1 : 0.2 }} key={key}>
-                    {isCurrentDate ? (
-                      <p style={{ color: 'blue' }}>{date}</p>
-                    ) : (
-                      date
-                    )}
+                    <p 
+                      style={{ color:  isCurrentDate ? 'blue' : 'black' }}
+                      data-testid={isCurrentDate ? 'calendar-cell--today' : 'calendar-cell'}>
+                      {date}
+                    </p>
                   </td>
                 )
               })}
