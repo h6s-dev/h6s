@@ -2,8 +2,6 @@
   "name": "@h6s/calendar",
   "version": "1.0.1",
   "main": "src/index.ts",
-  "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
     "access": "public",
