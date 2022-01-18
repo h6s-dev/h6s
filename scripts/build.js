@@ -26,11 +26,11 @@ Promise.all([
   build({
     ...config,
     format: 'esm',
-    outdir: 'dist',
+    outdir: 'esm',
   }),
   build({
     ...config,
     format: 'cjs',
-    outdir: 'cjs',
+    outdir: 'dist',
   }),
 ]).catch(() => process.exit(1))
