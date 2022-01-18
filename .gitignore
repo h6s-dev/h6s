@@ -7,7 +7,6 @@
 
 dist
 cjs
-esm
 storybook-static
 node_modules
 temp

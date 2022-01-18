@@ -1,12 +1,13 @@
 {
   "name": "@h6s/calendar",
-  "version": "1.0.3-alpha.3",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "esm/index.js",
+  "version": "1.0.2",
+  "main": "src/index.ts",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "cjs/index.js",
+    "types": "dist/index.d.ts",
+    "module": "dist/index.js"
   },
   "scripts": {
     "prepack": "yarn build",
