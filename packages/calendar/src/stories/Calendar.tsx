@@ -16,7 +16,7 @@ export function Calendar() {
           </div>
           <p data-testid="cursor-date">{format(cursorDate, 'yyyy. MM')}</p>
           <div>
-            <button aria-label="button for navigating to prev calendar" onClick={navigation.toPrev}>{'>'}</button>
+            <button aria-label="button for navigating to prev calendar" onClick={navigation.toPrev}>{'<'}</button>
             <button aria-label="button for navigating to today calendar" onClick={navigation.setToday}>TODAY</button>
             <button aria-label="button for navigating to next calendar" onClick={navigation.toNext}>{'>'}</button>
           </div>
