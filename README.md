@@ -23,7 +23,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://velog.io/@bigsaigon333"><img src="https://avatars.githubusercontent.com/u/31029000?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Danny Kim</b></sub></a><br /><a href="#maintenance-bigsaigon333" title="Maintenance">🚧</a></td>
     <td align="center"><a href="http://gladys.codes"><img src="https://avatars.githubusercontent.com/u/40550185?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gladys Álvarez</b></sub></a><br /><a href="https://github.com/veccu/react-calendar/commits?author=gladyscodes" title="Documentation">📖</a></td>
     <td align="center"><a href="https://techoi.github.io"><img src="https://avatars.githubusercontent.com/u/47510626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeemin Choi</b></sub></a><br /><a href="https://github.com/veccu/react-calendar/issues?q=author%3Atechoi" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/manudeli"><img src="https://avatars.githubusercontent.com/u/61593290?v=4=100" width="100px;" alt=""/><br /><sub><b>Jonghyeon Ko</b></sub></a><br /><a href="https://github.com/h6s-dev/h6s/issues?q=author%3Amanudeli" title="Content">🖋</a></td>
   </tr>
 </table>
 
