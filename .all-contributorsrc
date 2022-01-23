@@ -1,6 +1,6 @@
 {
-  "projectName": "react-calendar",
-  "projectOwner": "veccu",
+  "projectName": "h6s",
+  "projectOwner": "h6s-dev",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -65,6 +65,15 @@
       "profile": "https://techoi.github.io",
       "contributions": [
         "bug"
+      ]
+    },
+    {
+      "login": "manudeli",
+      "name": "Jonghyeon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61593290?v=4",
+      "profile": "http://bit.ly/jonghyeon",
+      "contributions": [
+        "doc"
       ]
     }
   ],
