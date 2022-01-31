@@ -1,5 +1,5 @@
 [build]
-  base = "/examples/calendar/"
+  base = "/examples/react/"
   publish = "dist/"
   command = "yarn build:static"
 [build.environment]

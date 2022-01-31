@@ -35,7 +35,7 @@ export default function Calendar() {
 ```
 
 <iframe
-  src="https://calendar.h6s.dev/"
+  src="https://react-examples.h6s.dev"
   title="@h6s/calendar example"
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
