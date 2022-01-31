@@ -31,6 +31,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/calendar"
       },
       {
+        "name": "@h6s/table",
+        "reference": "workspace:packages/table"
+      },
+      {
         "name": "website",
         "reference": "workspace:website"
       }
@@ -40,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@h6s-examples/react", ["workspace:examples/react"]],
       ["@h6s/calendar", ["workspace:packages/calendar"]],
+      ["@h6s/table", ["workspace:packages/table"]],
       ["h6s", ["workspace:."]],
       ["website", ["workspace:website"]]
     ],
@@ -9193,6 +9198,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:17.0.5"],
             ["@types/react", "npm:17.0.38"],
             ["date-fns", "npm:2.28.0"],
+            ["playwright", "npm:1.17.1"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:17.0.2"],
+            ["react-test-renderer", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:17.0.2"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@h6s/table", [
+        ["workspace:packages/table", {
+          "packageLocation": "./packages/table/",
+          "packageDependencies": [
+            ["@h6s/table", "workspace:packages/table"],
+            ["@playwright/test", "npm:1.17.1"],
+            ["@storybook/react", "virtual:3cce1c84b75c6752ab7b5395dbcd8e3ea3b1319115ab15fda228bf63fb81d197768dc0e6a4c4831843462d6a936c54a88b677afbdb62ac2b741e0b6101ed5c6d#npm:6.4.9"],
+            ["@testing-library/react-hooks", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:7.0.2"],
+            ["@types/jest", "npm:27.4.0"],
+            ["@types/node", "npm:17.0.5"],
+            ["@types/react", "npm:17.0.38"],
             ["playwright", "npm:1.17.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:17.0.2"],
