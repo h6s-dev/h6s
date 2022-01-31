@@ -15,7 +15,7 @@ If you have been assigned to fix an issue or develop a new feature, please follo
 - Fork this repository
 - Install dependencies by running `$ yarn`
 - Implement your changes and tests to files in the `packages/{package}` directory and corresponding test files
-- To run [local project in examples](https://github.com/h6s-dev/h6s/blob/main/examples/local), follow their individual directions. Usually this is just `$ yarn && yarn start`.
+- To run Storybook.
 - Document your changes in the appropriate doc page
 - Git stage your required changes and commit (see below commit guidelines)
 - Submit PR for review
