@@ -1,4 +1,4 @@
-import { RendererModel } from '../../types/tabler'
+import { RendererModel } from '../../types/table'
 
 export function flattenRendererModel<RowData>(
   rendererModel: RendererModel<RowData>,

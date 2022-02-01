@@ -3,7 +3,7 @@ import {
   CellRecursiveRenderer,
   CellRendererProps,
   CommonCell,
-} from '../types/tabler'
+} from '../types/table'
 
 export function cellRenderer<CellType extends CommonCell>(
   renderers?: CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>,

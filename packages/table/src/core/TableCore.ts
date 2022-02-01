@@ -4,7 +4,7 @@ import {
   HeaderMap,
   RendererModel,
   unstable_RendererModel,
-} from '../types/tabler'
+} from '../types/table'
 import { Path } from '../types/utility'
 import { invariant } from '../utils/invariant'
 import { buildFooters } from './footer/buildFooters'
@@ -22,7 +22,7 @@ interface Options<RowData, CellRenderer> {
   defaultHeaderIds?: Array<HeaderId<RowData>>;
 }
 
-export class TablerCore<RowData, CellRenderer> {
+export class TableCore<RowData, CellRenderer> {
   static compose = composeDataset
 
   private rendererModel: RendererModel<RowData>
@@ -92,7 +92,7 @@ export class TablerCore<RowData, CellRenderer> {
   }
 
   composeRows<Key extends Path<RowData>>(composeOptions: ComposeDatasetOptions<RowData, Key>) {
-    this.options.source = TablerCore.compose(this.options.source ?? [], composeOptions)
+    this.options.source = TableCore.compose(this.options.source ?? [], composeOptions)
 
     return this
   }

@@ -1,4 +1,4 @@
-import { RendererRules } from '../../types/tabler'
+import { RendererRules } from '../../types/table'
 import { get } from '../../utils/get'
 
 export class CellSpanManager<RowData> {

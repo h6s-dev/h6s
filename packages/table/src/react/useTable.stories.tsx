@@ -1,4 +1,4 @@
-import { RendererModel } from '../types/tabler'
+import { RendererModel } from '../types/table'
 import { sum } from '../utils/sum'
 import { useTable } from './useTable'
 

@@ -1,6 +1,6 @@
 import { getHeaderAccessorId } from '../../core/renderer/getHeaderAccessorId'
 import { getLargestDepth } from '../../core/renderer/getLargestDepth'
-import { HeaderId, HeaderMap, RendererModel } from '../../types/tabler'
+import { HeaderId, HeaderMap, RendererModel } from '../../types/table'
 import { arrayIncludes } from '../../utils/array'
 
 interface Options<RowData> {

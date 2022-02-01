@@ -1,4 +1,4 @@
-import { PrivateAggregatedCell, RendererModel } from '../../types/tabler'
+import { PrivateAggregatedCell, RendererModel } from '../../types/table'
 import { generateTableID } from '../../utils/generateTableID'
 
 interface Options<CellRenderer> {

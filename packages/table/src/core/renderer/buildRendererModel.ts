@@ -1,4 +1,4 @@
-import { HeaderMap, RendererModel } from '../../types/tabler'
+import { HeaderMap, RendererModel } from '../../types/table'
 import { getHeaderAccessorId } from './getHeaderAccessorId'
 
 export function buildRendererModel<RowData>(

@@ -103,7 +103,7 @@ interface RowProps {
   rowSpan: number;
 }
 
-export interface TablerInstance<RowData> {
+export interface TableInstance<RowData> {
   headerGroups: Array<{
     getRowProps: () => RowProps;
     headers: Array<Header<RowData>>;

@@ -1,6 +1,6 @@
 import { getChildrenCount } from '../../core/renderer/getChildrenCount'
 import { getLargestDepth } from '../../core/renderer/getLargestDepth'
-import { Header, RendererModel } from '../../types/tabler'
+import { Header, RendererModel } from '../../types/table'
 import { generateTableID } from '../../utils/generateTableID'
 
 interface Options<CellRenderer> {

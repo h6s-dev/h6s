@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { TablerCore } from '../core/TablerCore'
+import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
-import { HeaderId, RendererModel, unstable_RendererModel } from '../types/tabler'
+import { HeaderId, RendererModel, unstable_RendererModel } from '../types/table'
 
 interface Options<RowData> {
   model: RendererModel<RowData> | unstable_RendererModel<RowData>;
@@ -18,7 +18,7 @@ export function useTable<RowData>({
   options: { defaultHeaderIds } = {},
 }: Options<RowData>) {
   const tableCore = useRef(
-    new TablerCore(model, {
+    new TableCore(model, {
       source,
       cellRenderer,
       defaultHeaderIds,

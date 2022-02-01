@@ -1,4 +1,4 @@
-import { Cell, PrivateAggregatedCell } from '../../types/tabler'
+import { Cell, PrivateAggregatedCell } from '../../types/table'
 import { Primitive } from '../../types/utility'
 import { generateTableID } from '../../utils/generateTableID'
 import { get } from '../../utils/get'

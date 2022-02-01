@@ -1,4 +1,4 @@
-import { HeaderTreeNode, RendererModel } from '../../types/tabler'
+import { HeaderTreeNode, RendererModel } from '../../types/table'
 
 export function buildHeaderTree<RowData>(rendererModel: RendererModel<RowData>) {
   const headerTree = _build(rendererModel)

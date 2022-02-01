@@ -1,2 +1,2 @@
-export * from './tabler'
+export * from './table'
 export * from './utility'

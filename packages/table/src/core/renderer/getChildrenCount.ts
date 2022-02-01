@@ -1,4 +1,4 @@
-import { RendererModel } from '../../types/tabler'
+import { RendererModel } from '../../types/table'
 
 export function getChildrenCount<RowData>(model: RendererModel<RowData>[number]): number {
   if (!Array.isArray(model.accessor)) {

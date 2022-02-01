@@ -1,5 +1,5 @@
 import { flattenRendererModel } from '../../core/renderer/flattenRendererModel'
-import { Footer, RendererModel } from '../../types/tabler'
+import { Footer, RendererModel } from '../../types/table'
 import { popUntil, shiftUntil } from '../../utils/array'
 import { generateTableID } from '../../utils/generateTableID'
 

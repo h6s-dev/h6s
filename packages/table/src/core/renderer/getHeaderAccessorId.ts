@@ -1,4 +1,4 @@
-import { RendererModel } from '../../types/tabler'
+import { RendererModel } from '../../types/table'
 
 export function getHeaderAccessorId<RowData>(model: RendererModel<RowData>[number]): string {
   return Array.isArray(model.accessor)

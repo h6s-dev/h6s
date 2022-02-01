@@ -1,4 +1,4 @@
-import { Header } from '../../types/tabler'
+import { Header } from '../../types/table'
 import { generateTableID } from '../../utils/generateTableID'
 import { groupBy } from '../../utils/groupBy'
 
