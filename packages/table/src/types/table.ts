@@ -105,11 +105,11 @@ export type TableInstance<RowData> = {
 interface unstable_Renderer<RowData> {
   accessor: Path<RowData> | Array<unstable_Renderer<RowData>>;
   header: {
-    render: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
+    render?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
     label: string;
-  };
-  cell: {
-    render: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
+  } | string;
+  cell?: {
+    render?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
     mergeRow?: Path<RowData> | Array<Path<RowData>> | ((rowValues: RowData) => string);
     colSpanAs?: number | ((rowValues: RowData) => number);
   };

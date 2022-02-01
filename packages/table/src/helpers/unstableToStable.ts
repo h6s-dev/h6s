@@ -9,14 +9,15 @@ export function unstableToStable<RowData>(
 
   return model.map(x => {
     return {
-      label: x.header.label,
-      header: x.header.render,
-      cell: x.cell.render,
+      label: typeof x.header === 'string' ? x.header : x.header.label,
+      header: typeof x.header === 'string' ? undefined : x.header.render,
+      cell: x.cell?.render,
       footer: x.footer?.render,
       accessor: Array.isArray(x.accessor) ? unstableToStable(x.accessor) : x.accessor,
       rules: {
-        mergeRow: x.cell.mergeRow,
-        colSpanAs: x.cell.colSpanAs,
+        mergeRow: x.cell?.mergeRow,
+        colSpanAs: x.cell?.colSpanAs,
+        extendsFooter: x.footer?.extends,
       },
     }
   })
