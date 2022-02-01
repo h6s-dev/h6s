@@ -31,14 +31,18 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
       {
         accessor: 'amount',
         label: 'Paid',
-        footer: [() => <>{sum(paymentDataset.map(x => x.amount))}</>],
+        footer: [() => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>],
       },
       {
         accessor: 'cancelAmount',
         label: 'Canceled',
-        footer: [() => <>{sum(paymentDataset.map(x => x.cancelAmount))}</>],
+        footer: [() => <>Canceled: {sum(paymentDataset.map(x => x.cancelAmount))}</>],
       },
     ],
+  },
+  {
+    accessor: 'buyer',
+    label: 'Buyer',
   },
   {
     label: 'PAY METHOD',
@@ -49,22 +53,28 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
           {
             label: 'Plcc',
             accessor: 'plcc',
+            footer: [() => <>Plcc: {sum(paymentDataset.map(x => x.plcc))}</>],
           },
           {
             label: 'Debit',
             accessor: 'debit',
-            footer: [() => <>{sum(paymentDataset.map(x => x.debit))}</>],
+            footer: [() => <>Debit: {sum(paymentDataset.map(x => x.debit))}</>],
           },
         ],
       },
       {
         label: 'Transfer',
         accessor: 'transfer',
+        footer: [() => <>Transfer: {sum(paymentDataset.map(x => x.transfer))}</>],
       },
     ],
   },
   {
     label: 'Transaction Id',
     accessor: 'meta.transactionId',
+  },
+  {
+    label: 'Message',
+    accessor: 'message',
   },
 ]
