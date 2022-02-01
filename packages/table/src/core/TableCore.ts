@@ -1,8 +1,10 @@
 import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset'
+import { unstableToStable } from '../helpers/unstableToStable'
 import {
   HeaderId,
   HeaderMap,
   RendererModel,
+  TableInstance,
   unstable_RendererModel,
 } from '../types/table'
 import { Path } from '../types/utility'
@@ -33,7 +35,7 @@ export class TableCore<RowData, CellRenderer> {
     model: RendererModel<RowData> | unstable_RendererModel<RowData>,
     options: Options<RowData, CellRenderer>,
   ) {
-    const rendererModel = unstableToNormal(model)
+    const rendererModel = unstableToStable(model)
     const { headerMap } = buildHeaderMap(rendererModel, {
       visibleHeaderIds: options.defaultHeaderIds,
     })
@@ -61,7 +63,7 @@ export class TableCore<RowData, CellRenderer> {
     return this
   }
 
-  generate() {
+  generate(): TableInstance<RowData> {
     const {
       rendererModel,
       headerMap,
@@ -105,32 +107,4 @@ export class TableCore<RowData, CellRenderer> {
 
     return this
   }
-}
-
-function unstableToNormal<RowData>(
-  model: RendererModel<RowData> | unstable_RendererModel<RowData>,
-): RendererModel<RowData> {
-  if (!isUnstableRenderer(model)) {
-    return model
-  }
-
-  return model.map(x => {
-    return {
-      label: x.header.label,
-      header: x.header.render,
-      cell: x.cell.render,
-      footer: x.footer?.render,
-      accessor: Array.isArray(x.accessor) ? unstableToNormal(x.accessor) : x.accessor,
-      rules: {
-        mergeRow: x.cell.mergeRow,
-        colSpanAs: x.cell.colSpanAs,
-      },
-    }
-  })
-}
-
-function isUnstableRenderer<RowData>(
-  model: RendererModel<RowData> | unstable_RendererModel<RowData>,
-): model is unstable_RendererModel<RowData> {
-  return (model as RendererModel<RowData>)?.[0].label == null
 }

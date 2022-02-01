@@ -69,6 +69,39 @@ interface Renderer<RowData> {
 
 export type RendererModel<RowData> = Array<Renderer<RowData>>;
 
+export type HeaderId<RowData> = Path<RowData>;
+
+export type HeaderMap = Record<
+  string,
+  { label: string; show: boolean; countOfChild: number; countOfParent: number }
+>;
+
+interface RowProps {
+  id: string;
+  rowSpan: number;
+}
+
+export type TableInstance<RowData> = {
+  headerGroups: Array<{
+    getRowProps: () => RowProps;
+    headers: Array<Header<RowData>>;
+  }>;
+  rows: Array<{
+    getRowProps: () => RowProps;
+    cells: Array<Cell<RowData>>;
+  }>;
+  footers: Array<Footer<RowData>> | null;
+
+  headerMap: HeaderMap;
+  selectableHeaderIds: HeaderId<RowData>[]
+  visibleHeaderIds: HeaderId<RowData>[]
+}
+
+/**
+ * -------------------------------
+ *      unstable interface
+ * -------------------------------
+ */
 interface unstable_Renderer<RowData> {
   accessor: Path<RowData> | Array<unstable_Renderer<RowData>>;
   header: {
@@ -82,32 +115,8 @@ interface unstable_Renderer<RowData> {
   };
   footer?: {
     render: CellComponent<Footer<RowData>> | Array<CellRecursiveRenderer<Footer<RowData>>>;
+    extends?: boolean;
   };
 }
 
 export type unstable_RendererModel<RowData> = Array<unstable_Renderer<RowData>>;
-
-export type HeaderId<RowData> = Path<RowData>;
-
-export type HeaderMap = Record<
-  string,
-  { label: string; show: boolean; countOfChild: number; countOfParent: number }
->;
-
-interface RowProps {
-  id: string;
-  rowSpan: number;
-}
-
-export interface TableInstance<RowData> {
-  headerGroups: Array<{
-    getRowProps: () => RowProps;
-    headers: Array<Header<RowData>>;
-  }>;
-  rows: Array<{
-    getRowProps: () => RowProps;
-    cells: Array<Cell<RowData>>;
-  }>;
-  footers: Array<Footer<RowData>> | null;
-  headerMap: HeaderMap;
-}
