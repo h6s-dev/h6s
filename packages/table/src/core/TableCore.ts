@@ -7,6 +7,7 @@ import {
 } from '../types/table'
 import { Path } from '../types/utility'
 import { invariant } from '../utils/invariant'
+import { objectEntries } from '../utils/object'
 import { buildFooters } from './footer/buildFooters'
 import { buildHeaderGroups } from './header/buildHeaderGroups'
 import { buildHeaderMap } from './header/buildHeaderMap'
@@ -79,11 +80,23 @@ export class TableCore<RowData, CellRenderer> {
 
     const { footers } = buildFooters(model, { cellRenderer })
 
+    // FIXME: infer type
+    const selectableHeaderIds = objectEntries(headerMap)
+    .filter(([, x]) => x.countOfChild === 0)
+    .map(([id]) => id) as Array<HeaderId<RowData>>
+
+    const visibleHeaderIds = objectEntries(headerMap)
+      .filter(([, x]) => x.show && x.countOfChild === 0)
+      .map(([id]) => id) as Array<HeaderId<RowData>>
+
     return {
       headerGroups,
-      headerMap,
       rows,
       footers,
+
+      headerMap,
+      selectableHeaderIds,
+      visibleHeaderIds,
     }
   }
 
