@@ -1,6 +1,9 @@
+import { useState } from 'react'
+
 import { TableInstance } from '..'
 import { paymentDataset } from '../mocks/payments.mock'
 import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
+import { objectEntries } from '../utils/object'
 import { useTable } from './useTable'
 
 export default {
@@ -9,12 +12,36 @@ export default {
 }
 
 export function Basic() {
-  const [instance] = useTable({
+  const [instance, controls] = useTable({
     model: paymentsTableRendererModel,
     source: paymentDataset,
   })
+  const [headers, setHeaders] = useState(() => instance.visibleHeaderIds)
 
-  return <TableUI instance={instance} />
+  return (
+    <>
+      <TableUI instance={instance} />
+      <ul>
+        {objectEntries(instance.headerMap).map(([id, { label, show, countOfChild }]) => {
+          return (
+            <label key={id}>
+              <input
+                type="checkbox"
+                defaultChecked={show}
+                disabled={countOfChild > 0}
+                onChange={({ target: { checked } }) => {
+                  // FIXME: infer type
+                  checked ? setHeaders(x => x.concat(id as any)) : setHeaders(x => x.filter(y => y !== id))
+                }} />
+              {label}
+            </label>
+          )
+        })}
+      </ul>
+      <button onClick={() => controls.updateHeader(headers)}>Apply</button>
+      <button onClick={() => controls.updateHeader(instance.selectableHeaderIds)}>Show All</button>
+    </>
+  )
 }
 
 interface TableUIProps<RowData> {
