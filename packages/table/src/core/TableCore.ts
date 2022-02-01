@@ -11,7 +11,6 @@ import { buildFooters } from './footer/buildFooters'
 import { buildHeaderGroups } from './header/buildHeaderGroups'
 import { buildHeaderMap } from './header/buildHeaderMap'
 import { buildHeaders } from './header/buildHeaders'
-import { buildHeaderTree } from './header/buildHeaderTree'
 import { buildRendererModel } from './renderer/buildRendererModel'
 import { buildCells } from './row/buildCells'
 import { buildRows } from './row/buildRows'
@@ -70,8 +69,6 @@ export class TableCore<RowData, CellRenderer> {
 
     const model = buildRendererModel(rendererModel, headerMap)
 
-    const { headerTree } = buildHeaderTree(model)
-
     const { headerGroups } = buildHeaderGroups({
       headers: buildHeaders(model, { cellRenderer }),
     })
@@ -84,7 +81,6 @@ export class TableCore<RowData, CellRenderer> {
 
     return {
       headerGroups,
-      headerTree,
       headerMap,
       rows,
       footers,

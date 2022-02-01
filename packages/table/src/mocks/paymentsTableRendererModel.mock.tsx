@@ -47,24 +47,24 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
         label: 'CARD',
         accessor: [
           {
-            label: 'PLCC',
+            label: 'Plcc',
             accessor: 'plcc',
           },
           {
-            label: 'DEBIT',
+            label: 'Debit',
             accessor: 'debit',
             footer: [() => <>{sum(paymentDataset.map(x => x.debit))}</>],
           },
         ],
       },
       {
-        label: 'TRANSFER',
+        label: 'Transfer',
         accessor: 'transfer',
       },
     ],
   },
   {
-    label: 'TRANSACTION ID',
+    label: 'Transaction Id',
     accessor: 'meta.transactionId',
   },
 ]

@@ -88,11 +88,6 @@ export type unstable_RendererModel<RowData> = Array<unstable_Renderer<RowData>>;
 
 export type HeaderId<RowData> = Path<RowData>;
 
-export interface HeaderTreeNode<RowData> {
-  accessor: Path<RowData> | Array<HeaderTreeNode<RowData>>;
-  label: string;
-}
-
 export type HeaderMap = Record<
   string,
   { label: string; show: boolean; countOfChild: number; countOfParent: number }
@@ -113,6 +108,5 @@ export interface TableInstance<RowData> {
     cells: Array<Cell<RowData>>;
   }>;
   footers: Array<Footer<RowData>> | null;
-  headerTree: Array<HeaderTreeNode<RowData>>;
   headerMap: HeaderMap;
 }
