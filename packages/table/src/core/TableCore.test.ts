@@ -1,5 +1,5 @@
 import { TableCore } from '..'
-import { paymentDataset } from '../mocks/payments.mock'
+import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
 import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
 
 describe('let instance = new TableCore(model, { source })', () => {
@@ -415,6 +415,29 @@ describe('let instance = new TableCore(model) // without source', () => {
 
     it('return empty row', () => {
       expect(rows.length).toBe(0)
+    })
+  })
+})
+
+describe('let instance = new TableCore(model, { source: composeRow(data) })', () => {
+  const instance = new TableCore(paymentsTableRendererModel, {
+    source: paymentDatasetWithSum,
+  })
+
+  describe('instance.generate()', () => {
+    const { rows } = instance.generate()
+
+    describe('return rows', () => {
+      const [, , , , , , seventhRow] = rows
+
+      test('check seventhRow', () => {
+        const [TOTAL, SUB_ID] = seventhRow.cells
+
+        expect(TOTAL.label).toBe('Id')
+        expect(TOTAL.colSpan).toBe(2)
+        expect(SUB_ID.label).toBe('Sub Id')
+        expect(SUB_ID.colSpan).toBe(0)
+      })
     })
   })
 })

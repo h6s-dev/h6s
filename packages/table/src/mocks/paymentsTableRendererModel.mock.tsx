@@ -17,6 +17,7 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
     label: 'Id',
     rules: {
       mergeRow: ['date', 'id'],
+      colSpanAs: x => x.id === '#TOTAL' ? 2 : 1,
     },
   },
   {
@@ -24,6 +25,7 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
     label: 'Sub Id',
     rules: {
       mergeRow: ({ date, id, subId }) => date + id + subId,
+      colSpanAs: x => x.id === '#TOTAL' ? 0 : 1,
     },
   },
   {

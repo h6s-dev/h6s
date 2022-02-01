@@ -1,3 +1,6 @@
+import { composeDataset } from '..'
+import { sum } from '../utils/sum'
+
 export interface PaymentDatasetType {
   date: string;
   id: string;
@@ -113,3 +116,42 @@ export const paymentDataset: PaymentDatasetType[] = [{
   },
   message: 'success',
 }]
+
+export const paymentDatasetWithSum = composeDataset(paymentDataset, {
+  groupBy: 'date',
+  compose: rows => {
+    const appended = composeDataset(rows, {
+      groupBy: 'id',
+      compose: rows => {
+        return rows.concat({
+          subId: '#SUB_TOTAL',
+          amount: sum(rows.map(x => x.amount)),
+          cancelAmount: sum(rows.map(x => x.cancelAmount)),
+          buyer: 'N/A',
+          plcc: sum(rows.map(x => x.plcc)),
+          debit: sum(rows.map(x => x.debit)),
+          transfer: sum(rows.map(x => x.transfer)),
+          meta: {
+            transactionId: 'N/A',
+          },
+          message: 'N/A',
+        })
+      },
+    })
+
+    return appended.concat({
+      id: '#TOTAL',
+      subId: '',
+      amount: sum(rows.map(x => x.amount)),
+      cancelAmount: sum(rows.map(x => x.cancelAmount)),
+      buyer: 'N/A',
+      plcc: sum(rows.map(x => x.plcc)),
+      debit: sum(rows.map(x => x.debit)),
+      transfer: sum(rows.map(x => x.transfer)),
+      meta: {
+        transactionId: 'N/A',
+      },
+      message: 'N/A',
+    })
+  },
+})

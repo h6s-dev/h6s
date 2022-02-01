@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { paymentDataset } from '../mocks/payments.mock'
+import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
 import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
 import { TableInstance } from '../types/table'
 import { objectEntries } from '../utils/object'
@@ -42,6 +42,15 @@ export function Basic() {
       <button onClick={() => controls.updateHeader(instance.selectableHeaderIds)}>Show All</button>
     </>
   )
+}
+
+export function ComposeDataset() {
+  const [instance] = useTable({
+    model: paymentsTableRendererModel,
+    source: paymentDatasetWithSum,
+  })
+
+  return <TableUI instance={instance} />
 }
 
 interface TableUIProps<RowData> {
