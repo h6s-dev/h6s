@@ -1,18 +1,27 @@
+import { TableInstance } from '..'
 import { paymentDataset } from '../mocks/payments.mock'
 import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
 import { useTable } from './useTable'
 
 export default {
-  title: 'Table/basic',
-  component: Example,
+  title: 'table/useTable',
+  component: useTable,
 }
 
-export function Example() {
+export function Basic() {
   const [instance] = useTable({
     model: paymentsTableRendererModel,
     source: paymentDataset,
   })
 
+  return <TableUI instance={instance} />
+}
+
+interface TableUIProps<RowData> {
+  instance: TableInstance<RowData>
+}
+
+function TableUI<RowData>({ instance }: TableUIProps<RowData>) {
   return (
     <table style={{ border: '1px solid grey' }}>
       <thead>
