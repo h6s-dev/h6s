@@ -104,6 +104,11 @@ function prepare<RowData>(rendererModel: RendererModel<RowData>) {
   const tail = popUntil(model, x => x.footer == null)
   const middle = model
 
+  if (tail.length > 0) {
+    const lastColSpan = colSpanQueue.pop() ?? 1
+    colSpanQueue.push(lastColSpan - tail.length)
+  }
+
   return {
     colSpanQueue,
     footer: {
