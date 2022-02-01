@@ -49,42 +49,65 @@ function _build<RowData, CellRenderer>(
 
     if (hasChild) {
       footers.push(..._build(accessor, { cellRenderer, colSpanQueue }))
-      break
-    }
+    } else {
+      if (footer != null) {
+        footers.push({
+          ...getDefaultFooterCell(),
+          accessor,
+          colSpan: colSpanQueue.shift() ?? 1,
+          value: label,
+          render:
+            typeof cellRenderer === 'function'
+              ? cellRenderer(footer)
+              : ({ cellProps }) => cellProps.value,
+        })
+      } else {
+        const colSpan = colSpanQueue.shift()
 
-    if (footer != null) {
-      footers.push({
-        ...getDefaultFooterCell(),
-        accessor,
-        colSpan: colSpanQueue.shift() ?? 1,
-        value: label,
-        render:
-          typeof cellRenderer === 'function'
-            ? cellRenderer(footer)
-            : ({ cellProps }) => cellProps.value,
-      })
+        if (colSpan == null) {
+          footers.push({
+            ...getDefaultFooterCell(),
+            accessor,
+            colSpan: 1,
+          })
+        } else {
+          colSpanQueue.unshift(colSpan)
+        }
+      }
     }
   }
 
   return footers
 }
 
-function buildColSpanQueue<RowData>(rendererModel: RendererModel<RowData>): Array<number | null> {
-  const queue: Array<number | null> = []
+function buildColSpanQueue<RowData>(rendererModel: RendererModel<RowData>): Array<{ value: number | null, extends: boolean } | null> {
+  const queue: Array<{ value: number | null, extends: boolean } | null> = []
 
   for (const model of rendererModel) {
-    const { accessor, footer } = model
+    const { accessor, footer, rules } = model
     const hasChild = Array.isArray(accessor)
 
     if (hasChild) {
       queue.push(...buildColSpanQueue(accessor))
     } else {
       if (footer != null) {
-        queue.push(1)
+        queue.push({
+          value: 1,
+          extends: rules?.extendsFooter ?? true,
+        })
       } else {
         const lastValue = queue.pop()
 
-        queue.push(lastValue != null ? lastValue + 1 : null)
+        if (lastValue != null) {
+          if (lastValue.extends) {
+            queue.push({ value: (lastValue.value ?? 1) + 1, extends: lastValue.extends })
+          } else {
+            queue.push(lastValue)
+            queue.push({ value:null, extends: lastValue.extends })
+          }
+        } else {
+          queue.push(null)
+        }
       }
     }
   }
@@ -99,13 +122,14 @@ function prepare<RowData>(rendererModel: RendererModel<RowData>) {
     return null
   }
 
-  const colSpanQueue = buildColSpanQueue(rendererModel)
+  const colSpanQueue = buildColSpanQueue(rendererModel).map(x => x?.value ?? null)
   const head = shiftUntil(model, x => x.footer == null)
   const tail = popUntil(model, x => x.footer == null)
   const middle = model
 
   if (tail.length > 0) {
     const lastColSpan = colSpanQueue.pop() ?? 1
+
     colSpanQueue.push(lastColSpan - tail.length)
   }
 

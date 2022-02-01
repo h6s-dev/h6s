@@ -55,6 +55,7 @@ export type CellComponent<CellType extends CommonCell> = (props: {
 export interface RendererRules<RowData> {
   mergeRow?: Path<RowData> | Array<Path<RowData>> | ((rowValues: RowData) => string);
   colSpanAs?: number | ((rowValues: RowData) => number);
+  extendsFooter?: boolean
 }
 
 interface Renderer<RowData> {

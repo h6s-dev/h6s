@@ -9,6 +9,7 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
     footer: [() => <>{'Total'}</>],
     rules: {
       mergeRow: 'date',
+      extendsFooter: true,
     },
   },
   {
@@ -37,6 +38,9 @@ export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
         accessor: 'cancelAmount',
         label: 'Canceled',
         footer: [() => <>Canceled: {sum(paymentDataset.map(x => x.cancelAmount))}</>],
+        rules: {
+          extendsFooter: false,
+        },
       },
     ],
   },
