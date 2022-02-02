@@ -259,10 +259,10 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.updateHeaders([\'date\']).generate()', () => {
-    const { theadGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['date']).generate()
+    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHeader(['date']).generate()
 
     it('return single column instance with only \'date\' header', () => {
-      expect(visibleHeaderIds).toEqual(['date'])
+      expect(visibleHeadIds).toEqual(['date'])
       expect(theadGroups.length).toBe(1)
       expect(theadGroups[0].getRowProps().rowSpan).toBe(1)
       expect(theadGroups[0].theads.length).toBe(1)
@@ -281,10 +281,10 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.updateHeaders([\'id\', \'buyer\'\'transfer\']).generate()', () => {
-    const { theadGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
+    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
 
     it('return 2 depth column', () => {
-      expect(visibleHeaderIds).toEqual(['id', 'buyer', 'transfer'])
+      expect(visibleHeadIds).toEqual(['id', 'buyer', 'transfer'])
       expect(theadGroups.length).toBe(2)
 
       const [firstGroup, secondHeader] = theadGroups
@@ -347,10 +347,10 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 })
 
-describe('let instance = new TableCore(model, { defaultHeaderIds }) // with default Headers', () => {
-  describe('defaultHeaderIds: [\'date\']', () => {
+describe('let instance = new TableCore(model, { defaultHeadIds }) // with default Headers', () => {
+  describe('defaultHeadIds: [\'date\']', () => {
     const instance = new TableCore(paymentsTableModel, {
-      defaultHeaderIds: ['date'],
+      defaultHeadIds: ['date'],
     })
     const { theadGroups, tfoots } = instance.generate()
 
@@ -373,13 +373,13 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
     })
   })
 
-  describe('defaultHeaderIds: [\'id\', \'transfer\']', () => {
+  describe('defaultHeadIds: [\'id\', \'transfer\']', () => {
     const instance = new TableCore(paymentsTableModel, {
-      defaultHeaderIds: ['id', 'transfer'],
+      defaultHeadIds: ['id', 'transfer'],
     })
     const { theadGroups } = instance.generate()
 
-    test('changed largest depth by headerIds: 3 -> 2', () => {
+    test('changed largest depth by headIds: 3 -> 2', () => {
       expect(theadGroups.length).toBe(2)
 
       const [firstGroup, secondHeader] = theadGroups

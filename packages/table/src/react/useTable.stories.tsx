@@ -16,7 +16,7 @@ export function Basic() {
     model: paymentsTableModel,
     source: paymentDataset,
   })
-  const [headers, setHeaders] = useState(() => instance.visibleHeaderIds)
+  const [headers, setHeaders] = useState(() => instance.visibleHeadIds)
 
   return (
     <>
@@ -39,7 +39,7 @@ export function Basic() {
         })}
       </ul>
       <button onClick={() => controls.updateHeader(headers)}>Apply</button>
-      <button onClick={() => controls.updateHeader(instance.selectableHeaderIds)}>Show All</button>
+      <button onClick={() => controls.updateHeader(instance.selectableHeadIds)}>Show All</button>
     </>
   )
 }

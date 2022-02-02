@@ -1,7 +1,7 @@
 import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset'
 import { transToRendererModel } from '../helpers/transToRendererModel'
 import {
-  HeaderId,
+  HeadIds,
   HeadMeta,
   RendererModel,
   TableInstance,
@@ -21,7 +21,7 @@ import { buildTHeads } from './thead/buildTHeads'
 interface Options<RowData, CellRenderer> {
   source?: RowData[];
   cellRenderer?: CellRenderer;
-  defaultHeaderIds?: Array<HeaderId<RowData>>;
+  defaultHeadIds?: Array<HeadIds<RowData>>;
 }
 
 export class TableCore<RowData, CellRenderer> {
@@ -37,7 +37,7 @@ export class TableCore<RowData, CellRenderer> {
   ) {
     const rendererModel = transToRendererModel(model)
     const { headMeta } = buildHeadMeta(rendererModel, {
-      visibleHeaderIds: options.defaultHeaderIds,
+      visibleHeadIds: options.defaultHeadIds,
     })
 
     this.options = options
@@ -45,11 +45,11 @@ export class TableCore<RowData, CellRenderer> {
     this.headMeta = headMeta
   }
 
-  updateHeader(headerIds?: Array<HeaderId<RowData>>) {
-    invariant(headerIds == null || headerIds?.length > 0, 'headerIds must be an array')
+  updateHeader(headIds?: Array<HeadIds<RowData>>) {
+    invariant(headIds == null || headIds?.length > 0, 'headIds must be an array')
 
     const { headMeta } = buildHeadMeta(this.rendererModel, {
-      visibleHeaderIds: headerIds,
+      visibleHeadIds: headIds,
     })
 
     this.headMeta = headMeta
@@ -83,13 +83,13 @@ export class TableCore<RowData, CellRenderer> {
     const { tfoots } = buildTFoots(model, { cellRenderer })
 
     // FIXME: infer type
-    const selectableHeaderIds = objectEntries(headMeta)
+    const selectableHeadIds = objectEntries(headMeta)
     .filter(([, x]) => x.countOfChild === 0)
-    .map(([id]) => id) as Array<HeaderId<RowData>>
+    .map(([id]) => id) as Array<HeadIds<RowData>>
 
-    const visibleHeaderIds = objectEntries(headMeta)
+    const visibleHeadIds = objectEntries(headMeta)
       .filter(([, x]) => x.show && x.countOfChild === 0)
-      .map(([id]) => id) as Array<HeaderId<RowData>>
+      .map(([id]) => id) as Array<HeadIds<RowData>>
 
     return {
       theadGroups,
@@ -97,8 +97,8 @@ export class TableCore<RowData, CellRenderer> {
       tfoots,
 
       headMeta,
-      selectableHeaderIds,
-      visibleHeaderIds,
+      selectableHeadIds,
+      visibleHeadIds,
     }
   }
 

@@ -69,7 +69,7 @@ interface Renderer<RowData> {
 
 export type RendererModel<RowData> = Array<Renderer<RowData>>;
 
-export type HeaderId<RowData> = Path<RowData>;
+export type HeadIds<RowData> = Path<RowData>;
 
 export type HeadMeta = Record<
   string,
@@ -93,8 +93,8 @@ export type TableInstance<RowData> = {
   tfoots: Array<TFoot<RowData>> | null;
 
   headMeta: HeadMeta;
-  selectableHeaderIds: HeaderId<RowData>[]
-  visibleHeaderIds: HeaderId<RowData>[]
+  selectableHeadIds: HeadIds<RowData>[]
+  visibleHeadIds: HeadIds<RowData>[]
 }
 
 interface TableColumn<RowData> {

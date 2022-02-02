@@ -2,34 +2,34 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
-import { HeaderId, TableModel } from '../types/table'
+import { HeadIds, TableModel } from '../types/table'
 
 interface Options<RowData> {
   model: TableModel<RowData>;
   source?: RowData[];
   options?: {
-    defaultHeaderIds?: Array<HeaderId<RowData>>;
+    defaultHeadIds?: Array<HeadIds<RowData>>;
   };
 }
 
 export function useTable<RowData>({
   model,
   source,
-  options: { defaultHeaderIds } = {},
+  options: { defaultHeadIds } = {},
 }: Options<RowData>) {
   const tableCore = useRef(
     new TableCore(model, {
       source,
       cellRenderer,
-      defaultHeaderIds,
+      defaultHeadIds,
     }),
   )
 
   const [instance, setInstance] = useState(() => tableCore.current.generate())
   const controls = useMemo(
     () => ({
-      updateHeader(headerIds?: Array<HeaderId<RowData>>) {
-        setInstance(() => tableCore.current.updateHeader(headerIds).generate())
+      updateHeader(headIds?: Array<HeadIds<RowData>>) {
+        setInstance(() => tableCore.current.updateHeader(headIds).generate())
       },
     }),
     [],

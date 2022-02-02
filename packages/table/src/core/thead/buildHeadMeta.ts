@@ -1,10 +1,10 @@
-import { HeaderId, HeadMeta, RendererModel } from '../../types/table'
+import { HeadIds, HeadMeta, RendererModel } from '../../types/table'
 import { arrayIncludes } from '../../utils/array'
 import { getHeaderAccessorId } from '../renderer/getHeaderAccessorId'
 import { getLargestDepth } from '../renderer/getLargestDepth'
 
 interface Options<RowData> {
-  visibleHeaderIds?: Array<HeaderId<RowData>>;
+  visibleHeadIds?: Array<HeadIds<RowData>>;
 }
 
 export function buildHeadMeta<RowData>(
@@ -22,7 +22,7 @@ interface BuildOptions<RowData> extends Options<RowData> {
 
 function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOptions<RowData>) {
   const headMeta: HeadMeta = {}
-  const { visibleHeaderIds, depth } = options
+  const { visibleHeadIds, depth } = options
 
   for (const model of rendererModel) {
     const { label, accessor } = model
@@ -30,7 +30,7 @@ function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOp
 
     const base = hasChild ? accessor : [{ accessor }]
     const show =
-      visibleHeaderIds != null ? base.some(x => arrayIncludes(visibleHeaderIds, x.accessor)) : true
+      visibleHeadIds != null ? base.some(x => arrayIncludes(visibleHeadIds, x.accessor)) : true
 
     headMeta[getHeaderAccessorId(model)] = {
       label,
