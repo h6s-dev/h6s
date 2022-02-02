@@ -61,12 +61,12 @@ function TableUI<RowData>({ instance }: TableUIProps<RowData>) {
   return (
     <table style={{ border: '1px solid grey' }}>
       <thead>
-        {instance.headerGroups.map(({ headers, getRowProps }) => {
+        {instance.theadGroups.map(({ theads, getRowProps }) => {
           const props = getRowProps()
 
           return (
             <tr key={props.id} {...props}>
-              {headers.map(header => {
+              {theads.map(header => {
                 return (
                   <th key={header.id} rowSpan={header.rowSpan} colSpan={header.colSpan} style={{ border: '1px solid grey' }}>
                     {header.render({ cellProps: header })}

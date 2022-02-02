@@ -1,13 +1,13 @@
-import { getChildrenCount } from '../../core/renderer/getChildrenCount'
-import { getLargestDepth } from '../../core/renderer/getLargestDepth'
-import { Header, RendererModel } from '../../types/table'
+import { RendererModel, THead } from '../../types/table'
 import { generateTableID } from '../../utils/generateTableID'
+import { getChildrenCount } from '../renderer/getChildrenCount'
+import { getLargestDepth } from '../renderer/getLargestDepth'
 
 interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildHeaders<RowData, CellRenderer>(
+export function buildTHeads<RowData, CellRenderer>(
   rendererModel: RendererModel<RowData>,
   options?: Options<CellRenderer>,
 ) {
@@ -26,7 +26,7 @@ function _build<RowData, CellRenderer>(
   rendererModel: RendererModel<RowData>,
   { cellRenderer, largestDepth, depth, labelSequence }: BuildOptions<CellRenderer>,
 ) {
-  const headers: Array<Header<RowData>> = []
+  const headers: Array<THead<RowData>> = []
 
   for (const model of rendererModel) {
     const { label, accessor, header } = model

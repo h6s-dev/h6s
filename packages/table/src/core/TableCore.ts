@@ -10,13 +10,13 @@ import {
 import { Path } from '../types/utility'
 import { invariant } from '../utils/invariant'
 import { objectEntries } from '../utils/object'
-import { buildHeaderGroups } from './header/buildHeaderGroups'
-import { buildHeaderMap } from './header/buildHeaderMap'
-import { buildHeaders } from './header/buildHeaders'
 import { buildRendererModel } from './renderer/buildRendererModel'
 import { buildCells } from './row/buildCells'
 import { buildRows } from './row/buildRows'
 import { buildTFoots } from './tfoot/buildTFoots'
+import { buildHeaderMap } from './thead/buildHeaderMap'
+import { buildTHeadGroups } from './thead/buildTHeadGroups'
+import { buildTHeads } from './thead/buildTHeads'
 
 interface Options<RowData, CellRenderer> {
   source?: RowData[];
@@ -72,8 +72,8 @@ export class TableCore<RowData, CellRenderer> {
 
     const model = buildRendererModel(rendererModel, headerMap)
 
-    const { headerGroups } = buildHeaderGroups({
-      headers: buildHeaders(model, { cellRenderer }),
+    const { theadGroups } = buildTHeadGroups({
+      theads: buildTHeads(model, { cellRenderer }),
     })
 
     const { rows } = buildRows(source, {
@@ -92,7 +92,7 @@ export class TableCore<RowData, CellRenderer> {
       .map(([id]) => id) as Array<HeaderId<RowData>>
 
     return {
-      headerGroups,
+      theadGroups,
       rows,
       tfoots,
 

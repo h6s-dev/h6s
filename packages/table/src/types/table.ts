@@ -9,10 +9,10 @@ export interface CommonCell {
   value: Primitive;
 }
 
-export interface Header<RowData> extends CommonCell {
+export interface THead<RowData> extends CommonCell {
   accessor: Path<RowData> | null;
   depth: number;
-  render: CellRecursiveRenderer<Header<RowData>>;
+  render: CellRecursiveRenderer<THead<RowData>>;
   labelSequence: string[];
   label: string;
 }
@@ -61,7 +61,7 @@ export interface RendererRules<RowData> {
 interface Renderer<RowData> {
   accessor: Path<RowData> | Array<Renderer<RowData>>;
   label: string;
-  header?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
+  header?: CellComponent<THead<RowData>> | Array<CellRecursiveRenderer<THead<RowData>>>;
   cell?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
   footer?: CellComponent<TFoot<RowData>> | Array<CellRecursiveRenderer<TFoot<RowData>>>;
   rules?: RendererRules<RowData>;
@@ -82,9 +82,9 @@ interface RowProps {
 }
 
 export type TableInstance<RowData> = {
-  headerGroups: Array<{
+  theadGroups: Array<{
     getRowProps: () => RowProps;
-    headers: Array<Header<RowData>>;
+    theads: Array<THead<RowData>>;
   }>;
   rows: Array<{
     getRowProps: () => RowProps;
@@ -101,7 +101,7 @@ interface TableColumn<RowData> {
   accessor: Path<RowData> | Array<TableColumn<RowData>>;
   label: string;
   head?: {
-    render?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
+    render?: CellComponent<THead<RowData>> | Array<CellRecursiveRenderer<THead<RowData>>>;
   };
   cell?: {
     render?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;

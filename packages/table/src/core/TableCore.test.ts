@@ -8,18 +8,18 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.generate()', () => {
-    const { headerGroups, rows, tfoots, headerMap } = instance.generate()
+    const { theadGroups, rows, tfoots, headerMap } = instance.generate()
 
-    describe('return headerGroups', () => {
+    describe('return theadGroups', () => {
 
-      it('return headerGroups which have 3 length (3 is largest depth of generated table)', () => {
-        expect(headerGroups.length).toBe(3)
+      it('return theadGroups which have 3 length (3 is largest depth of generated table)', () => {
+        expect(theadGroups.length).toBe(3)
       })
 
       test('check first HeaderGroup', () => {
-        expect(headerGroups[0].headers.length).toBe(8)
+        expect(theadGroups[0].theads.length).toBe(8)
 
-        const [DATE, ID, SUB_ID, AMOUNT, BUYER, PAY_METHOD, TRANSACTION_ID, MESSAGE] = headerGroups[0].headers
+        const [DATE, ID, SUB_ID, AMOUNT, BUYER, PAY_METHOD, TRANSACTION_ID, MESSAGE] = theadGroups[0].theads
 
         expect(DATE.label).toBe('Date')
         expect(DATE.rowSpan).toBe(3)
@@ -55,9 +55,9 @@ describe('let instance = new TableCore(model, { source })', () => {
       })
 
       test('check second HeaderGroup', () => {
-        expect(headerGroups[1].headers.length).toBe(4)
+        expect(theadGroups[1].theads.length).toBe(4)
 
-        const [PAID, CANCELED, CARD, TRANSFER] = headerGroups[1].headers
+        const [PAID, CANCELED, CARD, TRANSFER] = theadGroups[1].theads
 
         expect(PAID.label).toBe('Paid')
         expect(PAID.rowSpan).toBe(2)
@@ -77,9 +77,9 @@ describe('let instance = new TableCore(model, { source })', () => {
       })
 
       test('check third HeaderGroup', () => {
-        expect(headerGroups[2].headers.length).toBe(2)
+        expect(theadGroups[2].theads.length).toBe(2)
 
-        const [PLCC, DEBIT] = headerGroups[2].headers
+        const [PLCC, DEBIT] = theadGroups[2].theads
 
         expect(PLCC.label).toBe('Plcc')
         expect(PLCC.rowSpan).toBe(1)
@@ -259,15 +259,15 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.updateHeaders([\'date\']).generate()', () => {
-    const { headerGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['date']).generate()
+    const { theadGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['date']).generate()
 
     it('return single column instance with only \'date\' header', () => {
       expect(visibleHeaderIds).toEqual(['date'])
-      expect(headerGroups.length).toBe(1)
-      expect(headerGroups[0].getRowProps().rowSpan).toBe(1)
-      expect(headerGroups[0].headers.length).toBe(1)
+      expect(theadGroups.length).toBe(1)
+      expect(theadGroups[0].getRowProps().rowSpan).toBe(1)
+      expect(theadGroups[0].theads.length).toBe(1)
 
-      const [DATE] = headerGroups[0].headers
+      const [DATE] = theadGroups[0].theads
 
       expect(DATE.label).toBe('Date')
       expect(DATE.rowSpan).toBe(1)
@@ -281,19 +281,19 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.updateHeaders([\'id\', \'buyer\'\'transfer\']).generate()', () => {
-    const { headerGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
+    const { theadGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
 
     it('return 2 depth column', () => {
       expect(visibleHeaderIds).toEqual(['id', 'buyer', 'transfer'])
-      expect(headerGroups.length).toBe(2)
+      expect(theadGroups.length).toBe(2)
 
-      const [firstGroup, secondHeader] = headerGroups
+      const [firstGroup, secondHeader] = theadGroups
 
       expect(firstGroup.getRowProps().rowSpan).toBe(2)
-      expect(firstGroup.headers.length).toBe(3)
-      expect(secondHeader.headers.length).toBe(1)
+      expect(firstGroup.theads.length).toBe(3)
+      expect(secondHeader.theads.length).toBe(1)
 
-      const [ID, BUYER, PAY_METHOD] = firstGroup.headers
+      const [ID, BUYER, PAY_METHOD] = firstGroup.theads
 
       expect(ID.label).toBe('Id')
       expect(ID.rowSpan).toBe(2)
@@ -307,7 +307,7 @@ describe('let instance = new TableCore(model, { source })', () => {
       expect(PAY_METHOD.rowSpan).toBe(1)
       expect(PAY_METHOD.colSpan).toBe(1)
 
-      const [TRANSFER] = secondHeader.headers
+      const [TRANSFER] = secondHeader.theads
 
       expect(TRANSFER.label).toBe('Transfer')
       expect(TRANSFER.rowSpan).toBe(1)
@@ -352,15 +352,15 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
     const instance = new TableCore(paymentsTableModel, {
       defaultHeaderIds: ['date'],
     })
-    const { headerGroups, tfoots } = instance.generate()
+    const { theadGroups, tfoots } = instance.generate()
 
     it('have single column with only \'date\' header', () => {
 
-      expect(headerGroups.length).toBe(1)
-      expect(headerGroups[0].getRowProps().rowSpan).toBe(1)
-      expect(headerGroups[0].headers.length).toBe(1)
+      expect(theadGroups.length).toBe(1)
+      expect(theadGroups[0].getRowProps().rowSpan).toBe(1)
+      expect(theadGroups[0].theads.length).toBe(1)
 
-      const [DATE] = headerGroups[0].headers
+      const [DATE] = theadGroups[0].theads
 
       expect(DATE.label).toBe('Date')
       expect(DATE.rowSpan).toBe(1)
@@ -377,18 +377,18 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
     const instance = new TableCore(paymentsTableModel, {
       defaultHeaderIds: ['id', 'transfer'],
     })
-    const { headerGroups } = instance.generate()
+    const { theadGroups } = instance.generate()
 
     test('changed largest depth by headerIds: 3 -> 2', () => {
-      expect(headerGroups.length).toBe(2)
+      expect(theadGroups.length).toBe(2)
 
-      const [firstGroup, secondHeader] = headerGroups
+      const [firstGroup, secondHeader] = theadGroups
 
       expect(firstGroup.getRowProps().rowSpan).toBe(2)
-      expect(firstGroup.headers.length).toBe(2)
-      expect(secondHeader.headers.length).toBe(1)
+      expect(firstGroup.theads.length).toBe(2)
+      expect(secondHeader.theads.length).toBe(1)
 
-      const [ID, PAY_METHOD] = firstGroup.headers
+      const [ID, PAY_METHOD] = firstGroup.theads
 
       expect(ID.label).toBe('Id')
       expect(ID.rowSpan).toBe(2)
@@ -398,7 +398,7 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
       expect(PAY_METHOD.rowSpan).toBe(1)
       expect(PAY_METHOD.colSpan).toBe(1)
 
-      const [TRANSFER] = secondHeader.headers
+      const [TRANSFER] = secondHeader.theads
 
       expect(TRANSFER.label).toBe('Transfer')
       expect(TRANSFER.rowSpan).toBe(1)
