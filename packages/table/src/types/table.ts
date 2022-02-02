@@ -55,7 +55,7 @@ export type CellComponent<CellType extends CommonCell> = (props: {
 export interface RendererRules<Row> {
   mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
   colSpanAs?: number | ((rowValues: Row) => number);
-  extendsFooter?: boolean
+  extendsFoot?: boolean
 }
 
 interface Renderer<Row> {
@@ -63,7 +63,7 @@ interface Renderer<Row> {
   label: string;
   head?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
   cell?: CellComponent<Cell<Row>> | Array<CellRecursiveRenderer<Cell<Row>>>;
-  footer?: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
+  foot?: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
   rules?: RendererRules<Row>;
 }
 

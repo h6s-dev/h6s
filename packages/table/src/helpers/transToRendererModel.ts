@@ -9,11 +9,11 @@ export function transToRendererModel<Row>(
       accessor: Array.isArray(x.accessor) ? transToRendererModel(x.accessor) : x.accessor,
       head: isRenderer(x.head) ? x.head: x.head?.render,
       cell: isRenderer(x.cell) ? x.cell : x.cell?.render,
-      footer: isRenderer(x.foot) ? x.foot : x.foot?.render,
+      foot: isRenderer(x.foot) ? x.foot : x.foot?.render,
       rules: {
         mergeRow: isRenderer(x.cell) ? undefined : x.cell?.mergeRow,
         colSpanAs: isRenderer(x.cell) ? undefined : x.cell?.colSpanAs,
-        extendsFooter: isRenderer(x.foot) ? undefined : x.foot?.extends,
+        extendsFoot: isRenderer(x.foot) ? undefined : x.foot?.extends,
       },
     }
   })

@@ -44,13 +44,13 @@ function _build<Row, CellRenderer>(
   const tfoots: Array<TFoot<Row>> = []
 
   for (const model of rendererModel) {
-    const { label, accessor, footer } = model
+    const { label, accessor, foot } = model
     const hasChild = Array.isArray(accessor)
 
     if (hasChild) {
       tfoots.push(..._build(accessor, { cellRenderer, colSpanQueue }))
     } else {
-      if (footer != null) {
+      if (foot != null) {
         tfoots.push({
           ...getDefaultTFootCell(),
           accessor,
@@ -58,7 +58,7 @@ function _build<Row, CellRenderer>(
           value: label,
           render:
             typeof cellRenderer === 'function'
-              ? cellRenderer(footer)
+              ? cellRenderer(foot)
               : ({ cellProps }) => cellProps.value,
         })
       } else {
@@ -84,16 +84,16 @@ function buildColSpanQueue<Row>(rendererModel: RendererModel<Row>): Array<{ valu
   const queue: Array<{ value: number | null, extends: boolean } | null> = []
 
   for (const model of rendererModel) {
-    const { accessor, footer, rules } = model
+    const { accessor, foot, rules } = model
     const hasChild = Array.isArray(accessor)
 
     if (hasChild) {
       queue.push(...buildColSpanQueue(accessor))
     } else {
-      if (footer != null) {
+      if (foot != null) {
         queue.push({
           value: 1,
-          extends: rules?.extendsFooter ?? true,
+          extends: rules?.extendsFoot ?? true,
         })
       } else {
         const lastValue = queue.pop()
@@ -118,13 +118,13 @@ function buildColSpanQueue<Row>(rendererModel: RendererModel<Row>): Array<{ valu
 function prepare<Row>(rendererModel: RendererModel<Row>) {
   const model = flattenRendererModel(rendererModel)
 
-  if (model.every(x => x.footer == null)) {
+  if (model.every(x => x.foot == null)) {
     return null
   }
 
   const colSpanQueue = buildColSpanQueue(rendererModel).map(x => x?.value ?? null)
-  const head = shiftUntil(model, x => x.footer == null)
-  const tail = popUntil(model, x => x.footer == null)
+  const head = shiftUntil(model, x => x.foot == null)
+  const tail = popUntil(model, x => x.foot == null)
   const middle = model
 
   if (tail.length > 0) {
