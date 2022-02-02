@@ -59,11 +59,11 @@ export interface RendererRules<RowData> {
 }
 
 interface Renderer<RowData> {
+  accessor: Path<RowData> | Array<Renderer<RowData>>;
   label: string;
   header?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
   cell?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
   footer?: CellComponent<Footer<RowData>> | Array<CellRecursiveRenderer<Footer<RowData>>>;
-  accessor: Path<RowData> | Array<Renderer<RowData>>;
   rules?: RendererRules<RowData>;
 }
 
@@ -104,16 +104,16 @@ export type TableInstance<RowData> = {
  */
 interface unstable_Renderer<RowData> {
   accessor: Path<RowData> | Array<unstable_Renderer<RowData>>;
-  header: {
+  label: string;
+  head?: {
     render?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
-    label: string;
-  } | string;
+  };
   cell?: {
     render?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
     mergeRow?: Path<RowData> | Array<Path<RowData>> | ((rowValues: RowData) => string);
     colSpanAs?: number | ((rowValues: RowData) => number);
   };
-  footer?: {
+  foot?: {
     render: CellComponent<Footer<RowData>> | Array<CellRecursiveRenderer<Footer<RowData>>>;
     extends?: boolean;
   };

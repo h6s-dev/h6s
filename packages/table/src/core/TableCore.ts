@@ -32,7 +32,7 @@ export class TableCore<RowData, CellRenderer> {
   private options: Options<RowData, CellRenderer>
 
   constructor(
-    model: RendererModel<RowData> | unstable_RendererModel<RowData>,
+    model: unstable_RendererModel<RowData>,
     options: Options<RowData, CellRenderer>,
   ) {
     const rendererModel = transToInternalRendererModel(model)

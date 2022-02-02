@@ -5,17 +5,17 @@ import { paymentDataset, PaymentDatasetType } from './payments.mock'
 export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetType> = [
   {
     accessor: 'date',
-    header: 'Date',
+    label: 'Date',
     cell: {
       mergeRow: 'date',
     },
-    footer: {
+    foot: {
       render: [() => <>{'Total'}</>],
     },
   },
   {
     accessor: 'id',
-    header: 'Id',
+    label: 'Id',
     cell: {
       mergeRow: ['date', 'id'],
       colSpanAs: x => x.id === '#TOTAL' ? 2 : 1,
@@ -23,7 +23,7 @@ export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetTy
   },
   {
     accessor: 'subId',
-    header: 'Sub Id',
+    label: 'Sub Id',
     cell: {
       mergeRow: ({ date, id, subId }) => date + id + subId,
       colSpanAs: x => x.id === '#TOTAL' ? 0 : 1,
@@ -33,25 +33,25 @@ export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetTy
     accessor: [
       {
         accessor: 'amount',
-        header: 'Paid',
-        footer: {
+        label: 'Paid',
+        foot: {
           render: [() => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>],
         },
       },
       {
         accessor: 'cancelAmount',
-        header: 'Canceled',
-        footer: {
+        label: 'Canceled',
+        foot: {
           render: [() => <>Canceled: {sum(paymentDataset.map(x => x.cancelAmount))}</>],
           extends: false,
         },
       },
     ],
-    header: 'AMOUNT',
+    label: 'AMOUNT',
   },
   {
     accessor: 'buyer',
-    header: 'Buyer',
+    label: 'Buyer',
   },
   {
     accessor: [
@@ -59,37 +59,37 @@ export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetTy
         accessor: [
           {
             accessor: 'plcc',
-            header: 'Plcc',
-            footer: {
+            label: 'Plcc',
+            foot: {
               render: [() => <>Plcc: {sum(paymentDataset.map(x => x.plcc))}</>],
             },
           },
           {
             accessor: 'debit',
-            header: 'Debit',
-            footer: {
+            label: 'Debit',
+            foot: {
               render: [() => <>Debit: {sum(paymentDataset.map(x => x.debit))}</>],
             },
           },
         ],
-        header: 'CARD',
+        label: 'CARD',
       },
       {
         accessor: 'transfer',
-        header: 'Transfer',
-        footer: {
+        label: 'Transfer',
+        foot: {
           render: [() => <>Transfer: {sum(paymentDataset.map(x => x.transfer))}</>],
         },
       },
     ],
-    header: 'PAY METHOD',
+    label: 'PAY METHOD',
   },
   {
     accessor: 'meta.transactionId',
-    header: 'Transaction Id',
+    label: 'Transaction Id',
   },
   {
     accessor: 'message',
-    header: 'Message',
+    label: 'Message',
   },
 ]

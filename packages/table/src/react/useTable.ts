@@ -2,10 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
-import { HeaderId, RendererModel, unstable_RendererModel } from '../types/table'
+import { HeaderId, unstable_RendererModel } from '../types/table'
 
 interface Options<RowData> {
-  model: RendererModel<RowData> | unstable_RendererModel<RowData>;
+  model: unstable_RendererModel<RowData>;
   source?: RowData[];
   options?: {
     defaultHeaderIds?: Array<HeaderId<RowData>>;
