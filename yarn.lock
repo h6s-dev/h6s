@@ -4527,6 +4527,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^6.0.0-alpha.5":
+  version: 6.0.0-alpha.5
+  resolution: "@faker-js/faker@npm:6.0.0-alpha.5"
+  checksum: aa145eaeba624a65fe3237f2abfe4fa4a87fb7283cda983cafad95fd8b88b9e58eae403a36bdc4108f9625b0c64b81e901e68d11b33c04c8f24dae07c31e314f
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -4543,7 +4550,9 @@ __metadata:
     "@chakra-ui/react": ^1.7.3
     "@chakra-ui/system": ^1.8.3
     "@chakra-ui/theme-tools": 1.3.1
+    "@faker-js/faker": ^6.0.0-alpha.5
     "@h6s/calendar": latest
+    "@h6s/table": "workspace:^"
     "@types/node": ^17.0.4
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -4554,6 +4563,7 @@ __metadata:
     next-transpile-modules: ^9.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-hook-form: 7.17.5
     typescript: 4.5.4
   languageName: unknown
   linkType: soft
@@ -4599,7 +4609,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@h6s/table@workspace:packages/table":
+"@h6s/table@workspace:^, @h6s/table@workspace:packages/table":
   version: 0.0.0-use.local
   resolution: "@h6s/table@workspace:packages/table"
   dependencies:
@@ -23827,6 +23837,15 @@ __metadata:
   peerDependencies:
     react: ">=16.3.0"
   checksum: a4998479dab7fc1c2799eddefb1870a9d881b5f71cfdf97979a9882e42f4bb50402d55335f308f461e735e01a06f46b16cc7b4e6bcb22c7a4a6f85a753c5c106
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:7.17.5":
+  version: 7.17.5
+  resolution: "react-hook-form@npm:7.17.5"
+  peerDependencies:
+    react: ^16.8.0 || ^17
+  checksum: 1948be28cbcaee76899720ae8ead6f6bcc58c9678364c69590d15a0d7c50884f5f8f3b1034a5bc91495bedd05b0fb07048d88cc6c93b3fa8aacf32c50f2bfda7
   languageName: node
   linkType: hard
 

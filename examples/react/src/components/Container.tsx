@@ -1,4 +1,4 @@
-import { Box, Flex, FlexProps, useColorMode } from '@chakra-ui/react'
+import { Flex, FlexProps, useColorMode } from '@chakra-ui/react'
 
 export const Container = ({ children, ...props }: FlexProps) => {
   const { colorMode } = useColorMode()
@@ -12,11 +12,10 @@ export const Container = ({ children, ...props }: FlexProps) => {
       direction="column"
       bg={bgColor[colorMode]}
       color={color[colorMode]}
+      paddingX={120}
       {...props}
     >
-      <Box maxW="640px" m="auto">
-        {children}
-      </Box>
+      {children}
     </Flex>
   )
 }
