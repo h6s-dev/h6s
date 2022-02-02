@@ -4599,6 +4599,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@h6s/table@workspace:packages/table":
+  version: 0.0.0-use.local
+  resolution: "@h6s/table@workspace:packages/table"
+  dependencies:
+    "@playwright/test": 1.17.1
+    "@storybook/react": 6.4.9
+    "@testing-library/react-hooks": 7.0.2
+    "@types/jest": 27.4.0
+    "@types/node": 17.0.5
+    "@types/react": 17.0.38
+    playwright: 1.17.1
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-test-renderer: 17.0.2
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  languageName: unknown
+  linkType: soft
+
 "@hapi/accept@npm:5.0.2":
   version: 5.0.2
   resolution: "@hapi/accept@npm:5.0.2"
