@@ -9,32 +9,32 @@ export interface CommonCell {
   value: Primitive;
 }
 
-export interface THead<RowData> extends CommonCell {
-  accessor: Path<RowData> | null;
+export interface THead<Row> extends CommonCell {
+  accessor: Path<Row> | null;
   depth: number;
-  render: CellRecursiveRenderer<THead<RowData>>;
+  render: CellRecursiveRenderer<THead<Row>>;
   labelSequence: string[];
   label: string;
 }
 
-export interface Cell<RowData> extends CommonCell {
-  accessor: Path<RowData>;
-  rowValues: RowData;
-  render: CellRecursiveRenderer<Cell<RowData>>;
+export interface Cell<Row> extends CommonCell {
+  accessor: Path<Row>;
+  rowValues: Row;
+  render: CellRecursiveRenderer<Cell<Row>>;
   labelSequence: string[];
   label: string;
 }
 
-export interface TFoot<RowData> extends CommonCell {
-  accessor: Path<RowData> | null;
-  render: CellRecursiveRenderer<TFoot<RowData>>;
+export interface TFoot<Row> extends CommonCell {
+  accessor: Path<Row> | null;
+  render: CellRecursiveRenderer<TFoot<Row>>;
 }
 
-export interface PrivateAggregatedCell<RowData>
-  extends Pick<Renderer<RowData>, 'rules'>,
+export interface PrivateAggregatedCell<Row>
+  extends Pick<Renderer<Row>, 'rules'>,
     Pick<CommonCell, 'id'> {
-  accessor: Path<RowData>;
-  render: CellRecursiveRenderer<Cell<RowData>>;
+  accessor: Path<Row>;
+  render: CellRecursiveRenderer<Cell<Row>>;
   labelSequence: string[];
   label: string;
 }
@@ -52,24 +52,24 @@ export type CellComponent<CellType extends CommonCell> = (props: {
   cellProps: CellType;
 }) => ReactNode | Primitive;
 
-export interface RendererRules<RowData> {
-  mergeRow?: Path<RowData> | Array<Path<RowData>> | ((rowValues: RowData) => string);
-  colSpanAs?: number | ((rowValues: RowData) => number);
+export interface RendererRules<Row> {
+  mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
+  colSpanAs?: number | ((rowValues: Row) => number);
   extendsFooter?: boolean
 }
 
-interface Renderer<RowData> {
-  accessor: Path<RowData> | Array<Renderer<RowData>>;
+interface Renderer<Row> {
+  accessor: Path<Row> | Array<Renderer<Row>>;
   label: string;
-  header?: CellComponent<THead<RowData>> | Array<CellRecursiveRenderer<THead<RowData>>>;
-  cell?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
-  footer?: CellComponent<TFoot<RowData>> | Array<CellRecursiveRenderer<TFoot<RowData>>>;
-  rules?: RendererRules<RowData>;
+  header?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
+  cell?: CellComponent<Cell<Row>> | Array<CellRecursiveRenderer<Cell<Row>>>;
+  footer?: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
+  rules?: RendererRules<Row>;
 }
 
-export type RendererModel<RowData> = Array<Renderer<RowData>>;
+export type RendererModel<Row> = Array<Renderer<Row>>;
 
-export type HeadIds<RowData> = Path<RowData>;
+export type HeadIds<Row> = Path<Row>;
 
 export type HeadMeta = Record<
   string,
@@ -81,37 +81,37 @@ interface RowProps {
   rowSpan: number;
 }
 
-export type TableInstance<RowData> = {
+export type TableInstance<Row> = {
   theadGroups: Array<{
     getRowProps: () => RowProps;
-    theads: Array<THead<RowData>>;
+    theads: Array<THead<Row>>;
   }>;
   rows: Array<{
     getRowProps: () => RowProps;
-    cells: Array<Cell<RowData>>;
+    cells: Array<Cell<Row>>;
   }>;
-  tfoots: Array<TFoot<RowData>> | null;
+  tfoots: Array<TFoot<Row>> | null;
 
   headMeta: HeadMeta;
-  selectableHeadIds: HeadIds<RowData>[]
-  visibleHeadIds: HeadIds<RowData>[]
+  selectableHeadIds: HeadIds<Row>[]
+  visibleHeadIds: HeadIds<Row>[]
 }
 
-interface TableColumn<RowData> {
-  accessor: Path<RowData> | Array<TableColumn<RowData>>;
+interface TableColumn<Row> {
+  accessor: Path<Row> | Array<TableColumn<Row>>;
   label: string;
   head?: {
-    render?: CellComponent<THead<RowData>> | Array<CellRecursiveRenderer<THead<RowData>>>;
+    render?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
   };
   cell?: {
-    render?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
-    mergeRow?: Path<RowData> | Array<Path<RowData>> | ((rowValues: RowData) => string);
-    colSpanAs?: number | ((rowValues: RowData) => number);
+    render?: CellComponent<Cell<Row>> | Array<CellRecursiveRenderer<Cell<Row>>>;
+    mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
+    colSpanAs?: number | ((rowValues: Row) => number);
   };
   foot?: {
-    render: CellComponent<TFoot<RowData>> | Array<CellRecursiveRenderer<TFoot<RowData>>>;
+    render: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
     extends?: boolean;
   };
 }
 
-export type TableModel<RowData> = Array<TableColumn<RowData>>;
+export type TableModel<Row> = Array<TableColumn<Row>>;

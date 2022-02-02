@@ -7,8 +7,8 @@ interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildTFoots<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+export function buildTFoots<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   options?: Options<CellRenderer>,
 ) {
   const parsed = prepare(rendererModel)
@@ -37,11 +37,11 @@ interface BuildOptions<CellRenderer> extends Options<CellRenderer> {
   colSpanQueue: Array<number | null>;
 }
 
-function _build<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+function _build<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   { cellRenderer, colSpanQueue }: BuildOptions<CellRenderer>,
 ) {
-  const tfoots: Array<TFoot<RowData>> = []
+  const tfoots: Array<TFoot<Row>> = []
 
   for (const model of rendererModel) {
     const { label, accessor, footer } = model
@@ -80,7 +80,7 @@ function _build<RowData, CellRenderer>(
   return tfoots
 }
 
-function buildColSpanQueue<RowData>(rendererModel: RendererModel<RowData>): Array<{ value: number | null, extends: boolean } | null> {
+function buildColSpanQueue<Row>(rendererModel: RendererModel<Row>): Array<{ value: number | null, extends: boolean } | null> {
   const queue: Array<{ value: number | null, extends: boolean } | null> = []
 
   for (const model of rendererModel) {
@@ -115,7 +115,7 @@ function buildColSpanQueue<RowData>(rendererModel: RendererModel<RowData>): Arra
   return queue
 }
 
-function prepare<RowData>(rendererModel: RendererModel<RowData>) {
+function prepare<Row>(rendererModel: RendererModel<Row>) {
   const model = flattenRendererModel(rendererModel)
 
   if (model.every(x => x.footer == null)) {

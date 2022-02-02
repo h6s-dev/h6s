@@ -7,8 +7,8 @@ interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildTHeads<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+export function buildTHeads<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   options?: Options<CellRenderer>,
 ) {
   const largestDepth = getLargestDepth(rendererModel)
@@ -22,11 +22,11 @@ interface BuildOptions<CellRenderer> extends Options<CellRenderer> {
   labelSequence: string[];
 }
 
-function _build<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+function _build<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   { cellRenderer, largestDepth, depth, labelSequence }: BuildOptions<CellRenderer>,
 ) {
-  const headers: Array<THead<RowData>> = []
+  const headers: Array<THead<Row>> = []
 
   for (const model of rendererModel) {
     const { label, accessor, header } = model

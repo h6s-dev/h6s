@@ -3,24 +3,24 @@ import { arrayIncludes } from '../../utils/array'
 import { getHeaderAccessorId } from '../renderer/getHeaderAccessorId'
 import { getLargestDepth } from '../renderer/getLargestDepth'
 
-interface Options<RowData> {
-  visibleHeadIds?: Array<HeadIds<RowData>>;
+interface Options<Row> {
+  visibleHeadIds?: Array<HeadIds<Row>>;
 }
 
-export function buildHeadMeta<RowData>(
-  rendererModel: RendererModel<RowData>,
-  options?: Options<RowData>,
+export function buildHeadMeta<Row>(
+  rendererModel: RendererModel<Row>,
+  options?: Options<Row>,
 ) {
   const headMeta = _build(rendererModel, { ...options, depth: 0 })
 
   return { headMeta }
 }
 
-interface BuildOptions<RowData> extends Options<RowData> {
+interface BuildOptions<Row> extends Options<Row> {
   depth: number;
 }
 
-function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOptions<RowData>) {
+function _build<Row>(rendererModel: RendererModel<Row>, options: BuildOptions<Row>) {
   const headMeta: HeadMeta = {}
   const { visibleHeadIds, depth } = options
 

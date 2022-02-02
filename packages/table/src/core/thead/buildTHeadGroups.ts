@@ -2,11 +2,11 @@ import { THead } from '../../types/table'
 import { generateTableID } from '../../utils/generateTableID'
 import { groupBy } from '../../utils/groupBy'
 
-interface Options<RowData> {
-  theads: Array<THead<RowData>>;
+interface Options<Row> {
+  theads: Array<THead<Row>>;
 }
 
-export function buildTHeadGroups<RowData>({ theads }: Options<RowData>) {
+export function buildTHeadGroups<Row>({ theads }: Options<Row>) {
   const groupByDepth = Object.values(groupBy(theads, x => String(x.depth)))
   const theadGroups = groupByDepth.map(theads => {
     return {

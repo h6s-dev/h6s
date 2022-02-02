@@ -1,10 +1,10 @@
 import { HeadMeta, RendererModel } from '../../types/table'
 import { getHeaderAccessorId } from './getHeaderAccessorId'
 
-export function buildRendererModel<RowData>(
-  rendererModel: RendererModel<RowData>,
+export function buildRendererModel<Row>(
+  rendererModel: RendererModel<Row>,
   headMeta: HeadMeta,
-): RendererModel<RowData> {
+): RendererModel<Row> {
   const result = []
 
   for (const model of rendererModel) {

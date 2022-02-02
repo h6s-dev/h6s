@@ -5,8 +5,8 @@ interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildCells<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+export function buildCells<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   options?: Options<CellRenderer>,
 ) {
   return _build(rendererModel, { ...options, labelSequence: [] })
@@ -16,11 +16,11 @@ interface BuildOptions<CellRenderer> extends Options<CellRenderer> {
   labelSequence: string[];
 }
 
-function _build<RowData, CellRenderer>(
-  rendererModel: RendererModel<RowData>,
+function _build<Row, CellRenderer>(
+  rendererModel: RendererModel<Row>,
   { cellRenderer, labelSequence }: BuildOptions<CellRenderer>,
 ) {
-  const cells: Array<PrivateAggregatedCell<RowData>> = []
+  const cells: Array<PrivateAggregatedCell<Row>> = []
 
   for (const model of rendererModel) {
     const { accessor, label, cell, rules } = model

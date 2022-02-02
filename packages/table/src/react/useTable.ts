@@ -4,19 +4,19 @@ import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
 import { HeadIds, TableModel } from '../types/table'
 
-interface Options<RowData> {
-  model: TableModel<RowData>;
-  source?: RowData[];
+interface Options<Row> {
+  model: TableModel<Row>;
+  source?: Row[];
   options?: {
-    defaultHeadIds?: Array<HeadIds<RowData>>;
+    defaultHeadIds?: Array<HeadIds<Row>>;
   };
 }
 
-export function useTable<RowData>({
+export function useTable<Row>({
   model,
   source,
   options: { defaultHeadIds } = {},
-}: Options<RowData>) {
+}: Options<Row>) {
   const tableCore = useRef(
     new TableCore(model, {
       source,
@@ -28,8 +28,8 @@ export function useTable<RowData>({
   const [instance, setInstance] = useState(() => tableCore.current.generate())
   const controls = useMemo(
     () => ({
-      updateHeader(headIds?: Array<HeadIds<RowData>>) {
-        setInstance(() => tableCore.current.updateHeader(headIds).generate())
+      updateHead(headIds?: Array<HeadIds<Row>>) {
+        setInstance(() => tableCore.current.updateHead(headIds).generate())
       },
     }),
     [],

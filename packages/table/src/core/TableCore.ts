@@ -18,22 +18,22 @@ import { buildHeadMeta } from './thead/buildHeadMeta'
 import { buildTHeadGroups } from './thead/buildTHeadGroups'
 import { buildTHeads } from './thead/buildTHeads'
 
-interface Options<RowData, CellRenderer> {
-  source?: RowData[];
+interface Options<Row, CellRenderer> {
+  source?: Row[];
   cellRenderer?: CellRenderer;
-  defaultHeadIds?: Array<HeadIds<RowData>>;
+  defaultHeadIds?: Array<HeadIds<Row>>;
 }
 
-export class TableCore<RowData, CellRenderer> {
+export class TableCore<Row, CellRenderer> {
   static compose = composeDataset
 
-  private rendererModel: RendererModel<RowData>
+  private rendererModel: RendererModel<Row>
   private headMeta: HeadMeta
-  private options: Options<RowData, CellRenderer>
+  private options: Options<Row, CellRenderer>
 
   constructor(
-    model: TableModel<RowData>,
-    options: Options<RowData, CellRenderer>,
+    model: TableModel<Row>,
+    options: Options<Row, CellRenderer>,
   ) {
     const rendererModel = transToRendererModel(model)
     const { headMeta } = buildHeadMeta(rendererModel, {
@@ -45,7 +45,7 @@ export class TableCore<RowData, CellRenderer> {
     this.headMeta = headMeta
   }
 
-  updateHeader(headIds?: Array<HeadIds<RowData>>) {
+  updateHead(headIds?: Array<HeadIds<Row>>) {
     invariant(headIds == null || headIds?.length > 0, 'headIds must be an array')
 
     const { headMeta } = buildHeadMeta(this.rendererModel, {
@@ -57,13 +57,13 @@ export class TableCore<RowData, CellRenderer> {
     return this
   }
 
-  updateSource(source?: RowData[]) {
+  updateSource(source?: Row[]) {
     this.options.source = source
 
     return this
   }
 
-  generate(): TableInstance<RowData> {
+  generate(): TableInstance<Row> {
     const {
       rendererModel,
       headMeta,
@@ -85,11 +85,11 @@ export class TableCore<RowData, CellRenderer> {
     // FIXME: infer type
     const selectableHeadIds = objectEntries(headMeta)
     .filter(([, x]) => x.countOfChild === 0)
-    .map(([id]) => id) as Array<HeadIds<RowData>>
+    .map(([id]) => id) as Array<HeadIds<Row>>
 
     const visibleHeadIds = objectEntries(headMeta)
       .filter(([, x]) => x.show && x.countOfChild === 0)
-      .map(([id]) => id) as Array<HeadIds<RowData>>
+      .map(([id]) => id) as Array<HeadIds<Row>>
 
     return {
       theadGroups,
@@ -102,7 +102,7 @@ export class TableCore<RowData, CellRenderer> {
     }
   }
 
-  composeRows<Key extends Path<RowData>>(composeOptions: ComposeDatasetOptions<RowData, Key>) {
+  composeRows<Key extends Path<Row>>(composeOptions: ComposeDatasetOptions<Row, Key>) {
     this.options.source = TableCore.compose(this.options.source ?? [], composeOptions)
 
     return this

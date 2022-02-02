@@ -1,8 +1,8 @@
 import { RendererModel, TableModel } from '../types/table'
 
-export function transToRendererModel<RowData>(
-  model: TableModel<RowData>,
-): RendererModel<RowData> {
+export function transToRendererModel<Row>(
+  model: TableModel<Row>,
+): RendererModel<Row> {
   return model.map(x => {
     return {
       ...x,

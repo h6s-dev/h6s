@@ -5,25 +5,25 @@ import { get } from '../../utils/get'
 import { invariant } from '../../utils/invariant'
 import { CellSpanManager } from './CellSpanManager'
 
-interface Options<RowData> {
-  cells: Array<PrivateAggregatedCell<RowData>>;
+interface Options<Row> {
+  cells: Array<PrivateAggregatedCell<Row>>;
 }
 
-export function buildRows<RowData>(data: RowData[], { cells }: Options<RowData>) {
-  const manager = new CellSpanManager<RowData>()
+export function buildRows<Row>(data: Row[], { cells }: Options<Row>) {
+  const manager = new CellSpanManager<Row>()
 
-  const candidateRows = data.map(rowData => {
+  const candidateRows = data.map(Row => {
     return cells
       .map(cell => {
-        const value = get(rowData, String(cell.accessor))
+        const value = get(Row, String(cell.accessor))
 
-        const dropCell = manager.saveRowSpan(rowData, cell.rules)
+        const dropCell = manager.saveRowSpan(Row, cell.rules)
 
         if (dropCell) {
           return null
         }
 
-        return { value, rowData, ...cell }
+        return { value, Row, ...cell }
       })
       .filter(x => x != null)
   })
@@ -39,12 +39,12 @@ export function buildRows<RowData>(data: RowData[], { cells }: Options<RowData>)
       cells: cells.map(aggregatedCell => {
         invariant(aggregatedCell != null, 'invalid cell')
 
-        const { rowData, rules, value, ...rest } = aggregatedCell
+        const { Row, rules, value, ...rest } = aggregatedCell
 
-        const cell: Cell<RowData> = {
-          rowSpan: manager.getRowSpan(rowData, rules) ?? 1,
-          colSpan: manager.getColSpan(rowData, rules),
-          rowValues: rowData,
+        const cell: Cell<Row> = {
+          rowSpan: manager.getRowSpan(Row, rules) ?? 1,
+          colSpan: manager.getColSpan(Row, rules),
+          rowValues: Row,
           value: value as Primitive,
           ...rest,
         }

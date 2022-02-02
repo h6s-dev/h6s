@@ -1,9 +1,9 @@
 import { RendererModel } from '../../types/table'
 
-export function flattenRendererModel<RowData>(
-  rendererModel: RendererModel<RowData>,
-): RendererModel<RowData> {
-  const models: RendererModel<RowData> = []
+export function flattenRendererModel<Row>(
+  rendererModel: RendererModel<Row>,
+): RendererModel<Row> {
+  const models: RendererModel<Row> = []
 
   for (const model of rendererModel) {
     const { accessor } = model

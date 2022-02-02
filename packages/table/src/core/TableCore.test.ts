@@ -258,8 +258,8 @@ describe('let instance = new TableCore(model, { source })', () => {
     })
   })
 
-  describe('instance.updateHeaders([\'date\']).generate()', () => {
-    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHeader(['date']).generate()
+  describe('instance.updateHeads([\'date\']).generate()', () => {
+    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHead(['date']).generate()
 
     it('return single column instance with only \'date\' header', () => {
       expect(visibleHeadIds).toEqual(['date'])
@@ -280,8 +280,8 @@ describe('let instance = new TableCore(model, { source })', () => {
     })
   })
 
-  describe('instance.updateHeaders([\'id\', \'buyer\'\'transfer\']).generate()', () => {
-    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
+  describe('instance.updateHeads([\'id\', \'buyer\'\'transfer\']).generate()', () => {
+    const { theadGroups, visibleHeadIds, tfoots } = instance.updateHead(['id', 'buyer', 'transfer']).generate()
 
     it('return 2 depth column', () => {
       expect(visibleHeadIds).toEqual(['id', 'buyer', 'transfer'])

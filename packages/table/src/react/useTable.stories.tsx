@@ -38,8 +38,8 @@ export function Basic() {
           )
         })}
       </ul>
-      <button onClick={() => controls.updateHeader(headers)}>Apply</button>
-      <button onClick={() => controls.updateHeader(instance.selectableHeadIds)}>Show All</button>
+      <button onClick={() => controls.updateHead(headers)}>Apply</button>
+      <button onClick={() => controls.updateHead(instance.selectableHeadIds)}>Show All</button>
     </>
   )
 }
@@ -53,11 +53,11 @@ export function ComposeDataset() {
   return <TableUI instance={instance} />
 }
 
-interface TableUIProps<RowData> {
-  instance: TableInstance<RowData>
+interface TableUIProps<Row> {
+  instance: TableInstance<Row>
 }
 
-function TableUI<RowData>({ instance }: TableUIProps<RowData>) {
+function TableUI<Row>({ instance }: TableUIProps<Row>) {
   return (
     <table style={{ border: '1px solid grey' }}>
       <thead>
