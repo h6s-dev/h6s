@@ -25,7 +25,7 @@ import { useForm } from 'react-hook-form'
 
 import { Container } from '../../components/Container'
 import { Header } from '../../components/Header'
-import { DATASET_WITH_SUMMARY, TABLE_MODEL } from './dataset.mock'
+import { DATASET_WITH_SUMMARY, TABLE_MODEL } from '../../mocks/dataset.mock'
 
 interface Field {
   headIds: Array<HeadIds<typeof DATASET_WITH_SUMMARY[number]>>;
