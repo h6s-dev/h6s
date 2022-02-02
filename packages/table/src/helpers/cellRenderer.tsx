@@ -1,3 +1,6 @@
+// @ts-ignore
+import React from 'react'
+
 import {
   CellComponent,
   CellRecursiveRenderer,
