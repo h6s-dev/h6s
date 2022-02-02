@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prepack": "yarn build",
-    "prebuild": "rimraf dist cjs",
+    "prebuild": "rimraf dist esm",
     "build:type": "yarn run -T tsc --emitDeclarationOnly --declaration",
     "build": "yarn build:type && node ../../scripts/build.js",
     "lint": "yarn run -T eslint 'src/**/*.{js,jsx,ts,tsx}'",
