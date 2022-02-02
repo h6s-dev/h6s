@@ -97,21 +97,28 @@ export type TableInstance<Row> = {
   visibleHeadIds: HeadIds<Row>[]
 }
 
+type CommonRenderer<CellType extends CommonCell> = CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>
+type CellConfig<CellType extends CommonCell> = CommonRenderer<CellType> | Record<string, unknown>
+
 interface TableColumn<Row> {
-  accessor: Path<Row> | Array<TableColumn<Row>>;
-  label: string;
-  head?: {
-    render?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
-  };
-  cell?: {
-    render?: CellComponent<Cell<Row>> | Array<CellRecursiveRenderer<Cell<Row>>>;
-    mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
-    colSpanAs?: number | ((rowValues: Row) => number);
-  };
-  foot?: {
-    render: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
-    extends?: boolean;
-  };
+  accessor: Path<Row> | Array<TableColumn<Row>>
+  label: string
+  head?: CommonRenderer<THead<Row>> | {
+    render: CommonRenderer<THead<Row>>
+  }
+  cell?: CommonRenderer<Cell<Row>> | {
+    render?: CommonRenderer<Cell<Row>>
+    mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string)
+    colSpanAs?: number | ((rowValues: Row) => number)
+  }
+  foot?: CommonRenderer<TFoot<Row>> | {
+    render: CommonRenderer<TFoot<Row>>
+    extends?: boolean
+  }
 }
 
-export type TableModel<Row> = Array<TableColumn<Row>>;
+export type TableModel<Row> = Array<TableColumn<Row>>
+
+export function  isRenderer<CellType extends CommonCell>(value?: CellConfig<CellType>): value is CommonRenderer<CellType> {
+  return typeof value === 'function' || Array.isArray(value)
+}

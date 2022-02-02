@@ -9,9 +9,7 @@ export const paymentsTableModel: TableModel<PaymentDatasetType> = [
     cell: {
       mergeRow: 'date',
     },
-    foot: {
-      render: [() => <>{'Total'}</>],
-    },
+    foot: [() => <>{'Total'}</>],
   },
   {
     accessor: 'id',
@@ -34,9 +32,7 @@ export const paymentsTableModel: TableModel<PaymentDatasetType> = [
       {
         accessor: 'amount',
         label: 'Paid',
-        foot: {
-          render: [() => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>],
-        },
+        foot: () => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>,
       },
       {
         accessor: 'cancelAmount',
