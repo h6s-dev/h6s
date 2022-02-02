@@ -1,7 +1,7 @@
-import { RendererModel, unstable_RendererModel } from '../types/table'
+import { RendererModel, TableModel } from '../types/table'
 
-export function transToInternalRendererModel<RowData>(
-  model: unstable_RendererModel<RowData>,
+export function transToRendererModel<RowData>(
+  model: TableModel<RowData>,
 ): RendererModel<RowData> {
 
   return model.map(x => {
@@ -10,7 +10,7 @@ export function transToInternalRendererModel<RowData>(
       header: x.head?.render,
       cell: x.cell?.render,
       footer: x.foot?.render,
-      accessor: Array.isArray(x.accessor) ? transToInternalRendererModel(x.accessor) : x.accessor,
+      accessor: Array.isArray(x.accessor) ? transToRendererModel(x.accessor) : x.accessor,
       rules: {
         mergeRow: x.cell?.mergeRow,
         colSpanAs: x.cell?.colSpanAs,

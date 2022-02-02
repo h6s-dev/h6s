@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
-import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
+import { paymentsTableModel } from '../mocks/paymentsTableModel.mock'
 import { TableInstance } from '../types/table'
 import { objectEntries } from '../utils/object'
 import { useTable } from './useTable'
@@ -13,7 +13,7 @@ export default {
 
 export function Basic() {
   const [instance, controls] = useTable({
-    model: paymentsTableRendererModel,
+    model: paymentsTableModel,
     source: paymentDataset,
   })
   const [headers, setHeaders] = useState(() => instance.visibleHeaderIds)
@@ -46,7 +46,7 @@ export function Basic() {
 
 export function ComposeDataset() {
   const [instance] = useTable({
-    model: paymentsTableRendererModel,
+    model: paymentsTableModel,
     source: paymentDatasetWithSum,
   })
 

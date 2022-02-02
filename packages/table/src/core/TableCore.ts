@@ -1,11 +1,11 @@
 import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset'
-import { transToInternalRendererModel } from '../helpers/transToInternalRendererModel'
+import { transToRendererModel } from '../helpers/transToRendererModel'
 import {
   HeaderId,
   HeaderMap,
   RendererModel,
   TableInstance,
-  unstable_RendererModel,
+  TableModel,
 } from '../types/table'
 import { Path } from '../types/utility'
 import { invariant } from '../utils/invariant'
@@ -32,10 +32,10 @@ export class TableCore<RowData, CellRenderer> {
   private options: Options<RowData, CellRenderer>
 
   constructor(
-    model: unstable_RendererModel<RowData>,
+    model: TableModel<RowData>,
     options: Options<RowData, CellRenderer>,
   ) {
-    const rendererModel = transToInternalRendererModel(model)
+    const rendererModel = transToRendererModel(model)
     const { headerMap } = buildHeaderMap(rendererModel, {
       visibleHeaderIds: options.defaultHeaderIds,
     })

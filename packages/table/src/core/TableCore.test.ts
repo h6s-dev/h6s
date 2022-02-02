@@ -1,9 +1,9 @@
 import { TableCore } from '..'
 import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
-import { paymentsTableRendererModel } from '../mocks/paymentsTableRendererModel.mock'
+import { paymentsTableModel } from '../mocks/paymentsTableModel.mock'
 
 describe('let instance = new TableCore(model, { source })', () => {
-  const instance = new TableCore(paymentsTableRendererModel, {
+  const instance = new TableCore(paymentsTableModel, {
     source: paymentDataset,
   })
 
@@ -349,7 +349,7 @@ describe('let instance = new TableCore(model, { source })', () => {
 
 describe('let instance = new TableCore(model, { defaultHeaderIds }) // with default Headers', () => {
   describe('defaultHeaderIds: [\'date\']', () => {
-    const instance = new TableCore(paymentsTableRendererModel, {
+    const instance = new TableCore(paymentsTableModel, {
       defaultHeaderIds: ['date'],
     })
     const { headerGroups, footers } = instance.generate()
@@ -374,7 +374,7 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
   })
 
   describe('defaultHeaderIds: [\'id\', \'transfer\']', () => {
-    const instance = new TableCore(paymentsTableRendererModel, {
+    const instance = new TableCore(paymentsTableModel, {
       defaultHeaderIds: ['id', 'transfer'],
     })
     const { headerGroups } = instance.generate()
@@ -408,7 +408,7 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
 })
 
 describe('let instance = new TableCore(model) // without source', () => {
-  const instance = new TableCore(paymentsTableRendererModel, {})
+  const instance = new TableCore(paymentsTableModel, {})
 
   describe('instance.generate()', () => {
     const { rows } = instance.generate()
@@ -420,7 +420,7 @@ describe('let instance = new TableCore(model) // without source', () => {
 })
 
 describe('let instance = new TableCore(model, { source: composeRow(data) })', () => {
-  const instance = new TableCore(paymentsTableRendererModel, {
+  const instance = new TableCore(paymentsTableModel, {
     source: paymentDatasetWithSum,
   })
 

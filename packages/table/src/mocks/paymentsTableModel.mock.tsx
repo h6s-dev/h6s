@@ -1,8 +1,8 @@
-import { unstable_RendererModel } from '../types/table'
+import { TableModel } from '../types/table'
 import { sum } from '../utils/sum'
 import { paymentDataset, PaymentDatasetType } from './payments.mock'
 
-export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetType> = [
+export const paymentsTableModel: TableModel<PaymentDatasetType> = [
   {
     accessor: 'date',
     label: 'Date',

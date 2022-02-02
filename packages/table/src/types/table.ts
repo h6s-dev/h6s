@@ -97,13 +97,8 @@ export type TableInstance<RowData> = {
   visibleHeaderIds: HeaderId<RowData>[]
 }
 
-/**
- * -------------------------------
- *      unstable interface
- * -------------------------------
- */
-interface unstable_Renderer<RowData> {
-  accessor: Path<RowData> | Array<unstable_Renderer<RowData>>;
+interface TableColumn<RowData> {
+  accessor: Path<RowData> | Array<TableColumn<RowData>>;
   label: string;
   head?: {
     render?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
@@ -119,4 +114,4 @@ interface unstable_Renderer<RowData> {
   };
 }
 
-export type unstable_RendererModel<RowData> = Array<unstable_Renderer<RowData>>;
+export type TableModel<RowData> = Array<TableColumn<RowData>>;
