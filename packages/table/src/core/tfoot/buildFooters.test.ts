@@ -1,5 +1,5 @@
 import { RendererModel } from '../..'
-import { buildFooters } from './buildFooters'
+import { buildTFoots } from './buildTFoots'
 
 interface Model {
   coding: number;
@@ -9,7 +9,7 @@ interface Model {
   lead: number;
 }
 
-describe('buildFooters', () => {
+describe('buildTFoots', () => {
   test('All Column has footer', () => {
     const model: RendererModel<Model> = [
       {
@@ -38,14 +38,14 @@ describe('buildFooters', () => {
         footer: () => 'lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(5)
-    footers!.forEach(footer => {
+    expect(tfoots!.length).toBe(5)
+    tfoots!.forEach(footer => {
       expect(footer.colSpan).toBe(1)
     })
 
-    const [CODING, COMMUNICATION, DESIGN, IMPACT, LEAD] = footers!
+    const [CODING, COMMUNICATION, DESIGN, IMPACT, LEAD] = tfoots!
 
     expect(CODING.value).toBe('Coding')
     expect(COMMUNICATION.value).toBe('Communication')
@@ -81,11 +81,11 @@ describe('buildFooters', () => {
         footer: () => 'lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(5)
+    expect(tfoots!.length).toBe(5)
 
-    const [first, ...rest] = footers!
+    const [first, ...rest] = tfoots!
 
     expect(first.colSpan).toBe(1)
     rest!.forEach(footer => {
@@ -127,11 +127,11 @@ describe('buildFooters', () => {
         footer: () => 'lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(4)
+    expect(tfoots!.length).toBe(4)
 
-    const [first, ...rest] = footers!
+    const [first, ...rest] = tfoots!
 
     expect(first.colSpan).toBe(2)
 
@@ -174,11 +174,11 @@ describe('buildFooters', () => {
         label: 'Lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(5)
+    expect(tfoots!.length).toBe(5)
 
-    const [CODING, COMMUNICATION, DESIGN, IMPACT, last] = footers!
+    const [CODING, COMMUNICATION, DESIGN, IMPACT, last] = tfoots!
 
     ;[CODING, COMMUNICATION, DESIGN, IMPACT].forEach(target => {
       expect(target.colSpan).toBe(1)
@@ -218,11 +218,11 @@ describe('buildFooters', () => {
         label: 'Lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(4)
+    expect(tfoots!.length).toBe(4)
 
-    const [CODING, COMMUNICATION, DESIGN, last] = footers!
+    const [CODING, COMMUNICATION, DESIGN, last] = tfoots!
 
     ;[CODING, COMMUNICATION, DESIGN].forEach(target => {
       expect(target.colSpan).toBe(1)
@@ -261,11 +261,11 @@ describe('buildFooters', () => {
         label: 'Lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(5)
+    expect(tfoots!.length).toBe(5)
 
-    const [first, COMMUNICATION, DESIGN, IMPACT, last] = footers!
+    const [first, COMMUNICATION, DESIGN, IMPACT, last] = tfoots!
 
     ;[COMMUNICATION, DESIGN, IMPACT].forEach(target => {
       expect(target.colSpan).toBe(1)
@@ -310,11 +310,11 @@ describe('buildFooters', () => {
         footer: () => 'lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(4)
+    expect(tfoots!.length).toBe(4)
 
-    const [CODING, COMMUNICATION, IMPACT, LEAD] = footers!
+    const [CODING, COMMUNICATION, IMPACT, LEAD] = tfoots!
 
     ;[CODING, IMPACT, LEAD].forEach(target => {
       expect(target.colSpan).toBe(1)
@@ -357,11 +357,11 @@ describe('buildFooters', () => {
         footer: () => 'lead',
       },
     ]
-    const { footers } = buildFooters(model)
+    const { tfoots } = buildTFoots(model)
 
-    expect(footers!.length).toBe(5)
+    expect(tfoots!.length).toBe(5)
 
-    const [CODING, COMMUNICATION, empty, IMPACT, LEAD] = footers!
+    const [CODING, COMMUNICATION, empty, IMPACT, LEAD] = tfoots!
 
     ;[CODING, COMMUNICATION, IMPACT, LEAD].forEach(target => {
       expect(target.colSpan).toBe(1)

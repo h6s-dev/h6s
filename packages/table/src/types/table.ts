@@ -25,9 +25,9 @@ export interface Cell<RowData> extends CommonCell {
   label: string;
 }
 
-export interface Footer<RowData> extends CommonCell {
+export interface TFoot<RowData> extends CommonCell {
   accessor: Path<RowData> | null;
-  render: CellRecursiveRenderer<Footer<RowData>>;
+  render: CellRecursiveRenderer<TFoot<RowData>>;
 }
 
 export interface PrivateAggregatedCell<RowData>
@@ -63,7 +63,7 @@ interface Renderer<RowData> {
   label: string;
   header?: CellComponent<Header<RowData>> | Array<CellRecursiveRenderer<Header<RowData>>>;
   cell?: CellComponent<Cell<RowData>> | Array<CellRecursiveRenderer<Cell<RowData>>>;
-  footer?: CellComponent<Footer<RowData>> | Array<CellRecursiveRenderer<Footer<RowData>>>;
+  footer?: CellComponent<TFoot<RowData>> | Array<CellRecursiveRenderer<TFoot<RowData>>>;
   rules?: RendererRules<RowData>;
 }
 
@@ -90,7 +90,7 @@ export type TableInstance<RowData> = {
     getRowProps: () => RowProps;
     cells: Array<Cell<RowData>>;
   }>;
-  footers: Array<Footer<RowData>> | null;
+  tfoots: Array<TFoot<RowData>> | null;
 
   headerMap: HeaderMap;
   selectableHeaderIds: HeaderId<RowData>[]
@@ -109,7 +109,7 @@ interface TableColumn<RowData> {
     colSpanAs?: number | ((rowValues: RowData) => number);
   };
   foot?: {
-    render: CellComponent<Footer<RowData>> | Array<CellRecursiveRenderer<Footer<RowData>>>;
+    render: CellComponent<TFoot<RowData>> | Array<CellRecursiveRenderer<TFoot<RowData>>>;
     extends?: boolean;
   };
 }

@@ -100,7 +100,7 @@ function TableUI<RowData>({ instance }: TableUIProps<RowData>) {
       </tbody>
       <tfoot>
         <tr>
-          {instance.footers?.map(cell => {
+          {instance.tfoots?.map(cell => {
             return (
               <th key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan} style={{ border: '1px solid grey' }}>
                 {cell.render({ cellProps: cell })}

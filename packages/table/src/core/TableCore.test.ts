@@ -8,7 +8,7 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.generate()', () => {
-    const { headerGroups, rows, footers, headerMap } = instance.generate()
+    const { headerGroups, rows, tfoots, headerMap } = instance.generate()
 
     describe('return headerGroups', () => {
 
@@ -168,10 +168,10 @@ describe('let instance = new TableCore(model, { source })', () => {
       })
     })
 
-    describe('return footers', () => {
-      expect(footers!.length).toBe(8)
+    describe('return tfoots', () => {
+      expect(tfoots!.length).toBe(8)
 
-      const [TOTAL, PAID, CANCELED, EMPTY, PLCC, DEBIT, TRANSFER, REST] = footers!
+      const [TOTAL, PAID, CANCELED, EMPTY, PLCC, DEBIT, TRANSFER, REST] = tfoots!
 
       expect(TOTAL.colSpan).toBe(3)
       expect(PAID.colSpan).toBe(1)
@@ -259,7 +259,7 @@ describe('let instance = new TableCore(model, { source })', () => {
   })
 
   describe('instance.updateHeaders([\'date\']).generate()', () => {
-    const { headerGroups, visibleHeaderIds, footers } = instance.updateHeader(['date']).generate()
+    const { headerGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['date']).generate()
 
     it('return single column instance with only \'date\' header', () => {
       expect(visibleHeaderIds).toEqual(['date'])
@@ -275,13 +275,13 @@ describe('let instance = new TableCore(model, { source })', () => {
     })
 
     it('return single footer', () => {
-      expect(footers?.length).toBe(1)
-      expect(footers?.[0].rowSpan).toBe(1)
+      expect(tfoots?.length).toBe(1)
+      expect(tfoots?.[0].rowSpan).toBe(1)
     })
   })
 
   describe('instance.updateHeaders([\'id\', \'buyer\'\'transfer\']).generate()', () => {
-    const { headerGroups, visibleHeaderIds, footers } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
+    const { headerGroups, visibleHeaderIds, tfoots } = instance.updateHeader(['id', 'buyer', 'transfer']).generate()
 
     it('return 2 depth column', () => {
       expect(visibleHeaderIds).toEqual(['id', 'buyer', 'transfer'])
@@ -314,10 +314,10 @@ describe('let instance = new TableCore(model, { source })', () => {
       expect(TRANSFER.colSpan).toBe(1)
     })
 
-    it('return 2 length footers', () => {
-      expect(footers?.length).toBe(2)
+    it('return 2 length tfoots', () => {
+      expect(tfoots?.length).toBe(2)
 
-      const [first, second] = footers ?? []
+      const [first, second] = tfoots ?? []
 
       expect(first.accessor).toBeNull()
       expect(first.colSpan).toBe(2)
@@ -352,7 +352,7 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
     const instance = new TableCore(paymentsTableModel, {
       defaultHeaderIds: ['date'],
     })
-    const { headerGroups, footers } = instance.generate()
+    const { headerGroups, tfoots } = instance.generate()
 
     it('have single column with only \'date\' header', () => {
 
@@ -368,8 +368,8 @@ describe('let instance = new TableCore(model, { defaultHeaderIds }) // with defa
     })
 
     it('return single footer', () => {
-      expect(footers?.length).toBe(1)
-      expect(footers?.[0].rowSpan).toBe(1)
+      expect(tfoots?.length).toBe(1)
+      expect(tfoots?.[0].rowSpan).toBe(1)
     })
   })
 

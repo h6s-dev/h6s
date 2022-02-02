@@ -10,13 +10,13 @@ import {
 import { Path } from '../types/utility'
 import { invariant } from '../utils/invariant'
 import { objectEntries } from '../utils/object'
-import { buildFooters } from './footer/buildFooters'
 import { buildHeaderGroups } from './header/buildHeaderGroups'
 import { buildHeaderMap } from './header/buildHeaderMap'
 import { buildHeaders } from './header/buildHeaders'
 import { buildRendererModel } from './renderer/buildRendererModel'
 import { buildCells } from './row/buildCells'
 import { buildRows } from './row/buildRows'
+import { buildTFoots } from './tfoot/buildTFoots'
 
 interface Options<RowData, CellRenderer> {
   source?: RowData[];
@@ -80,7 +80,7 @@ export class TableCore<RowData, CellRenderer> {
       cells: buildCells(model, { cellRenderer }),
     })
 
-    const { footers } = buildFooters(model, { cellRenderer })
+    const { tfoots } = buildTFoots(model, { cellRenderer })
 
     // FIXME: infer type
     const selectableHeaderIds = objectEntries(headerMap)
@@ -94,7 +94,7 @@ export class TableCore<RowData, CellRenderer> {
     return {
       headerGroups,
       rows,
-      footers,
+      tfoots,
 
       headerMap,
       selectableHeaderIds,

@@ -1,36 +1,36 @@
-import { flattenRendererModel } from '../../core/renderer/flattenRendererModel'
-import { Footer, RendererModel } from '../../types/table'
+import { RendererModel, TFoot } from '../../types/table'
 import { popUntil, shiftUntil } from '../../utils/array'
 import { generateTableID } from '../../utils/generateTableID'
+import { flattenRendererModel } from '../renderer/flattenRendererModel'
 
 interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildFooters<RowData, CellRenderer>(
+export function buildTFoots<RowData, CellRenderer>(
   rendererModel: RendererModel<RowData>,
   options?: Options<CellRenderer>,
 ) {
   const parsed = prepare(rendererModel)
 
   if (parsed == null) {
-    return { footers: null }
+    return { tfoots: null }
   }
   const {
-    footer: { head, middle, tail },
+    result: { head, middle, tail },
     colSpanQueue,
   } = parsed
 
-  const footers = _build(middle, { ...options, colSpanQueue })
+  const tfoots = _build(middle, { ...options, colSpanQueue })
 
   if (head.length > 0) {
-    footers.unshift({ ...getDefaultFooterCell(), colSpan: head.length })
+    tfoots.unshift({ ...getDefaultTFootCell(), colSpan: head.length })
   }
   if (tail.length > 0) {
-    footers.push({ ...getDefaultFooterCell(), colSpan: tail.length })
+    tfoots.push({ ...getDefaultTFootCell(), colSpan: tail.length })
   }
 
-  return { footers: footers.length === 0 ? null : footers }
+  return { tfoots: tfoots.length === 0 ? null : tfoots }
 }
 
 interface BuildOptions<CellRenderer> extends Options<CellRenderer> {
@@ -41,18 +41,18 @@ function _build<RowData, CellRenderer>(
   rendererModel: RendererModel<RowData>,
   { cellRenderer, colSpanQueue }: BuildOptions<CellRenderer>,
 ) {
-  const footers: Array<Footer<RowData>> = []
+  const tfoots: Array<TFoot<RowData>> = []
 
   for (const model of rendererModel) {
     const { label, accessor, footer } = model
     const hasChild = Array.isArray(accessor)
 
     if (hasChild) {
-      footers.push(..._build(accessor, { cellRenderer, colSpanQueue }))
+      tfoots.push(..._build(accessor, { cellRenderer, colSpanQueue }))
     } else {
       if (footer != null) {
-        footers.push({
-          ...getDefaultFooterCell(),
+        tfoots.push({
+          ...getDefaultTFootCell(),
           accessor,
           colSpan: colSpanQueue.shift() ?? 1,
           value: label,
@@ -65,8 +65,8 @@ function _build<RowData, CellRenderer>(
         const colSpan = colSpanQueue.shift()
 
         if (colSpan == null) {
-          footers.push({
-            ...getDefaultFooterCell(),
+          tfoots.push({
+            ...getDefaultTFootCell(),
             accessor,
             colSpan: 1,
           })
@@ -77,7 +77,7 @@ function _build<RowData, CellRenderer>(
     }
   }
 
-  return footers
+  return tfoots
 }
 
 function buildColSpanQueue<RowData>(rendererModel: RendererModel<RowData>): Array<{ value: number | null, extends: boolean } | null> {
@@ -135,7 +135,7 @@ function prepare<RowData>(rendererModel: RendererModel<RowData>) {
 
   return {
     colSpanQueue,
-    footer: {
+    result: {
       head,
       tail,
       middle,
@@ -143,7 +143,7 @@ function prepare<RowData>(rendererModel: RendererModel<RowData>) {
   }
 }
 
-function getDefaultFooterCell() {
+function getDefaultTFootCell() {
   return {
     id: generateTableID(),
     accessor: null,

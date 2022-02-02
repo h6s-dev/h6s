@@ -3,10 +3,9 @@ import { RendererModel, TableModel } from '../types/table'
 export function transToRendererModel<RowData>(
   model: TableModel<RowData>,
 ): RendererModel<RowData> {
-
   return model.map(x => {
     return {
-      label: x.label,
+      ...x,
       header: x.head?.render,
       cell: x.cell?.render,
       footer: x.foot?.render,
