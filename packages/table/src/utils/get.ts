@@ -1,4 +1,6 @@
-export const get = (obj: Record<string, any>, path: string, defaultValue = undefined) => {
+import { Path } from '..'
+
+export function get<ObjectType extends Record<string, any>>(obj: ObjectType, path: Path<ObjectType>, defaultValue = undefined) {
   const travel = (regexp: RegExp) =>
     String.prototype.split
       .call(path, regexp)

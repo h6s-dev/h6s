@@ -12,18 +12,18 @@ interface Options<Row> {
 export function buildRows<Row>(data: Row[], { cells }: Options<Row>) {
   const manager = new CellSpanManager<Row>()
 
-  const candidateRows = data.map(Row => {
+  const candidateRows = data.map(row => {
     return cells
       .map(cell => {
-        const value = get(Row, String(cell.accessor))
+        const value = get(row, cell.accessor)
 
-        const dropCell = manager.saveRowSpan(Row, cell.rules)
+        const dropCell = manager.saveRowSpan(row, cell.rules)
 
         if (dropCell) {
           return null
         }
 
-        return { value, Row, ...cell }
+        return { value, row, ...cell }
       })
       .filter(x => x != null)
   })
@@ -39,12 +39,12 @@ export function buildRows<Row>(data: Row[], { cells }: Options<Row>) {
       cells: cells.map(aggregatedCell => {
         invariant(aggregatedCell != null, 'invalid cell')
 
-        const { Row, rules, value, ...rest } = aggregatedCell
+        const { row, rules, value, ...rest } = aggregatedCell
 
         const cell: Cell<Row> = {
-          rowSpan: manager.getRowSpan(Row, rules) ?? 1,
-          colSpan: manager.getColSpan(Row, rules),
-          rowValues: Row,
+          rowSpan: manager.getRowSpan(row, rules) ?? 1,
+          colSpan: manager.getColSpan(row, rules),
+          rowValues: row,
           value: value as Primitive,
           ...rest,
         }

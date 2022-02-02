@@ -51,7 +51,7 @@ export class CellSpanManager<Row> {
     return { mergeRow, colSpanRule }
   }
 
-  private getRowSpanMapKey(Row: Row, rules?: RendererRules<Row>) {
+  private getRowSpanMapKey(row: Row, rules?: RendererRules<Row>) {
     const { mergeRow } = this.parseRules(rules)
 
     if (mergeRow == null) {
@@ -59,13 +59,13 @@ export class CellSpanManager<Row> {
     }
 
     if (typeof mergeRow === 'function') {
-      return mergeRow(Row)
+      return mergeRow(row)
     }
 
     if (Array.isArray(mergeRow)) {
-      return mergeRow.map(accessor => get(Row, accessor as string)).join('+')
+      return mergeRow.map(accessor => get(row, accessor)).join('+')
     }
 
-    return JSON.stringify(get(Row, mergeRow))
+    return JSON.stringify(get(row, mergeRow))
   }
 }
