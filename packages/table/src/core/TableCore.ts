@@ -1,5 +1,5 @@
 import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset'
-import { unstableToStable } from '../helpers/unstableToStable'
+import { transToInternalRendererModel } from '../helpers/transToInternalRendererModel'
 import {
   HeaderId,
   HeaderMap,
@@ -35,7 +35,7 @@ export class TableCore<RowData, CellRenderer> {
     model: RendererModel<RowData> | unstable_RendererModel<RowData>,
     options: Options<RowData, CellRenderer>,
   ) {
-    const rendererModel = unstableToStable(model)
+    const rendererModel = transToInternalRendererModel(model)
     const { headerMap } = buildHeaderMap(rendererModel, {
       visibleHeaderIds: options.defaultHeaderIds,
     })
