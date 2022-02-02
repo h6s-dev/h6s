@@ -71,7 +71,7 @@ export type RendererModel<RowData> = Array<Renderer<RowData>>;
 
 export type HeaderId<RowData> = Path<RowData>;
 
-export type HeaderMap = Record<
+export type HeadMeta = Record<
   string,
   { label: string; show: boolean; countOfChild: number; countOfParent: number }
 >;
@@ -92,7 +92,7 @@ export type TableInstance<RowData> = {
   }>;
   tfoots: Array<TFoot<RowData>> | null;
 
-  headerMap: HeaderMap;
+  headMeta: HeadMeta;
   selectableHeaderIds: HeaderId<RowData>[]
   visibleHeaderIds: HeaderId<RowData>[]
 }

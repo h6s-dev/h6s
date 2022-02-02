@@ -2,7 +2,7 @@ import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset
 import { transToRendererModel } from '../helpers/transToRendererModel'
 import {
   HeaderId,
-  HeaderMap,
+  HeadMeta,
   RendererModel,
   TableInstance,
   TableModel,
@@ -14,7 +14,7 @@ import { buildRendererModel } from './renderer/buildRendererModel'
 import { buildCells } from './row/buildCells'
 import { buildRows } from './row/buildRows'
 import { buildTFoots } from './tfoot/buildTFoots'
-import { buildHeaderMap } from './thead/buildHeaderMap'
+import { buildHeadMeta } from './thead/buildHeadMeta'
 import { buildTHeadGroups } from './thead/buildTHeadGroups'
 import { buildTHeads } from './thead/buildTHeads'
 
@@ -28,7 +28,7 @@ export class TableCore<RowData, CellRenderer> {
   static compose = composeDataset
 
   private rendererModel: RendererModel<RowData>
-  private headerMap: HeaderMap
+  private headMeta: HeadMeta
   private options: Options<RowData, CellRenderer>
 
   constructor(
@@ -36,23 +36,23 @@ export class TableCore<RowData, CellRenderer> {
     options: Options<RowData, CellRenderer>,
   ) {
     const rendererModel = transToRendererModel(model)
-    const { headerMap } = buildHeaderMap(rendererModel, {
+    const { headMeta } = buildHeadMeta(rendererModel, {
       visibleHeaderIds: options.defaultHeaderIds,
     })
 
     this.options = options
     this.rendererModel = rendererModel
-    this.headerMap = headerMap
+    this.headMeta = headMeta
   }
 
   updateHeader(headerIds?: Array<HeaderId<RowData>>) {
     invariant(headerIds == null || headerIds?.length > 0, 'headerIds must be an array')
 
-    const { headerMap } = buildHeaderMap(this.rendererModel, {
+    const { headMeta } = buildHeadMeta(this.rendererModel, {
       visibleHeaderIds: headerIds,
     })
 
-    this.headerMap = headerMap
+    this.headMeta = headMeta
 
     return this
   }
@@ -66,11 +66,11 @@ export class TableCore<RowData, CellRenderer> {
   generate(): TableInstance<RowData> {
     const {
       rendererModel,
-      headerMap,
+      headMeta,
       options: { source = [], cellRenderer },
     } = this
 
-    const model = buildRendererModel(rendererModel, headerMap)
+    const model = buildRendererModel(rendererModel, headMeta)
 
     const { theadGroups } = buildTHeadGroups({
       theads: buildTHeads(model, { cellRenderer }),
@@ -83,11 +83,11 @@ export class TableCore<RowData, CellRenderer> {
     const { tfoots } = buildTFoots(model, { cellRenderer })
 
     // FIXME: infer type
-    const selectableHeaderIds = objectEntries(headerMap)
+    const selectableHeaderIds = objectEntries(headMeta)
     .filter(([, x]) => x.countOfChild === 0)
     .map(([id]) => id) as Array<HeaderId<RowData>>
 
-    const visibleHeaderIds = objectEntries(headerMap)
+    const visibleHeaderIds = objectEntries(headMeta)
       .filter(([, x]) => x.show && x.countOfChild === 0)
       .map(([id]) => id) as Array<HeaderId<RowData>>
 
@@ -96,7 +96,7 @@ export class TableCore<RowData, CellRenderer> {
       rows,
       tfoots,
 
-      headerMap,
+      headMeta,
       selectableHeaderIds,
       visibleHeaderIds,
     }

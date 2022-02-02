@@ -1,19 +1,19 @@
-import { getHeaderAccessorId } from '../../core/renderer/getHeaderAccessorId'
-import { getLargestDepth } from '../../core/renderer/getLargestDepth'
-import { HeaderId, HeaderMap, RendererModel } from '../../types/table'
+import { HeaderId, HeadMeta, RendererModel } from '../../types/table'
 import { arrayIncludes } from '../../utils/array'
+import { getHeaderAccessorId } from '../renderer/getHeaderAccessorId'
+import { getLargestDepth } from '../renderer/getLargestDepth'
 
 interface Options<RowData> {
   visibleHeaderIds?: Array<HeaderId<RowData>>;
 }
 
-export function buildHeaderMap<RowData>(
+export function buildHeadMeta<RowData>(
   rendererModel: RendererModel<RowData>,
   options?: Options<RowData>,
 ) {
-  const headerMap = _build(rendererModel, { ...options, depth: 0 })
+  const headMeta = _build(rendererModel, { ...options, depth: 0 })
 
-  return { headerMap }
+  return { headMeta }
 }
 
 interface BuildOptions<RowData> extends Options<RowData> {
@@ -21,7 +21,7 @@ interface BuildOptions<RowData> extends Options<RowData> {
 }
 
 function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOptions<RowData>) {
-  const headerMap: HeaderMap = {}
+  const headMeta: HeadMeta = {}
   const { visibleHeaderIds, depth } = options
 
   for (const model of rendererModel) {
@@ -32,7 +32,7 @@ function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOp
     const show =
       visibleHeaderIds != null ? base.some(x => arrayIncludes(visibleHeaderIds, x.accessor)) : true
 
-    headerMap[getHeaderAccessorId(model)] = {
+    headMeta[getHeaderAccessorId(model)] = {
       label,
       show,
       countOfChild: hasChild ? getLargestDepth(accessor) : 0,
@@ -40,9 +40,9 @@ function _build<RowData>(rendererModel: RendererModel<RowData>, options: BuildOp
     }
 
     if (hasChild) {
-      Object.assign(headerMap, _build(accessor, { ...options, depth: depth + 1 }))
+      Object.assign(headMeta, _build(accessor, { ...options, depth: depth + 1 }))
     }
   }
 
-  return headerMap
+  return headMeta
 }

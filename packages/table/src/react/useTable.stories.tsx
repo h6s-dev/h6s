@@ -22,7 +22,7 @@ export function Basic() {
     <>
       <TableUI instance={instance} />
       <ul>
-        {objectEntries(instance.headerMap).map(([id, { label, show, countOfChild }]) => {
+        {objectEntries(instance.headMeta).map(([id, { label, show, countOfChild }]) => {
           return (
             <label key={id}>
               <input
