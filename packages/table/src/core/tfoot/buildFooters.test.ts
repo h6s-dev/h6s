@@ -374,4 +374,64 @@ describe('buildTFoots', () => {
     expect(IMPACT.value).toBe('Impact')
     expect(LEAD.value).toBe('Lead')
   })
+
+  test('No column have footer', () => {
+    const model: RendererModel<Model> = [
+      {
+        accessor: 'coding',
+        label: 'Coding',
+      },
+      {
+        accessor: 'communication',
+        label: 'Communication',
+      },
+      {
+        accessor: 'design',
+        label: 'Design',
+      },
+      {
+        accessor: 'impact',
+        label: 'Impact',
+      },
+      {
+        accessor: 'lead',
+        label: 'Lead',
+      },
+    ]
+    const { tfoots } = buildTFoots(model)
+
+    expect(tfoots).toBeNull()
+  })
+
+  test('All Column has footer', () => {
+    const model: RendererModel<{ web: string; mobile: string}> = [
+      {
+        accessor: [
+          {
+            accessor: 'web',
+            label: 'Web',
+            footer: () => 'Web',
+          },
+          {
+            accessor: 'mobile',
+            label: 'Mobile',
+            footer: () => 'Mobile',
+          },
+        ],
+        label: 'Coding',
+        footer: () => 'coding',
+      },
+    ]
+    const { tfoots } = buildTFoots(model)
+
+    expect(tfoots!.length).toBe(2)
+    tfoots!.forEach(footer => {
+      expect(footer.colSpan).toBe(1)
+    })
+
+    const [WEB, MOBILE] = tfoots!
+
+    expect(WEB.value).toBe('Web')
+    expect(MOBILE.value).toBe('Mobile')
+  })
 })

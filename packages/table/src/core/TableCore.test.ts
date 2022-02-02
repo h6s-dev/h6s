@@ -1,6 +1,7 @@
 import { TableCore } from '..'
 import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
 import { paymentsTableModel } from '../mocks/paymentsTableModel.mock'
+import { sum } from '../utils/sum'
 
 describe('let instance = new TableCore(model, { source })', () => {
   const instance = new TableCore(paymentsTableModel, {
@@ -100,6 +101,7 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('first row have cells,', () => {
         expect(firstRow.cells.length).toBe(11)
+        expect(firstRow.getRowProps().rowSpan).toBe(4)
 
         const [DATE, ID, SUB_ID, PAID, CANCELED, BUYER, PLCC, DEBIT, TRANSFER, TRANSACTION_ID, MESSAGE] = firstRow.cells
 
@@ -126,6 +128,8 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('second row have cells,', () => {
         expect(secondRow.cells.length).toBe(8)
+        expect(secondRow.getRowProps().rowSpan).toBe(4)
+
         expect(secondRow.cells[0].label).toBe('Paid')
         secondRow.cells.forEach(target => {
           expect(target.rowSpan).toBe(1)
@@ -135,6 +139,8 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('third row have cells,', () => {
         expect(thirdRow.cells.length).toBe(9)
+        expect(thirdRow.getRowProps().rowSpan).toBe(4)
+
         expect(thirdRow.cells[0].label).toBe('Sub Id')
         thirdRow.cells.forEach(target => {
           expect(target.rowSpan).toBe(1)
@@ -144,6 +150,8 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('fourth row have cells,', () => {
         expect(fourthRow.cells.length).toBe(10)
+        expect(fourthRow.getRowProps().rowSpan).toBe(4)
+
         expect(fourthRow.cells[0].label).toBe('Id')
         fourthRow.cells.forEach(target => {
           expect(target.rowSpan).toBe(1)
@@ -153,6 +161,8 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('fifth row have cells,', () => {
         expect(fifthRow.cells.length).toBe(11)
+        expect(fifthRow.getRowProps().rowSpan).toBe(4)
+
         expect(fifthRow.cells[0].label).toBe('Date')
 
         const [DATE, ...restCells] = fifthRow.cells
@@ -368,8 +378,8 @@ describe('let instance = new TableCore(model, { defaultHeadIds }) // with defaul
     })
 
     it('return single footer', () => {
-      expect(tfoots?.length).toBe(1)
-      expect(tfoots?.[0].rowSpan).toBe(1)
+      expect(tfoots!.length).toBe(1)
+      expect(tfoots![0].rowSpan).toBe(1)
     })
   })
 
@@ -417,6 +427,19 @@ describe('let instance = new TableCore(model) // without source', () => {
       expect(rows.length).toBe(0)
     })
   })
+
+  describe('instance.composeRows().generate()', () => {
+    const { rows } = instance.composeRows({
+      groupBy: 'date',
+      compose: rows => {
+        return rows.concat([])
+      },
+    }).generate()
+
+    it('return empty row', () => {
+      expect(rows.length).toBe(0)
+    })
+  })
 })
 
 describe('let instance = new TableCore(model, { source: composeRow(data) })', () => {
@@ -426,6 +449,66 @@ describe('let instance = new TableCore(model, { source: composeRow(data) })', ()
 
   describe('instance.generate()', () => {
     const { rows } = instance.generate()
+
+    describe('return rows', () => {
+      const [, , , , , , seventhRow] = rows
+
+      test('check seventhRow', () => {
+        const [TOTAL, SUB_ID] = seventhRow.cells
+
+        expect(TOTAL.label).toBe('Id')
+        expect(TOTAL.colSpan).toBe(2)
+        expect(SUB_ID.label).toBe('Sub Id')
+        expect(SUB_ID.colSpan).toBe(0)
+      })
+    })
+  })
+})
+
+describe('let instance = new TableCore(model, { source }).compose(...)', () => {
+  const instance = new TableCore(paymentsTableModel, {
+    source: paymentDataset,
+  })
+
+  describe('instance.generate()', () => {
+    const { rows } = instance.composeRows({
+      groupBy: 'date',
+      compose: rows => {
+        const appended = TableCore.compose(rows, {
+          groupBy: 'id',
+          compose: rows => {
+            return rows.concat({
+              subId: '#SUB_TOTAL',
+              amount: sum(rows.map(x => x.amount)),
+              cancelAmount: sum(rows.map(x => x.cancelAmount)),
+              buyer: 'N/A',
+              plcc: sum(rows.map(x => x.plcc)),
+              debit: sum(rows.map(x => x.debit)),
+              transfer: sum(rows.map(x => x.transfer)),
+              meta: {
+                transactionId: 'N/A',
+              },
+              message: 'N/A',
+            })
+          },
+        })
+
+        return appended.concat({
+          id: '#TOTAL',
+          subId: '',
+          amount: sum(rows.map(x => x.amount)),
+          cancelAmount: sum(rows.map(x => x.cancelAmount)),
+          buyer: 'N/A',
+          plcc: sum(rows.map(x => x.plcc)),
+          debit: sum(rows.map(x => x.debit)),
+          transfer: sum(rows.map(x => x.transfer)),
+          meta: {
+            transactionId: 'N/A',
+          },
+          message: 'N/A',
+        })
+      },
+    }).generate()
 
     describe('return rows', () => {
       const [, , , , , , seventhRow] = rows
