@@ -1,4 +1,4 @@
-import { composeDataset } from '..'
+import { composeDataset, TableCore } from '..'
 import { sum } from '../utils/sum'
 
 export interface PaymentDatasetType {
@@ -120,7 +120,7 @@ export const paymentDataset: PaymentDatasetType[] = [{
 export const paymentDatasetWithSum = composeDataset(paymentDataset, {
   groupBy: 'date',
   compose: rows => {
-    const appended = composeDataset(rows, {
+    const appended = TableCore.compose(rows, {
       groupBy: 'id',
       compose: rows => {
         return rows.concat({
