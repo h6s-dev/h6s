@@ -1,86 +1,95 @@
-import { RendererModel } from '../types/table'
+import { unstable_RendererModel } from '../types/table'
 import { sum } from '../utils/sum'
 import { paymentDataset, PaymentDatasetType } from './payments.mock'
 
-export const paymentsTableRendererModel: RendererModel<PaymentDatasetType> = [
+export const paymentsTableRendererModel: unstable_RendererModel<PaymentDatasetType> = [
   {
     accessor: 'date',
-    label: 'Date',
-    footer: [() => <>{'Total'}</>],
-    rules: {
+    header: 'Date',
+    cell: {
       mergeRow: 'date',
-      extendsFooter: true,
+    },
+    footer: {
+      render: [() => <>{'Total'}</>],
     },
   },
   {
     accessor: 'id',
-    label: 'Id',
-    rules: {
+    header: 'Id',
+    cell: {
       mergeRow: ['date', 'id'],
       colSpanAs: x => x.id === '#TOTAL' ? 2 : 1,
     },
   },
   {
     accessor: 'subId',
-    label: 'Sub Id',
-    rules: {
+    header: 'Sub Id',
+    cell: {
       mergeRow: ({ date, id, subId }) => date + id + subId,
       colSpanAs: x => x.id === '#TOTAL' ? 0 : 1,
     },
   },
   {
-    label: 'AMOUNT',
     accessor: [
       {
         accessor: 'amount',
-        label: 'Paid',
-        footer: [() => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>],
+        header: 'Paid',
+        footer: {
+          render: [() => <>Paid: {sum(paymentDataset.map(x => x.amount))}</>],
+        },
       },
       {
         accessor: 'cancelAmount',
-        label: 'Canceled',
-        footer: [() => <>Canceled: {sum(paymentDataset.map(x => x.cancelAmount))}</>],
-        rules: {
-          extendsFooter: false,
+        header: 'Canceled',
+        footer: {
+          render: [() => <>Canceled: {sum(paymentDataset.map(x => x.cancelAmount))}</>],
+          extends: false,
         },
       },
     ],
+    header: 'AMOUNT',
   },
   {
     accessor: 'buyer',
-    label: 'Buyer',
+    header: 'Buyer',
   },
   {
-    label: 'PAY METHOD',
     accessor: [
       {
-        label: 'CARD',
         accessor: [
           {
-            label: 'Plcc',
             accessor: 'plcc',
-            footer: [() => <>Plcc: {sum(paymentDataset.map(x => x.plcc))}</>],
+            header: 'Plcc',
+            footer: {
+              render: [() => <>Plcc: {sum(paymentDataset.map(x => x.plcc))}</>],
+            },
           },
           {
-            label: 'Debit',
             accessor: 'debit',
-            footer: [() => <>Debit: {sum(paymentDataset.map(x => x.debit))}</>],
+            header: 'Debit',
+            footer: {
+              render: [() => <>Debit: {sum(paymentDataset.map(x => x.debit))}</>],
+            },
           },
         ],
+        header: 'CARD',
       },
       {
-        label: 'Transfer',
         accessor: 'transfer',
-        footer: [() => <>Transfer: {sum(paymentDataset.map(x => x.transfer))}</>],
+        header: 'Transfer',
+        footer: {
+          render: [() => <>Transfer: {sum(paymentDataset.map(x => x.transfer))}</>],
+        },
       },
     ],
+    header: 'PAY METHOD',
   },
   {
-    label: 'Transaction Id',
     accessor: 'meta.transactionId',
+    header: 'Transaction Id',
   },
   {
-    label: 'Message',
     accessor: 'message',
+    header: 'Message',
   },
 ]

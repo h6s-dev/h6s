@@ -56,21 +56,21 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('check second HeaderGroup', () => {
         expect(headerGroups[1].headers.length).toBe(4)
-  
+
         const [PAID, CANCELED, CARD, TRANSFER] = headerGroups[1].headers
-  
+
         expect(PAID.label).toBe('Paid')
         expect(PAID.rowSpan).toBe(2)
         expect(PAID.colSpan).toBe(1)
-  
+
         expect(CANCELED.label).toBe('Canceled')
         expect(CANCELED.rowSpan).toBe(2)
         expect(CANCELED.colSpan).toBe(1)
-  
+
         expect(CARD.label).toBe('CARD')
         expect(CARD.rowSpan).toBe(1)
         expect(CARD.colSpan).toBe(2)
-  
+
         expect(TRANSFER.label).toBe('Transfer')
         expect(TRANSFER.rowSpan).toBe(2)
         expect(TRANSFER.colSpan).toBe(1)
@@ -78,13 +78,13 @@ describe('let instance = new TableCore(model, { source })', () => {
 
       test('check third HeaderGroup', () => {
         expect(headerGroups[2].headers.length).toBe(2)
-  
+
         const [PLCC, DEBIT] = headerGroups[2].headers
-  
+
         expect(PLCC.label).toBe('Plcc')
         expect(PLCC.rowSpan).toBe(1)
         expect(PLCC.colSpan).toBe(1)
-  
+
         expect(DEBIT.label).toBe('Debit')
         expect(DEBIT.rowSpan).toBe(1)
         expect(DEBIT.colSpan).toBe(1)
