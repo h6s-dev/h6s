@@ -16,7 +16,7 @@
     "lint": "yarn run -T eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "typecheck": "yarn run -T tsc",
-    "test": "yarn run -T jest --config ../../jest.config.js",
+    "test": "yarn run -T jest --config ../../jest.config.js --roots './packages/calendar/src'",
     "test:playwright": "playwright test",
     "test:cov": "yarn test --coverage",
     "test:watch": "yarn test --watch",
