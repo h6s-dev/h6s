@@ -18,4 +18,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build
-        run: yarn build:examples
+        run: yarn build
+        working-directory: /examples/react
