@@ -26,15 +26,15 @@ function _build<Row, CellRenderer>(
   rendererModel: RendererModel<Row>,
   { cellRenderer, largestDepth, depth, labelSequence }: BuildOptions<CellRenderer>,
 ) {
-  const headers: Array<THead<Row>> = []
+  const heads: Array<THead<Row>> = []
 
   for (const model of rendererModel) {
-    const { label, accessor, header } = model
+    const { label, accessor, head } = model
     const hasChild = Array.isArray(accessor)
     const sequence = labelSequence.concat(label)
 
     if (hasChild) {
-      headers.push(
+      heads.push(
         ..._build(accessor, {
           largestDepth,
           depth: depth + 1,
@@ -43,7 +43,7 @@ function _build<Row, CellRenderer>(
         }),
       )
     }
-    headers.push({
+    heads.push({
       id: generateTableID(),
       accessor: hasChild ? null : accessor,
       rowSpan: hasChild ? 1 : depth > 1 ? largestDepth - depth + 1 : largestDepth,
@@ -53,11 +53,11 @@ function _build<Row, CellRenderer>(
       labelSequence: sequence,
       render:
         typeof cellRenderer === 'function'
-          ? cellRenderer(header)
+          ? cellRenderer(head)
           : ({ cellProps }) => cellProps.value,
       depth,
     })
   }
 
-  return headers
+  return heads
 }

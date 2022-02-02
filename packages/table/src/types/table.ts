@@ -61,7 +61,7 @@ export interface RendererRules<Row> {
 interface Renderer<Row> {
   accessor: Path<Row> | Array<Renderer<Row>>;
   label: string;
-  header?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
+  head?: CellComponent<THead<Row>> | Array<CellRecursiveRenderer<THead<Row>>>;
   cell?: CellComponent<Cell<Row>> | Array<CellRecursiveRenderer<Cell<Row>>>;
   footer?: CellComponent<TFoot<Row>> | Array<CellRecursiveRenderer<TFoot<Row>>>;
   rules?: RendererRules<Row>;

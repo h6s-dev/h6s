@@ -7,7 +7,7 @@ export function transToRendererModel<Row>(
     return {
       ...x,
       accessor: Array.isArray(x.accessor) ? transToRendererModel(x.accessor) : x.accessor,
-      header: isRenderer(x.head) ? x.head: x.head?.render,
+      head: isRenderer(x.head) ? x.head: x.head?.render,
       cell: isRenderer(x.cell) ? x.cell : x.cell?.render,
       footer: isRenderer(x.foot) ? x.foot : x.foot?.render,
       rules: {
