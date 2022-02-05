@@ -4,8 +4,7 @@ sidebar_position: 1
 
 # Get started
 
-1. `@h6s/table` is `TableModel` manager
-2. Create complex table UI!
+`@h6s/table` is module for creating complex table UI
 
 ## Install
 
@@ -21,10 +20,42 @@ yarn add @h6s/table
 npm install --save @h6s/table
 ```
 
-## Define Table as Model
+## Build Table
+
+### Source
 
 ```tsx
-const myTableModel = []
+interface Product {
+  id: number;
+  product: {
+    name: string;
+    price: number;
+  };
+  createdAt: string;
+}
+```
+
+### Define Model
+
+```tsx
+const model: TableModel<Product> = [
+  {
+    accessor: 'id', // <- keyof Product
+    label: 'Id', // <- whatever
+  },
+  {
+    accessor: 'product.name',
+    label: 'Name',
+  },
+  {
+    accessor: 'product.price',
+    label: 'Price',
+  },
+  {
+    accessor: 'createdAt',
+    label: 'Created Date',
+  },
+]
 ```
 
 ## Get Table Instance
@@ -35,9 +66,37 @@ const myTableModel = []
 import { useTable } from '@h6s/table'
 
 const [instance, controls] = useTable({
-  model: myTableModel,
-  source: [],
+  model: model,
+  source: products,
 })
+```
+
+- `instance`: serve data for building table UI.
+
+```tsx
+type TableInstance<Row> = {
+  theadGroups: Array<{
+    getRowProps: () => RowProps;
+    theads: Array<THead<Row>>;
+  }>;
+  rows: Array<{
+    getRowProps: () => RowProps;
+    cells: Array<Cell<Row>>;
+  }>;
+  tfoots: Array<TFoot<Row>> | null;
+
+  headMeta: HeadMeta;
+  selectableHeadIds: HeadId<Row>[]
+  visibleHeadIds: HeadId<Row>[]
+}
+```
+
+- `controls`: serve interface to control table.
+
+```ts
+type TableControls = {
+  updateHead: (headIds?: Array<HeadId<Row>>) => void;
+}
 ```
 
 ## Build UI with anything
@@ -50,40 +109,40 @@ import { useTable } from '@h6s/table'
 export default function Table() {
   const [{ theadGroups, rows }, controls] = useTable({
     model: myTableModel,
-    source: [],
+    source: products,
   })
 
   return (
-    <Table>
-      <Thead>
+    <table>
+      <thead>
         {theadGroups.map(({ theads, getRowProps }) => {
           const props = getRowProps()
 
           return (
-            <Tr key={props.id} {...props}>
+            <tr key={props.id} {...props}>
               {theads.map(head => (
-                <Th>{head.render({ cellProps: head })}</Th>
+                <th>{head.render({ cellProps: head })}</th>
               ))}
-            </Tr>
+            </tr>
           )
         })}
-      </Thead>
-      <Tbody>
+      </thead>
+      <tbody>
         {rows.map(({ cells, getRowProps }) => {
           const props = getRowProps()
 
           return (
-            <Tr key={props.id} {...props}>
+            <tr key={props.id} {...props}>
               {cells.map(cell => (
-                cell.colSpan === 0 ? null : (
-                  <Td key={cell.id}>{cell.render({ cellProps: cell })}</Td>
-                )
+                cell.colSpan !== 0
+                  ? <td key={cell.id}>{cell.render({ cellProps: cell })}</td>
+                  : null
               )}
-            </Tr>
+            </tr>
           )
         })}
-      </Tbody>
-    </Table>
+      </tbody>
+    </table>
   )
 }
 ```
