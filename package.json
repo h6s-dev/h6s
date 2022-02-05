@@ -113,8 +113,6 @@
     "semantic-release": "yarn workspaces foreach --from '@h6s/*' run semantic-release",
     "build": "yarn workspaces foreach -ptR --from '@h6s/*' run build",
     "build:storybook": "build-storybook",
-    "build:website": "yarn workspaces foreach --include 'website' run build",
-    "build:examples": "yarn workspaces foreach -ptR --from '@h6s-examples/*' run build",
     "postinstall": "husky install"
   },
   "packageManager": "yarn@3.1.1"
