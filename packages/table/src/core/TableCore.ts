@@ -1,8 +1,7 @@
 import { composeDataset, ComposeDatasetOptions } from '../helpers/composeDataset'
 import { transToRendererModel } from '../helpers/transToRendererModel'
 import {
-  HeadIds,
-  HeadMeta,
+  HeadId, HeadMeta,
   RendererModel,
   TableInstance,
   TableModel,
@@ -21,7 +20,7 @@ import { buildTHeads } from './thead/buildTHeads'
 interface Options<Row, CellRenderer> {
   source?: Row[];
   cellRenderer?: CellRenderer;
-  defaultHeadIds?: Array<HeadIds<Row>>;
+  defaultHeadIds?: Array<HeadId<Row>>;
 }
 
 export class TableCore<Row, CellRenderer> {
@@ -45,7 +44,7 @@ export class TableCore<Row, CellRenderer> {
     this.headMeta = headMeta
   }
 
-  updateHead(headIds?: Array<HeadIds<Row>>) {
+  updateHead(headIds?: Array<HeadId<Row>>) {
     invariant(headIds == null || headIds?.length > 0, 'headIds must be an array')
 
     const { headMeta } = buildHeadMeta(this.rendererModel, {
@@ -85,11 +84,11 @@ export class TableCore<Row, CellRenderer> {
     // FIXME: infer type
     const selectableHeadIds = objectEntries(headMeta)
     .filter(([, x]) => x.countOfChild === 0)
-    .map(([id]) => id) as Array<HeadIds<Row>>
+    .map(([id]) => id) as Array<HeadId<Row>>
 
     const visibleHeadIds = objectEntries(headMeta)
       .filter(([, x]) => x.show && x.countOfChild === 0)
-      .map(([id]) => id) as Array<HeadIds<Row>>
+      .map(([id]) => id) as Array<HeadId<Row>>
 
     return {
       theadGroups,

@@ -69,7 +69,7 @@ interface Renderer<Row> {
 
 export type RendererModel<Row> = Array<Renderer<Row>>;
 
-export type HeadIds<Row> = Path<Row>;
+export type HeadId<Row> = Path<Row>;
 
 export type HeadMeta = Record<
   string,
@@ -93,8 +93,8 @@ export type TableInstance<Row> = {
   tfoots: Array<TFoot<Row>> | null;
 
   headMeta: HeadMeta;
-  selectableHeadIds: HeadIds<Row>[]
-  visibleHeadIds: HeadIds<Row>[]
+  selectableHeadIds: HeadId<Row>[]
+  visibleHeadIds: HeadId<Row>[]
 }
 
 type CommonRenderer<CellType extends CommonCell> = CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>
