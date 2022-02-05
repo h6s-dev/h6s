@@ -20,7 +20,7 @@ import {
   Tr,
   useDisclosure,
 } from '@chakra-ui/react'
-import { HeadIds, useTable } from '@h6s/table'
+import { HeadId, useTable } from '@h6s/table'
 import { useForm } from 'react-hook-form'
 
 import { Container } from '../../components/Container'
@@ -28,7 +28,7 @@ import { Header } from '../../components/Header'
 import { DATASET_WITH_SUMMARY, TABLE_MODEL } from '../../mocks/dataset.mock'
 
 interface Field {
-  headIds: Array<HeadIds<typeof DATASET_WITH_SUMMARY[number]>>;
+  headIds: Array<HeadId<typeof DATASET_WITH_SUMMARY[number]>>;
 }
 
 export default function TableExample() {

@@ -2,13 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
-import { HeadIds, TableModel } from '../types/table'
+import { HeadId, TableModel } from '../types/table'
 
 interface Options<Row> {
   model: TableModel<Row>;
   source?: Row[];
   options?: {
-    defaultHeadIds?: Array<HeadIds<Row>>;
+    defaultHeadIds?: Array<HeadId<Row>>;
   };
 }
 
@@ -28,7 +28,7 @@ export function useTable<Row>({
   const [instance, setInstance] = useState(() => tableCore.current.generate())
   const controls = useMemo(
     () => ({
-      updateHead(headIds?: Array<HeadIds<Row>>) {
+      updateHead(headIds?: Array<HeadId<Row>>) {
         setInstance(() => tableCore.current.updateHead(headIds).generate())
       },
     }),
