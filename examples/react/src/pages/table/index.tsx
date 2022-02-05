@@ -1,5 +1,6 @@
 import { SettingsIcon } from '@chakra-ui/icons'
 import {
+  Box,
   Button,
   Checkbox,
   Drawer,
@@ -53,85 +54,86 @@ export default function TableExample() {
             </HStack>
           </Button>
         </Flex>
-        <Table size="sm" sx={{
-          whiteSpace: 'nowrap',
-          marginBottom: '20rem',
-          'th': {
-            borderLeft: '1px solid',
-            borderRight: '1px solid',
-            borderLeftColor: 'blue.100',
-            borderRightColor: 'blue.100',
-          },
-          'td': {
-            borderLeft: '1px solid',
-            borderRight: '1px solid',
-            borderLeftColor: 'blue.100',
-            borderRightColor: 'blue.100',
-          },
-          'th:first-of-type': {
-            borderLeftColor: 'blue.300',
-          },
-          'td:first-of-type': {
-            borderLeftColor: 'blue.300',
-          },
-          'th:last-child': {
-            borderRightColor: 'blue.300',
-          },
-          'td:last-child': {
-            borderRightColor: 'blue.300',
-          },
-        }} colorScheme="blue" borderColor="blue.300" borderWidth={1}>
-          <TableCaption placement='top'>Transaction Table</TableCaption>
-          <Thead bgColor="blue.50">
-            {instance.theadGroups.map(({ theads, getRowProps }) => {
-              const props = getRowProps()
+        <Box overflowX="auto" maxWidth="100%" mb="20">
+          <Table size="sm" sx={{
+            whiteSpace: 'nowrap',
+            'th': {
+              borderLeft: '1px solid',
+              borderRight: '1px solid',
+              borderLeftColor: 'blue.100',
+              borderRightColor: 'blue.100',
+            },
+            'td': {
+              borderLeft: '1px solid',
+              borderRight: '1px solid',
+              borderLeftColor: 'blue.100',
+              borderRightColor: 'blue.100',
+            },
+            'th:first-of-type': {
+              borderLeftColor: 'blue.300',
+            },
+            'td:first-of-type': {
+              borderLeftColor: 'blue.300',
+            },
+            'th:last-child': {
+              borderRightColor: 'blue.300',
+            },
+            'td:last-child': {
+              borderRightColor: 'blue.300',
+            },
+          }} colorScheme="blue" borderColor="blue.300" borderWidth={1}>
+            <TableCaption placement='top'>Transaction Table</TableCaption>
+            <Thead bgColor="blue.50">
+              {instance.theadGroups.map(({ theads, getRowProps }) => {
+                const props = getRowProps()
 
-              return (
-                <Tr key={props.id} {...props}>
-                  {theads.map(header => {
-                    return (
-                      <Th key={header.id} rowSpan={header.rowSpan} colSpan={header.colSpan}>
-                        {header.render({ cellProps: header })}
-                      </Th>
-                    )
-                  })}
-                </Tr>
-              )
-          })}
-          </Thead>
-          <Tbody>
-            {instance.rows.map(({ cells, getRowProps }) => {
-              const props = getRowProps()
-
-              return (
-                <Tr key={props.id} {...props}>
-                  {cells.map(cell => {
-                    if (cell.colSpan === 0) {
-                      return null
-                    }
-
-                    return (
-                      <Td key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan}>
-                        {cell.render({ cellProps: cell })}
-                      </Td>
-                    )
-                  })}
-                </Tr>
-              )
-            })}
-          </Tbody>
-          <Tfoot>
-            <Tr>
-              {instance.tfoots?.map(cell => {
                 return (
-                  <Th key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan}>
-                    {cell.render({ cellProps: cell })}
-                  </Th>
+                  <Tr key={props.id} {...props}>
+                    {theads.map(header => {
+                      return (
+                        <Th key={header.id} rowSpan={header.rowSpan} colSpan={header.colSpan}>
+                          {header.render({ cellProps: header })}
+                        </Th>
+                      )
+                    })}
+                  </Tr>
+                )
+            })}
+            </Thead>
+            <Tbody>
+              {instance.rows.map(({ cells, getRowProps }) => {
+                const props = getRowProps()
+
+                return (
+                  <Tr key={props.id} {...props}>
+                    {cells.map(cell => {
+                      if (cell.colSpan === 0) {
+                        return null
+                      }
+
+                      return (
+                        <Td key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan}>
+                          {cell.render({ cellProps: cell })}
+                        </Td>
+                      )
+                    })}
+                  </Tr>
                 )
               })}
-            </Tr>
-          </Tfoot>
-        </Table>
+            </Tbody>
+            <Tfoot>
+              <Tr>
+                {instance.tfoots?.map(cell => {
+                  return (
+                    <Th key={cell.id} rowSpan={cell.rowSpan} colSpan={cell.colSpan}>
+                      {cell.render({ cellProps: cell })}
+                    </Th>
+                  )
+                })}
+              </Tr>
+            </Tfoot>
+          </Table>
+        </Box>
         <Drawer
           isOpen={isOpen}
           placement='right'
