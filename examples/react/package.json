@@ -22,7 +22,7 @@
     "@h6s/table": "workspace:^",
     "babel-loader": "^8.2.3",
     "date-fns": "^2.27.0",
-    "next": "12.0.10",
+    "next": "12.1.0",
     "react-hook-form": "7.17.5"
   },
   "devDependencies": {
