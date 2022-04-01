@@ -4281,7 +4281,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
     "@types/node": 17.0.5
-    "@types/react": 17.0.38
+    "@types/react": 17.0.43
     date-fns: 2.28.0
     playwright: 1.17.1
     react: 17.0.2
@@ -4307,7 +4307,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
     "@types/node": 17.0.5
-    "@types/react": 17.0.38
+    "@types/react": 17.0.43
     playwright: 1.17.1
     react: 17.0.2
     react-dom: 17.0.2
@@ -7497,7 +7497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:17.0.38, @types/react@npm:>=16.9.0, @types/react@npm:^17.0.15, @types/react@npm:^17.0.38":
+"@types/react@npm:*, @types/react@npm:>=16.9.0, @types/react@npm:^17.0.15, @types/react@npm:^17.0.38":
   version: 17.0.38
   resolution: "@types/react@npm:17.0.38"
   dependencies:
@@ -7508,14 +7508,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.39":
-  version: 17.0.39
-  resolution: "@types/react@npm:17.0.39"
+"@types/react@npm:17.0.43":
+  version: 17.0.43
+  resolution: "@types/react@npm:17.0.43"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bf04d3c2894559012710d595553e12b422d3b91cd8f4f7e122d8cb044ba9c2ba17f6e8a4e09581359cc5509ddc59cd8c8fabd6774f3505a40a45393f074d6e6e
+  checksum: 981b0993f5b3ea9d3488b8cc883201e8ae47ba7732929f788f450a79fd72829e658080d5084e67caa008e58d989b0abc1d5f36ff0a1cda09315ea3a3c0c9dc11
   languageName: node
   linkType: hard
 
@@ -15347,7 +15347,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@testing-library/user-event": 13.5.0
     "@types/jest": 27.4.0
-    "@types/react": 17.0.38
+    "@types/react": 17.0.43
     "@types/testing-library__jest-dom": 5.14.2
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
@@ -27249,7 +27249,7 @@ __metadata:
     "@mdx-js/react": 1.6.22
     "@tsconfig/docusaurus": 1.0.4
     "@types/node": 17.0.15
-    "@types/react": 17.0.39
+    "@types/react": 17.0.43
     clsx: 1.1.1
     globby: 12.2.0
     prism-react-renderer: 1.2.1
