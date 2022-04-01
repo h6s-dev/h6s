@@ -5352,7 +5352,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/github@npm:8.0.2, @semantic-release/github@npm:^8.0.0":
+"@semantic-release/github@npm:8.0.4":
+  version: 8.0.4
+  resolution: "@semantic-release/github@npm:8.0.4"
+  dependencies:
+    "@octokit/rest": ^18.0.0
+    "@semantic-release/error": ^2.2.0
+    aggregate-error: ^3.0.0
+    bottleneck: ^2.18.1
+    debug: ^4.0.0
+    dir-glob: ^3.0.0
+    fs-extra: ^10.0.0
+    globby: ^11.0.0
+    http-proxy-agent: ^5.0.0
+    https-proxy-agent: ^5.0.0
+    issue-parser: ^6.0.0
+    lodash: ^4.17.4
+    mime: ^3.0.0
+    p-filter: ^2.0.0
+    p-retry: ^4.0.0
+    url-join: ^4.0.0
+  peerDependencies:
+    semantic-release: ">=18.0.0-beta.1"
+  checksum: e344b26f12891fe7ba157473d1c9c4ceebe2165cc0ba64fef36e20bc857694afe5e9c4bf196301b7b6fea2686c6a995949dc30d35d52120a8b6fef6016d76714
+  languageName: node
+  linkType: hard
+
+"@semantic-release/github@npm:^8.0.0":
   version: 8.0.2
   resolution: "@semantic-release/github@npm:8.0.2"
   dependencies:
@@ -15333,7 +15359,7 @@ __metadata:
     "@mdx-js/react": 1.6.22
     "@semantic-release/commit-analyzer": 9.0.2
     "@semantic-release/git": 10.0.1
-    "@semantic-release/github": 8.0.2
+    "@semantic-release/github": 8.0.4
     "@semantic-release/npm": 8.0.3
     "@semantic-release/release-notes-generator": 10.0.3
     "@storybook/addon-actions": 6.4.9
