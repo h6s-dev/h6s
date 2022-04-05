@@ -60,7 +60,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/jest": "27.4.0",
     "@types/react": "17.0.43",
-    "@types/testing-library__jest-dom": "5.14.2",
+    "@types/testing-library__jest-dom": "5.14.3",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
     "@yarnpkg/esbuild-plugin-pnp": "2.0.0",
