@@ -13997,10 +13997,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@tsconfig/docusaurus", [
-        ["npm:1.0.4", {
-          "packageLocation": "./.yarn/cache/@tsconfig-docusaurus-npm-1.0.4-d62f751eda-720ca04baa.zip/node_modules/@tsconfig/docusaurus/",
+        ["npm:1.0.5", {
+          "packageLocation": "./.yarn/cache/@tsconfig-docusaurus-npm-1.0.5-7d9496b6dd-3089de4a1a.zip/node_modules/@tsconfig/docusaurus/",
           "packageDependencies": [
-            ["@tsconfig/docusaurus", "npm:1.0.4"]
+            ["@tsconfig/docusaurus", "npm:1.0.5"]
           ],
           "linkType": "HARD",
         }]
@@ -38872,7 +38872,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/theme-classic", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.14"],
             ["@docusaurus/types", "npm:2.0.0-beta.14"],
             ["@mdx-js/react", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:1.6.22"],
-            ["@tsconfig/docusaurus", "npm:1.0.4"],
+            ["@tsconfig/docusaurus", "npm:1.0.5"],
             ["@types/node", "npm:17.0.15"],
             ["@types/react", "npm:17.0.43"],
             ["clsx", "npm:1.1.1"],
