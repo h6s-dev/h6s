@@ -6,30 +6,45 @@ title: Example
 [View Source on GitHub](https://github.com/h6s-dev/h6s/blob/main/examples/react/src/pages/table/index.tsx)
 
 ```tsx
-import { useCalendar } from '@h6s/calendar'
+import { useTable } from '@h6s/table'
 
-export default function Calendar() {
-  const { headers, body, view } = useCalendar()
+export default function Table() {
+  const [{ theadGroups, rows }, controls] = useTable({
+    model: myTableModel,
+    source: products,
+  })
 
   return (
-    <Table>
-      <Thead>
-        <Tr>
-          {headers.weekDays.map(({ key, value }) => {
-            return <Th key={key}>{format(value, 'E', { locale })}</Th>
-          })}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {body.value.map(({ key, value: days }) => (
-          <Tr key={key}>
-            {days.map(({ key, value }) => (
-              <Td key={key}>{getDate(value)}</Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </Table>
+    <table>
+      <thead>
+        {theadGroups.map(({ theads, getRowProps }) => {
+          const props = getRowProps()
+
+          return (
+            <tr key={props.id} {...props}>
+              {theads.map(head => (
+                <th>{head.render({ cellProps: head })}</th>
+              ))}
+            </tr>
+          )
+        })}
+      </thead>
+      <tbody>
+        {rows.map(({ cells, getRowProps }) => {
+          const props = getRowProps()
+
+          return (
+            <tr key={props.id} {...props}>
+              {cells.map(cell => (
+                cell.colSpan !== 0
+                  ? <td key={cell.id}>{cell.render({ cellProps: cell })}</td>
+                  : null
+              )}
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
   )
 }
 ```
