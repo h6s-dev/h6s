@@ -150,10 +150,10 @@ export default function TableExample() {
               })}>
               <DrawerBody>
                 <Stack spacing={4}>
-                  {Object.entries(instance.headMeta).map(([id, { label, show, countOfChild, countOfParent }]) => {
+                  {Object.entries(instance.headMeta).map(([id, { label, show, countOfChild, countOfParent }], index) => {
                     return (
                       <Checkbox
-                        {...register('headIds')}
+                        {...register(`headIds.${index}`)}
                         key={id}
                         size="lg"
                         value={id}
