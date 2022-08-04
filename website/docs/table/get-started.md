@@ -60,7 +60,7 @@ const model: TableModel<Product> = [
 
 ## Get Table Instance
 
-`useTable` hooks are the most important functions and everything in Calendar. These hooks return almost everything you need to construct a table.
+`useTable` hooks are the most important functions and everything in Table. These hooks return almost everything you need to construct a table.
 
 ```ts
 import { useTable } from '@h6s/table'
