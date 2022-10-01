@@ -83,7 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:5.8.1"],
             ["@yarnpkg/esbuild-plugin-pnp", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:2.0.0"],
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],
-            ["acorn", "npm:8.7.0"],
+            ["acorn", "npm:8.8.0"],
             ["all-contributors-cli", "npm:6.20.0"],
             ["concurrently", "npm:6.5.1"],
             ["cz-conventional-changelog", "npm:3.3.0"],
@@ -15835,6 +15835,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["acorn", "npm:8.7.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:8.8.0", {
+          "packageLocation": "./.yarn/cache/acorn-npm-8.8.0-9ef399ab45-7270ca82b2.zip/node_modules/acorn/",
+          "packageDependencies": [
+            ["acorn", "npm:8.8.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["acorn-dynamic-import", [
@@ -24326,7 +24333,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:5.8.1"],
             ["@yarnpkg/esbuild-plugin-pnp", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:2.0.0"],
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],
-            ["acorn", "npm:8.7.0"],
+            ["acorn", "npm:8.8.0"],
             ["all-contributors-cli", "npm:6.20.0"],
             ["concurrently", "npm:6.5.1"],
             ["cz-conventional-changelog", "npm:3.3.0"],
