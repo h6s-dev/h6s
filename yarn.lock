@@ -8318,14 +8318,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/esbuild-plugin-pnp@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:2.0.0"
+"@yarnpkg/esbuild-plugin-pnp@npm:2.0.3":
+  version: 2.0.3
+  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:2.0.3"
   dependencies:
     tslib: ^1.13.0
   peerDependencies:
     esbuild: ">=0.10.0"
-  checksum: 7b98034f4c0931aa15e9cb2c77c5c485d89df3af31f1ea8223411f8880a2fbe88377d9f71ff45c04aecbcc8b2b47e167991a0f948dc2ec1f4a6ee026fea1fe9d
+  checksum: fe0233af6c54e018ca43666aa5dc4e9e15f625d68c38dd949869b28368e2d7790818404fa75655883a8c8802f7ec66deea7e2a6a68de6f4be3e9a38502c0ba46
   languageName: node
   linkType: hard
 
@@ -15361,7 +15361,7 @@ __metadata:
     "@types/testing-library__jest-dom": 5.14.2
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
-    "@yarnpkg/esbuild-plugin-pnp": 2.0.0
+    "@yarnpkg/esbuild-plugin-pnp": 2.0.3
     "@yarnpkg/pnpify": 3.1.1-rc.9
     acorn: 8.7.0
     all-contributors-cli: 6.20.0
