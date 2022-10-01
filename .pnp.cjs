@@ -87,7 +87,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["all-contributors-cli", "npm:6.20.0"],
             ["concurrently", "npm:6.5.1"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["date-fns", "npm:2.28.0"],
+            ["date-fns", "npm:2.29.3"],
             ["esbuild", "npm:0.14.11"],
             ["eslint", "npm:8.6.0"],
             ["eslint-config-prettier", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:8.3.0"],
@@ -8906,7 +8906,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:27.4.0"],
             ["@types/node", "npm:17.0.5"],
             ["@types/react", "npm:17.0.43"],
-            ["date-fns", "npm:2.28.0"],
+            ["date-fns", "npm:2.29.3"],
             ["playwright", "npm:1.17.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:17.0.2"],
@@ -20112,10 +20112,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:2.28.0", {
-          "packageLocation": "./.yarn/cache/date-fns-npm-2.28.0-c19c5add1b-a0516b2e4f.zip/node_modules/date-fns/",
+        ["npm:2.29.3", {
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.29.3-fef7e3c72c-e01cf5b62a.zip/node_modules/date-fns/",
           "packageDependencies": [
-            ["date-fns", "npm:2.28.0"]
+            ["date-fns", "npm:2.29.3"]
           ],
           "linkType": "HARD",
         }]
@@ -24330,7 +24330,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["all-contributors-cli", "npm:6.20.0"],
             ["concurrently", "npm:6.5.1"],
             ["cz-conventional-changelog", "npm:3.3.0"],
-            ["date-fns", "npm:2.28.0"],
+            ["date-fns", "npm:2.29.3"],
             ["esbuild", "npm:0.14.11"],
             ["eslint", "npm:8.6.0"],
             ["eslint-config-prettier", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:8.3.0"],

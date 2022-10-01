@@ -29,7 +29,7 @@
     "@types/jest": "27.4.0",
     "@types/node": "17.0.5",
     "@types/react": "17.0.43",
-    "date-fns": "2.28.0",
+    "date-fns": "2.29.3",
     "playwright": "1.17.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
