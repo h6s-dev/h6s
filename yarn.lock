@@ -4281,7 +4281,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
     "@types/node": 17.0.5
-    "@types/react": 17.0.43
+    "@types/react": 17.0.50
     date-fns: 2.28.0
     playwright: 1.17.1
     react: 17.0.2
@@ -4307,7 +4307,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
     "@types/node": 17.0.5
-    "@types/react": 17.0.43
+    "@types/react": 17.0.50
     playwright: 1.17.1
     react: 17.0.2
     react-dom: 17.0.2
@@ -7518,14 +7518,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:17.0.43":
-  version: 17.0.43
-  resolution: "@types/react@npm:17.0.43"
+"@types/react@npm:17.0.50":
+  version: 17.0.50
+  resolution: "@types/react@npm:17.0.50"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 981b0993f5b3ea9d3488b8cc883201e8ae47ba7732929f788f450a79fd72829e658080d5084e67caa008e58d989b0abc1d5f36ff0a1cda09315ea3a3c0c9dc11
+  checksum: b5629dff7c2f3e9fcba95a19b2b3bfd78d7cacc33ba5fc26413dba653d34afcac3b93ddabe563e8062382688a1eac7db68e93739bb8e712d27637a03aaafbbb8
   languageName: node
   linkType: hard
 
@@ -15357,7 +15357,7 @@ __metadata:
     "@testing-library/react-hooks": 7.0.2
     "@testing-library/user-event": 13.5.0
     "@types/jest": 27.4.0
-    "@types/react": 17.0.43
+    "@types/react": 17.0.50
     "@types/testing-library__jest-dom": 5.14.2
     "@typescript-eslint/eslint-plugin": 5.8.1
     "@typescript-eslint/parser": 5.8.1
@@ -27259,7 +27259,7 @@ __metadata:
     "@mdx-js/react": 1.6.22
     "@tsconfig/docusaurus": 1.0.4
     "@types/node": 17.0.15
-    "@types/react": 17.0.43
+    "@types/react": 17.0.50
     clsx: 1.1.1
     globby: 12.2.0
     prism-react-renderer: 1.2.1
