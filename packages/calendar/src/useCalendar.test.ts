@@ -170,6 +170,33 @@ describe('useCalendar hooks test', () => {
       expect(result.current.body.value[0].value[0].isCurrentMonth).toBeTruthy()
       expect(result.current.body.value[0].value[0].key).toBeDefined()
     })
+
+    it('return body that has the same length array with minimumWeeksInMonth option', () => {
+      // Given
+      const minimumWeeksInMonth = 6
+
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({ minimumWeeksInMonth }),
+      )
+
+      // Then
+      expect(result.current.body.value.length).toBe(minimumWeeksInMonth)
+    })
+
+    it('return body that has at least length of weeksInMonth', () => {
+      // Given
+      const defaultDate = new Date(2022, 10, 1)
+      const minimumWeeksInMonth = 2
+
+      // When
+      const { result } = renderHook(() =>
+        useCalendar({ minimumWeeksInMonth, defaultDate }),
+      )
+
+      // Then
+      expect(result.current.body.value.length).toBe(result.current.weeksInMonth)
+    })
   })
 
   describe('result.navigation', () => {

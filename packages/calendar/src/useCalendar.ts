@@ -21,12 +21,14 @@ export interface UseCalendarOptions {
   defaultDate?: Date | number | string
   defaultWeekStart?: WeekDayType
   defaultViewType?: CalendarViewType
+  minimumWeeksInMonth?: number;
 }
 
 export function useCalendar({
   defaultDate,
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
+  minimumWeeksInMonth = 0,
 }: UseCalendarOptions = {}) {
   const isMounted = useIsMounted()
   const baseDate = useMemo(() => {
@@ -79,7 +81,7 @@ export function useCalendar({
 
   const getBody = useCallback(
     (viewType: CalendarViewType) => {
-      const matrix = createMatrix(weeksInMonth)
+      const matrix = createMatrix(Math.max(minimumWeeksInMonth, weeksInMonth))
       const { weekIndex, dateIndex } = today
 
       return {
@@ -97,7 +99,7 @@ export function useCalendar({
         },
       }[viewType]
     },
-    [createMatrix, today, weeksInMonth],
+    [createMatrix, minimumWeeksInMonth, today, weeksInMonth],
   )
 
   const setNext = useMemo(() => {
