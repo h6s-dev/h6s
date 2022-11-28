@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "esm/index.js",
+  "module": "esm/index.mjs",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
