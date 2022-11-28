@@ -27,6 +27,7 @@ Promise.all([
     ...config,
     format: 'esm',
     outdir: 'esm',
+    outExtension: { '.js': '.mjs' },
   }),
   build({
     ...config,

@@ -114,5 +114,5 @@
     "build:storybook": "build-storybook",
     "postinstall": "husky install"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.3.0"
 }
