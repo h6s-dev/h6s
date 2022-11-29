@@ -26584,7 +26584,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["he", "npm:1.2.0"],\
             ["param-case", "npm:3.0.4"],\
             ["relateurl", "npm:0.2.7"],\
-            ["terser", "npm:4.8.0"]\
+            ["terser", "npm:4.8.1"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -38604,10 +38604,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["terser", [\
-        ["npm:4.8.0", {\
-          "packageLocation": "./.yarn/cache/terser-npm-4.8.0-272e3d2592-f980789097.zip/node_modules/terser/",\
+        ["npm:4.8.1", {\
+          "packageLocation": "./.yarn/cache/terser-npm-4.8.1-16347908cf-b342819bf7.zip/node_modules/terser/",\
           "packageDependencies": [\
-            ["terser", "npm:4.8.0"],\
+            ["terser", "npm:4.8.1"],\
             ["acorn", "npm:8.8.1"],\
             ["commander", "npm:2.20.3"],\
             ["source-map", "npm:0.6.1"],\
@@ -38701,7 +38701,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["schema-utils", "npm:1.0.0"],\
             ["serialize-javascript", "npm:4.0.0"],\
             ["source-map", "npm:0.6.1"],\
-            ["terser", "npm:4.8.0"],\
+            ["terser", "npm:4.8.1"],\
             ["webpack", "virtual:7387500f0e34dc63328b59151aef76ab4865bd6cf5de73fd72b93dcecb585348a7051d0a97504744f5766e8ac3de0dad4df6f985789ea1c3b11bdf2eaf0515bf#npm:4.46.0"],\
             ["webpack-sources", "npm:1.4.3"],\
             ["worker-farm", "npm:1.7.0"]\
