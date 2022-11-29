@@ -16,7 +16,7 @@ import {
   Tr,
 } from '@chakra-ui/react'
 import { useCalendar } from '@h6s/calendar'
-import { version } from '@h6s/calendar/package.json'
+import packageJson from '@h6s/calendar/package.json'
 import { format } from 'date-fns'
 import locale from 'date-fns/locale/en-US'
 
@@ -41,7 +41,7 @@ export default function BasicExample() {
           textTransform="lowercase"
           aria-label="badge for current version"
         >
-          v{version}
+          v{packageJson.version}
         </Badge>
         <Heading as="h1" size="xl">
           @h6s/calendar
@@ -55,7 +55,7 @@ export default function BasicExample() {
         <TableCaption placement="top">
           <nav>
             <Flex justify="space-between" width="w.100">
-              <Stack direction="row" gutter={4}>
+              <Stack direction="row" spacing={2}>
                 <Button
                   size="md"
                   onClick={view.showMonthView}
@@ -84,7 +84,7 @@ export default function BasicExample() {
               <Text fontSize="2xl" data-testid="cursor-date">
                 {format(cursorDate, 'yyyy. MM')}
               </Text>
-              <Stack direction="row" gutter={8}>
+              <Stack direction="row" spacing={2}>
                 <IconButton
                   aria-label="button for navigating to prev calendar"
                   icon={<ChevronLeftIcon />}

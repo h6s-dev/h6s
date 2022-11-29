@@ -57,7 +57,7 @@ export default function CalendarExample() {
           <TableCaption placement="top">
             <nav>
               <Flex justify="space-between" width="w.100">
-                <Stack direction="row" gutter={4}>
+                <Stack direction="row" spacing={2}>
                   <Button
                     size="md"
                     onClick={view.showMonthView}
@@ -86,7 +86,7 @@ export default function CalendarExample() {
                 <Text fontSize="2xl" data-testid="cursor-date">
                   {format(cursorDate, 'yyyy. MM')}
                 </Text>
-                <Stack direction="row" gutter={8}>
+                <Stack direction="row" spacing={4}>
                   <IconButton
                     aria-label="button for navigating to prev calendar"
                     icon={<ChevronLeftIcon />}
