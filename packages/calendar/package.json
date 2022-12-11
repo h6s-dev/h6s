@@ -1,16 +1,33 @@
 {
   "name": "@h6s/calendar",
   "version": "1.0.7",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "esm/index.mjs",
+  "sideEffects": false,
+  "main": "./src/index.ts",
   "files": [
     "dist",
     "esm"
   ],
-  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "require": "./dist/index.js",
+        "import": "./esm/index.mjs"
+      },
+      "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "import": "./esm/index.mjs",
+    "module": "./esm/index.mjs"
   },
   "scripts": {
     "prepack": "yarn build",
