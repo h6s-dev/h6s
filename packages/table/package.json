@@ -2,7 +2,7 @@
   "name": "@h6s/table",
   "version": "1.0.4",
   "sideEffects": false,
-  "main": "./src/index.ts",
+  "main": "src/index.ts",
   "files": [
     "dist",
     "esm"
@@ -24,10 +24,10 @@
       },
       "./package.json": "./package.json"
     },
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "import": "./esm/index.mjs",
-    "module": "./esm/index.mjs"
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "import": "esm/index.mjs",
+    "module": "esm/index.mjs"
   },
   "scripts": {
     "prepack": "yarn build",
