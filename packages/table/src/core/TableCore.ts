@@ -17,10 +17,10 @@ import { buildHeadMeta } from './thead/buildHeadMeta'
 import { buildTHeadGroups } from './thead/buildTHeadGroups'
 import { buildTHeads } from './thead/buildTHeads'
 
-interface Options<Row, CellRenderer> {
-  source?: Row[];
+interface Options<Row2, CellRenderer> {
+  source?: Row2[];
   cellRenderer?: CellRenderer;
-  defaultHeadIds?: Array<HeadId<Row>>;
+  defaultHeadIds?: Array<HeadId<Row2>>;
 }
 
 export class TableCore<Row, CellRenderer> {
