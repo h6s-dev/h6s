@@ -20,7 +20,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          # do not change this version, because of semantic-release, npm whoami bug
+          # see with https://github.com/semantic-release/npm/issues/470
+          node-version: 16.15.0
       - name: Install dependencies
         run: yarn install --immutable
       - name: Check Type
