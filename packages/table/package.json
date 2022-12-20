@@ -1,6 +1,6 @@
 {
   "name": "@h6s/table",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "esm/index.mjs",
