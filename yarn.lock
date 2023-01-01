@@ -9939,12 +9939,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:8.7.0, acorn@npm:^8.7.0":
-  version: 8.7.0
-  resolution: "acorn@npm:8.7.0"
+"acorn@npm:8.8.1, acorn@npm:^8.5.0, acorn@npm:^8.7.1":
+  version: 8.8.1
+  resolution: "acorn@npm:8.8.1"
   bin:
     acorn: bin/acorn
-  checksum: e0f79409d68923fbf1aa6d4166f3eedc47955320d25c89a20cc822e6ba7c48c5963d5bc657bc242d68f7a4ac9faf96eef033e8f73656da6c640d4219935fdfd0
+  checksum: 4079b67283b94935157698831967642f24a075c52ce3feaaaafe095776dfbe15d86a1b33b1e53860fc0d062ed6c83f4284a5c87c85b9ad51853a01173da6097f
   languageName: node
   linkType: hard
 
@@ -9975,12 +9975,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.5.0, acorn@npm:^8.7.1":
-  version: 8.8.1
-  resolution: "acorn@npm:8.8.1"
+"acorn@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "acorn@npm:8.7.0"
   bin:
     acorn: bin/acorn
-  checksum: 4079b67283b94935157698831967642f24a075c52ce3feaaaafe095776dfbe15d86a1b33b1e53860fc0d062ed6c83f4284a5c87c85b9ad51853a01173da6097f
+  checksum: e0f79409d68923fbf1aa6d4166f3eedc47955320d25c89a20cc822e6ba7c48c5963d5bc657bc242d68f7a4ac9faf96eef033e8f73656da6c640d4219935fdfd0
   languageName: node
   linkType: hard
 
@@ -16916,7 +16916,7 @@ __metadata:
     "@typescript-eslint/parser": 5.8.1
     "@yarnpkg/esbuild-plugin-pnp": 2.0.0
     "@yarnpkg/pnpify": 3.1.1-rc.9
-    acorn: 8.7.0
+    acorn: 8.8.1
     all-contributors-cli: 6.20.0
     concurrently: 6.5.1
     cz-conventional-changelog: 3.3.0

@@ -65,7 +65,7 @@
     "@typescript-eslint/parser": "5.8.1",
     "@yarnpkg/esbuild-plugin-pnp": "2.0.0",
     "@yarnpkg/pnpify": "3.1.1-rc.9",
-    "acorn": "8.7.0",
+    "acorn": "8.8.1",
     "all-contributors-cli": "6.20.0",
     "concurrently": "6.5.1",
     "cz-conventional-changelog": "3.3.0",
