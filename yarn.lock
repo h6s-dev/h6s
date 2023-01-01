@@ -2340,7 +2340,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.16.5
   resolution: "@babel/runtime@npm:7.16.5"
   dependencies:
@@ -2355,6 +2355,15 @@ __metadata:
   dependencies:
     regenerator-runtime: ^0.13.11
   checksum: 42a8504db21031b1859fbc0f52d698a3d2f5ada9519eb76c6f96a7e657d8d555732a18fe71ef428a67cc9fc81ca0d3562fb7afdc70549c5fec343190cbaa9b03
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.18.9":
+  version: 7.20.7
+  resolution: "@babel/runtime@npm:7.20.7"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 4629ce5c46f06cca9cfb9b7fc00d48003335a809888e2b91ec2069a2dcfbfef738480cff32ba81e0b7c290f8918e5c22ddcf2b710001464ee84ba62c7e32a3a3
   languageName: node
   linkType: hard
 
@@ -10146,23 +10155,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"all-contributors-cli@npm:6.20.0":
-  version: 6.20.0
-  resolution: "all-contributors-cli@npm:6.20.0"
+"all-contributors-cli@npm:6.24.0":
+  version: 6.24.0
+  resolution: "all-contributors-cli@npm:6.24.0"
   dependencies:
     "@babel/runtime": ^7.7.6
-    async: ^3.0.1
+    async: ^3.1.0
     chalk: ^4.0.0
     didyoumean: ^1.2.1
-    inquirer: ^7.0.4
-    json-fixer: ^1.5.1
+    inquirer: ^7.3.3
+    json-fixer: ^1.6.8
     lodash: ^4.11.2
     node-fetch: ^2.6.0
     pify: ^5.0.0
     yargs: ^15.0.1
   bin:
     all-contributors: dist/cli.js
-  checksum: 3ac54cc73b75960be0d0304b22301d56f2422d509660860ab5cdb55bce1a3a1d3b3eba63b470a6edbe9568dfc4fd0c8176b0702ea2bdb430376c9c57900f53f4
+  checksum: 26b0a5ec014185d79380a90c5603d26100f8d57956cabbf92b68d3567de058787f5a4ddf788e3b3e71802dff827c3c096c6052805473f243f912018c31a024b7
   languageName: node
   linkType: hard
 
@@ -10690,10 +10699,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.0.1":
-  version: 3.2.2
-  resolution: "async@npm:3.2.2"
-  checksum: 90712c98df0c6d0ef0190f8bee9797bf6c7035a1317c9a036b80306a8d2246396b3ee356b4540ff349e29e625fafa25d4f04e11b6ac1c5f6b4c74c803e641137
+"async@npm:^3.1.0":
+  version: 3.2.4
+  resolution: "async@npm:3.2.4"
+  checksum: 43d07459a4e1d09b84a20772414aa684ff4de085cbcaec6eea3c7a8f8150e8c62aa6cd4e699fe8ee93c3a5b324e777d34642531875a0817a35697522c1b02e89
   languageName: node
   linkType: hard
 
@@ -16917,7 +16926,7 @@ __metadata:
     "@yarnpkg/esbuild-plugin-pnp": 2.0.0
     "@yarnpkg/pnpify": 3.1.1-rc.9
     acorn: 8.7.0
-    all-contributors-cli: 6.20.0
+    all-contributors-cli: 6.24.0
     concurrently: 6.5.1
     cz-conventional-changelog: 3.3.0
     date-fns: 2.28.0
@@ -17897,7 +17906,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^7.0.4":
+"inquirer@npm:^7.3.3":
   version: 7.3.3
   resolution: "inquirer@npm:7.3.3"
   dependencies:
@@ -19511,14 +19520,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-fixer@npm:^1.5.1":
-  version: 1.6.13
-  resolution: "json-fixer@npm:1.6.13"
+"json-fixer@npm:^1.6.8":
+  version: 1.6.15
+  resolution: "json-fixer@npm:1.6.15"
   dependencies:
-    "@babel/runtime": ^7.14.6
+    "@babel/runtime": ^7.18.9
     chalk: ^4.1.2
     pegjs: ^0.10.0
-  checksum: 21a650768d22290a5cefd0a36a3e709c13edfde9e3d627d5cdfefd54d35d537d6d16446cb5f8ed9a7bf409fb354a9aec7d02bd07d13e3f733cb2bf25c0f6bab9
+  checksum: ae805d5155ace57fd588a9ec129efd7324c3ef7f622988c66301eed9380da0acccdd35e9355b307c53051b246e2118d17a40775a2b13f19221574f5f662d4b15
   languageName: node
   linkType: hard
 

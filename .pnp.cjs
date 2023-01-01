@@ -77,7 +77,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/esbuild-plugin-pnp", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:2.0.0"],\
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],\
             ["acorn", "npm:8.7.0"],\
-            ["all-contributors-cli", "npm:6.20.0"],\
+            ["all-contributors-cli", "npm:6.24.0"],\
             ["concurrently", "npm:6.5.1"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:2.28.0"],\
@@ -5527,6 +5527,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.20.6-ef7cda3b78-42a8504db2.zip/node_modules/@babel/runtime/",\
           "packageDependencies": [\
             ["@babel/runtime", "npm:7.20.6"],\
+            ["regenerator-runtime", "npm:0.13.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.20.7", {\
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.20.7-69d8df458c-4629ce5c46.zip/node_modules/@babel/runtime/",\
+          "packageDependencies": [\
+            ["@babel/runtime", "npm:7.20.7"],\
             ["regenerator-runtime", "npm:0.13.11"]\
           ],\
           "linkType": "HARD"\
@@ -17758,16 +17766,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["all-contributors-cli", [\
-        ["npm:6.20.0", {\
-          "packageLocation": "./.yarn/cache/all-contributors-cli-npm-6.20.0-ba332c4a3e-3ac54cc73b.zip/node_modules/all-contributors-cli/",\
+        ["npm:6.24.0", {\
+          "packageLocation": "./.yarn/cache/all-contributors-cli-npm-6.24.0-fb87374524-26b0a5ec01.zip/node_modules/all-contributors-cli/",\
           "packageDependencies": [\
-            ["all-contributors-cli", "npm:6.20.0"],\
+            ["all-contributors-cli", "npm:6.24.0"],\
             ["@babel/runtime", "npm:7.16.5"],\
-            ["async", "npm:3.2.2"],\
+            ["async", "npm:3.2.4"],\
             ["chalk", "npm:4.1.2"],\
             ["didyoumean", "npm:1.2.2"],\
             ["inquirer", "npm:7.3.3"],\
-            ["json-fixer", "npm:1.6.13"],\
+            ["json-fixer", "npm:1.6.15"],\
             ["lodash", "npm:4.17.21"],\
             ["node-fetch", "npm:2.6.6"],\
             ["pify", "npm:5.0.0"],\
@@ -18356,10 +18364,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:3.2.2", {\
-          "packageLocation": "./.yarn/cache/async-npm-3.2.2-0245d236b6-90712c98df.zip/node_modules/async/",\
+        ["npm:3.2.4", {\
+          "packageLocation": "./.yarn/cache/async-npm-3.2.4-aba13508f9-43d07459a4.zip/node_modules/async/",\
           "packageDependencies": [\
-            ["async", "npm:3.2.2"]\
+            ["async", "npm:3.2.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -26073,7 +26081,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/esbuild-plugin-pnp", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:2.0.0"],\
             ["@yarnpkg/pnpify", "npm:3.1.1-rc.9"],\
             ["acorn", "npm:8.7.0"],\
-            ["all-contributors-cli", "npm:6.20.0"],\
+            ["all-contributors-cli", "npm:6.24.0"],\
             ["concurrently", "npm:6.5.1"],\
             ["cz-conventional-changelog", "npm:3.3.0"],\
             ["date-fns", "npm:2.28.0"],\
@@ -28965,11 +28973,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["json-fixer", [\
-        ["npm:1.6.13", {\
-          "packageLocation": "./.yarn/cache/json-fixer-npm-1.6.13-f62cf54c4d-21a650768d.zip/node_modules/json-fixer/",\
+        ["npm:1.6.15", {\
+          "packageLocation": "./.yarn/cache/json-fixer-npm-1.6.15-ae75b6da33-ae805d5155.zip/node_modules/json-fixer/",\
           "packageDependencies": [\
-            ["json-fixer", "npm:1.6.13"],\
-            ["@babel/runtime", "npm:7.16.5"],\
+            ["json-fixer", "npm:1.6.15"],\
+            ["@babel/runtime", "npm:7.20.7"],\
             ["chalk", "npm:4.1.2"],\
             ["pegjs", "npm:0.10.0"]\
           ],\
