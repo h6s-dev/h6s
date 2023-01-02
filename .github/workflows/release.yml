@@ -28,7 +28,9 @@ jobs:
       - name: Build Package
         run: yarn build
       - name: Release to npm registry
-        run: yarn semantic-release
+        uses: cometkim/yarn-changeset-action@v1
+        with:
+          autoPublish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
