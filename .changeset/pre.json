@@ -1,0 +1,11 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@h6s-examples/react": "1.0.0",
+    "@h6s/calendar": "1.0.8-alpha.1",
+    "@h6s/table": "1.0.5-alpha.1",
+    "website": "0.0.0"
+  },
+  "changesets": []
+}
