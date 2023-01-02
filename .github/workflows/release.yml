@@ -10,6 +10,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
@@ -30,5 +33,5 @@ jobs:
         with:
           autoPublish: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
