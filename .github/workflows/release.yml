@@ -17,12 +17,10 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          # do not change this version, because of semantic-release, npm whoami bug
-          # see with https://github.com/semantic-release/npm/issues/470
-          node-version: 16.15.0
+          node-version: '16'
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build Package
