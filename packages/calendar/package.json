@@ -23,8 +23,7 @@
     "test": "yarn run -T jest --config ../../jest.config.js --roots './packages/calendar/src'",
     "test:playwright": "playwright test",
     "test:cov": "yarn test --coverage",
-    "test:watch": "yarn test --watch",
-    "semantic-release": "semantic-release"
+    "test:watch": "yarn test --watch"
   },
   "devDependencies": {
     "@playwright/test": "1.17.1",

@@ -10,19 +10,16 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          # do not change this version, because of semantic-release, npm whoami bug
-          # see with https://github.com/semantic-release/npm/issues/470
-          node-version: 16.15.0
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
       - name: Install dependencies
         run: yarn install --immutable
       - name: Check Type
@@ -33,8 +30,10 @@ jobs:
         run: yarn test
       - name: Build Package
         run: yarn build
-      - name: Release to npm registry
-        run: yarn semantic-release
+      - name: Release or Versioning
+        uses: cometkim/yarn-changeset-action@v1
+        with:
+          autoPublish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
