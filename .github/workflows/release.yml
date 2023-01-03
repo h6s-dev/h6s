@@ -32,6 +32,8 @@ jobs:
         uses: cometkim/yarn-changeset-action@v1
         with:
           autoPublish: true
+          commit: 'chore(release): version package [skip ci]'
+          title: 'chore(release): version package [skip ci]'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
