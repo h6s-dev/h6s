@@ -4780,7 +4780,7 @@ __metadata:
     "@storybook/react": 6.4.9
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
-    "@types/node": 17.0.5
+    "@types/node": 17.0.45
     "@types/react": ^18.0.25
     date-fns: 2.28.0
     playwright: 1.17.1
@@ -4806,7 +4806,7 @@ __metadata:
     "@storybook/react": 6.4.9
     "@testing-library/react-hooks": 7.0.2
     "@types/jest": 27.4.0
-    "@types/node": 17.0.5
+    "@types/node": 17.0.45
     "@types/react": ^18.0.25
     playwright: 1.17.1
     react: ^18.2.0
@@ -8697,17 +8697,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.15":
-  version: 17.0.15
-  resolution: "@types/node@npm:17.0.15"
-  checksum: aa64ecf4fbcf9888e794dcdc20e98c49cdcb102b17e57c44ca56943904732d6cc250e766f8448a3cd71d6a40a4b597bd83c565e5bd9b982733fa3f9813d5c291
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:17.0.5":
-  version: 17.0.5
-  resolution: "@types/node@npm:17.0.5"
-  checksum: 105535e78722515c26cfdc1b0cbf1b19f55fe53b814e2e90d8b1e653bc63136d4760c7efc102eca111c6d124a291e37d60d761d569a3f4afb3fba05bad5d9ade
+"@types/node@npm:17.0.45":
+  version: 17.0.45
+  resolution: "@types/node@npm:17.0.45"
+  checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
   languageName: node
   linkType: hard
 
@@ -29210,7 +29203,7 @@ __metadata:
     "@docusaurus/types": 2.0.0-beta.14
     "@mdx-js/react": 1.6.22
     "@tsconfig/docusaurus": 1.0.4
-    "@types/node": 17.0.15
+    "@types/node": 17.0.45
     "@types/react": 17.0.39
     clsx: 1.1.1
     globby: 12.2.0
