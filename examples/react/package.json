@@ -13,25 +13,25 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.16.5",
-    "@chakra-ui/icons": "^2.0.12",
-    "@chakra-ui/react": "^2.4.1",
-    "@chakra-ui/system": "^2.3.4",
-    "@chakra-ui/theme-tools": "2.0.14",
-    "@faker-js/faker": "^6.0.0-alpha.5",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/styled-system": "^2.9.2",
+    "@chakra-ui/system": "^2.6.2",
+    "@chakra-ui/theme-tools": "2.1.2",
+    "@faker-js/faker": "^6.3.1",
     "@h6s/calendar": "workspace:^",
     "@h6s/table": "workspace:^",
     "date-fns": "^2.30.0",
-    "framer-motion": "^7.10.3",
+    "framer-motion": "^10.16.16",
     "next": "^13.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "7.17.5"
+    "react-hook-form": "7.49.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.4",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
     "eslint": "<8.0.0",
     "typescript": "4.5.4"
   },
