@@ -5409,7 +5409,7 @@ __metadata:
     vitest: ^1.0.4
   peerDependencies:
     date-fns: ">= 2"
-    react: ^16.8 || ^17.0 || ^18.0
+    react: ">= 16.8.0"
   peerDependenciesMeta:
     react-dom:
       optional: true
@@ -5436,7 +5436,7 @@ __metadata:
     vite: ^5.0.7
     vitest: ^1.0.4
   peerDependencies:
-    react: ^16.8 || ^17.0 || ^18.0
+    react: ">= 16.8.0"
   peerDependenciesMeta:
     react-dom:
       optional: true
