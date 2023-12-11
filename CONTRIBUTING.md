@@ -18,6 +18,7 @@ If you have been assigned to fix an issue or develop a new feature, please follo
 - To run Storybook.
 - Document your changes in the appropriate doc page
 - Git stage your required changes and commit (see below commit guidelines)
+  - also need to run `yarn changeset`
 - Submit PR for review
 
 ## Commit message conventions
@@ -101,7 +102,3 @@ If the commit reverts a previous commit, it should begin with `revert:`, followe
 Maintainers merge pull requests by squashing all commits and editing the commit message if necessary using the GitHub user interface.
 
 Use an appropriate commit type. Be especially careful with breaking changes.
-
-## Releases
-
-For each new commit added to `master` with `git push` or by merging a pull request or merging from another branch, a github action is triggered and runs the `semantic-release` command to make a release if there are codebase changes since the last release that affect the package functionalities.
