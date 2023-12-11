@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import resetTimeOfDate from './resetTimeOfDate'
 
 describe('resetTimeOfDate function', () => {

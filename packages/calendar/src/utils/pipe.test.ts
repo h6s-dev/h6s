@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { pipe, pipeWith } from './pipe'
 
 const zeroParamGetNumber = () => 1

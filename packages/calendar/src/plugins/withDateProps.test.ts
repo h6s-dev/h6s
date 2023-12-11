@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import withDateProps from './withDateProps'
 
 describe('withDateProps plugin', () => {

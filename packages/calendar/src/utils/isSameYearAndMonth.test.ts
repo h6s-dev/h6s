@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import isSameYearAndMonth from './isSameYearAndMonth'
 
 describe('isSameYearAndMonth function', () => {
