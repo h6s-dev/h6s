@@ -1,7 +1,7 @@
 import { RendererRules } from '../../types/table'
 import { get } from '../../utils/get'
 
-export class CellSpanManager<Row> {
+export class CellSpanManager<Row extends Record<string, any>> {
   private rowSpanMap: Map<string, number>
 
   constructor() {

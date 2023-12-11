@@ -9,7 +9,7 @@ interface Options<Row> {
   cells: Array<PrivateAggregatedCell<Row>>;
 }
 
-export function buildRows<Row>(data: Row[], { cells }: Options<Row>) {
+export function buildRows<Row extends Record<string, any>>(data: Row[], { cells }: Options<Row>) {
   const manager = new CellSpanManager<Row>()
 
   const candidateRows = data.map(row => {

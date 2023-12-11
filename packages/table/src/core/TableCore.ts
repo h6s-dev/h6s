@@ -17,13 +17,13 @@ import { buildHeadMeta } from './thead/buildHeadMeta'
 import { buildTHeadGroups } from './thead/buildTHeadGroups'
 import { buildTHeads } from './thead/buildTHeads'
 
-interface Options<Row, CellRenderer> {
+interface Options<Row extends Record<string, any>, CellRenderer> {
   source?: Row[];
   cellRenderer?: CellRenderer;
   defaultHeadIds?: Array<HeadId<Row>>;
 }
 
-export class TableCore<Row, CellRenderer> {
+export class TableCore<Row extends Record<string, any>, CellRenderer> {
   static compose = composeDataset
 
   private rendererModel: RendererModel<Row>
