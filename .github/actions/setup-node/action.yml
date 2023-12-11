@@ -1,0 +1,9 @@
+name: Frontend Node.js Setup
+description: Setup Node.js for CI/CD
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: .nvmrc
