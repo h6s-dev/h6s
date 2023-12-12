@@ -1,5 +1,13 @@
 # @h6s-examples/react
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [1248860]
+  - @h6s/calendar@2.0.1
+  - @h6s/table@2.0.1
+
 ## 1.0.1
 
 ### Patch Changes
