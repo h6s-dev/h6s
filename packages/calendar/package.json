@@ -1,6 +1,6 @@
 {
   "name": "@h6s/calendar",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "sideEffects": false,
   "main": "src/index.ts",
   "type": "module",
