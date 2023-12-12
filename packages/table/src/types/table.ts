@@ -46,7 +46,7 @@ export type CellRendererProps<CellType extends CommonCell> = PropsWithChildren<{
 
 export type CellRecursiveRenderer<CellType extends CommonCell> = (
   props: PropsWithChildren<{ cellProps: CellType }>
-) => JSX.Element | null;
+) => ReactNode | null;
 
 export type CellComponent<CellType extends CommonCell> = (props: {
   cellProps: CellType;
