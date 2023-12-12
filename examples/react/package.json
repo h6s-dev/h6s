@@ -1,7 +1,7 @@
 {
   "name": "@h6s-examples/react",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "dev": "next",
     "prebuild": "yarn workspaces foreach -ptR --no-private run build",
