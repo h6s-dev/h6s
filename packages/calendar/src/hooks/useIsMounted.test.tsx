@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks'
+import { describe, expect, it } from 'vitest'
 
 import useIsMounted from './useIsMounted'
 

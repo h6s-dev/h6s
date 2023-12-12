@@ -1,7 +1,9 @@
+import { describe, expect, it, vi } from 'vitest'
+
 import generateID from './generateID'
 import withKey from './withKey'
 
-jest.mock('./generateID')
+vi.mock('./generateID')
 
 const mockGenerateId = generateID as jest.MockedFunction<typeof generateID>
 

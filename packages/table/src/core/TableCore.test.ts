@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest'
+
 import { TableCore } from '..'
 import { paymentDataset, paymentDatasetWithSum } from '../mocks/payments.mock'
 import { paymentsTableModel } from '../mocks/paymentsTableModel.mock'

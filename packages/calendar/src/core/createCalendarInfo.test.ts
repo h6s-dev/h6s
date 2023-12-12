@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import createCalendarInfo from './createCalendarInfo'
 
 describe('createCalendarInfo function', () => {

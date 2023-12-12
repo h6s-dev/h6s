@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest'
+
 import { sum } from '../utils/sum'
 import { composeDataset } from './composeDataset'
 

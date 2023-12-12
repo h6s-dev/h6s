@@ -17,7 +17,7 @@ import {
   Tr,
 } from '@chakra-ui/react'
 import { useCalendar } from '@h6s/calendar'
-import { version } from '@h6s/calendar/package.json'
+import packageJson from '@h6s/calendar/package.json'
 import { format } from 'date-fns'
 import locale from 'date-fns/locale/en-US'
 
@@ -43,7 +43,7 @@ export default function CalendarExample() {
             textTransform="lowercase"
             aria-label="badge for current version"
           >
-            v{version}
+            v{packageJson.version}
           </Badge>
           <Heading as="h1" size="xl">
             @h6s/calendar

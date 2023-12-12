@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest'
+
 import { RendererModel } from '../..'
 import { buildTFoots } from './buildTFoots'
 

@@ -4,7 +4,7 @@ import { TableCore } from '../core/TableCore'
 import { cellRenderer } from '../helpers/cellRenderer'
 import { HeadId, TableModel } from '../types/table'
 
-interface Options<Row> {
+interface Options<Row extends Record<string, any>> {
   model: TableModel<Row>;
   source?: Row[];
   options?: {
@@ -12,7 +12,7 @@ interface Options<Row> {
   };
 }
 
-export function useTable<Row>({
+export function useTable<Row extends Record<string, any>>({
   model,
   source,
   options: { defaultHeadIds } = {},

@@ -9,7 +9,7 @@ export interface ComposeDatasetOptions<Row, Key extends Path<Row>> {
   compose: (rows: Array<Omit<Row, Key>>, key: PathValue<Row, Key>) => Array<Omit<Row, Key>>;
 }
 
-export function composeDataset<Row, Key extends Path<Row>>(
+export function composeDataset<Row extends Record<string, any>, Key extends Path<Row>>(
   rows: Row[],
   { groupBy: key, compose }: ComposeDatasetOptions<Row, Key>,
 ) {
@@ -19,7 +19,7 @@ export function composeDataset<Row, Key extends Path<Row>>(
   return reverseNormalize(result, key) as unknown as Row[]
 }
 
-function normalize<Row, Key extends Path<Row>>(rows: Row[], key: Key) {
+function normalize<Row extends Record<string, any>, Key extends Path<Row>>(rows: Row[], key: Key) {
   return mapValues(
     groupBy(rows, x => String(get(x, key))),
     x => x.map(({ [key]: _, ...rest }) => rest),
