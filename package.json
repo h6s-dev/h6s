@@ -39,7 +39,7 @@
   "devDependencies": {
     "@babel/core": "7.16.7",
     "@babel/preset-env": "^7.23.5",
-    "@changesets/cli": "^2.26.0",
+    "@changesets/cli": "^2.27.1",
     "@commitlint/cli": "16.0.2",
     "@commitlint/config-conventional": "16.0.0",
     "@emotion/react": "11.7.1",
