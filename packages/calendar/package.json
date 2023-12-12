@@ -53,7 +53,7 @@
   },
   "peerDependencies": {
     "date-fns": ">= 2",
-    "react": ">= 16.8.0"
+    "react": ">= 18"
   },
   "peerDependenciesMeta": {
     "react-dom": {

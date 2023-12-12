@@ -50,7 +50,7 @@
     "vitest": "^1.0.4"
   },
   "peerDependencies": {
-    "react": ">= 16.8.0"
+    "react": ">= 18"
   },
   "peerDependenciesMeta": {
     "react-dom": {
