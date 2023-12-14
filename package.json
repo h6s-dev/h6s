@@ -99,12 +99,12 @@
     "website"
   ],
   "scripts": {
-    "storybook": "storybook dev -p 6006 --quiet",
-    "lint": "yarn workspaces foreach -pt --from '@h6s/*' run lint",
-    "test": "yarn workspaces foreach -pt --from '@h6s/*' run test",
-    "typecheck": "yarn workspaces foreach -pt --from '@h6s/*' run typecheck",
+    "lint": "yarn workspaces foreach -ptR --from '@h6s/*' run lint",
+    "test": "yarn workspaces foreach -ptR --from '@h6s/*' run test",
+    "typecheck": "yarn workspaces foreach -ptR --from '@h6s/*' run typecheck",
     "build": "yarn workspaces foreach -ptR --from '@h6s/*' run build",
     "build:storybook": "storybook build",
+    "storybook": "storybook dev -p 6006 --quiet",
     "postinstall": "husky install"
   },
   "packageManager": "yarn@4.0.2"
