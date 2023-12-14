@@ -1,2 +1,2 @@
-export * from './table'
-export * from './utility'
+export * from "./table";
+export * from "./utility";

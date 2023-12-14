@@ -1,22 +1,22 @@
 export function generateTableID() {
-  return generateID('table')
+  return generateID("table");
 }
 
-let randomId = 0
+let randomId = 0;
 
-const map = new Map<string, number>()
+const map = new Map<string, number>();
 
 function generateID(prefix: string) {
   if (map.has(prefix)) {
-    const id = map.get(prefix)
-    const newId = id! + 1
-    map.set(prefix, newId)
-    randomId = newId
+    const id = map.get(prefix);
+    const newId = id! + 1;
+    map.set(prefix, newId);
+    randomId = newId;
   } else {
-    const id = 1
-    map.set(prefix, id)
-    randomId = id
+    const id = 1;
+    map.set(prefix, id);
+    randomId = id;
   }
 
-  return `${prefix}-${randomId}`
+  return `${prefix}-${randomId}`;
 }

@@ -1,6 +1,6 @@
-import { PropsWithChildren, ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from "react";
 
-import { Path, Primitive } from './utility'
+import { Path, Primitive } from "./utility";
 
 export interface CommonCell {
   id: string;
@@ -30,9 +30,7 @@ export interface TFoot<Row> extends CommonCell {
   render: CellRecursiveRenderer<TFoot<Row>>;
 }
 
-export interface PrivateAggregatedCell<Row>
-  extends Pick<Renderer<Row>, 'rules'>,
-    Pick<CommonCell, 'id'> {
+export interface PrivateAggregatedCell<Row> extends Pick<Renderer<Row>, "rules">, Pick<CommonCell, "id"> {
   accessor: Path<Row>;
   render: CellRecursiveRenderer<Cell<Row>>;
   labelSequence: string[];
@@ -45,7 +43,7 @@ export type CellRendererProps<CellType extends CommonCell> = PropsWithChildren<{
 }>;
 
 export type CellRecursiveRenderer<CellType extends CommonCell> = (
-  props: PropsWithChildren<{ cellProps: CellType }>
+  props: PropsWithChildren<{ cellProps: CellType }>,
 ) => ReactNode | null;
 
 export type CellComponent<CellType extends CommonCell> = (props: {
@@ -55,7 +53,7 @@ export type CellComponent<CellType extends CommonCell> = (props: {
 export interface RendererRules<Row> {
   mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
   colSpanAs?: number | ((rowValues: Row) => number);
-  extendsFoot?: boolean
+  extendsFoot?: boolean;
 }
 
 interface Renderer<Row> {
@@ -71,10 +69,7 @@ export type RendererModel<Row> = Array<Renderer<Row>>;
 
 export type HeadId<Row> = Path<Row>;
 
-export type HeadMeta = Record<
-  string,
-  { label: string; show: boolean; countOfChild: number; countOfParent: number }
->;
+export type HeadMeta = Record<string, { label: string; show: boolean; countOfChild: number; countOfParent: number }>;
 
 interface RowProps {
   id: string;
@@ -93,32 +88,40 @@ export type TableInstance<Row> = {
   tfoots: Array<TFoot<Row>> | null;
 
   headMeta: HeadMeta;
-  selectableHeadIds: HeadId<Row>[]
-  visibleHeadIds: HeadId<Row>[]
-}
+  selectableHeadIds: HeadId<Row>[];
+  visibleHeadIds: HeadId<Row>[];
+};
 
-type CommonRenderer<CellType extends CommonCell> = CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>
-type CellConfig<CellType extends CommonCell> = CommonRenderer<CellType> | Record<string, unknown>
+type CommonRenderer<CellType extends CommonCell> = CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>;
+type CellConfig<CellType extends CommonCell> = CommonRenderer<CellType> | Record<string, unknown>;
 
 interface TableColumn<Row> {
-  accessor: Path<Row> | Array<TableColumn<Row>>
-  label: string
-  head?: CommonRenderer<THead<Row>> | {
-    render: CommonRenderer<THead<Row>>
-  }
-  cell?: CommonRenderer<Cell<Row>> | {
-    render?: CommonRenderer<Cell<Row>>
-    mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string)
-    colSpanAs?: number | ((rowValues: Row) => number)
-  }
-  foot?: CommonRenderer<TFoot<Row>> | {
-    render: CommonRenderer<TFoot<Row>>
-    extends?: boolean
-  }
+  accessor: Path<Row> | Array<TableColumn<Row>>;
+  label: string;
+  head?:
+    | CommonRenderer<THead<Row>>
+    | {
+        render: CommonRenderer<THead<Row>>;
+      };
+  cell?:
+    | CommonRenderer<Cell<Row>>
+    | {
+        render?: CommonRenderer<Cell<Row>>;
+        mergeRow?: Path<Row> | Array<Path<Row>> | ((rowValues: Row) => string);
+        colSpanAs?: number | ((rowValues: Row) => number);
+      };
+  foot?:
+    | CommonRenderer<TFoot<Row>>
+    | {
+        render: CommonRenderer<TFoot<Row>>;
+        extends?: boolean;
+      };
 }
 
-export type TableModel<Row> = Array<TableColumn<Row>>
+export type TableModel<Row> = Array<TableColumn<Row>>;
 
-export function  isRenderer<CellType extends CommonCell>(value?: CellConfig<CellType>): value is CommonRenderer<CellType> {
-  return typeof value === 'function' || Array.isArray(value)
+export function isRenderer<CellType extends CommonCell>(
+  value?: CellConfig<CellType>,
+): value is CommonRenderer<CellType> {
+  return typeof value === "function" || Array.isArray(value);
 }
