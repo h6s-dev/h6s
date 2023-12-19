@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Badge,
   Box,
@@ -15,27 +15,21 @@ import {
   Th,
   Thead,
   Tr,
-} from '@chakra-ui/react'
-import { useCalendar } from '@h6s/calendar'
-import packageJson from '@h6s/calendar/package.json'
-import { format } from 'date-fns'
-import locale from 'date-fns/locale/en-US'
+} from "@chakra-ui/react";
+import { useCalendar } from "@h6s/calendar";
+import packageJson from "@h6s/calendar/package.json";
+import { format } from "date-fns";
+import locale from "date-fns/locale/en-US";
 
-import { Container } from '../../components/Container'
+import { Container } from "../../components/Container";
 
 export default function CalendarExample() {
-  const { cursorDate, headers, body, navigation, view } = useCalendar()
+  const { cursorDate, headers, body, navigation, view } = useCalendar();
 
   return (
     <Container height="100vh">
       <Box maxW="640px" m="auto">
-        <Stack
-          padding={12}
-          justifyContent="center"
-          direction="column"
-          alignItems="center"
-          spacing={4}
-        >
+        <Stack padding={12} justifyContent="center" direction="column" alignItems="center" spacing={4}>
           <Badge
             colorScheme="green"
             fontSize="1.2em"
@@ -84,7 +78,7 @@ export default function CalendarExample() {
                   </Button>
                 </Stack>
                 <Text fontSize="2xl" data-testid="cursor-date">
-                  {format(cursorDate, 'yyyy. MM')}
+                  {format(cursorDate, "yyyy. MM")}
                 </Text>
                 <Stack direction="row" spacing={4}>
                   <IconButton
@@ -114,54 +108,49 @@ export default function CalendarExample() {
               {headers.weekDays.map(({ key, value }) => {
                 return (
                   <Th key={key} data-testid="calendar-weekends">
-                    {format(value, 'E', { locale })}
+                    {format(value, "E", { locale })}
                   </Th>
-                )
+                );
               })}
             </Tr>
           </Thead>
           <Tbody>
             {body.value.map((week) => {
-              const { key, value: days } = week
+              const { key, value: days } = week;
 
               return (
                 <Tr key={key} data-testid="calendar-weeks">
                   {days.map((day) => {
-                    const {
-                      key,
-                      date,
-                      isCurrentDate,
-                      isCurrentMonth,
-                      isWeekend,
-                      value,
-                    } = day
+                    const { key, date, isCurrentDate, isCurrentMonth, isWeekend, value } = day;
 
                     return (
                       <Td
                         key={key}
                         opacity={isCurrentMonth ? 1 : 0.2}
-                        data-testid={
-                          isCurrentDate ? 'calendar-cell--today' : 'calendar-cell'
-                        }
+                        data-testid={isCurrentDate ? "calendar-cell--today" : "calendar-cell"}
                       >
                         {isCurrentDate ? (
-                          <Text as="time" fontWeight="bold" color="teal.500" dateTime={format(value, 'yy-MM-dd')}>
+                          <Text as="time" fontWeight="bold" color="teal.500" dateTime={format(value, "yy-MM-dd")}>
                             {date}
                           </Text>
                         ) : (
-                          <Text as="time" color={isWeekend ? 'red.500' : 'black.500'} dateTime={format(value, 'yy-MM-dd')}>
+                          <Text
+                            as="time"
+                            color={isWeekend ? "red.500" : "black.500"}
+                            dateTime={format(value, "yy-MM-dd")}
+                          >
                             {date}
                           </Text>
                         )}
                       </Td>
-                    )
+                    );
                   })}
                 </Tr>
-              )
+              );
             })}
           </Tbody>
         </Table>
       </Box>
     </Container>
-  )
+  );
 }
