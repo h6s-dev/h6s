@@ -1,7 +1,6 @@
 {
   "editor.formatOnSave": false,
   "javascript.format.enable": false,
-  "eslint.alwaysShowStatus": true,
   "eslint.options": {
     "extensions": [
       ".html",
@@ -11,18 +10,29 @@
     ]
   },
   "files.autoSaveDelay": 500,
-  "eslint.packageManager": "yarn",
+  "editor.inlayHints.enabled": "onUnlessPressed",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "quickfix.biome": true,
+    "source.organizeImports.biome": true
   },
   "editor.tabSize": 2,
   "editor.useTabStops": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }
