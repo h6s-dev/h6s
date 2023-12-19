@@ -29,7 +29,7 @@
     "prepack": "yarn build",
     "build": "yarn run -T tsup",
     "lint": "yarn run -T biome check src/",
-    "lint:fix": "yarn lint --fix",
+    "lint:fix": "yarn lint --apply",
     "typecheck": "yarn run -T tsc",
     "test": "vitest",
     "test:cov": "yarn test --coverage",
