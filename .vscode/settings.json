@@ -1,14 +1,6 @@
 {
   "editor.formatOnSave": false,
   "javascript.format.enable": false,
-  "eslint.options": {
-    "extensions": [
-      ".html",
-      ".ts",
-      ".js",
-      ".tsx"
-    ]
-  },
   "files.autoSaveDelay": 500,
   "editor.inlayHints.enabled": "onUnlessPressed",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
