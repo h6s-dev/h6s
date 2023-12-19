@@ -7,6 +7,8 @@
     "prebuild": "yarn workspaces foreach -ptR --no-private run build",
     "build": "next build",
     "build:static": "yarn prebuild && yarn build && next export -o dist/",
+    "lint": "yarn run -T biome check src/",
+    "lint:fix": "yarn lint --apply",
     "start": "next start"
   },
   "engines": {
@@ -34,9 +36,8 @@
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "eslint": "^8.55.0",
     "typescript": "5.3.3"
   },
   "license": "MIT",
-  "packageManager": "yarn@3.7.0"
+  "packageManager": "yarn@4.0.2"
 }

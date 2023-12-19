@@ -1,11 +1,11 @@
 export interface DateCell extends Record<string, unknown> {
-  value: Date
+  value: Date;
 }
 
 export interface WeekRow extends Record<string, unknown> {
-  value: DateCell[]
+  value: DateCell[];
 }
 
 export interface MonthMatrix extends Record<string, unknown> {
-  value: WeekRow[]
+  value: WeekRow[];
 }

@@ -1,19 +1,16 @@
-import { RendererModel, THead } from '../../types/table'
-import { generateTableID } from '../../utils/generateTableID'
-import { getChildrenCount } from '../renderer/getChildrenCount'
-import { getLargestDepth } from '../renderer/getLargestDepth'
+import { RendererModel, THead } from "../../types/table";
+import { generateTableID } from "../../utils/generateTableID";
+import { getChildrenCount } from "../renderer/getChildrenCount";
+import { getLargestDepth } from "../renderer/getLargestDepth";
 
 interface Options<CellRenderer> {
   cellRenderer?: CellRenderer;
 }
 
-export function buildTHeads<Row, CellRenderer>(
-  rendererModel: RendererModel<Row>,
-  options?: Options<CellRenderer>,
-) {
-  const largestDepth = getLargestDepth(rendererModel)
+export function buildTHeads<Row, CellRenderer>(rendererModel: RendererModel<Row>, options?: Options<CellRenderer>) {
+  const largestDepth = getLargestDepth(rendererModel);
 
-  return _build(rendererModel, { ...options, largestDepth, depth: 1, labelSequence: [] })
+  return _build(rendererModel, { ...options, largestDepth, depth: 1, labelSequence: [] });
 }
 
 interface BuildOptions<CellRenderer> extends Options<CellRenderer> {
@@ -26,12 +23,12 @@ function _build<Row, CellRenderer>(
   rendererModel: RendererModel<Row>,
   { cellRenderer, largestDepth, depth, labelSequence }: BuildOptions<CellRenderer>,
 ) {
-  const heads: Array<THead<Row>> = []
+  const heads: Array<THead<Row>> = [];
 
   for (const model of rendererModel) {
-    const { label, accessor, head } = model
-    const hasChild = Array.isArray(accessor)
-    const sequence = labelSequence.concat(label)
+    const { label, accessor, head } = model;
+    const hasChild = Array.isArray(accessor);
+    const sequence = labelSequence.concat(label);
 
     if (hasChild) {
       heads.push(
@@ -41,7 +38,7 @@ function _build<Row, CellRenderer>(
           labelSequence: sequence,
           cellRenderer,
         }),
-      )
+      );
     }
     heads.push({
       id: generateTableID(),
@@ -51,13 +48,10 @@ function _build<Row, CellRenderer>(
       label,
       value: label,
       labelSequence: sequence,
-      render:
-        typeof cellRenderer === 'function'
-          ? cellRenderer(head)
-          : ({ cellProps }) => cellProps.value,
+      render: typeof cellRenderer === "function" ? cellRenderer(head) : ({ cellProps }) => cellProps.value,
       depth,
-    })
+    });
   }
 
-  return heads
+  return heads;
 }

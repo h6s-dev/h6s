@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import { TableCore } from '../core/TableCore'
-import { cellRenderer } from '../helpers/cellRenderer'
-import { HeadId, TableModel } from '../types/table'
+import { TableCore } from "../core/TableCore";
+import { cellRenderer } from "../helpers/cellRenderer";
+import { HeadId, TableModel } from "../types/table";
 
 interface Options<Row extends Record<string, any>> {
   model: TableModel<Row>;
@@ -23,21 +23,21 @@ export function useTable<Row extends Record<string, any>>({
       cellRenderer,
       defaultHeadIds,
     }),
-  )
+  );
 
-  const [instance, setInstance] = useState(() => tableCore.current.generate())
+  const [instance, setInstance] = useState(() => tableCore.current.generate());
   const controls = useMemo(
     () => ({
       updateHead(headIds?: Array<HeadId<Row>>) {
-        setInstance(() => tableCore.current.updateHead(headIds).generate())
+        setInstance(() => tableCore.current.updateHead(headIds).generate());
       },
     }),
     [],
-  )
+  );
 
   useEffect(() => {
-    setInstance(() => tableCore.current.updateSource(source).generate())
-  }, [source])
+    setInstance(() => tableCore.current.updateSource(source).generate());
+  }, [source]);
 
-  return [instance, controls] as const
+  return [instance, controls] as const;
 }

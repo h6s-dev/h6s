@@ -1,10 +1,10 @@
-import { isEqual } from 'date-fns'
+import { isEqual } from "date-fns";
 
-import resetTimeOfDate from './resetTimeOfDate'
+import resetTimeOfDate from "./resetTimeOfDate";
 
 export default function isSameDate(baseDate: Date, targetDate: Date) {
-  const base = resetTimeOfDate(baseDate)
-  const target = resetTimeOfDate(targetDate)
+  const base = resetTimeOfDate(baseDate);
+  const target = resetTimeOfDate(targetDate);
 
-  return isEqual(base, target)
+  return isEqual(base, target);
 }

@@ -3,5 +3,5 @@ export default function parseDate(date: Date) {
     year: date.getFullYear(),
     month: date.getMonth(),
     day: date.getDate(),
-  }
+  };
 }

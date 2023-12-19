@@ -1,26 +1,17 @@
-import {
-  addDays,
-  addMonths,
-  addWeeks,
-  startOfMonth,
-  startOfWeek,
-  subDays,
-  subMonths,
-  subWeeks,
-} from 'date-fns'
-import { useCallback, useMemo, useState } from 'react'
+import { addDays, addMonths, addWeeks, startOfMonth, startOfWeek, subDays, subMonths, subWeeks } from "date-fns";
+import { useCallback, useMemo, useState } from "react";
 
-import { createCalendarInfo } from './core'
-import useIsMounted from './hooks/useIsMounted'
-import { CalendarViewType, WeekDayType } from './models'
-import { withDateProps } from './plugins'
-import withKeyProps from './plugins/withKeyProps'
-import { arrayOf, generateID, pipeWith, withKey } from './utils'
+import { createCalendarInfo } from "./core";
+import useIsMounted from "./hooks/useIsMounted";
+import { CalendarViewType, WeekDayType } from "./models";
+import { withDateProps } from "./plugins";
+import withKeyProps from "./plugins/withKeyProps";
+import { arrayOf, generateID, pipeWith, withKey } from "./utils";
 
 export interface UseCalendarOptions {
-  defaultDate?: Date | number | string
-  defaultWeekStart?: WeekDayType
-  defaultViewType?: CalendarViewType
+  defaultDate?: Date | number | string;
+  defaultWeekStart?: WeekDayType;
+  defaultViewType?: CalendarViewType;
 }
 
 export function useCalendar({
@@ -28,18 +19,18 @@ export function useCalendar({
   defaultWeekStart = 0,
   defaultViewType = CalendarViewType.Month,
 }: UseCalendarOptions = {}) {
-  const isMounted = useIsMounted()
+  const isMounted = useIsMounted();
+  // biome-ignore lint: reason
   const baseDate = useMemo(() => {
-    return defaultDate != null ? new Date(defaultDate) : new Date()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultDate, isMounted])
+    return defaultDate != null ? new Date(defaultDate) : new Date();
+  }, [defaultDate, isMounted]);
 
-  const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart)
-  const [cursorDate, setCursorDate] = useState(baseDate)
-  const [viewType, setViewType] = useState(defaultViewType)
+  const [weekStartsOn, setWeekStartsOn] = useState(defaultWeekStart);
+  const [cursorDate, setCursorDate] = useState(baseDate);
+  const [viewType, setViewType] = useState(defaultViewType);
 
-  const calendar = createCalendarInfo(cursorDate, { weekStartsOn })
-  const { weekendDays, weeksInMonth, today, getDateCellByIndex } = calendar
+  const calendar = createCalendarInfo(cursorDate, { weekStartsOn });
+  const { weekendDays, weeksInMonth, today, getDateCellByIndex } = calendar;
 
   const getHeaders = useCallback(
     (viewType: CalendarViewType) => {
@@ -47,40 +38,39 @@ export function useCalendar({
         case CalendarViewType.Month:
         case CalendarViewType.Week:
           return {
-            weekDays: withKey(weekendDays, 'weekdays'),
-          }
-        case CalendarViewType.Day:
+            weekDays: withKey(weekendDays, "weekdays"),
+          };
         default:
           return {
-            weekDays: withKey([{ value: cursorDate }], 'weekdays'),
-          }
+            weekDays: withKey([{ value: cursorDate }], "weekdays"),
+          };
       }
     },
     [cursorDate, weekendDays],
-  )
+  );
 
   const createMatrix = useCallback(
     (weeksInMonth: number) => ({
       value: arrayOf(weeksInMonth).map((weekIndex) => {
         return {
-          key: generateID('weeks'),
+          key: generateID("weeks"),
           value: arrayOf(7).map((dayIndex) => {
             return pipeWith(
               getDateCellByIndex(weekIndex, dayIndex),
               withDateProps(baseDate, cursorDate),
-              withKeyProps('days'),
-            )
+              withKeyProps("days"),
+            );
           }),
-        }
+        };
       }),
     }),
     [baseDate, cursorDate, getDateCellByIndex],
-  )
+  );
 
   const getBody = useCallback(
     (viewType: CalendarViewType) => {
-      const matrix = createMatrix(weeksInMonth)
-      const { weekIndex, dateIndex } = today
+      const matrix = createMatrix(weeksInMonth);
+      const { weekIndex, dateIndex } = today;
 
       return {
         [CalendarViewType.Month]: matrix,
@@ -90,37 +80,37 @@ export function useCalendar({
         [CalendarViewType.Day]: {
           value: [
             {
-              key: 'week-day-type',
+              key: "week-day-type",
               value: [matrix.value[weekIndex]?.value[dateIndex]],
             },
           ],
         },
-      }[viewType]
+      }[viewType];
     },
     [createMatrix, today, weeksInMonth],
-  )
+  );
 
   const setNext = useMemo(() => {
     switch (viewType) {
       case CalendarViewType.Month:
-        return (date: Date) => addMonths(startOfMonth(date), 1)
+        return (date: Date) => addMonths(startOfMonth(date), 1);
       case CalendarViewType.Week:
-        return (date: Date) => addWeeks(startOfWeek(date, { weekStartsOn }), 1)
+        return (date: Date) => addWeeks(startOfWeek(date, { weekStartsOn }), 1);
       case CalendarViewType.Day:
-        return (date: Date) => addDays(date, 1)
+        return (date: Date) => addDays(date, 1);
     }
-  }, [viewType, weekStartsOn])
+  }, [viewType, weekStartsOn]);
 
   const setPrev = useMemo(() => {
     switch (viewType) {
       case CalendarViewType.Month:
-        return (date: Date) => subMonths(startOfMonth(date), 1)
+        return (date: Date) => subMonths(startOfMonth(date), 1);
       case CalendarViewType.Week:
-        return (date: Date) => subWeeks(startOfWeek(date, { weekStartsOn }), 1)
+        return (date: Date) => subWeeks(startOfWeek(date, { weekStartsOn }), 1);
       case CalendarViewType.Day:
-        return (date: Date) => subDays(date, 1)
+        return (date: Date) => subDays(date, 1);
     }
-  }, [viewType, weekStartsOn])
+  }, [viewType, weekStartsOn]);
 
   return useMemo(
     () => ({
@@ -146,5 +136,5 @@ export function useCalendar({
       },
     }),
     [calendar, getBody, getHeaders, setNext, setPrev, viewType],
-  )
+  );
 }

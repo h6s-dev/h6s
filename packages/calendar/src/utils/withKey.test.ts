@@ -1,26 +1,26 @@
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from "vitest";
 
-import generateID from './generateID'
-import withKey from './withKey'
+import generateID from "./generateID";
+import withKey from "./withKey";
 
-vi.mock('./generateID')
+vi.mock("./generateID");
 
-const mockGenerateId = generateID as jest.MockedFunction<typeof generateID>
+const mockGenerateId = generateID as jest.MockedFunction<typeof generateID>;
 
 mockGenerateId.mockImplementation(() => {
-  return 'test-key'
-})
+  return "test-key";
+});
 
-describe('withKey function', () => {
-  it('return array with key property', () => {
+describe("withKey function", () => {
+  it("return array with key property", () => {
     // Given
-    const arr = [{ value: 1 }, { value: 2 }]
+    const arr = [{ value: 1 }, { value: 2 }];
     // When
-    const result = withKey(arr, 'test')
+    const result = withKey(arr, "test");
     // Then
     expect(result).toEqual([
-      { key: 'test-key', value: 1 },
-      { key: 'test-key', value: 2 },
-    ])
-  })
-})
+      { key: "test-key", value: 1 },
+      { key: "test-key", value: 2 },
+    ]);
+  });
+});
