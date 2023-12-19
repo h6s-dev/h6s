@@ -1,7 +1,7 @@
 enum CalendarViewtype {
-  Month = 'month',
-  Week = 'week',
-  Day = 'day',
+  Month = "month",
+  Week = "week",
+  Day = "day",
 }
 
-export default CalendarViewtype
+export default CalendarViewtype;

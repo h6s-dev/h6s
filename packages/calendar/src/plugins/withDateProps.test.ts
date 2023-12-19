@@ -1,16 +1,16 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from "vitest";
 
-import withDateProps from './withDateProps'
+import withDateProps from "./withDateProps";
 
-describe('withDateProps plugin', () => {
-  it('return with correct date, isCurrentDate false, isCurrentMonth true', () => {
+describe("withDateProps plugin", () => {
+  it("return with correct date, isCurrentDate false, isCurrentMonth true", () => {
     // Given
-    const dateCell = { value: new Date(2020, 11, 17) }
-    const baseDate = new Date(2020, 11, 13)
-    const cursorDate = new Date(2020, 11, 17)
+    const dateCell = { value: new Date(2020, 11, 17) };
+    const baseDate = new Date(2020, 11, 13);
+    const cursorDate = new Date(2020, 11, 17);
 
     // When
-    const result = withDateProps(baseDate, cursorDate)(dateCell)
+    const result = withDateProps(baseDate, cursorDate)(dateCell);
 
     // Then
     expect(result).toEqual({
@@ -19,17 +19,17 @@ describe('withDateProps plugin', () => {
       isCurrentDate: false,
       isCurrentMonth: true,
       isWeekend: false,
-    })
-  })
+    });
+  });
 
-  it('return with correct date, isCurrentDate false, isCurrentMonth false', () => {
+  it("return with correct date, isCurrentDate false, isCurrentMonth false", () => {
     // Given
-    const dateCell = { value: new Date(2020, 11, 17) }
-    const baseDate = new Date(2020, 11, 13)
-    const cursorDate = new Date(2020, 10, 17)
+    const dateCell = { value: new Date(2020, 11, 17) };
+    const baseDate = new Date(2020, 11, 13);
+    const cursorDate = new Date(2020, 10, 17);
 
     // When
-    const result = withDateProps(baseDate, cursorDate)(dateCell)
+    const result = withDateProps(baseDate, cursorDate)(dateCell);
 
     // Then
     expect(result).toEqual({
@@ -38,17 +38,17 @@ describe('withDateProps plugin', () => {
       isCurrentDate: false,
       isCurrentMonth: false,
       isWeekend: false,
-    })
-  })
+    });
+  });
 
-  it('return with correct date, isCurrentDate true, isCurrentMonth true', () => {
+  it("return with correct date, isCurrentDate true, isCurrentMonth true", () => {
     // Given
-    const dateCell = { value: new Date(2020, 11, 17) }
-    const baseDate = new Date(2020, 11, 17)
-    const cursorDate = new Date(2020, 11, 17)
+    const dateCell = { value: new Date(2020, 11, 17) };
+    const baseDate = new Date(2020, 11, 17);
+    const cursorDate = new Date(2020, 11, 17);
 
     // When
-    const result = withDateProps(baseDate, cursorDate)(dateCell)
+    const result = withDateProps(baseDate, cursorDate)(dateCell);
 
     // Then
     expect(result).toEqual({
@@ -57,6 +57,6 @@ describe('withDateProps plugin', () => {
       isCurrentDate: true,
       isCurrentMonth: true,
       isWeekend: false,
-    })
-  })
-})
+    });
+  });
+});

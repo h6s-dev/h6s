@@ -1,3 +1,3 @@
 export default function arrayOf(count: number) {
-  return [...new Array(count).keys()]
+  return [...new Array(count).keys()];
 }

@@ -1,12 +1,13 @@
-import { Meta, Story } from '@storybook/react'
+import { Meta } from "@storybook/react";
 
-import { Calendar } from './Calendar'
+import React from "react";
+import { Calendar } from "./Calendar";
 
-export default {
-  title: 'Calendar/With table element',
+export default ({
+  title: "Calendar/With table element",
   component: Calendar,
-} as Meta
+} as Meta);
 
-const Template: Story<{}> = (args) => <Calendar {...args} />
+const Template = (args) => <Calendar {...args} />;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});

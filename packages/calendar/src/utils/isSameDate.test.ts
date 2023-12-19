@@ -1,35 +1,35 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it } from "vitest";
 
-import isSameDate from './isSameDate'
+import isSameDate from "./isSameDate";
 
-describe('isSameDate function', () => {
-  it('return true when same month and same date', () => {
+describe("isSameDate function", () => {
+  it("return true when same month and same date", () => {
     // Given
-    const baseDate = new Date(2020, 11, 27)
-    const targetDate = baseDate
+    const baseDate = new Date(2020, 11, 27);
+    const targetDate = baseDate;
     // When
-    const result = isSameDate(baseDate, targetDate)
+    const result = isSameDate(baseDate, targetDate);
     // Then
-    expect(result).toBeTruthy()
-  })
+    expect(result).toBeTruthy();
+  });
 
-  it('return false when same month and different date', () => {
+  it("return false when same month and different date", () => {
     // Given
-    const baseDate = new Date(2020, 11, 27)
-    const targetDate = new Date(2020, 11, 26)
+    const baseDate = new Date(2020, 11, 27);
+    const targetDate = new Date(2020, 11, 26);
     // When
-    const result = isSameDate(baseDate, targetDate)
+    const result = isSameDate(baseDate, targetDate);
     // Then
-    expect(result).toBeFalsy()
-  })
+    expect(result).toBeFalsy();
+  });
 
-  it('return false when different month and different date', () => {
+  it("return false when different month and different date", () => {
     // Given
-    const baseDate = new Date(2020, 11, 27)
-    const targetDate = new Date(2020, 10, 26)
+    const baseDate = new Date(2020, 11, 27);
+    const targetDate = new Date(2020, 10, 26);
     // When
-    const result = isSameDate(baseDate, targetDate)
+    const result = isSameDate(baseDate, targetDate);
     // Then
-    expect(result).toBeFalsy()
-  })
-})
+    expect(result).toBeFalsy();
+  });
+});
