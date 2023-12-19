@@ -28,7 +28,7 @@
   "scripts": {
     "prepack": "yarn build",
     "build": "yarn run -T tsup",
-    "lint": "yarn run -T eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "yarn run -T biome check src/",
     "lint:fix": "yarn lint --fix",
     "typecheck": "yarn run -T tsc",
     "test": "vitest",
