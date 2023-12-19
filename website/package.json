@@ -15,22 +15,22 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.14",
-    "@docusaurus/preset-classic": "2.0.0-beta.14",
-    "@mdx-js/react": "1.6.22",
-    "@types/node": "20.10.4",
-    "clsx": "1.1.1",
-    "globby": "12.2.0",
-    "prism-react-renderer": "1.2.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@docusaurus/core": "3.0.1",
+    "@docusaurus/preset-classic": "3.0.1",
+    "@mdx-js/react": "3.0.0",
+    "@types/node": "20.10.5",
+    "clsx": "2.0.0",
+    "globby": "14.0.0",
+    "prism-react-renderer": "2.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.14",
-    "@docusaurus/theme-classic": "2.0.0-beta.14",
-    "@docusaurus/types": "2.0.0-beta.14",
-    "@tsconfig/docusaurus": "1.0.4",
-    "@types/react": "18.2.43",
+    "@docusaurus/module-type-aliases": "3.0.1",
+    "@docusaurus/theme-classic": "3.0.1",
+    "@docusaurus/types": "3.0.1",
+    "@tsconfig/docusaurus": "2.0.2",
+    "@types/react": "18.2.45",
     "typescript": "5.3.3"
   },
   "browserslist": {
