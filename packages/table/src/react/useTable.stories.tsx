@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import React from "react";
 import { paymentDataset, paymentDatasetWithSum } from "../mocks/payments.mock";
 import { paymentsTableModel } from "../mocks/paymentsTableModel.mock";
 import { TableInstance } from "../types/table";
@@ -39,8 +40,12 @@ export function Basic() {
           );
         })}
       </ul>
-      <button onClick={() => controls.updateHead(headers)}>Apply</button>
-      <button onClick={() => controls.updateHead(instance.selectableHeadIds)}>Show All</button>
+      <button type="button" onClick={() => controls.updateHead(headers)}>
+        Apply
+      </button>
+      <button type="button" onClick={() => controls.updateHead(instance.selectableHeadIds)}>
+        Show All
+      </button>
     </>
   );
 }

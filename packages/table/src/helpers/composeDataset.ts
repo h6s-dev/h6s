@@ -15,7 +15,7 @@ export function composeDataset<Row extends Record<string, any>, Key extends Path
   const normalized = normalize(rows, key);
   const result = insert(normalized, compose);
 
-  return reverseNormalize(result, key) as unknown as Row[];
+  return reverseNormalize(result, key) as Row[];
 }
 
 function normalize<Row extends Record<string, any>, Key extends Path<Row>>(rows: Row[], key: Key) {
@@ -38,7 +38,7 @@ function insert<Row, Key extends Path<Row>>(
 ) {
   return Object.fromEntries(
     Object.entries(body).map(([key, entities]) => {
-      return [key, compose(entities, key as any)];
+      return [key, compose(entities, key as PathValue<Row, Key>)];
     }),
   );
 }
