@@ -1,6 +1,5 @@
 const packageJson = require('../package.json')
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { themes } = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const config = {
@@ -21,7 +20,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: packageJson.repository.url + '/edit/main/website/',
+          editUrl: `${packageJson.repository.url}/edit/main/website/`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -109,8 +108,8 @@ const config = {
       },
       metadata: [{ name: 'keywords', content: packageJson.keywords.join(', ') }],
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: themes.github,
+        darkTheme: themes.dracula,
       },
       image: 'img/assets/og.jpg',
     }),

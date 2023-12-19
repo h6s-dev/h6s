@@ -6,7 +6,7 @@
     "dev": "next",
     "prebuild": "yarn workspaces foreach -ptR --no-private run build",
     "build": "next build",
-    "build:static": "yarn prebuild && yarn build && next export -o dist/",
+    "build:static": "yarn prebuild && yarn build",
     "lint": "yarn run -T biome check src/",
     "lint:fix": "yarn lint --apply",
     "start": "next start"
