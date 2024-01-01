@@ -36,7 +36,7 @@
     "test:watch": "yarn test --watch"
   },
   "devDependencies": {
-    "@storybook/react": "7.6.6",
+    "@storybook/react": "7.6.7",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react-hooks": "8.0.1",
     "@types/node": "20.10.6",
