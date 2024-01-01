@@ -72,7 +72,7 @@ const RAW_RUNTIME_STATE =
           ["acorn", "npm:8.11.3"],\
           ["all-contributors-cli", "npm:6.20.0"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
-          ["date-fns", "npm:2.28.0"],\
+          ["date-fns", "npm:2.30.0"],\
           ["esbuild", "npm:0.14.11"],\
           ["husky", "npm:7.0.4"],\
           ["lint-staged", "npm:12.1.4"],\
@@ -20663,13 +20663,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["date-fns", [\
-      ["npm:2.28.0", {\
-        "packageLocation": "./.yarn/cache/date-fns-npm-2.28.0-c19c5add1b-2d99e884f7.zip/node_modules/date-fns/",\
-        "packageDependencies": [\
-          ["date-fns", "npm:2.28.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:2.30.0", {\
         "packageLocation": "./.yarn/cache/date-fns-npm-2.30.0-895c790e0f-70b3e8ea7a.zip/node_modules/date-fns/",\
         "packageDependencies": [\
@@ -23788,7 +23781,7 @@ const RAW_RUNTIME_STATE =
           ["acorn", "npm:8.11.3"],\
           ["all-contributors-cli", "npm:6.20.0"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
-          ["date-fns", "npm:2.28.0"],\
+          ["date-fns", "npm:2.30.0"],\
           ["esbuild", "npm:0.14.11"],\
           ["husky", "npm:7.0.4"],\
           ["lint-staged", "npm:12.1.4"],\
