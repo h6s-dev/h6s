@@ -11238,7 +11238,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.0.0, clsx@npm:^2.0.0":
+"clsx@npm:2.1.0":
+  version: 2.1.0
+  resolution: "clsx@npm:2.1.0"
+  checksum: 2e0ce7c3b6803d74fc8147c408f88e79245583202ac14abd9691e2aebb9f312de44270b79154320d10bb7804a9197869635d1291741084826cff20820f31542b
+  languageName: node
+  linkType: hard
+
+"clsx@npm:^2.0.0":
   version: 2.0.0
   resolution: "clsx@npm:2.0.0"
   checksum: 943766d1b02fee3538c871e56638d87f973fbc2d6291ce221215ea436fdecb9be97ad323f411839c2d52c45640c449b1a53fbfe7e8b3d529b4e263308b630c9a
@@ -24981,7 +24988,7 @@ __metadata:
     "@tsconfig/docusaurus": "npm:2.0.2"
     "@types/node": "npm:20.10.6"
     "@types/react": "npm:18.2.46"
-    clsx: "npm:2.0.0"
+    clsx: "npm:2.1.0"
     globby: "npm:14.0.0"
     prism-react-renderer: "npm:2.3.1"
     react: "npm:18.2.0"

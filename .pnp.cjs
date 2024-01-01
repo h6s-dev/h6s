@@ -19580,6 +19580,13 @@ const RAW_RUNTIME_STATE =
           ["clsx", "npm:2.0.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:2.1.0", {\
+        "packageLocation": "./.yarn/cache/clsx-npm-2.1.0-29d286e1de-2e0ce7c3b6.zip/node_modules/clsx/",\
+        "packageDependencies": [\
+          ["clsx", "npm:2.1.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["collapse-white-space", [\
@@ -35799,7 +35806,7 @@ const RAW_RUNTIME_STATE =
           ["@tsconfig/docusaurus", "npm:2.0.2"],\
           ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
-          ["clsx", "npm:2.0.0"],\
+          ["clsx", "npm:2.1.0"],\
           ["globby", "npm:14.0.0"],\
           ["prism-react-renderer", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.3.1"],\
           ["react", "npm:18.2.0"],\
