@@ -2461,7 +2461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.16.5
   resolution: "@babel/runtime@npm:7.16.5"
   dependencies:
@@ -2485,6 +2485,15 @@ __metadata:
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
   checksum: 0f1669f639af30a0a2948ffcefa2c61935f337b0777bd94f8d7bc66bba8e7d4499e725caeb0449540d9c6d67399b733c4e719babb43ce9a0f33095aa01b42b37
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.18.9":
+  version: 7.23.7
+  resolution: "@babel/runtime@npm:7.23.7"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: b29cf3ca6277aea8c5c823d9b86e7f7153757f07eaaa81d726f125de00ac0e7451c90845770f919826a94ade8f71a6bda9c0421410dfcc285ee17a40f8f8ca00
   languageName: node
   linkType: hard
 
@@ -9833,23 +9842,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"all-contributors-cli@npm:6.20.0":
-  version: 6.20.0
-  resolution: "all-contributors-cli@npm:6.20.0"
+"all-contributors-cli@npm:6.26.1":
+  version: 6.26.1
+  resolution: "all-contributors-cli@npm:6.26.1"
   dependencies:
     "@babel/runtime": "npm:^7.7.6"
-    async: "npm:^3.0.1"
+    async: "npm:^3.1.0"
     chalk: "npm:^4.0.0"
     didyoumean: "npm:^1.2.1"
-    inquirer: "npm:^7.0.4"
-    json-fixer: "npm:^1.5.1"
+    inquirer: "npm:^7.3.3"
+    json-fixer: "npm:^1.6.8"
     lodash: "npm:^4.11.2"
     node-fetch: "npm:^2.6.0"
     pify: "npm:^5.0.0"
+    prettier: "npm:^2"
     yargs: "npm:^15.0.1"
+  dependenciesMeta:
+    prettier:
+      optional: true
   bin:
     all-contributors: dist/cli.js
-  checksum: dc810d4e0bbed350bd04504ee0efacdc1e03f78238003d58c9b85153e225857c15a6daf55f3bb920893638bce72015f7a3adb7030f51cbfa02ce0f18c7004679
+  checksum: 07878861df898a596660cae79c26e9b0e31d0541f0e772d61a1ea0f3044eda6a163ef7a2b855b2a6739573d398de289953ef9d7575e2185725a7f19be4a07ab8
   languageName: node
   linkType: hard
 
@@ -10173,14 +10186,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.0.1":
-  version: 3.2.2
-  resolution: "async@npm:3.2.2"
-  checksum: e1af22e439675a2b486c20b72506d86c25b3de705c4da84a53282e5b326375af6e94303ee3576d3a4e13d72ebc6121b3baa76817817f6da533e430f22f5b103d
-  languageName: node
-  linkType: hard
-
-"async@npm:^3.2.3":
+"async@npm:^3.1.0, async@npm:^3.2.3":
   version: 3.2.5
   resolution: "async@npm:3.2.5"
   checksum: 323c3615c3f0ab1ac25a6f953296bc0ac3213d5e0f1c0debdb12964e55963af288d570293c11e44f7967af58c06d2a88d0ea588c86ec0fbf62fa98037f604a0f
@@ -15048,7 +15054,7 @@ __metadata:
     "@types/react": "npm:^18.2.43"
     "@types/testing-library__jest-dom": "npm:6.0.0"
     acorn: "npm:8.11.3"
-    all-contributors-cli: "npm:6.20.0"
+    all-contributors-cli: "npm:6.26.1"
     cz-conventional-changelog: "npm:3.3.0"
     date-fns: "npm:2.28.0"
     esbuild: "npm:0.14.11"
@@ -15901,7 +15907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^7.0.4":
+"inquirer@npm:^7.3.3":
   version: 7.3.3
   resolution: "inquirer@npm:7.3.3"
   dependencies:
@@ -16914,14 +16920,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-fixer@npm:^1.5.1":
-  version: 1.6.13
-  resolution: "json-fixer@npm:1.6.13"
+"json-fixer@npm:^1.6.8":
+  version: 1.6.15
+  resolution: "json-fixer@npm:1.6.15"
   dependencies:
-    "@babel/runtime": "npm:^7.14.6"
+    "@babel/runtime": "npm:^7.18.9"
     chalk: "npm:^4.1.2"
     pegjs: "npm:^0.10.0"
-  checksum: 2ff57c63ed9524af502aa29bf05fd093aaa2c82c047313f1e610911531539fd13c70275116d3528d9a10f092a2a310560d2dddc13933e87561cc03f88b32dea2
+  checksum: 240d6ad7ed8438159ad6ef97e75180f61361a54a32354e5e57f69f6974d844e4019533bbf960c00a180011225bc7bd17a6a63a4292e66e6259c7f2fe977a6097
   languageName: node
   linkType: hard
 
@@ -20424,21 +20430,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2, prettier@npm:^2.8.0":
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.7.1":
   version: 2.8.1
   resolution: "prettier@npm:2.8.1"
   bin:
     prettier: bin-prettier.js
   checksum: 135801ef4c609f24f3606607f8b4e71bd42d6a2efb2579d7709d9079377614800a295f9cc5683b10c6070381106e805e00700a278a506b79a4e29c3548ef4ec1
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.0":
-  version: 2.8.8
-  resolution: "prettier@npm:2.8.8"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
   languageName: node
   linkType: hard
 

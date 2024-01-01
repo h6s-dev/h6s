@@ -70,7 +70,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.46"],\
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["acorn", "npm:8.11.3"],\
-          ["all-contributors-cli", "npm:6.20.0"],\
+          ["all-contributors-cli", "npm:6.26.1"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
           ["date-fns", "npm:2.28.0"],\
           ["esbuild", "npm:0.14.11"],\
@@ -6844,6 +6844,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.23.6-287e8eeec7-4c4ab16f03.zip/node_modules/@babel/runtime/",\
         "packageDependencies": [\
           ["@babel/runtime", "npm:7.23.6"],\
+          ["regenerator-runtime", "npm:0.14.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:7.23.7", {\
+        "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.23.7-9691b86096-b29cf3ca62.zip/node_modules/@babel/runtime/",\
+        "packageDependencies": [\
+          ["@babel/runtime", "npm:7.23.7"],\
           ["regenerator-runtime", "npm:0.14.0"]\
         ],\
         "linkType": "HARD"\
@@ -17822,19 +17830,20 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["all-contributors-cli", [\
-      ["npm:6.20.0", {\
-        "packageLocation": "./.yarn/cache/all-contributors-cli-npm-6.20.0-ba332c4a3e-dc810d4e0b.zip/node_modules/all-contributors-cli/",\
+      ["npm:6.26.1", {\
+        "packageLocation": "./.yarn/cache/all-contributors-cli-npm-6.26.1-b196173d57-07878861df.zip/node_modules/all-contributors-cli/",\
         "packageDependencies": [\
-          ["all-contributors-cli", "npm:6.20.0"],\
+          ["all-contributors-cli", "npm:6.26.1"],\
           ["@babel/runtime", "npm:7.16.5"],\
-          ["async", "npm:3.2.2"],\
+          ["async", "npm:3.2.5"],\
           ["chalk", "npm:4.1.2"],\
           ["didyoumean", "npm:1.2.2"],\
           ["inquirer", "npm:7.3.3"],\
-          ["json-fixer", "npm:1.6.13"],\
+          ["json-fixer", "npm:1.6.15"],\
           ["lodash", "npm:4.17.21"],\
           ["node-fetch", "npm:2.6.6"],\
           ["pify", "npm:5.0.0"],\
+          ["prettier", "npm:2.8.8"],\
           ["yargs", "npm:15.4.1"]\
         ],\
         "linkType": "HARD"\
@@ -18189,13 +18198,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["async", [\
-      ["npm:3.2.2", {\
-        "packageLocation": "./.yarn/cache/async-npm-3.2.2-0245d236b6-e1af22e439.zip/node_modules/async/",\
-        "packageDependencies": [\
-          ["async", "npm:3.2.2"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:3.2.5", {\
         "packageLocation": "./.yarn/cache/async-npm-3.2.5-f5dbdabdfc-323c3615c3.zip/node_modules/async/",\
         "packageDependencies": [\
@@ -23804,7 +23806,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react", "npm:18.2.46"],\
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
           ["acorn", "npm:8.11.3"],\
-          ["all-contributors-cli", "npm:6.20.0"],\
+          ["all-contributors-cli", "npm:6.26.1"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
           ["date-fns", "npm:2.28.0"],\
           ["esbuild", "npm:0.14.11"],\
@@ -25898,11 +25900,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["json-fixer", [\
-      ["npm:1.6.13", {\
-        "packageLocation": "./.yarn/cache/json-fixer-npm-1.6.13-f62cf54c4d-2ff57c63ed.zip/node_modules/json-fixer/",\
+      ["npm:1.6.15", {\
+        "packageLocation": "./.yarn/cache/json-fixer-npm-1.6.15-ae75b6da33-240d6ad7ed.zip/node_modules/json-fixer/",\
         "packageDependencies": [\
-          ["json-fixer", "npm:1.6.13"],\
-          ["@babel/runtime", "npm:7.16.5"],\
+          ["json-fixer", "npm:1.6.15"],\
+          ["@babel/runtime", "npm:7.23.7"],\
           ["chalk", "npm:4.1.2"],\
           ["pegjs", "npm:0.10.0"]\
         ],\
