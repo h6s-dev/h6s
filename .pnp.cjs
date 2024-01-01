@@ -69,7 +69,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/user-event", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:14.5.2"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
-          ["acorn", "npm:8.7.0"],\
+          ["acorn", "npm:8.11.3"],\
           ["all-contributors-cli", "npm:6.20.0"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
           ["date-fns", "npm:2.28.0"],\
@@ -17293,17 +17293,17 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
+      ["npm:8.11.3", {\
+        "packageLocation": "./.yarn/cache/acorn-npm-8.11.3-0d7ab48b38-b688e7e3c6.zip/node_modules/acorn/",\
+        "packageDependencies": [\
+          ["acorn", "npm:8.11.3"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:8.6.0", {\
         "packageLocation": "./.yarn/cache/acorn-npm-8.6.0-9de50afc7d-d6c7326a75.zip/node_modules/acorn/",\
         "packageDependencies": [\
           ["acorn", "npm:8.6.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:8.7.0", {\
-        "packageLocation": "./.yarn/cache/acorn-npm-8.7.0-ca81d350ee-0c437f0bef.zip/node_modules/acorn/",\
-        "packageDependencies": [\
-          ["acorn", "npm:8.7.0"]\
         ],\
         "linkType": "HARD"\
       }],\
@@ -23503,7 +23503,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/user-event", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:14.5.2"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/testing-library__jest-dom", "npm:6.0.0"],\
-          ["acorn", "npm:8.7.0"],\
+          ["acorn", "npm:8.11.3"],\
           ["all-contributors-cli", "npm:6.20.0"],\
           ["cz-conventional-changelog", "npm:3.3.0"],\
           ["date-fns", "npm:2.28.0"],\
