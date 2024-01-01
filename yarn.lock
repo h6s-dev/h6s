@@ -12138,13 +12138,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.28.0":
-  version: 2.28.0
-  resolution: "date-fns@npm:2.28.0"
-  checksum: 2d99e884f7dc020971a394deef35cc4a2685cdf6c99585a79d64d271eb639e0e483f17948ec06c2820b01cc662b6e76b7be2aa3d671d530444447bf836cd40f8
-  languageName: node
-  linkType: hard
-
 "date-fns@npm:2.30.0, date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
@@ -15056,7 +15049,7 @@ __metadata:
     acorn: "npm:8.11.3"
     all-contributors-cli: "npm:6.26.1"
     cz-conventional-changelog: "npm:3.3.0"
-    date-fns: "npm:2.28.0"
+    date-fns: "npm:2.30.0"
     esbuild: "npm:0.14.11"
     husky: "npm:7.0.4"
     lint-staged: "npm:12.1.4"
