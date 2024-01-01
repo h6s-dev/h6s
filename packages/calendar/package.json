@@ -41,7 +41,7 @@
     "@storybook/react": "7.6.4",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react-hooks": "8.0.1",
-    "@types/node": "20.10.4",
+    "@types/node": "20.10.6",
     "@types/react": "^18.2.43",
     "date-fns": "2.30.0",
     "playwright": "1.17.1",

@@ -5777,7 +5777,7 @@ __metadata:
     "@storybook/react": "npm:7.6.4"
     "@testing-library/jest-dom": "npm:^6.1.5"
     "@testing-library/react-hooks": "npm:8.0.1"
-    "@types/node": "npm:20.10.4"
+    "@types/node": "npm:20.10.6"
     "@types/react": "npm:^18.2.43"
     date-fns: "npm:2.30.0"
     playwright: "npm:1.17.1"
@@ -5805,7 +5805,7 @@ __metadata:
     "@storybook/react": "npm:7.6.4"
     "@testing-library/jest-dom": "npm:^6.1.5"
     "@testing-library/react-hooks": "npm:8.0.1"
-    "@types/node": "npm:20.10.4"
+    "@types/node": "npm:20.10.6"
     "@types/react": "npm:^18.2.43"
     happy-dom: "npm:^12.10.3"
     jsdom: "npm:^23.0.1"
@@ -8957,21 +8957,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.10.4, @types/node@npm:^20.10.4":
-  version: 20.10.4
-  resolution: "@types/node@npm:20.10.4"
+"@types/node@npm:20.10.6":
+  version: 20.10.6
+  resolution: "@types/node@npm:20.10.6"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: c10c1dd13f5c2341ad866777dc32946538a99e1ebd203ae127730814b8e5fa4aedfbcb01cb3e24a5466f1af64bcdfa16e7de6e745ff098fff0942aa779b7fe03
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:20.10.5":
-  version: 20.10.5
-  resolution: "@types/node@npm:20.10.5"
-  dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 4a378428d2c9f692b19801a5a3d20dc4c0ad5d4a3d103350f8b401af439941a9aa5efeadc8eb9db13c66c620318bc7f336abfc8934f82fd32c4a689d85068c6f
+  checksum: 08471220d3cbbb6669835c4b78541edf5eface8f2c2e36c550cfa4ff73da73071c90e200a06359fac25d6564127597c23e178128058fb676824ec23d5178a017
   languageName: node
   linkType: hard
 
@@ -8995,6 +8986,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: b95d0c0be342275e27d882bb6ca73c0b757d1672a121cae1fc3249eda4f86a8abeb5745e5c5c1150914bcfda323a3fc51526cd34e2097f8355bf7cbf12fa6bcb
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.10.4":
+  version: 20.10.4
+  resolution: "@types/node@npm:20.10.4"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: c10c1dd13f5c2341ad866777dc32946538a99e1ebd203ae127730814b8e5fa4aedfbcb01cb3e24a5466f1af64bcdfa16e7de6e745ff098fff0942aa779b7fe03
   languageName: node
   linkType: hard
 
@@ -24902,7 +24902,7 @@ __metadata:
     "@docusaurus/types": "npm:3.0.1"
     "@mdx-js/react": "npm:3.0.0"
     "@tsconfig/docusaurus": "npm:2.0.2"
-    "@types/node": "npm:20.10.5"
+    "@types/node": "npm:20.10.6"
     "@types/react": "npm:18.2.46"
     clsx: "npm:2.0.0"
     globby: "npm:14.0.0"

@@ -11570,7 +11570,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/jest-dom", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:6.1.6"],\
           ["@testing-library/react-hooks", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:8.0.1"],\
           ["@types/date-fns", null],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/react-dom", "npm:18.2.17"],\
           ["@types/react-native", null],\
@@ -11604,7 +11604,7 @@ const RAW_RUNTIME_STATE =
           ["@storybook/react", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:7.6.4"],\
           ["@testing-library/jest-dom", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:6.1.6"],\
           ["@testing-library/react-hooks", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:8.0.1"],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["date-fns", "npm:2.30.0"],\
           ["playwright", "npm:1.17.1"],\
@@ -11626,7 +11626,7 @@ const RAW_RUNTIME_STATE =
           ["@storybook/react", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:7.6.4"],\
           ["@testing-library/jest-dom", "virtual:e496c5fef5722e938804dc56e976088a975c32c1b1ac2849ef1756bfebb00a99f72a60bf7be3f45b6725d50ac68ccd13c0498fface401588035220bb14c0b6e7#npm:6.1.6"],\
           ["@testing-library/react-hooks", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:8.0.1"],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["@types/react-dom", "npm:18.2.17"],\
           ["@types/react-native", null],\
@@ -11657,7 +11657,7 @@ const RAW_RUNTIME_STATE =
           ["@storybook/react", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:7.6.4"],\
           ["@testing-library/jest-dom", "virtual:e496c5fef5722e938804dc56e976088a975c32c1b1ac2849ef1756bfebb00a99f72a60bf7be3f45b6725d50ac68ccd13c0498fface401588035220bb14c0b6e7#npm:6.1.6"],\
           ["@testing-library/react-hooks", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:8.0.1"],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["happy-dom", "npm:12.10.3"],\
           ["jsdom", "virtual:e496c5fef5722e938804dc56e976088a975c32c1b1ac2849ef1756bfebb00a99f72a60bf7be3f45b6725d50ac68ccd13c0498fface401588035220bb14c0b6e7#npm:23.0.1"],\
@@ -16524,10 +16524,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:20.10.5", {\
-        "packageLocation": "./.yarn/cache/@types-node-npm-20.10.5-9464a4540b-4a378428d2.zip/node_modules/@types/node/",\
+      ["npm:20.10.6", {\
+        "packageLocation": "./.yarn/cache/@types-node-npm-20.10.6-59a7d708ba-08471220d3.zip/node_modules/@types/node/",\
         "packageDependencies": [\
-          ["@types/node", "npm:20.10.5"],\
+          ["@types/node", "npm:20.10.6"],\
           ["undici-types", "npm:5.26.5"]\
         ],\
         "linkType": "HARD"\
@@ -34872,7 +34872,7 @@ const RAW_RUNTIME_STATE =
           ["vite", "virtual:abe90f875b5beef0e38403a8454ea0eefda549e95aac1ad297da0ed29b55095ad3cd9f38a14e4c3a5db914b694221e8d36299db8cd6f79f3c9dd1443e69fb6a3#npm:5.0.7"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/sass", null],\
           ["@types/stylus", null],\
           ["@types/sugarss", null],\
@@ -34975,7 +34975,7 @@ const RAW_RUNTIME_STATE =
           ["@types/edge-runtime__vm", null],\
           ["@types/happy-dom", null],\
           ["@types/jsdom", null],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/vitest__browser", null],\
           ["@types/vitest__ui", null],\
           ["@vitest/browser", null],\
@@ -35079,7 +35079,7 @@ const RAW_RUNTIME_STATE =
           ["@types/edge-runtime__vm", null],\
           ["@types/happy-dom", null],\
           ["@types/jsdom", null],\
-          ["@types/node", "npm:20.10.4"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/vitest__browser", null],\
           ["@types/vitest__ui", null],\
           ["@vitest/browser", null],\
@@ -35477,7 +35477,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/types", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:3.0.1"],\
           ["@mdx-js/react", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:3.0.0"],\
           ["@tsconfig/docusaurus", "npm:2.0.2"],\
-          ["@types/node", "npm:20.10.5"],\
+          ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["clsx", "npm:2.0.0"],\
           ["globby", "npm:14.0.0"],\
