@@ -7,7 +7,7 @@ export default function createCalendarInfo(cursorDate: Date, { weekStartsOn }: {
   const { year, month, day } = parseDate(cursorDate);
   const startWeekdayInMonth = getStartWeekdayInMonth(cursorDate, weekStartsOn);
   const weeksInMonth = getWeeksInMonth(cursorDate, startWeekdayInMonth);
-  const weekendDays = arrayOf(7).map((index) => ({
+  const weekDays = arrayOf(7).map((index) => ({
     value: setDay(cursorDate, index + weekStartsOn),
   }));
 
@@ -25,7 +25,7 @@ export default function createCalendarInfo(cursorDate: Date, { weekStartsOn }: {
     weekStartsOn,
     startWeekdayInMonth,
     weeksInMonth,
-    weekendDays,
+    weekDays,
     today: {
       weekIndex: getCurrentWeekIndex(day, startWeekdayInMonth),
       dateIndex: getDay(cursorDate),
