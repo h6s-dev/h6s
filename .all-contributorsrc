@@ -75,8 +75,18 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "jaehunn",
+      "name": "Bang, Jaehun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50726813?v=4",
+      "profile": "https://www.jaehun.dev",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs"
 }
