@@ -17838,7 +17838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"memfs@npm:^3.4.12":
+"memfs@npm:^3.4.12, memfs@npm:^3.4.3":
   version: 3.5.3
   resolution: "memfs@npm:3.5.3"
   dependencies:
@@ -24788,17 +24788,17 @@ __metadata:
   linkType: hard
 
 "webpack-dev-middleware@npm:^5.3.1":
-  version: 5.3.1
-  resolution: "webpack-dev-middleware@npm:5.3.1"
+  version: 5.3.4
+  resolution: "webpack-dev-middleware@npm:5.3.4"
   dependencies:
     colorette: "npm:^2.0.10"
-    memfs: "npm:^3.4.1"
+    memfs: "npm:^3.4.3"
     mime-types: "npm:^2.1.31"
     range-parser: "npm:^1.2.1"
     schema-utils: "npm:^4.0.0"
   peerDependencies:
     webpack: ^4.0.0 || ^5.0.0
-  checksum: 4b2609cc6573dfd1247fd6109b32269f32fa87703fefc50913acc3cd05d19d7c9595fe8dbc43ae927f54d58437dcd1a318f7db59def5072daba23890b855bd34
+  checksum: 3004374130f31c2910da39b80e24296009653bb11caa0b8449d962b67e003d7e73d01fbcfda9be1f1f04179f66a9c39f4caf7963df54303b430e39ba5a94f7c2
   languageName: node
   linkType: hard
 
