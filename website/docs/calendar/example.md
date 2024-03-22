@@ -15,7 +15,7 @@ export default function Calendar() {
     <Table>
       <Thead>
         <Tr>
-          {headers.weekDays.map(({ key, value }) => {
+          {headers.weekdays.map(({ key, value }) => {
             return <Th key={key}>{format(value, 'E', { locale })}</Th>
           })}
         </Tr>
