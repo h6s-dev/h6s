@@ -22,11 +22,11 @@ describe("useCalendar hooks test", () => {
         }),
       );
       // Then
-      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+      const onlyDates = result.current.headers.weekdays.map(({ value }) => ({
         value,
       }));
       expect(onlyDates).toEqual(DecemberFirstWeekData.value[0].value);
-      expect(result.current.headers.weekDays[0].key).toBeDefined();
+      expect(result.current.headers.weekdays[0].key).toBeDefined();
     });
 
     it("return weekdays array when month viewType", () => {
@@ -43,13 +43,13 @@ describe("useCalendar hooks test", () => {
         }),
       );
       // Then
-      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+      const onlyDates = result.current.headers.weekdays.map(({ value }) => ({
         value,
       }));
       expect(onlyDates).toEqual([{ value: defaultDate }]);
     });
 
-    it("return weekDays when set WeekDayType: 0", () => {
+    it("return weekdays when set WeekDayType: 0", () => {
       // Given
       const defaultDate = new Date(2021, 8, 30);
       const defaultWeekStart = 0;
@@ -61,7 +61,7 @@ describe("useCalendar hooks test", () => {
         }),
       );
       // Then
-      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+      const onlyDates = result.current.headers.weekdays.map(({ value }) => ({
         value,
       }));
       expect(onlyDates).toEqual([
@@ -74,7 +74,7 @@ describe("useCalendar hooks test", () => {
         { value: new Date(2021, 9, 2) },
       ]);
     });
-    it("return weekDays when set WeekDayType: 1", () => {
+    it("return weekdays when set WeekDayType: 1", () => {
       // Given
       const defaultDate = new Date(2021, 8, 30);
       const defaultWeekStart = 1;
@@ -86,7 +86,7 @@ describe("useCalendar hooks test", () => {
         }),
       );
       // Then
-      const onlyDates = result.current.headers.weekDays.map(({ value }) => ({
+      const onlyDates = result.current.headers.weekdays.map(({ value }) => ({
         value,
       }));
       expect(onlyDates).toEqual([

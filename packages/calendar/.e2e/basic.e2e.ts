@@ -12,6 +12,7 @@ const BASIC_EXAMPLES_URL =
 
 const SELECTOR = {
   CURSOR_DATE: 'data-testid=cursor-date',
+  WEEKDAYS: 'data-testid=calendar-weekdays',
   WEEKS: 'data-testid=calendar-weeks',
   CELL_TODAY: 'data-testid=calendar-cell--today',
 }
@@ -35,9 +36,9 @@ test('render calendar successfully', async ({ page }) => {
   const pageTitle = page.locator(SELECTOR.CURSOR_DATE)
   await expect(pageTitle).toHaveText(dateFormat(baseDate))
 
-  // render weekends in calendar
-  const weekendsCount = await page.locator('data-testid=calendar-weekends').count()
-  expect(weekendsCount).toBe(7)
+  // render weekdays in calendar
+  const weekdaysCount = await page.locator(SELECTOR.WEEKDAYS).count()
+  expect(weekdaysCount).toBe(7)
 
   // render calendar cells
   const weeksCount = await page.locator(SELECTOR.WEEKS).count()

@@ -36,9 +36,9 @@ export function Calendar() {
       </caption>
       <thead>
         <tr>
-          {headers.weekDays.map(({ key, value }) => {
+          {headers.weekdays.map(({ key, value }) => {
             return (
-              <th key={key} data-testid="calendar-weekends">
+              <th key={key} data-testid="calendar-weekdays">
                 {format(value, "E")}
               </th>
             );

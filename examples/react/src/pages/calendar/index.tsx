@@ -105,9 +105,9 @@ export default function CalendarExample() {
           </TableCaption>
           <Thead>
             <Tr>
-              {headers.weekDays.map(({ key, value }) => {
+              {headers.weekdays.map(({ key, value }) => {
                 return (
-                  <Th key={key} data-testid="calendar-weekends">
+                  <Th key={key} data-testid="calendar-weekdays">
                     {format(value, "E", { locale })}
                   </Th>
                 );
