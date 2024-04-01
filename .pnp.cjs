@@ -16167,10 +16167,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@tsconfig/docusaurus", [\
-      ["npm:2.0.2", {\
-        "packageLocation": "./.yarn/cache/@tsconfig-docusaurus-npm-2.0.2-9e1a4c398a-129f253217.zip/node_modules/@tsconfig/docusaurus/",\
+      ["npm:2.0.3", {\
+        "packageLocation": "./.yarn/cache/@tsconfig-docusaurus-npm-2.0.3-3e635f391c-d8245a64bf.zip/node_modules/@tsconfig/docusaurus/",\
         "packageDependencies": [\
-          ["@tsconfig/docusaurus", "npm:2.0.2"]\
+          ["@tsconfig/docusaurus", "npm:2.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -35796,7 +35796,7 @@ const RAW_RUNTIME_STATE =
           ["@docusaurus/theme-classic", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:3.0.1"],\
           ["@docusaurus/types", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:3.0.1"],\
           ["@mdx-js/react", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:3.0.0"],\
-          ["@tsconfig/docusaurus", "npm:2.0.2"],\
+          ["@tsconfig/docusaurus", "npm:2.0.3"],\
           ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["clsx", "npm:2.0.0"],\
