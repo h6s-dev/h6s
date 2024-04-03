@@ -30,7 +30,7 @@ export function useCalendar({
   const [viewType, setViewType] = useState(defaultViewType);
 
   const calendar = createCalendarInfo(cursorDate, { weekStartsOn });
-  const { weekDays, weeksInMonth, today, getDateCellByIndex } = calendar;
+  const { weekdays, weeksInMonth, today, getDateCellByIndex } = calendar;
 
   const getHeaders = useCallback(
     (viewType: CalendarViewType) => {
@@ -38,15 +38,15 @@ export function useCalendar({
         case CalendarViewType.Month:
         case CalendarViewType.Week:
           return {
-            weekDays: withKey(weekDays, "weekdays"),
+            weekdays: withKey(weekdays, "weekdays"),
           };
         default:
           return {
-            weekDays: withKey([{ value: cursorDate }], "weekdays"),
+            weekdays: withKey([{ value: cursorDate }], "weekdays"),
           };
       }
     },
-    [cursorDate, weekDays],
+    [cursorDate, weekdays],
   );
 
   const createMatrix = useCallback(
