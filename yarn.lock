@@ -6105,31 +6105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:2.1.5":
-  version: 2.1.5
-  resolution: "@mdx-js/react@npm:2.1.5"
-  dependencies:
-    "@types/mdx": "npm:^2.0.0"
-    "@types/react": "npm:>=16"
-  peerDependencies:
-    react: ">=16"
-  checksum: 1cbbb3603caf4ce51af18f15aea2094d267b80f56edda4e74f8a48697fbf4eec29ca99d16e9f7dd112e6d3aebe3bff89ea24a7fc7e8a00c06d2555be48e08c21
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:3.0.0, @mdx-js/react@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@mdx-js/react@npm:3.0.0"
-  dependencies:
-    "@types/mdx": "npm:^2.0.0"
-  peerDependencies:
-    "@types/react": ">=16"
-    react: ">=16"
-  checksum: 6d05cd3871eabbcc86df5042981692eccea55b5c31cbf39952bef0f41b38f2c4abeb357fed456a16c1472a0877b2f7e842341117034a3f1ddcb40b4840c33731
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:^2.1.5":
+"@mdx-js/react@npm:2.3.0, @mdx-js/react@npm:^2.1.5":
   version: 2.3.0
   resolution: "@mdx-js/react@npm:2.3.0"
   dependencies:
@@ -6138,6 +6114,30 @@ __metadata:
   peerDependencies:
     react: ">=16"
   checksum: bce1cb1dde0a9a2b786cd9167b9e2bc0e3be52c195a4a79aaf1677470566d1fd2979d01baca2380c76aa4a1a27cd89f051484e595fdc4144a428d6af39bb667a
+  languageName: node
+  linkType: hard
+
+"@mdx-js/react@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@mdx-js/react@npm:3.0.1"
+  dependencies:
+    "@types/mdx": "npm:^2.0.0"
+  peerDependencies:
+    "@types/react": ">=16"
+    react: ">=16"
+  checksum: d566407af11e76f498f8133fbfa8a9d8a2ad80dc7a66ca109d29fcb92e953a2d2d7aaedc0c28571d126f1967faeb126dd2e4ab4ea474c994bf5c76fa204c5997
+  languageName: node
+  linkType: hard
+
+"@mdx-js/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@mdx-js/react@npm:3.0.0"
+  dependencies:
+    "@types/mdx": "npm:^2.0.0"
+  peerDependencies:
+    "@types/react": ">=16"
+    react: ">=16"
+  checksum: 6d05cd3871eabbcc86df5042981692eccea55b5c31cbf39952bef0f41b38f2c4abeb357fed456a16c1472a0877b2f7e842341117034a3f1ddcb40b4840c33731
   languageName: node
   linkType: hard
 
@@ -15031,7 +15031,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:16.2.4"
     "@emotion/react": "npm:11.7.1"
     "@emotion/styled": "npm:11.6.0"
-    "@mdx-js/react": "npm:2.1.5"
+    "@mdx-js/react": "npm:2.3.0"
     "@storybook/addon-actions": "npm:7.6.6"
     "@storybook/addon-docs": "npm:7.6.6"
     "@storybook/addon-essentials": "npm:7.6.6"
@@ -24977,7 +24977,7 @@ __metadata:
     "@docusaurus/preset-classic": "npm:3.0.1"
     "@docusaurus/theme-classic": "npm:3.0.1"
     "@docusaurus/types": "npm:3.0.1"
-    "@mdx-js/react": "npm:3.0.0"
+    "@mdx-js/react": "npm:3.0.1"
     "@tsconfig/docusaurus": "npm:2.0.2"
     "@types/node": "npm:20.10.6"
     "@types/react": "npm:18.2.46"
