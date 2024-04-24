@@ -137,7 +137,7 @@ export default function Table() {
                 cell.colSpan !== 0
                   ? <td key={cell.id}>{cell.render({ cellProps: cell })}</td>
                   : null
-              )}
+              ))}
             </tr>
           )
         })}
