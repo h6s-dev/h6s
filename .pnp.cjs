@@ -14116,10 +14116,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@sindresorhus/merge-streams", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "./.yarn/cache/@sindresorhus-merge-streams-npm-1.0.0-2ae6684f8f-453c2a2816.zip/node_modules/@sindresorhus/merge-streams/",\
+      ["npm:2.3.0", {\
+        "packageLocation": "./.yarn/cache/@sindresorhus-merge-streams-npm-2.3.0-5d49fcd96d-798bcb53cd.zip/node_modules/@sindresorhus/merge-streams/",\
         "packageDependencies": [\
-          ["@sindresorhus/merge-streams", "npm:1.0.0"]\
+          ["@sindresorhus/merge-streams", "npm:2.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -23656,11 +23656,11 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:14.0.0", {\
-        "packageLocation": "./.yarn/cache/globby-npm-14.0.0-3bccdd5188-6e7d84bbc6.zip/node_modules/globby/",\
+      ["npm:14.0.2", {\
+        "packageLocation": "./.yarn/cache/globby-npm-14.0.2-28ff4422ff-67660da70f.zip/node_modules/globby/",\
         "packageDependencies": [\
-          ["globby", "npm:14.0.0"],\
-          ["@sindresorhus/merge-streams", "npm:1.0.0"],\
+          ["globby", "npm:14.0.2"],\
+          ["@sindresorhus/merge-streams", "npm:2.3.0"],\
           ["fast-glob", "npm:3.3.2"],\
           ["ignore", "npm:5.3.0"],\
           ["path-type", "npm:5.0.0"],\
@@ -35800,7 +35800,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.10.6"],\
           ["@types/react", "npm:18.2.46"],\
           ["clsx", "npm:2.0.0"],\
-          ["globby", "npm:14.0.0"],\
+          ["globby", "npm:14.0.2"],\
           ["prism-react-renderer", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.3.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:abf59ffe433a9dd4bbaca062eb7bd9e362b80a73d9304e4d8e587a76736b2ea454dcce4a0bfbee94b505e09a8cc5901c05c4bb781ca089484664c4ca13a9e345#npm:18.2.0"],\
