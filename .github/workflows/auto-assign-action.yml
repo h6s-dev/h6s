@@ -4,7 +4,7 @@ on:
     types: [opened, ready_for_review, reopened]
 
 jobs:
-  add-reviews:
+  add-default-assignee:
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/auto-assign-action@v2.0.0
