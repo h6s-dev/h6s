@@ -46,9 +46,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.7",
-    "vitest": "^1.0.4"
+    "typescript": "*",
+    "vite": "*",
+    "vitest": "*"
   },
   "peerDependencies": {
     "react": ">= 18"

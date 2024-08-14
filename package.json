@@ -69,8 +69,13 @@
     "ts-node": "10.4.0",
     "tsup": "^8.0.1",
     "typescript": "^5.5.4",
-    "vite": "^5.0.7",
-    "vitest": "^1.0.4"
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  },
+  "resolutions": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
   },
   "workspaces": [
     "packages/*",

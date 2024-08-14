@@ -31,7 +31,7 @@
     "lint": "yarn run -T biome check src/",
     "lint:fix": "yarn lint --apply",
     "typecheck": "yarn run -T tsc",
-    "test": "vitest",
+    "test": "yarn run -T vitest",
     "test:playwright": "playwright test",
     "test:cov": "yarn test --coverage",
     "test:watch": "yarn test --watch"
@@ -39,18 +39,20 @@
   "devDependencies": {
     "@playwright/test": "1.17.1",
     "@storybook/react": "7.6.6",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/react-hooks": "8.0.1",
+    "@testing-library/react": "^16.0.0",
     "@types/node": "20.10.6",
     "@types/react": "^18.2.43",
     "date-fns": "2.30.0",
+    "jsdom": "^24.1.1",
     "playwright": "1.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.7",
-    "vitest": "^1.0.4"
+    "typescript": "*",
+    "vite": "*",
+    "vitest": "*"
   },
   "peerDependencies": {
     "date-fns": ">= 2",
