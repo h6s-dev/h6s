@@ -1,4 +1,4 @@
-import { RendererModel, THead } from "../../types/table";
+import type { RendererModel, THead } from "../../types/table";
 import { generateTableID } from "../../utils/generateTableID";
 import { getChildrenCount } from "../renderer/getChildrenCount";
 import { getLargestDepth } from "../renderer/getLargestDepth";

@@ -1,4 +1,4 @@
-import { THead } from "../../types/table";
+import type { THead } from "../../types/table";
 import { generateTableID } from "../../utils/generateTableID";
 import { groupBy } from "../../utils/groupBy";
 

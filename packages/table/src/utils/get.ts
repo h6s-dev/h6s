@@ -1,4 +1,4 @@
-import { Path } from "..";
+import type { Path } from "..";
 
 export function get<ObjectType extends Record<string, any>>(
   obj: ObjectType,

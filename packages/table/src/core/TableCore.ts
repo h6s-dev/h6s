@@ -1,7 +1,7 @@
-import { ComposeDatasetOptions, composeDataset } from "../helpers/composeDataset";
+import { type ComposeDatasetOptions, composeDataset } from "../helpers/composeDataset";
 import { transToRendererModel } from "../helpers/transToRendererModel";
-import { HeadId, HeadMeta, RendererModel, TableInstance, TableModel } from "../types/table";
-import { Path } from "../types/utility";
+import type { HeadId, HeadMeta, RendererModel, TableInstance, TableModel } from "../types/table";
+import type { Path } from "../types/utility";
 import { invariant } from "../utils/invariant";
 import { objectEntries } from "../utils/object";
 import { buildRendererModel } from "./renderer/buildRendererModel";

@@ -1,6 +1,6 @@
-import { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 
-import { Path, Primitive } from "./utility";
+import type { Path, Primitive } from "./utility";
 
 export interface CommonCell {
   id: string;

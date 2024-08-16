@@ -1,4 +1,4 @@
-import { HeadMeta, RendererModel } from "../../types/table";
+import type { HeadMeta, RendererModel } from "../../types/table";
 import { getHeaderAccessorId } from "./getHeaderAccessorId";
 
 export function buildRendererModel<Row>(rendererModel: RendererModel<Row>, headMeta: HeadMeta): RendererModel<Row> {

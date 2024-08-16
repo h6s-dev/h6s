@@ -1,6 +1,6 @@
-import { getDate, isWeekend as _isWeekend } from "date-fns";
+import { isWeekend as _isWeekend, getDate } from "date-fns";
 
-import { DateCell } from "../models";
+import type { DateCell } from "../models";
 import { isSameDate, isSameYearAndMonth } from "../utils";
 
 export default function withDateProps(baseDate: Date, cursorDate: Date) {

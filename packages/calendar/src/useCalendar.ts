@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 
 import { createCalendarInfo } from "./core";
 import useIsMounted from "./hooks/useIsMounted";
-import { CalendarViewType, WeekDayType } from "./models";
+import { CalendarViewType, type WeekDayType } from "./models";
 import { withDateProps } from "./plugins";
 import withKeyProps from "./plugins/withKeyProps";
 import { arrayOf, generateID, pipeWith, withKey } from "./utils";

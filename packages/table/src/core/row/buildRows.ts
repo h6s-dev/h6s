@@ -1,5 +1,5 @@
-import { Cell, PrivateAggregatedCell } from "../../types/table";
-import { Primitive } from "../../types/utility";
+import type { Cell, PrivateAggregatedCell } from "../../types/table";
+import type { Primitive } from "../../types/utility";
 import { generateTableID } from "../../utils/generateTableID";
 import { get } from "../../utils/get";
 import { invariant } from "../../utils/invariant";
