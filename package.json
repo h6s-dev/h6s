@@ -48,10 +48,11 @@
     "@storybook/react-vite": "^7.6.4",
     "@storybook/react-webpack5": "7.6.6",
     "@storybook/theming": "7.6.6",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "6.1.5",
     "@testing-library/react": "14.1.2",
-    "@testing-library/react-hooks": "8.0.1",
     "@testing-library/user-event": "14.5.2",
+    "@types/node": "^22.3.0",
     "@types/react": "^18.2.43",
     "@types/testing-library__jest-dom": "6.0.0",
     "acorn": "8.11.3",
@@ -69,8 +70,13 @@
     "ts-node": "10.4.0",
     "tsup": "^8.0.1",
     "typescript": "^5.5.4",
-    "vite": "^5.0.7",
-    "vitest": "^1.0.4"
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  },
+  "resolutions": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
   },
   "workspaces": [
     "packages/*",
@@ -78,6 +84,7 @@
     "website"
   ],
   "scripts": {
+    "check": "yarn typecheck && yarn lint && yarn test",
     "lint": "yarn workspaces foreach -ptR --from '@h6s/*' run lint",
     "test": "yarn workspaces foreach -ptR --from '@h6s/*' run test",
     "typecheck": "yarn workspaces foreach -ptR --from '@h6s/*' run typecheck",

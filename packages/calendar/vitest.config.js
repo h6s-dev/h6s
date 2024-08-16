@@ -6,5 +6,6 @@ export default defineConfig({
     passWithNoTests: true,
     setupFiles: ['./vitest.setup.ts'],
     watch: false,
+    environment: "jsdom"
   },
 })
