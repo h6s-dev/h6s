@@ -5,17 +5,12 @@ on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['18', '20', '22']
     name: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
+        uses: ./.github/actions/setup-node
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build

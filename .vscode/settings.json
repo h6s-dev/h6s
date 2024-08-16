@@ -5,8 +5,8 @@
   "editor.inlayHints.enabled": "onUnlessPressed",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "editor.codeActionsOnSave": {
-    "quickfix.biome": true,
-    "source.organizeImports.biome": true
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "editor.tabSize": 2,
   "editor.useTabStops": true,
