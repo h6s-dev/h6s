@@ -8,10 +8,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        persist-credentials: false
     - name: Setup Node.js
       if: ${{ inputs.node-version-matrix == 'false' }}
       uses: actions/setup-node@v4
@@ -22,5 +18,8 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version-matrix }}
+    - name: Enable corepack
+      shell: bash
+      run: corepack enable
     - name: Install dependencies
         run: yarn install --immutable
