@@ -22,4 +22,4 @@ runs:
       shell: bash
       run: corepack enable
     - name: Install dependencies
-        run: yarn install --immutable
+      run: yarn install --immutable
