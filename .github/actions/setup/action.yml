@@ -1,0 +1,26 @@
+name: Setup
+description: Setup development environment
+inputs:
+  node-version-matrix:
+    required: false
+    description: you can use matrix strategy
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js
+      if: ${{ inputs.node-version-matrix == 'false' }}
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .tool-versions
+    - name: Setup Node.js
+      if: ${{ inputs.node-version-matrix != 'false' }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version-matrix }}
+    - name: Enable corepack
+      shell: bash
+      run: corepack enable
+    - name: Install dependencies
+      shell: bash
+      run: yarn install --immutable

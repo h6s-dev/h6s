@@ -8,16 +8,14 @@ jobs:
     strategy:
       matrix:
         node: ['18', '20', '22']
-    name: CI (Node.js ${{ matrix.node }})
+    name: Node.js ${{ matrix.node }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
-          node-version: ${{ matrix.node }}
-      - name: Install dependencies
-        run: yarn install --immutable
+          node-version-matrix: ${{ matrix.node }}
       - name: Check Type
         run: yarn typecheck
       - name: Check Lint

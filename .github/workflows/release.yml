@@ -16,10 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: ./.github/actions/setup-node
-      - name: Install dependencies
-        run: yarn install --immutable
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Check Type
         run: yarn typecheck
       - name: Check Lint
