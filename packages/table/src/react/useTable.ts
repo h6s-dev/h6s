@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { TableCore } from "../core/TableCore";
 import { cellRenderer } from "../helpers/cellRenderer";
-import { HeadId, TableModel } from "../types/table";
+import type { HeadId, TableModel } from "../types/table";
 
 interface Options<Row extends Record<string, any>> {
   model: TableModel<Row>;

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 
-import { RendererModel } from "../..";
+import type { RendererModel } from "../..";
 import { buildTFoots } from "./buildTFoots";
 
 interface Model {

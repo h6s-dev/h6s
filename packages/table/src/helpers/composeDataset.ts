@@ -1,4 +1,4 @@
-import { Path, PathValue } from "../types/utility";
+import type { Path, PathValue } from "../types/utility";
 import { get } from "../utils/get";
 import { groupBy } from "../utils/groupBy";
 import { mapValues } from "../utils/mapValues";

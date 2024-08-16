@@ -1,4 +1,4 @@
-import { RendererModel } from "../../types/table";
+import type { RendererModel } from "../../types/table";
 
 export function flattenRendererModel<Row>(rendererModel: RendererModel<Row>): RendererModel<Row> {
   const models: RendererModel<Row> = [];

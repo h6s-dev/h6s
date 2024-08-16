@@ -1,4 +1,4 @@
-import { RendererModel } from "../../types/table";
+import type { RendererModel } from "../../types/table";
 
 export function getLargestDepth<Row>(rendererModel: RendererModel<Row>): number {
   return rendererModel.reduce((acc, { accessor }) => {

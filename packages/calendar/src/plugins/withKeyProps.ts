@@ -1,4 +1,4 @@
-import { DateCell } from "../models";
+import type { DateCell } from "../models";
 import { generateID } from "../utils";
 
 export default function withKeyProps(keyPrefix: string) {

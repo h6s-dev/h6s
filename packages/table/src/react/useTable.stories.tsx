@@ -3,7 +3,7 @@ import { useState } from "react";
 import React from "react";
 import { paymentDataset, paymentDatasetWithSum } from "../mocks/payments.mock";
 import { paymentsTableModel } from "../mocks/paymentsTableModel.mock";
-import { TableInstance } from "../types/table";
+import type { TableInstance } from "../types/table";
 import { objectEntries } from "../utils/object";
 import { useTable } from "./useTable";
 

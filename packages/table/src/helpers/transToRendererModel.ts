@@ -1,4 +1,4 @@
-import { RendererModel, TableModel, isRenderer } from "../types/table";
+import { type RendererModel, type TableModel, isRenderer } from "../types/table";
 
 export function transToRendererModel<Row>(model: TableModel<Row>): RendererModel<Row> {
   return model.map((x) => {

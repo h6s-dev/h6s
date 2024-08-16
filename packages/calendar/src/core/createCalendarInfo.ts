@@ -1,6 +1,6 @@
 import { getDay, getDaysInMonth, setDay, startOfMonth } from "date-fns";
 
-import { WeekDayType } from "../models";
+import type { WeekDayType } from "../models";
 import { arrayOf, parseDate } from "../utils";
 
 export default function createCalendarInfo(cursorDate: Date, { weekStartsOn }: { weekStartsOn: WeekDayType }) {

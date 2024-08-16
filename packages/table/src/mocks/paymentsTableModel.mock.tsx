@@ -1,6 +1,6 @@
-import { TableModel } from "../types/table";
+import type { TableModel } from "../types/table";
 import { sum } from "../utils/sum";
-import { PaymentDatasetType, paymentDataset } from "./payments.mock";
+import { type PaymentDatasetType, paymentDataset } from "./payments.mock";
 
 export const paymentsTableModel: TableModel<PaymentDatasetType> = [
   {

@@ -1,7 +1,7 @@
 // @ts-ignore
 import React from "react";
 
-import { CellComponent, CellRecursiveRenderer, CellRendererProps, CommonCell } from "../types/table";
+import type { CellComponent, CellRecursiveRenderer, CellRendererProps, CommonCell } from "../types/table";
 
 export function cellRenderer<CellType extends CommonCell>(
   renderers?: CellComponent<CellType> | Array<CellRecursiveRenderer<CellType>>,

@@ -1,4 +1,4 @@
-import { RendererModel, TFoot } from "../../types/table";
+import type { RendererModel, TFoot } from "../../types/table";
 import { popUntil, shiftUntil } from "../../utils/array";
 import { generateTableID } from "../../utils/generateTableID";
 import { flattenRendererModel } from "../renderer/flattenRendererModel";

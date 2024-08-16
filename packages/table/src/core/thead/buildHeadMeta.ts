@@ -1,4 +1,4 @@
-import { HeadId, HeadMeta, RendererModel } from "../../types/table";
+import type { HeadId, HeadMeta, RendererModel } from "../../types/table";
 import { arrayIncludes } from "../../utils/array";
 import { getHeaderAccessorId } from "../renderer/getHeaderAccessorId";
 import { getLargestDepth } from "../renderer/getLargestDepth";
