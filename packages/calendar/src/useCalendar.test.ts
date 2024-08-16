@@ -40,9 +40,6 @@ describe("useCalendar hooks test", () => {
           defaultDate,
           defaultWeekStart,
           defaultViewType,
-
-
-
         }),
       );
       // Then
