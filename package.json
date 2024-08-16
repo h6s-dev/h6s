@@ -82,6 +82,7 @@
     "website"
   ],
   "scripts": {
+    "check": "yarn typecheck && yarn lint && yarn test",
     "lint": "yarn workspaces foreach -ptR --from '@h6s/*' run lint",
     "test": "yarn workspaces foreach -ptR --from '@h6s/*' run test",
     "typecheck": "yarn workspaces foreach -ptR --from '@h6s/*' run typecheck",
