@@ -38,13 +38,13 @@
   "devDependencies": {
     "@storybook/react": "7.6.6",
     "@testing-library/jest-dom": "^6.1.5",
-    "@types/node": "20.10.6",
-    "@types/react": "^18.2.43",
+    "@types/node": "*",
+    "@types/react": "*",
     "happy-dom": "^12.10.3",
     "jsdom": "^23.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
+    "react": "*",
+    "react-dom": "*",
+    "react-test-renderer": "*",
     "typescript": "*",
     "vite": "*",
     "vitest": "*"
