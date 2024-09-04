@@ -1,0 +1,8 @@
+"package:table":
+  - packages/table/**
+
+"package:calendar":
+  - packages/calendar/**
+
+"website":
+  - website/**
