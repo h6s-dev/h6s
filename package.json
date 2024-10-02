@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "7.25.2",
     "@babel/preset-env": "^7.25.3",
-    "@biomejs/biome": "1.8.3",
+    "@biomejs/biome": "1.9.3",
     "@changesets/cli": "^2.27.7",
     "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",
