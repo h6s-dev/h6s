@@ -15415,7 +15415,7 @@ const RAW_RUNTIME_STATE =
           ["color-convert", "npm:2.0.1"],\
           ["dequal", "npm:2.0.3"],\
           ["lodash", "npm:4.17.21"],\
-          ["markdown-to-jsx", "virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.3.2"],\
+          ["markdown-to-jsx", "virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.5.0"],\
           ["memoizerific", "npm:1.11.3"],\
           ["polished", "npm:4.2.2"],\
           ["react", "npm:18.3.1"],\
@@ -15455,7 +15455,7 @@ const RAW_RUNTIME_STATE =
           ["color-convert", "npm:2.0.1"],\
           ["dequal", "npm:2.0.3"],\
           ["lodash", "npm:4.17.21"],\
-          ["markdown-to-jsx", "virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.3.2"],\
+          ["markdown-to-jsx", "virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.5.0"],\
           ["memoizerific", "npm:1.11.3"],\
           ["polished", "npm:4.2.2"],\
           ["react", null],\
@@ -26949,17 +26949,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["markdown-to-jsx", [\
-      ["npm:7.3.2", {\
-        "packageLocation": "./.yarn/cache/markdown-to-jsx-npm-7.3.2-ab393676ba-5a7ca9d04d.zip/node_modules/markdown-to-jsx/",\
+      ["npm:7.5.0", {\
+        "packageLocation": "./.yarn/cache/markdown-to-jsx-npm-7.5.0-b0a5a37db0-b1fbe4429b.zip/node_modules/markdown-to-jsx/",\
         "packageDependencies": [\
-          ["markdown-to-jsx", "npm:7.3.2"]\
+          ["markdown-to-jsx", "npm:7.5.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.3.2", {\
-        "packageLocation": "./.yarn/__virtual__/markdown-to-jsx-virtual-05efd8ccb8/0/cache/markdown-to-jsx-npm-7.3.2-ab393676ba-5a7ca9d04d.zip/node_modules/markdown-to-jsx/",\
+      ["virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/markdown-to-jsx-virtual-000e07e73d/0/cache/markdown-to-jsx-npm-7.5.0-b0a5a37db0-b1fbe4429b.zip/node_modules/markdown-to-jsx/",\
         "packageDependencies": [\
-          ["markdown-to-jsx", "virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.3.2"],\
+          ["markdown-to-jsx", "virtual:0211659667394cbe47e777fb620483e6e7e1ba46f6a5416e3f520f225a77f6e0ead44a2360579223dc9f4f058e5ffa861659b6ff678bd53597f308eb32850e43#npm:7.5.0"],\
           ["@types/react", null],\
           ["react", null]\
         ],\
@@ -26969,10 +26969,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.3.2", {\
-        "packageLocation": "./.yarn/__virtual__/markdown-to-jsx-virtual-cf50ae8054/0/cache/markdown-to-jsx-npm-7.3.2-ab393676ba-5a7ca9d04d.zip/node_modules/markdown-to-jsx/",\
+      ["virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/markdown-to-jsx-virtual-60f7c7a558/0/cache/markdown-to-jsx-npm-7.5.0-b0a5a37db0-b1fbe4429b.zip/node_modules/markdown-to-jsx/",\
         "packageDependencies": [\
-          ["markdown-to-jsx", "virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.3.2"],\
+          ["markdown-to-jsx", "virtual:b1370fa9b8219a7bb78c06e4201f88f697fdfe26e6c1e60156088b7dcda024ae1c911786651c194c93b90aca82873665fe336a51c81fef5cd9524fea4d1f5f2e#npm:7.5.0"],\
           ["@types/react", "npm:18.3.10"],\
           ["react", "npm:18.3.1"]\
         ],\
