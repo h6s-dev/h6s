@@ -10275,12 +10275,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:8.12.1":
-  version: 8.12.1
-  resolution: "acorn@npm:8.12.1"
+"acorn@npm:8.14.0":
+  version: 8.14.0
+  resolution: "acorn@npm:8.14.0"
   bin:
     acorn: bin/acorn
-  checksum: 10/d08c2d122bba32d0861e0aa840b2ee25946c286d5dc5990abca991baf8cdbfbe199b05aacb221b979411a2fea36f83e26b5ac4f6b4e0ce49038c62316c1848f0
+  checksum: 10/6df29c35556782ca9e632db461a7f97947772c6c1d5438a81f0c873a3da3a792487e83e404d1c6c25f70513e91aa18745f6eafb1fcc3a43ecd1920b21dd173d2
   languageName: node
   linkType: hard
 
@@ -15555,7 +15555,7 @@ __metadata:
     "@types/node": "npm:^22.5.2"
     "@types/react": "npm:^18.3.5"
     "@types/testing-library__jest-dom": "npm:6.0.0"
-    acorn: "npm:8.12.1"
+    acorn: "npm:8.14.0"
     all-contributors-cli: "npm:6.26.1"
     cz-conventional-changelog: "npm:3.3.0"
     date-fns: "npm:2.30.0"
