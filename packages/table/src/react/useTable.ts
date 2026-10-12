@@ -17,27 +17,31 @@ export function useTable<Row extends Record<string, any>>({
   source,
   options: { defaultHeadIds } = {},
 }: Options<Row>) {
-  const tableCore = useRef(
-    new TableCore(model, {
+  const tableCoreRef = useRef<TableCore<Row, typeof cellRenderer> | null>(null);
+
+  if (tableCoreRef.current === null) {
+    tableCoreRef.current = new TableCore(model, {
       source,
       cellRenderer,
       defaultHeadIds,
-    }),
-  );
+    });
+  }
 
-  const [instance, setInstance] = useState(() => tableCore.current.generate());
+  const tableCore = tableCoreRef.current;
+
+  const [instance, setInstance] = useState(() => tableCore.generate());
   const controls = useMemo(
     () => ({
       updateHead(headIds?: Array<HeadId<Row>>) {
-        setInstance(() => tableCore.current.updateHead(headIds).generate());
+        setInstance(() => tableCore.updateHead(headIds).generate());
       },
     }),
-    [],
+    [tableCore],
   );
 
   useEffect(() => {
-    setInstance(() => tableCore.current.updateSource(source).generate());
-  }, [source]);
+    setInstance(() => tableCore.updateSource(source).generate());
+  }, [source, tableCore]);
 
   return [instance, controls] as const;
 }
