@@ -3,6 +3,7 @@ import { get } from "../../utils/get";
 
 export class CellSpanManager<Row extends Record<string, any>> {
   private rowSpanMap: Map<string, number>;
+  private maxRowSpan = 1;
 
   constructor() {
     this.rowSpanMap = new Map<string, number>();
@@ -31,7 +32,9 @@ export class CellSpanManager<Row extends Record<string, any>> {
       const savedRowSpan = this.rowSpanMap.get(key);
 
       if (savedRowSpan != null) {
-        this.rowSpanMap.set(key, savedRowSpan + 1);
+        const rowSpan = savedRowSpan + 1;
+        this.rowSpanMap.set(key, rowSpan);
+        this.maxRowSpan = Math.max(this.maxRowSpan, rowSpan);
 
         return true;
       }
@@ -42,7 +45,7 @@ export class CellSpanManager<Row extends Record<string, any>> {
   }
 
   getMaxRowSpan() {
-    return Math.max(...this.rowSpanMap.values());
+    return this.maxRowSpan;
   }
 
   private parseRules(rules?: RendererRules<Row>) {

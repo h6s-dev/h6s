@@ -5,6 +5,30 @@ import { paymentDataset, paymentDatasetWithSum } from "../mocks/payments.mock";
 import { paymentsTableModel } from "../mocks/paymentsTableModel.mock";
 import { sum } from "../utils/sum";
 
+describe("row span summaries", () => {
+  it("returns a finite default span for rows without merging", () => {
+    const { rows } = new TableCore([{ accessor: "group", label: "Group" }], {
+      source: [{ group: "a" }, { group: "b" }],
+    }).generate();
+
+    expect(rows.map((row) => row.getRowProps().rowSpan)).toEqual([1, 1]);
+    expect(rows.map((row) => row.cells[0].rowSpan)).toEqual([1, 1]);
+  });
+
+  it("keeps the maximum independent for each generated snapshot", () => {
+    const core = new TableCore([{ accessor: "group", label: "Group", cell: { mergeRow: "group" } }], {
+      source: [{ group: "a" }, { group: "a" }, { group: "a" }, { group: "b" }],
+    });
+    const original = core.generate();
+    const updated = core.updateSource([{ group: "b" }]).generate();
+
+    expect(original.rows.map((row) => row.getRowProps().rowSpan)).toEqual([3, 3, 3, 3]);
+    expect(original.rows.map((row) => row.cells.map((cell) => cell.rowSpan))).toEqual([[3], [], [], [1]]);
+    expect(updated.rows[0].getRowProps().rowSpan).toBe(1);
+    expect(updated.rows[0].cells[0].rowSpan).toBe(1);
+  });
+});
+
 describe("let instance = new TableCore(model, { source })", () => {
   const instance = new TableCore(paymentsTableModel, {
     source: paymentDataset,
