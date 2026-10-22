@@ -1,5 +1,12 @@
 # @h6s/calendar-docs
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [e5190fd]
+  - @h6s/calendar@2.2.1
+
 ## 0.1.2
 
 ### Patch Changes

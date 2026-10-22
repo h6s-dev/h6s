@@ -1,5 +1,11 @@
 # @h6s/calendar
 
+## 2.2.1
+
+### Patch Changes
+
+- e5190fd: Fix incorrect dates in the day view when the week starts on a day other than Sunday.
+
 ## 2.2.0
 
 ### Minor Changes
